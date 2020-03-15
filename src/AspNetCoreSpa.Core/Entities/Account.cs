@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,7 +9,7 @@ namespace AspNetCoreSpa.Core.Entities
     {
         [Key]
         [Column(TypeName = "VARCHAR(100)")]
-        public string Username { get; set; }
+        public string UserId { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string Name { get; set; }
         [Column(TypeName = "NVARCHAR(255)")]
@@ -23,6 +24,8 @@ namespace AspNetCoreSpa.Core.Entities
         [Column(TypeName = "NVARCHAR(255)")]
         public string Address {get; set;}
         public bool Deleted {get; set;}
-        public int RoleID {get; set;}
+        public int RoleId {get; set;}
+        public Role Role { get; set; }
+        public ICollection<TourBooking> TourBookings { get; set; }
     }
 }

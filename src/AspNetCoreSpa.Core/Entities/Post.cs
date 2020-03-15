@@ -11,19 +11,19 @@ namespace AspNetCoreSpa.Core.Entities
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
-        public String Name { get; set; }
+        public string Name { get; set; }
         [Column(TypeName = "NVARCHAR(200)")]
-        public String PostContent { get; set; }
+        public string PostContent { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
-        public String Description { get; set; }
+        public string Description { get; set; }
         [Column(TypeName = "NVARCHAR(255)")]
-        public String Image { get; set; }
+        public string Image { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
-        public String MetaDescription { get; set; }
+        public string MetaDescription { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
-        public String MetaKeyWord { get; set; }
+        public string MetaKeyWord { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
-        public String Alias { get; set; }
+        public string Alias { get; set; }
         public bool Status { get; set; }
         public bool Censorship { get; set; }
         public bool Deleted { get; set; }

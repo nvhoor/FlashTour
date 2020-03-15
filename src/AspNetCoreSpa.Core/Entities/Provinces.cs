@@ -9,8 +9,8 @@ namespace AspNetCoreSpa.Core.Entities
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
-        public String Name { get; set; }
-        public int Latitude { get; set; }
-        public int Longitude { get; set; }
+        public string Name { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
     }
 }

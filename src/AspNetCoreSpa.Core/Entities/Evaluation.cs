@@ -13,5 +13,6 @@ namespace AspNetCoreSpa.Core.Entities
         public int FourStar { get; set; }
         public int FiveStar { get; set; }
         public int TourId { get; set; }
+        public Tour Tour { get; set; }
     }
 }

@@ -13,20 +13,18 @@ namespace AspNetCoreSpa.Core.Entities
         [EmailAddress]
         public string Email {get; set;}
         [Column(TypeName="VARCHAR(20)")]
-        public String Mobile {get; set; }
+        public string Mobile {get; set; }
         [Column(TypeName="NVARCHAR(255)")]
-        public String Address {get; set;}
+        public string Address {get; set;}
         [Column(TypeName="NVARCHAR(500)")]
-        public String Note {get; set;}
-        public int AccountId {get;set;}
-
+        public string Note {get; set;}
+        public int UserId {get;set;}
+        public Account User { get; set; }
         public int TourId {get;set;}
-
         public int StatusId {get;set;}
-
         public bool Deleted {get;set;}
-
         public ICollection<TourCustomer> TourCustomers { get; set; }
         public ICollection<TourBookingDetail> TourBookingDetails { get; set; }
+        
     }
 }
