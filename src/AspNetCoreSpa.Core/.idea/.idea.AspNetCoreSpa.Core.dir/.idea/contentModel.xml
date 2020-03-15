@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="AspNetCoreSpa.Core.csproj" t="IncludeRecursive" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Entities" t="Include">
+        <e p="Account.cs" t="Include" />
+        <e p="AuditableEntity.cs" t="Include" />
+        <e p="Banner.cs" t="Include" />
+        <e p="BookingPrice.cs" t="Include" />
+        <e p="Contact.cs" t="Include" />
+        <e p="ContactUs.cs" t="Include" />
+        <e p="Culture.cs" t="Include" />
+        <e p="Customer.cs" t="Include" />
+        <e p="Evaluation.cs" t="Include" />
+        <e p="IAuditableEntity.cs" t="Include" />
+        <e p="IEntityBase.cs" t="Include" />
+        <e p="Order.cs" t="Include" />
+        <e p="OrderDetail.cs" t="Include" />
+        <e p="Post.cs" t="Include" />
+        <e p="PostCategory.cs" t="Include" />
+        <e p="Price.cs" t="Include" />
+        <e p="Product.cs" t="Include" />
+        <e p="ProductCategory.cs" t="Include" />
+        <e p="Provinces.cs" t="Include" />
+        <e p="Resource.cs" t="Include" />
+        <e p="Role.cs" t="Include" />
+        <e p="Tour.cs" t="Include" />
+        <e p="TourBooking.cs" t="Include" />
+        <e p="TourBookingDeail.cs" t="Include" />
+        <e p="TourCategory.cs" t="Include" />
+        <e p="TourCustomer.cs" t="Include" />
+        <e p="TouristType.cs" t="Include" />
+        <e p="TourProgram.cs" t="Include" />
+      </e>
+      <e p="Enums" t="Include">
+        <e p="Enums.cs" t="Include" />
+      </e>
+      <e p="Extensions" t="Include">
+        <e p="EnumExtensions.cs" t="Include" />
+        <e p="HostingEnvironmentExtensions.cs" t="Include" />
+      </e>
+      <e p="Helpers" t="Include">
+        <e p="Helpers.cs" t="Include" />
+      </e>
+      <e p="Microsoft.AspNetCore.App" t="Include" />
+      <e p="Microsoft.NETCore.App" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="AspNetCoreSpa.Core.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="ViewModels" t="Include">
+        <e p="AccountViewModels" t="Include">
+          <e p="ExternalLoginConfirmationViewModel.cs" t="Include" />
+          <e p="ForgotPasswordViewModel.cs" t="Include" />
+          <e p="LoginViewModel.cs" t="Include" />
+          <e p="RegisterViewModel.cs" t="Include" />
+          <e p="ResetPasswordViewModel.cs" t="Include" />
+          <e p="SendCodeViewModel.cs" t="Include" />
+          <e p="VerifyCodeViewModel.cs" t="Include" />
+        </e>
+        <e p="AutoMapperProfile.cs" t="Include" />
+        <e p="ContactUsVm.cs" t="Include" />
+        <e p="ContentVm.cs" t="Include" />
+        <e p="CustomerViewModel.cs" t="Include" />
+        <e p="ManageViewModels" t="Include">
+          <e p="ChangePasswordViewModel.cs" t="Include" />
+          <e p="EnableAuthenticatorViewModel.cs" t="Include" />
+          <e p="GenerateRecoveryCodesViewModel.cs" t="Include" />
+          <e p="IndexViewModel.cs" t="Include" />
+          <e p="ManageLoginsViewModel.cs" t="Include" />
+          <e p="RemoveLoginViewModel.cs" t="Include" />
+          <e p="SetPasswordViewModel.cs" t="Include" />
+          <e p="TwoFactorAuthenticationViewModel.cs" t="Include" />
+        </e>
+        <e p="OrderViewModel.cs" t="Include" />
+        <e p="ProductCategoryViewModel.cs" t="Include" />
+        <e p="ProductViewModel.cs" t="Include" />
+      </e>
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_.19.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+  </component>
+</project>
