@@ -12,12 +12,27 @@ namespace AspNetCoreSpa.Infrastructure
     public class ApplicationDbContext : DbContext
     {
         public string CurrentUserId { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductCategory> ProductCategories { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
-
+//        public DbSet<Customer> Customers { get; set; }
+//        public DbSet<Product> Products { get; set; }
+//        public DbSet<ProductCategory> ProductCategories { get; set; }
+//        public DbSet<Order> Orders { get; set; }
+//        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Banner> Banners { get; set; }
+        public DbSet<BookingPrice> BookingPrices { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Evaluation> Evaluations { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostCategory> PostCategories { get; set; }
+        public DbSet<Price> Prices { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Tour> Tours { get; set; }
+        public DbSet<TourBooking> TourBookings { get; set; }
+        public DbSet<TourBookingDetail> TourBookingDetails { get; set; }
+        public DbSet<TourCategory> TourCategories { get; set; }
+        public DbSet<TourCustomer> TourCustomers { get; set; }
+        public DbSet<TouristType> TouristTypes { get; set; }
+        public DbSet<TourProgram> TourPrograms { get; set; }
         public DbSet<Culture> Cultures { get; set; }
         public DbSet<Resource> Resources { get; set; }
 

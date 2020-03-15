@@ -14,10 +14,10 @@ namespace AspNetCoreSpa.Infrastructure
             services.AddScoped<IUnitOfWork, HttpUnitOfWork>();
             services.AddTransient<ApplicationDbContext>();
             services.AddTransient<ISeedData, SeedData>();
-            services.AddTransient<ICustomerRepository, CustomerRepository>();
-            services.AddTransient<IOrdersRepository, OrdersRepository>();
-            services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+//            services.AddTransient<ICustomerRepository, CustomerRepository>();
+//            services.AddTransient<IOrdersRepository, OrdersRepository>();
+//            services.AddTransient<IProductRepository, ProductRepository>();
+//            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
 
             return services;
         }
