@@ -19,8 +19,9 @@ namespace AspNetCoreSpa.Core.Entities
         public string Description { get; set; }
         public DateTime DepartureDate { get; set; }
         public int DepartureId { get; set; }
+        public Province Province { get; set; }
         public int Slot { get; set; }
-        public int Censorship { get; set; }
+        public bool Censorship { get; set; }
         public bool Status { get; set; }
         public bool Deleted { get; set; }
         public int CategoryId { get; set; }

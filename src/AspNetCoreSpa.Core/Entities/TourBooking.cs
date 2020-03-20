@@ -5,11 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AspNetCoreSpa.Core.Entities
 {
-    public class TourBooking : IEntityBase{
+    public class TourBooking : AuditableEntity,IEntityBase{
         [Key]
         public int Id {get; set;}
         [Column(TypeName="NVARCHAR(100)")]
-        public int FullName {get;set;}
+        public string FullName {get;set;}
         [EmailAddress]
         public string Email {get; set;}
         [Column(TypeName="VARCHAR(20)")]
@@ -21,7 +21,7 @@ namespace AspNetCoreSpa.Core.Entities
         public int UserId {get;set;}
         public Account User { get; set; }
         public int TourId {get;set;}
-        public int StatusId {get;set;}
+        public bool Status {get;set;}
         public bool Deleted {get;set;}
         public ICollection<TourCustomer> TourCustomers { get; set; }
         public ICollection<TourBookingDetail> TourBookingDetails { get; set; }

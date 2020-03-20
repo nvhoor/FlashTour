@@ -17,5 +17,6 @@ namespace AspNetCoreSpa.Core.Entities
         public int DestinationId { get; set; }
         public int TourId { get; set; }
         public Tour Tour { get; set; }
+        
     }
 }
