@@ -12,7 +12,6 @@ namespace AspNetCoreSpa.Core.Entities
         public TourBookingDetail TourBookingDetail { get; set; }
         public int TouristTypeId {get; set;}
         public TouristType TouristType { get; set; }
-        [Column(TypeName="decimal(18,2)")]
         public decimal Price {get; set;}
     }
 }
