@@ -10,7 +10,7 @@ namespace AspNetCoreSpa.Core.Entities
         [Column(TypeName = "NVARCHAR(100)")]
         public string Name { get; set; }
         public decimal Longitude { get; set; }
-        public string Latitude { get; set; }
+        public decimal Latitude { get; set; }
         public ICollection<Tour> Tours { get; set; }
         public ICollection<TourProgram> TourPrograms { get; set; }
     }

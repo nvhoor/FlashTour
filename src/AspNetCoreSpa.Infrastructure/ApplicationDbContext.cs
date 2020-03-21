@@ -23,6 +23,7 @@ namespace AspNetCoreSpa.Infrastructure
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Evaluation> Evaluations { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Province> Provinces { get; set; }
         public DbSet<PostCategory> PostCategories { get; set; }
         public DbSet<Price> Prices { get; set; }
         public DbSet<Role> Roles { get; set; }

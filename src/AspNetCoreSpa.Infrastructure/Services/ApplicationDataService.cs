@@ -32,6 +32,7 @@ namespace AspNetCoreSpa.Infrastructure.Services
             _cache = memoryCache;
         }
 
+        [Obsolete]
         public object GetApplicationData(HttpContext context, string stsAuthority)
         {
             var data = Helpers.JsonSerialize(new
@@ -47,6 +48,7 @@ namespace AspNetCoreSpa.Infrastructure.Services
             return data;
         }
 
+        [Obsolete]
         private Dictionary<string, string> GetContentByCulture(HttpContext context)
         {
             var requestCulture = context.Features.Get<IRequestCultureFeature>();
