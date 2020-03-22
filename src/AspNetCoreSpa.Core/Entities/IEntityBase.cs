@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetCoreSpa.Core.Entities
 {
     public interface IEntityBase
     {
-        int Id { get; set; }
+        Guid Id { get; set; }
     }
 }

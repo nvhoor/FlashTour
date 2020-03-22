@@ -8,7 +8,7 @@ namespace AspNetCoreSpa.Core.Entities
     public class TourCategory:IEntityBase
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string Name { get; set; }
         [Column(TypeName = "NVARCHAR(500)")]

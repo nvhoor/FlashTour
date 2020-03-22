@@ -7,13 +7,14 @@ namespace AspNetCoreSpa.Core.Entities
     public class TourCustomer : IEntityBase
     {
         [Key]
-        public int Id {get; set;}
+        public Guid Id {get; set;}
         [Column(TypeName="NVARCHAR(100)")]
         public String FullName {get; set;}
         public Gender Gender {get;set;}
         public DateTime BirthDay {get; set;}
-        public int TourBookingId {get;set;}  
-        public int TouristTypeId {get;set;}  
+        public Guid TourBookingId {get;set;}
+        public  Tour Tour { get; set; }
+        public Guid TouristTypeId {get;set;}  
         public TouristType TouristType { get; set; }
     }
 }

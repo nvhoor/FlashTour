@@ -9,7 +9,7 @@ namespace AspNetCoreSpa.Core.Entities
     public class Post : AuditableEntity, IEntityBase
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string Name { get; set; }
         [Column(TypeName = "NVARCHAR(200)")]
@@ -27,7 +27,7 @@ namespace AspNetCoreSpa.Core.Entities
         public bool Status { get; set; }
         public bool Censorship { get; set; }
         public bool Deleted { get; set; }
-        public int PostCategoryId { get; set; }
+        public Guid PostCategoryId { get; set; }
         public PostCategory PostCategory { get; set; }
     }
 }

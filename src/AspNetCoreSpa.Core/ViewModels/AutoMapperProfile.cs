@@ -8,17 +8,23 @@ namespace AspNetCoreSpa.Core.ViewModels
     {
         public AutoMapperProfile()
         {
-//            CreateMap<Customer, CustomerViewModel>()
-//                .ReverseMap();
-//
-//            CreateMap<Product, ProductViewModel>()
-//                .ReverseMap();
-//
-//            CreateMap<ProductCategory, ProductCategoryViewModel>()
-//                .ReverseMap();
-//
-//            CreateMap<Order, OrderViewModel>()
-//                .ReverseMap();
+            CreateMap<Account, AccountVM>().ReverseMap();
+            CreateMap<Banner, BannerVM>().ReverseMap();
+            CreateMap<BookingPrice, BookingPriceVM>().ReverseMap();
+            CreateMap<Contact, ContactVM>().ReverseMap();
+            CreateMap<Evaluation, EvaluationVM>().ReverseMap();
+            CreateMap<PostCategory, PostCategoryVM>().ReverseMap();
+            CreateMap<Post, PostCategoryVM>().ReverseMap();
+            CreateMap<Price, PriceVM>().ReverseMap();
+            CreateMap<Province, ProvinceVM>().ReverseMap();
+            CreateMap<Resource, ResourceVM>().ReverseMap();
+            CreateMap<RoleVM, RoleVM>().ReverseMap();
+            CreateMap<TourBookingDetail, TourBookingDetailVM>().ReverseMap();
+            CreateMap<TourCategory, TourCategoryVM>().ReverseMap();
+            CreateMap<TourCustomer, TourCustomerVM>().ReverseMap();
+            CreateMap<TouristType, TouristTypeVM>().ReverseMap();
+            CreateMap<TourProgram, TourProgramVM>().ReverseMap();
+            CreateMap<Tour, TourVM>().ReverseMap();
         }
     }
 }

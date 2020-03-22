@@ -7,7 +7,7 @@ namespace AspNetCoreSpa.Core.Entities
 {
     public class PostCategory : IEntityBase
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string Name { get; set; }
         public ICollection<Post> Posts { get; set; }
