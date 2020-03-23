@@ -111,7 +111,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Status = true,
                         Censorship = true,
                         Deleted = false,
-                        PostCategoryId =  new Random().Next(1, 11),
+                        PostCategoryId =  Guid.NewGuid(),
                         CreatedDate = DateTime.UtcNow,
                         UpdatedDate = DateTime.UtcNow
                     });
@@ -143,7 +143,7 @@ namespace AspNetCoreSpa.Infrastructure
                         PromotionPrice = new Random().Next(100000,200000),
                         OriginalPrice = new Random().Next(1000000,5000000),
                         StartDatePro = DateTime.UtcNow,
-                        TouristTypeId = new Random().Next(1,4)
+                        TouristTypeId = Guid.NewGuid(),
                     });
                 }
                 _context.SaveChanges();
@@ -177,8 +177,8 @@ namespace AspNetCoreSpa.Infrastructure
                         Censorship = true,
                         Deleted = false,
                         Slot = new Random().Next(1,20),
-                        DepartureId = new Random().Next(1,4),
-                        CategoryId = new Random().Next(1,4)
+                        DepartureId = Guid.NewGuid(),
+                        CategoryId = Guid.NewGuid(),
                     });
                 }
                 _context.SaveChanges();
@@ -196,7 +196,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Note = "Note " + i,
                         Status = true,
                         Deleted = false,
-                        UserId = new Random().Next(1,10),
+                        UserId = Guid.NewGuid()
                     });
                 }
                 _context.SaveChanges();
@@ -235,8 +235,8 @@ namespace AspNetCoreSpa.Infrastructure
                                      FullName = "Tony Nguyen " +i,
                                      BirthDay = DateTime.Now.AddDays(i),
                                      Gender = i % 2 == 0 ? Gender.Male : Gender.Female,
-                                     TourBookingId = new Random().Next(1,5),
-                                     TouristTypeId = new Random().Next(1,4)
+                                     TourBookingId = Guid.NewGuid(),
+                                     TouristTypeId = Guid.NewGuid(),
                                  });
                              }
                              _context.SaveChanges();
@@ -262,8 +262,8 @@ namespace AspNetCoreSpa.Infrastructure
                         OrderNumber = 1 + i,
                         Title = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn",
                         Description = @"Lorem ipsum dolor sit amet Nulla quis sem at nibh elemen",
-                        DestinationId = new Random().Next(1,4),
-                        TourId = new Random().Next(1,10),
+                        Destination = new Random().Next(1,4),
+                        TourId = Guid.NewGuid(),
                     });
                 }
                 _context.SaveChanges();

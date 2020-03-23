@@ -8,7 +8,7 @@ namespace AspNetCoreSpa.Core.Entities
     public class Tour : AuditableEntity, IEntityBase
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string Name { get; set; }
         [Column(TypeName = "VARCHAR(100)")]
@@ -18,13 +18,13 @@ namespace AspNetCoreSpa.Core.Entities
         [Column(TypeName = "NVARCHAR(500)")]
         public string Description { get; set; }
         public DateTime DepartureDate { get; set; }
-        public int DepartureId { get; set; }
-        public Province Province { get; set; }
+        public Guid DepartureId { get; set; }
+        public Province Departure { get; set; }
         public int Slot { get; set; }
         public bool Censorship { get; set; }
         public bool Status { get; set; }
         public bool Deleted { get; set; }
-        public int CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
         public TourCategory TourCategory { get; set; }
         public ICollection<Evaluation> Evaluations { get; set; }
     }

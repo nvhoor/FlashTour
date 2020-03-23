@@ -8,7 +8,7 @@ namespace AspNetCoreSpa.Core.Entities
     public class TouristType : IEntityBase
     {
         [Key]
-        public int Id {get; set;}
+        public Guid Id {get; set;}
         [Column(TypeName="NVARCHAR(100)")]
         public string Name {get; set;}
         public ICollection<TourCustomer> TourCustomer { get; set; }

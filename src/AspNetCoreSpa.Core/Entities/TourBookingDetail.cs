@@ -6,7 +6,7 @@ namespace AspNetCoreSpa.Core.Entities
 {
     public class TourBookingDetail : IEntityBase{
         [Key]
-        public int Id {get; set;}
+        public Guid Id {get; set;}
         public int TourId {get; set;}
         public int TourBookingId {get; set;}
         public TourBooking TourBooking { get; set; }

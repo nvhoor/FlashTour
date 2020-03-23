@@ -7,7 +7,7 @@ namespace AspNetCoreSpa.Core.Entities
     public class Contact : IEntityBase
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string FullName { get; set; }
         [EmailAddress]

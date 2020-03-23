@@ -1,46 +1,362 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54f19109-2958-40c4-a24e-c1ddf1f3eb45" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="54f19109-2958-40c4-a24e-c1ddf1f3eb45" name="Default Changelist" comment="Fix Conflicts and Add TourController">
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/AccountVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/BannerVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/BookingPriceVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ContactVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/EvaluationVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PostCategoryVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PostVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PriceVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ProvinceVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ResourceVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/RoleVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourBookingDetailVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourBookingVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourCategoryVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourCustomerVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourProgramVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TouristTypeVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourCustomerRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/TourCategoryController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/TourController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetCoreSpa/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetCoreSpa/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetCoreSpa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetCoreSpa/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetCoreSpa/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetCoreSpa/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Account.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Banner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Banner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/BookingPrice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/BookingPrice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Contact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Contact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/ContactUs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/ContactUs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Evaluation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Evaluation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/IEntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/IEntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/PostCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/PostCategory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Price.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Price.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Province.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Province.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Role.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Tour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Tour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBooking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBooking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBookingDeail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBookingDeail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBookingDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBookingDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourCategory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourCustomer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourCustomer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourProgram.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TouristType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TouristType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/AutoMapperProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/CustomerViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/OrderViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ProductCategoryViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ProductViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/EfCoreMaterializerSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/EfCoreMaterializerSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/IUnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/AccountRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/BookingPriceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/BookingPriceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ContactRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/EvaluationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/EvaluationRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IAccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IAccountRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IBookingPriceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IBookingPriceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IContactRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IPriceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IPriceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IRoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingDetailRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingDetailRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourCategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourCategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/OrdersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/OrdersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostCategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostCategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PriceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PriceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ProvinceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ProvinceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/RoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/RoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingDetailRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingDetailRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourCategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourCategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourProgramRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourProgramRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TouristTypeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TouristTypeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/SeedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/UnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.STS/wwwroot/css/vendor.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.STS/wwwroot/css/vendor.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.STS/wwwroot/js/vendor-validation.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.STS/wwwroot/js/vendor-validation.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.STS/wwwroot/js/vendor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.STS/wwwroot/js/vendor.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AspNetCoreSpa.Web/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/AspNetCoreSpa.Web/appsettings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Repositories" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Extensions/ModelStateExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Extensions/ServiceCollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Extensions/IdentityExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/ProductCategoryController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourProgram.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/AppUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/OrderController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/BaseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/CustomerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/ProductController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourCategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBooking.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Tour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourProgramRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Role.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourCategory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Migrations/20200321072407_DBInitial.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/TourCategoryController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/TourController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Province.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TouristType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourCustomer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBookingDetail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Resource.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/PostCategory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Post.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/IEntityBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/IAuditableEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Evaluation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Price.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IPostCategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/CultureRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Culture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IPostRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Migrations/ApplicationDbContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Contact.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ContentVm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/BookingPrice.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/AutoMapperProfile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ContactRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Banner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/AuditableEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/AccountRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Account.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/BannerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/IUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingDetailRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ContactUsVm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TouristTypeRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ManageViewModels/SetPasswordViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ManageViewModels/IndexViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ManageViewModels/ManageLoginsViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IContactRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourCategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ManageViewModels/ChangePasswordViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/ServicesCollectionExtension.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Filters/ApiExceptionFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Filters/ValidationError.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/ApplicationDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Filters/ModelValidationFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/HttpUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Filters/ApiException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/UnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Filters/ApiError.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/SignalR/ChatHub.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/SignalR/ShapeHub.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/EfCoreMaterializerSource.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IAccountRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IBookingPriceRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/BookingPriceRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Services/ApplicationDataService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/EFLocalizer/EFStringLocalizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/EFLocalizer/EFStringLocalizerFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/EFLocalizer/EFStringLocalizerOfT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ProductCategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/OrdersRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/CustomerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IOrdersRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ICustomerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IProductCategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Grants/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Manage/GenerateRecoveryCodes.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Manage/PersonalData.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Manage/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Manage/ExternalLogins.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Manage/ShowRecoveryCodes.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IProvinceRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Shared/_LoginPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostCategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Shared/_SelectLanguagePartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IEvaluationRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Account/Logout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Account/ExternalLoginConfirmation.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Account/LoginWith2fa.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ICultureRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Consent/_ScopeListItem.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Consent/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Views/Diagnostics/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Models/StsConfig.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IBannerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Models/IAuditable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Models/EmailSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Models/ConsentViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Models/ApplicationUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourCustomerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ProvinceVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IPriceRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ResourceVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/EvaluationRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ProvinceRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PriceRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ContactVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/RoleRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourBookingDetailVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IRoleRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourBookingVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/ContactUs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourProgramRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITouristTypeRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourCategoryVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/RoleVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PriceVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PostVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/EvaluationVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/BannerVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PostCategoryVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TouristTypeVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/AccountVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourProgramVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourCustomerVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/BookingPriceVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingDetailRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Resources/SharedResource.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourCustomerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/GrantsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/ConsentController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/ManageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/DiagnosticsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/AspNetCoreSpa.Web/Program.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBookingDeail.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IPostRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IPriceRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IRoleRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourCategoryRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourCustomerRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourProgramRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/AccountRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/BookingPriceRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ContactRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/EvaluationRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostCategoryRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PostRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/PriceRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/ProvinceRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/RoleRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingDetailRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourBookingRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourCategoryRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TouristTypeRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourProgramRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/TourRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IEvaluationRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IProvinceRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITouristTypeRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Province.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBookingDetail.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Price.cs" />
         <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourBooking.cs" />
-        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/ManageController.cs" />
-        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/SetLanguageController.cs" />
-        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.STS/Controllers/AccountController.cs" />
-        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/BookingPrice.cs" />
-        <option value="$PROJECT_DIR$/tests/AspNetCoreSpa.Web.Integration/Helpers/HtmlHelpers.cs" />
-        <option value="$PROJECT_DIR$/tests/AspNetCoreSpa.Web.Integration/Helpers/HttpClientExtensions.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/TourProgram.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/SeedData.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/AccountVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourCategoryVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/ProvinceVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PostCategoryVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PostVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/RoleVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/PriceVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourBookingDetailVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TouristTypeVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourProgramVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourCustomerVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourBookingVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/TourCategoryController.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/ViewModels/TourVM.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Web/Controllers/api/TourController.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/BannerRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingDetailRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/IContactRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Infrastructure/Repositories/Interfaces/ITourBookingRepository.cs" />
+        <option value="$PROJECT_DIR$/src/AspNetCoreSpa.Core/Entities/Account.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1Z9QpWBbdMC9IUEIANDtZkaqukr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="G:\TourFlash\src\AspNetCoreSpa.Web\ClientApp\node_modules\typescript\lib" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.AspNetCoreSpa.STS">
+  <component name="RunManager" selected=".NET Launch Settings Profile.AspNetCoreSpa.Web">
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/src/AspNetCoreSpa.Web/bin/Debug/netcoreapp3.1/AspNetCoreSpa.Web.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AspNetCoreSpa.Web" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/AspNetCoreSpa.Web/AspNetCoreSpa.Web.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v3.1" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AspNetCoreSpa.STS" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/AspNetCoreSpa.STS/AspNetCoreSpa.STS.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -78,6 +394,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <browser name="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
@@ -131,6 +448,14 @@
         <option name="Build" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.AspNetCoreSpa.STS" />
+      <item itemvalue=".NET Launch Settings Profile.AspNetCoreSpa.STS: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.AspNetCoreSpa.Web" />
+      <item itemvalue=".NET Launch Settings Profile.AspNetCoreSpa.Web.Integration" />
+      <item itemvalue=".NET Launch Settings Profile.AspNetCoreSpa.Web.Integration: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.AspNetCoreSpa.Web: IIS Express" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -145,14 +470,136 @@
       <workItem from="1584249013806" duration="136000" />
       <workItem from="1584249202448" duration="332000" />
       <workItem from="1584249721621" duration="218000" />
+      <workItem from="1584351916125" duration="129000" />
+      <workItem from="1584435438710" duration="438000" />
+      <workItem from="1584446614688" duration="9418000" />
+      <workItem from="1584523474542" duration="13319000" />
+      <workItem from="1584716779559" duration="3804000" />
+      <workItem from="1584776877125" duration="3920000" />
+      <workItem from="1584808831864" duration="4639000" />
+      <workItem from="1584964381938" duration="11134000" />
     </task>
+    <task id="LOCAL-00001" summary="Fix Enitity_2 - Add SeedDatabase">
+      <created>1584724426912</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584724426912</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix Enitity_2 - Add SeedDatabase">
+      <created>1584777010049</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584777010049</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ViewModel_1">
+      <created>1584779643609</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584779643609</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Repositories">
+      <created>1584814548132</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584814548132</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <MESSAGE value="Fix Enitity_2 - Add SeedDatabase" />
+    <MESSAGE value="ViewModel_1" />
+    <MESSAGE value="Repositories" />
+    <MESSAGE value="Fix Conflicts and Add TourController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Conflicts and Add TourController" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="0" key="#AspNetCoreSpa.STS/Dockerfile" timestamp="1584524321706">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="414" y="0" key="#AspNetCoreSpa.STS/Dockerfile/0.0.1366.768@0.0.1366.768" timestamp="1584524321706" />
+    <state x="275" y="42" key="#Notifications" timestamp="1584966202214">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="42" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1584966202214" />
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584549193867">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1584549193867" />
+    <state x="129" y="59" key="DiffContextDialog" timestamp="1584966278166">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="129" y="59" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1584966278166" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1584814685585">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1584814685585" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1584814685585">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1584814685585" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1584814685584">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1584814685584" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1584814685585">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1584814685585" />
+    <state x="129" y="59" key="MergeDialog" timestamp="1584981692111">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="129" y="59" key="MergeDialog/0.0.1366.768@0.0.1366.768" timestamp="1584981692111" />
+    <state x="388" y="100" key="MultipleFileMergeDialog" timestamp="1584981692118">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="388" y="100" key="MultipleFileMergeDialog/0.0.1366.768@0.0.1366.768" timestamp="1584981692118" />
+    <state x="392" y="84" key="RiderGenerateDialog" timestamp="1584813341957">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="392" y="84" key="RiderGenerateDialog/0.0.1366.768@0.0.1366.768" timestamp="1584813341957" />
+    <state x="184" y="26" key="SettingsEditor" timestamp="1584724165275">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1584724165275" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1584981973398">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1584981973398" />
+    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584967792664">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768@0.0.1366.768" timestamp="1584967792664" />
+    <state x="422" y="175" key="git4idea.merge.GitPullDialog" timestamp="1584966329824">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="422" y="175" key="git4idea.merge.GitPullDialog/0.0.1366.768@0.0.1366.768" timestamp="1584966329824" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1584537470228">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1584537470228" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

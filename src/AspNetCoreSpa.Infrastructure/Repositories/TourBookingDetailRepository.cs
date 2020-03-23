@@ -1,5 +1,5 @@
-﻿using AspNetCoreSpa.Core.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿﻿using AspNetCoreSpa.Core.Entities;
+ using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreSpa.Infrastructure
 {
@@ -9,6 +9,5 @@ namespace AspNetCoreSpa.Infrastructure
         {
         }
         private ApplicationDbContext _appContext => (ApplicationDbContext)_context;
-        
     }
 }

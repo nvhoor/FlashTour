@@ -1,5 +1,5 @@
 ﻿using AspNetCoreSpa.Core.Entities;
-using Microsoft.EntityFrameworkCore;
+ using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreSpa.Infrastructure
 {

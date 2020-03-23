@@ -1,6 +1,6 @@
 ﻿//using Microsoft.EntityFrameworkCore;
 //using AspNetCoreSpa.Core.Entities;
-//
+
 //namespace AspNetCoreSpa.Infrastructure
 //{
 //    public class OrdersRepository : Repository<Order>, IOrdersRepository

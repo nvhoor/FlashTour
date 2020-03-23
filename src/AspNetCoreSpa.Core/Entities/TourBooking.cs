@@ -7,7 +7,7 @@ namespace AspNetCoreSpa.Core.Entities
 {
     public class TourBooking : AuditableEntity,IEntityBase{
         [Key]
-        public int Id {get; set;}
+        public Guid Id {get; set;}
         [Column(TypeName="NVARCHAR(100)")]
         public string FullName {get;set;}
         [EmailAddress]
@@ -18,9 +18,8 @@ namespace AspNetCoreSpa.Core.Entities
         public string Address {get; set;}
         [Column(TypeName="NVARCHAR(500)")]
         public string Note {get; set;}
-        public int UserId {get;set;}
+        public Guid UserId {get;set;}
         public Account User { get; set; }
-        public int TourId {get;set;}
         public bool Status {get;set;}
         public bool Deleted {get;set;}
         public ICollection<TourCustomer> TourCustomers { get; set; }

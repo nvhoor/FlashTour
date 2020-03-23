@@ -1,7 +1,6 @@
-﻿using AspNetCoreSpa.Core.Entities;
+﻿﻿using AspNetCoreSpa.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-
-namespace AspNetCoreSpa.Infrastructure
+ namespace AspNetCoreSpa.Infrastructure
 {
     public class TourCategoryRepository : Repository<TourCategory>, ITourCategoryRepository
     {
