@@ -9,7 +9,7 @@ namespace AspNetCoreSpa.Core.Entities
         [Key]
         public Guid Id {get; set;}
         [Column(TypeName="NVARCHAR(100)")]
-        public String FullName {get; set;}
+        public string FullName {get; set;}
         public Gender Gender {get;set;}
         public DateTime BirthDay {get; set;}
         public Guid TourBookingId {get;set;}

@@ -11,7 +11,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public decimal OriginalPrice {get;set;}
         public decimal PromotionPrice {get;set;}
         public DateTime StartDatePro {get; set;}
-        public int TouristTypeId {get;set;}
+        public Guid TouristTypeId {get;set;}
         public TouristType TouristType { get; set; } 
     }
 }
