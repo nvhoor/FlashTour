@@ -19,7 +19,16 @@ namespace AspNetCoreSpa.Infrastructure
         private readonly ApplicationDbContext _context;
         private readonly ILogger _logger;
         private readonly IWebHostEnvironment _hostingEnvironment;
-
+        private List<Guid> tourCategoryIds;
+        private List<Guid> tourIds;
+        private List<Guid> postIds;
+        private List<Guid> postCategoriesIds;
+        private List<Guid> roleIds;
+        private List<Guid> touristTypeIds;
+        private List<Guid> tourBookingIds;
+        private List<Guid> tourBookingDetailIds;
+        private List<Guid> priceIds;
+        private List<Guid> provinceIds;
         public SeedData(
             ApplicationDbContext context,
             ILogger<SeedData> logger,
@@ -34,11 +43,66 @@ namespace AspNetCoreSpa.Infrastructure
         public void Initialise()
         {
             _context.Database.Migrate();
-
+            InitListGuId();
             AddLocalisedData();
             AddTourData();
            // AddShopData();
         }
+
+        private void InitListGuId()
+        {
+           postCategoriesIds=new List<Guid>();
+           for (var i = 0; i < 15; i++)
+           {
+               postCategoriesIds.Add(Guid.NewGuid());
+           }
+           postIds=new List<Guid>();
+           for (var i = 0; i < 15; i++)
+           {
+               postIds.Add(Guid.NewGuid());
+           }
+           roleIds=new List<Guid>();
+           for (var i = 0; i < 3; i++)
+           {
+               roleIds.Add(Guid.NewGuid());
+           }
+           touristTypeIds=new List<Guid>();
+           for (var i = 0; i < 3; i++)
+           {
+               touristTypeIds.Add(Guid.NewGuid());
+           }
+           tourIds=new List<Guid>();
+           for (var i = 0; i < 15; i++)
+           {
+               tourIds.Add(Guid.NewGuid());
+           }
+           tourBookingIds=new List<Guid>();
+           for (var i = 0; i < 10; i++)
+           {
+               tourBookingIds.Add(Guid.NewGuid());
+           }
+           tourBookingDetailIds=new List<Guid>();
+           for (var i = 0; i < 10; i++)
+           {
+               tourBookingDetailIds.Add(Guid.NewGuid());
+           }
+           tourCategoryIds=new List<Guid>();
+           for (var i = 0; i < 10; i++)
+           {
+               tourCategoryIds.Add(Guid.NewGuid());
+           }
+           priceIds=new List<Guid>();
+           for (var i = 0; i < 10; i++)
+           {
+               priceIds.Add(Guid.NewGuid());
+           }
+           provinceIds=new List<Guid>();
+           for (var i = 0; i < 10; i++)
+           {
+               provinceIds.Add(Guid.NewGuid());
+           }
+        }
+
         private void AddLocalisedData()
         {
             if (!_context.Cultures.Any())
@@ -83,10 +147,11 @@ namespace AspNetCoreSpa.Infrastructure
             
             if (!_context.PostCategories.Any())
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     _context.PostCategories.Add(new PostCategory
                     {
+                        Id = postCategoriesIds[i],
                         Name = "Category_" +i,
                     });
                 }
@@ -96,24 +161,22 @@ namespace AspNetCoreSpa.Infrastructure
 
             if (!_context.Posts.Any())
             {
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     _context.Posts.Add(new Post
                     {
+                        Id = postIds[i],
+                        Alias = "Post description " + i,
+                        Censorship = true,
                         Name = "Post_" + i,
                         PostContent = "Post content " + i,
-                        Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
+                        Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
                         MetaDescription = "Post Meta description " + i,
                         MetaKeyWord = "Post Meta description " + i,
-                        Alias = "Post description " + i,
-                        Image = "PostImage_.png",
+                        Image = "post_"+i+".png",
                         Status = true,
-                        Censorship = true,
                         Deleted = false,
-                        PostCategoryId =  Guid.NewGuid(),
-                        CreatedDate = DateTime.UtcNow,
-                        UpdatedDate = DateTime.UtcNow
+                        PostCategoryId =  postCategoriesIds[i],
                     });
                 }
                 _context.SaveChanges();
@@ -124,6 +187,7 @@ namespace AspNetCoreSpa.Infrastructure
                 {
                     _context.Contacts.Add(new Contact
                     {
+                        Id = Guid.NewGuid(),
                         FullName = "Contact_" + i,
                         Email = $"{i}test@test.com",
                         Address = "Address " + i,
@@ -133,27 +197,66 @@ namespace AspNetCoreSpa.Infrastructure
                 }
                 _context.SaveChanges();
             }
-            if (!_context.Prices.Any())
+
+            if (!_context.Roles.Any())
             {
-                for (int i = 0; i < 5; i++)
-                {
-                    _context.Prices.Add(new Price
+                    _context.Roles.Add(new Role
                     {
-                        Name = "price_" + i,
-                        PromotionPrice = new Random().Next(100000,200000),
-                        OriginalPrice = new Random().Next(1000000,5000000),
-                        StartDatePro = DateTime.UtcNow,
-                        TouristTypeId = Guid.NewGuid(),
+                        Id = roleIds[0],
+                        RoleName = "ADMIN"
+                    });
+                    _context.Roles.Add(new Role
+                    {
+                        Id = roleIds[1],
+                        RoleName = "STAFF"
+                    });
+                    _context.Roles.Add(new Role
+                    {
+                        Id = roleIds[2],
+                        RoleName = "USER"
+                    });
+                    
+                    _context.SaveChanges();
+            }
+            if (!_context.Accounts.Any())
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    _context.Accounts.Add(new Account
+                    {
+                        UserId = "user_"+i,
+                        Address = "Da Nang",
+                        Avatar = "avatar_"+i,
+                        BirthDay = DateTime.UtcNow,
+                        Deleted = false,
+                        Email = "user"+i+"@email.com",
+                        Name = "User "+i,
+                        Password = "asfsdfs",
+                        Phone = "0900014324",
+                        RoleId = roleIds[new Random().Next(0,2)]
+                    });
+                }
+            }
+            if (!_context.TouristTypes.Any())
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    _context.TouristTypes.Add(new TouristType
+                    {
+                        Id = touristTypeIds[i],
+                        Name = "Touristype_" +i,
                     });
                 }
                 _context.SaveChanges();
             }
+           
             if (!_context.Provinces.Any())
             {
                 for (int i = 0; i < 10; i++)
                 {
                     _context.Provinces.Add(new Province
                     {
+                        Id = provinceIds[i],
                         Name = "Provine_" + i,
                         Longitude = new Random().Next(100,150),
                         Latitude = new Random().Next(100, 200)
@@ -161,12 +264,27 @@ namespace AspNetCoreSpa.Infrastructure
                 }
                 _context.SaveChanges();
             }
-            if (!_context.Tours.Any())
+            if (!_context.TourCategories.Any())
             {
                 for (int i = 0; i < 10; i++)
                 {
+                    _context.TourCategories.Add(new TourCategory()
+                    {
+                        Id = tourCategoryIds[i],
+                        Name = "TourCategory_" + i,
+                        Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
+                    });
+                }
+                _context.SaveChanges();
+            }
+            if (!_context.Tours.Any())
+            {
+                for (int i = 0; i < 15; i++)
+                {
                     _context.Tours.Add(new Tour
                     {
+                        Id = tourIds[i],
                         Name = "Post_" + i,
                         Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                             Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
@@ -177,8 +295,25 @@ namespace AspNetCoreSpa.Infrastructure
                         Censorship = true,
                         Deleted = false,
                         Slot = new Random().Next(1,20),
-                        DepartureId = Guid.NewGuid(),
-                        CategoryId = Guid.NewGuid(),
+                        DepartureId = provinceIds[new Random().Next(0,9)],
+                        TourCategoryId = tourCategoryIds[new Random().Next(0,9)],
+                    });
+                }
+                _context.SaveChanges();
+            }
+            if (!_context.Prices.Any())
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    _context.Prices.Add(new Price
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "price_" + i,
+                        PromotionPrice = new Random().Next(100000,200000),
+                        OriginalPrice = new Random().Next(1000000,5000000),
+                        StartDatePro = DateTime.UtcNow,
+                        TourId = tourIds[i],
+                        TouristTypeId =touristTypeIds[new Random().Next(0,2)],
                     });
                 }
                 _context.SaveChanges();
@@ -189,6 +324,7 @@ namespace AspNetCoreSpa.Infrastructure
                 {
                     _context.TourBookings.Add(entity: new TourBooking
                     {
+                        Id = tourBookingIds[i],
                         FullName = "TourBooking_" + i,
                         Email = $"{i}test@test.com",
                         Address = "Address_" + i,
@@ -196,7 +332,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Note = "Note " + i,
                         Status = true,
                         Deleted = false,
-                        UserId = Guid.NewGuid()
+                        UserId = "user_"+i
                     });
                 }
                 _context.SaveChanges();
@@ -207,25 +343,14 @@ namespace AspNetCoreSpa.Infrastructure
                 {
                     _context.TourBookingDetails.Add(new TourBookingDetail
                     {
-                        TourId = new Random().Next(1,4),
-                        TourBookingId = new Random().Next(1,4)
+                        Id = tourBookingDetailIds[i],
+                        TourId = tourIds[i],
+                        TourBookingId = tourBookingIds[i]
                     });
                 }
                 _context.SaveChanges();
             }
-            if (!_context.TourCategories.Any())
-            {
-                for (int i = 0; i < 5; i++)
-                {
-                    _context.TourCategories.Add(new TourCategory()
-                    {
-                        Name = "TourCategory_" + i,
-                        Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
-                    });
-                }
-                _context.SaveChanges();
-            }
+           
             if (!_context.TourCustomers.Any())
             {
                              for (int i = 0; i < 10; i++)
@@ -235,35 +360,43 @@ namespace AspNetCoreSpa.Infrastructure
                                      FullName = "Tony Nguyen " +i,
                                      BirthDay = DateTime.Now.AddDays(i),
                                      Gender = i % 2 == 0 ? Gender.Male : Gender.Female,
-                                     TourBookingId = Guid.NewGuid(),
-                                     TouristTypeId = Guid.NewGuid(),
+                                     TourBookingId = tourBookingIds[i],
+                                     TouristTypeId = touristTypeIds[new Random().Next(0,2)],
                                  });
                              }
                              _context.SaveChanges();
             }
-            if (!_context.TouristTypes.Any())
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    _context.TouristTypes.Add(new TouristType
-                    {
-                        Name = "Touristype_" +i,
-                    });
-                }
-                _context.SaveChanges();
-            }
+          
             if (!_context.TourPrograms.Any())
             {
                 for (int i = 0; i < 10; i++)
                 {
                     _context.TourPrograms.Add(new TourProgram
                     {
+                        Id = Guid.NewGuid(),
                         Date = DateTime.Now.AddDays(i),
                         OrderNumber = 1 + i,
                         Title = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn",
                         Description = @"Lorem ipsum dolor sit amet Nulla quis sem at nibh elemen",
-                        Destination = new Random().Next(1,4),
-                        TourId = Guid.NewGuid(),
+                        Destination = "Hai Chau, Da Nang",
+                        TourId = tourIds[i],
+                    });
+                }
+                _context.SaveChanges();
+            }
+            if (!_context.Evaluations.Any())
+            {
+                for (int i = 0; i < 15; i++)
+                {
+                    _context.Evaluations.Add(new Evaluation
+                    {
+                        Id = Guid.NewGuid(),
+                        OneStar = new Random().Next(1,2000),
+                        TwoStar = new Random().Next(1,2000),
+                        ThreeStar = new Random().Next(1,2000),
+                        FourStar = new Random().Next(1,2000),
+                        FiveStar = new Random().Next(1,2000),
+                        TourId = tourIds[i],
                     });
                 }
                 _context.SaveChanges();
@@ -274,6 +407,7 @@ namespace AspNetCoreSpa.Infrastructure
                 {
                     _context.Banners.Add(new Banner
                     {
+                        Id = Guid.NewGuid(),
                        Name = "Bander_" +i,
                        Image = "BanderImage_.png",
                        Description = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn"

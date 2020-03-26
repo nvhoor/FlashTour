@@ -14,7 +14,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public string Mobile {get; set; }
         public string Address {get; set;}
         public string Note {get; set;}
-        public Guid UserId {get;set;}
+        public string UserId {get;set;}
         public Account User { get; set; }
         public Guid TourId {get;set;}
         public bool Status {get;set;}

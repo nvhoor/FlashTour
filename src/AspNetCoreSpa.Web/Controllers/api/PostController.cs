@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -28,7 +29,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // GET: api/Post/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             var post = _uow.Posts.Get(id);
             return Ok(_mapper.Map<PostVM>(post));
@@ -44,7 +45,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Post/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] PostVM post)
+        public void Put(Guid id, [FromBody] PostVM post)
         {
             var p = _uow.Posts.Get(id);
             p.Name = post.Name;
@@ -64,7 +65,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // DELETE: api/Tour/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _uow.Posts.Remove(_uow.Posts.Get(id));
             _uow.SaveChanges();

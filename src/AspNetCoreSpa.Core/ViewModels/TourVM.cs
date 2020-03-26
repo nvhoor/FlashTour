@@ -17,7 +17,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public bool Censorship { get; set; }
         public bool Status { get; set; }
         public bool Deleted { get; set; }
-        public Guid CategoryId { get; set; }
+        public Guid TourCategoryId { get; set; }
         public string CategoryName { get; set; }
         public TourCategory TourCategory { get; set; }
         public ICollection<EvaluationVM> Evaluations { get; set; } 

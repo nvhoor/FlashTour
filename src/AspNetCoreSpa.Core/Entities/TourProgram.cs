@@ -14,8 +14,7 @@ namespace AspNetCoreSpa.Core.Entities
         public string Title { get; set; }
         [Column(TypeName = "NVARCHAR(500)")]
         public  string Description { get; set; }
-        public int Destination { get; set; }
-        public Province Province { get; set; }
+        public string Destination { get; set; }
         public Guid TourId { get; set; }
         public Tour Tour { get; set; }
         

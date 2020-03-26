@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -27,7 +28,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // GET: api/Account/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             var account = _uow.Accounts.Get(id);
             return Ok(_mapper.Map<AccountVM>(account));
@@ -43,7 +44,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Account/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] AccountVM account)
+        public void Put(Guid id, [FromBody] AccountVM account)
         {
             var a = _uow.Accounts.Get(id);
             a.RoleId = account.RoleId;
@@ -53,7 +54,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // DELETE: api/Account/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _uow.Accounts.Remove(_uow.Accounts.Get(id));
             _uow.SaveChanges();

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -27,7 +28,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // GET: api/Evaluations/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             var evaluation = _uow.Evaluations.Get(id);
             return Ok(_mapper.Map<EvaluationVM>(evaluation));
@@ -43,7 +44,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Evaluations/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] EvaluationVM ev)
+        public void Put(Guid id, [FromBody] EvaluationVM ev)
         {
             var e = _uow.Evaluations.Get(id);
             e.OneStar = ev.OneStar;
@@ -57,7 +58,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // DELETE: api/Evaluations/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _uow.Evaluations.Remove(_uow.Evaluations.Get(id));
             _uow.SaveChanges();

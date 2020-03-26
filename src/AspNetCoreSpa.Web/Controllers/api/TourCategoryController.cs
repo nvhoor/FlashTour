@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -28,7 +29,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // GET: api/TourCategories/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             var category = _uow.TourCategories.Get(id);
             return Ok(_mapper.Map<TourCategoryVM>(category));
@@ -44,7 +45,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/TourCategories/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] TourCategoryVM category)
+        public void Put(Guid id, [FromBody] TourCategoryVM category)
         {
             var cat = _uow.TourCategories.Get(id);
             cat.Name = category.Name;
@@ -56,7 +57,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // DELETE: api/TourCategories/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _uow.TourCategories.Remove(_uow.TourCategories.Get(id));
             _uow.SaveChanges();

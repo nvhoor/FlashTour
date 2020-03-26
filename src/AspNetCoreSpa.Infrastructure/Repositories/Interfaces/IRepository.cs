@@ -19,7 +19,7 @@ namespace AspNetCoreSpa.Infrastructure
 
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
         TEntity GetSingleOrDefault(Expression<Func<TEntity, bool>> predicate);
-        TEntity Get(int id);
+        TEntity Get(Guid id);
         IEnumerable<TEntity> GetAll();
     }
 }

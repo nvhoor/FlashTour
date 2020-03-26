@@ -9,5 +9,9 @@ namespace AspNetCoreSpa.Infrastructure
         {
         }
         private ApplicationDbContext _appContext => (ApplicationDbContext)_context;
+        public Account Get(string username)
+        {
+            return _entities.Find(username);
+        }
     }
 }

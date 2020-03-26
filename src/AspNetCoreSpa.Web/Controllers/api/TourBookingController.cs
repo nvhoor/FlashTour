@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -27,7 +28,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         
                 // GET: api/TourBookings/5
                 [HttpGet("{id}")]
-                public IActionResult Get(int id)
+                public IActionResult Get(Guid id)
                 {
                     var booking = _uow.TourBookings.Get(id);
                     return Ok(_mapper.Map<TourBookingVM>(booking));
@@ -43,7 +44,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         
                 // PUT: api/TourBookings/5
                 [HttpPut("{id}")]
-                public void Put(int id, [FromBody] TourBookingVM tbooking)
+                public void Put(Guid id, [FromBody] TourBookingVM tbooking)
                 {
                     var booking = _uow.TourBookings.Get(id);
                     booking.FullName = tbooking.FullName;
@@ -52,7 +53,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     booking.Note = tbooking.Note;
                     booking.Address = tbooking.Address;
                     booking.UserId = tbooking.UserId;
-                    booking.TourId = tbooking.TourId;
                     booking.Status = tbooking.Status;
                     booking.Deleted = tbooking.Deleted;
                     _uow.TourBookings.Update(booking);
@@ -61,7 +61,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         
                 // DELETE: api/TourBookings/5
                 [HttpDelete("{id}")]
-                public void Delete(int id)
+                public void Delete(Guid id)
                 {
                     _uow.TourBookings.Remove(_uow.TourBookings.Get(id));
                     _uow.SaveChanges();

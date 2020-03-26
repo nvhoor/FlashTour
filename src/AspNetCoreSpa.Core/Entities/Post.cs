@@ -12,9 +12,9 @@ namespace AspNetCoreSpa.Core.Entities
         public Guid Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string Name { get; set; }
-        [Column(TypeName = "NVARCHAR(200)")]
+        [Column(TypeName = "NVARCHAR(3000)")]
         public string PostContent { get; set; }
-        [Column(TypeName = "NVARCHAR(100)")]
+        [Column(TypeName = "NVARCHAR(500)")]
         public string Description { get; set; }
         [Column(TypeName = "NVARCHAR(255)")]
         public string Image { get; set; }

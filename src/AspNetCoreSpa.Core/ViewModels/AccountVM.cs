@@ -17,7 +17,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public DateTime BirthDay {get; set;}
         public string Address {get; set;}
         public bool Deleted {get; set;}
-        public int RoleId {get; set;}
+        public Guid RoleId {get; set;}
         public Role Role { get; set; }
         public ICollection<TourBookingVM> TourBookings { get; set; }
     }

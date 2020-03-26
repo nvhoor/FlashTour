@@ -18,10 +18,8 @@ namespace AspNetCoreSpa.Core.Entities
         public string Address {get; set;}
         [Column(TypeName="NVARCHAR(500)")]
         public string Note {get; set;}
-        public Guid UserId {get;set;}
+        public string UserId {get;set;}
         public Account User { get; set; }
-        public Guid TourId {get;set;}
-        public Tour Tour { get; set; }
         public bool Status {get;set;}
         public bool Deleted {get;set;}
         public ICollection<TourCustomer> TourCustomers { get; set; }

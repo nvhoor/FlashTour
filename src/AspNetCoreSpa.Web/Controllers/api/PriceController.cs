@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -27,7 +28,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // GET: api/Price/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             var price = _uow.Prices.Get(id);
             return Ok(_mapper.Map<PriceVM>(price));
@@ -43,7 +44,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Price/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] PriceVM price)
+        public void Put(Guid id, [FromBody] PriceVM price)
         {
             var pr = _uow.Prices.Get(id);
             pr.Name = price.Name;
@@ -58,7 +59,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // DELETE: api/Price/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _uow.Prices.Remove(_uow.Prices.Get(id));
             _uow.SaveChanges();

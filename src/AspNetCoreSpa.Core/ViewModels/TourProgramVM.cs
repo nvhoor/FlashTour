@@ -12,7 +12,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public int OrderNumber { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public int DestinationId { get; set; }
+        public string Destination { get; set; }
         public Guid TourId { get; set; }
         public Tour Tour { get; set; }
         public string TourName { get; set; }

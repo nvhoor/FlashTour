@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -27,7 +28,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // GET: api/Contact/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             var contact = _uow.Contacts.Get(id);
             return Ok(_mapper.Map<ContactVM>(contact));
@@ -43,7 +44,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Contact/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] ContactVM contact)
+        public void Put(Guid id, [FromBody] ContactVM contact)
         {
             var ct = _uow.Contacts.Get(id);
             ct.FullName = contact.FullName;
@@ -57,7 +58,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // DELETE: api/Contact/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _uow.Contacts.Remove(_uow.Contacts.Get(id));
             _uow.SaveChanges();

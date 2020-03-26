@@ -8,7 +8,6 @@ namespace AspNetCoreSpa.Core.Entities
     {
         [Key]
         public int Id { get; set; }
-        [Column(TypeName = "NVARCHAR(255)")]
         public string Name { get; set; }
         public virtual List<Resource> Resources { get; set; }
     }

@@ -40,10 +40,10 @@ namespace AspNetCoreSpa.Infrastructure
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //optionsBuilder.ReplaceService<IEntityMaterializerSource, EfCoreMaterializerSource>();
-        }
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            optionsBuilder.ReplaceService<IEntityMaterializerSource, EfCoreMaterializerSource>();
+//        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var entityType in modelBuilder.Model.GetEntityTypes()

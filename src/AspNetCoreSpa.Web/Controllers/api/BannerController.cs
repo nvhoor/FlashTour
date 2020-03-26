@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -27,7 +28,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // GET: api/Banner/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             var banner = _uow.Banners.Get(id);
             return Ok(_mapper.Map<BannerVM>(banner));
@@ -43,7 +44,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Banner/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] BannerVM banner)
+        public void Put(Guid id, [FromBody] BannerVM banner)
         {
             var b = _uow.Banners.Get(id);
             b.Name = banner.Name;
@@ -56,7 +57,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // DELETE: api/Banner/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _uow.Banners.Remove(_uow.Banners.Get(id));
             _uow.SaveChanges();
