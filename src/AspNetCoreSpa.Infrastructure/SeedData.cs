@@ -173,7 +173,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
                         MetaDescription = "Post Meta description " + i,
                         MetaKeyWord = "Post Meta description " + i,
-                        Image = "post_"+i+".png",
+                        Image = "post_"+i+".jpg",
                         Status = true,
                         Deleted = false,
                         PostCategoryId =  postCategoriesIds[i],
@@ -289,7 +289,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                             Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
                         DepartureDate = DateTime.UtcNow,
-                        Image = "Tour_.png",
+                        Image = "tour_"+i+".jpg",
                         Images = "ImagesTour_.png",
                         Status = true,
                         Censorship = true,
@@ -403,13 +403,13 @@ namespace AspNetCoreSpa.Infrastructure
             }
             if (!_context.Banners.Any())
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     _context.Banners.Add(new Banner
                     {
                         Id = Guid.NewGuid(),
                        Name = "Bander_" +i,
-                       Image = "BanderImage_.png",
+                       Image = "banner_"+i+".jpg",
                        Description = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn"
                     });
                 }

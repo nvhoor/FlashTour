@@ -10,7 +10,7 @@
     "angular-cli",
     "typescript"
   ],
-  "repository": "git+https://github.com/asadsahi/AspNetCoreSpa.git",
+  "repository": "https://github.com/nvhoor/FlashTour.git",
   "author": "Asad Sahi <asadazmat@gmail.com>",
   "scripts": {
     "ng": "ng",
@@ -48,7 +48,7 @@
     "bootstrap": "4.3.1",
     "date-fns": "2.6.0",
     "flatpickr": "4.6.3",
-    "font-awesome": "4.7.0",
+    "font-awesome": "^4.7.0",
     "lodash": "4.17.15",
     "oidc-client": "1.9.1",
     "preboot": "7.0.0",

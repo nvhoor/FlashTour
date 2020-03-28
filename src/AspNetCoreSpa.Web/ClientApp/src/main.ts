@@ -15,7 +15,6 @@ const providers = [
 if (environment.production) {
     enableProdMode();
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     platformBrowserDynamic(providers).bootstrapModule(AppModule)
         .catch(err => console.log(err));

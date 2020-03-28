@@ -39,12 +39,14 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
+    <Content Include="ClientApp\src\assets\images\carousel-slider.slider.standard\.DS_Store" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AspNetCoreSpa.Core\AspNetCoreSpa.Core.csproj" />
     <ProjectReference Include="..\AspNetCoreSpa.Infrastructure\AspNetCoreSpa.Infrastructure.csproj" />
+    <ProjectReference Include="..\AspNetCoreSpa.STS\AspNetCoreSpa.STS.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

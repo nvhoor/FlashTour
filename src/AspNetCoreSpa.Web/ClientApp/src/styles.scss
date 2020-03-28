@@ -10,7 +10,8 @@ $fa-font-path: '../node_modules/font-awesome/fonts';
 //   "primary": #0074d9,
 //   "danger": #ff4136
 // );
-
+@import "./assets/styles/reset.min.css";
+@import "./assets/styles/style.css";
 // IMPORT BOOTSTRAP TWO WAYS
 // Options A
 @import '../node_modules/bootstrap/scss/bootstrap';
