@@ -5,3 +5,20 @@ h4 {
 a:hover{
   text-decoration: none;
 }
+.carousel-control-tour-cate.carousel-control-prev,
+.carousel-control-tour-cate.carousel-control-next {
+  position: absolute;
+  top: 25%;
+  height: 50px;
+  width: 50px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+.carousel-control-tour-cate.carousel-control-next {
+  right: -5%;
+}
+.carousel-control-tour-cate.carousel-control-prev {
+  left: -5%;
+}

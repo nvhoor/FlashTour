@@ -14,7 +14,7 @@ namespace AspNetCoreSpa.Core.Entities
         public DateTime BirthDay {get; set;}
         public Guid TourBookingId {get;set;}
         public  TourBooking TourBooking { get; set; }
-        public Guid TouristTypeId {get;set;}  
+        public int TouristTypeId {get;set;}  
         public TouristType TouristType { get; set; }
     }
 }

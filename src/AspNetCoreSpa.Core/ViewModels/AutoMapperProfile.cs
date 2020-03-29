@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using AspNetCoreSpa.Core.Entities;
 using AutoMapper;
 
@@ -20,7 +19,6 @@ namespace AspNetCoreSpa.Core.ViewModels
             CreateMap<Province, ProvinceVM>().ReverseMap();
             CreateMap<Resource, ResourceVM>().ReverseMap();
             CreateMap<RoleVM, RoleVM>().ReverseMap();
-            CreateMap<TourBookingDetail, TourBookingDetailVM>().ReverseMap();
             CreateMap<TourCategory, TourCategoryVM>().ReverseMap();
             CreateMap<TourCustomer, TourCustomerVM>().ReverseMap();
             CreateMap<TouristType, TouristTypeVM>().ReverseMap();

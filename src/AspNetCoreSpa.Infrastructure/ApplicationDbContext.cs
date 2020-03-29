@@ -29,7 +29,6 @@ namespace AspNetCoreSpa.Infrastructure
         public DbSet<Role> Roles { get; set; }
         public DbSet<Tour> Tours { get; set; }
         public DbSet<TourBooking> TourBookings { get; set; }
-        public DbSet<TourBookingDetail> TourBookingDetails { get; set; }
         public DbSet<TourCategory> TourCategories { get; set; }
         public DbSet<TourCustomer> TourCustomers { get; set; }
         public DbSet<TouristType> TouristTypes { get; set; }

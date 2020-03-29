@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AspNetCoreSpa.Core.Entities
 {
-    public class Role : IEntityBase
+    public class Role 
     {
        [Key]
-        public Guid Id { get; set; }
+       [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id { get; set; }
         [Column(TypeName = "NVARCHAR(100)")]
         public string RoleName { get; set; }
         public ICollection<Account> Accounts { get; set; }

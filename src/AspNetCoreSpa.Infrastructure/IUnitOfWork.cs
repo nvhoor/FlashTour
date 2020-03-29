@@ -17,7 +17,6 @@ namespace AspNetCoreSpa.Infrastructure
         IPriceRepository Prices { get; }
         IProvinceRepository Provinces { get; }
         IRoleRepository Roles { get; }
-        ITourBookingDetailRepository TourBookingDetails { get; }
         ITourBookingRepository TourBookings { get; }
         ITourCategoryRepository TourCategories { get; }
         ITourCustomerRepository TourCustomers { get; }

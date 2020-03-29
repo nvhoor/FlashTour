@@ -22,8 +22,10 @@ namespace AspNetCoreSpa.Core.Entities
         public Account User { get; set; }
         public bool Status {get;set;}
         public bool Deleted {get;set;}
+        public Guid TourId {get; set;}
+        public Tour Tour {get; set;}
         public ICollection<TourCustomer> TourCustomers { get; set; }
-        public ICollection<TourBookingDetail> TourBookingDetails { get; set; }
+        public ICollection<BookingPrice> BookingPrices { get; set; }
         
     }
 }

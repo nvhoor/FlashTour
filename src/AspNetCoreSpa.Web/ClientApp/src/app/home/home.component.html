@@ -1,17 +1,8 @@
 <section id="slide">
   <div id="carouselExampleControls" class="carousel slide slide-banner" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="./assets/images/slide-1.jpg" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="./assets/images/slide-2.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="./assets/images/slide-3.jpg" alt="Third slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="./assets/images/slide-4.jpg" alt="Third slide">
+      <div class="carousel-item {{banner.active}}" *ngFor="let banner of banners;let i=index;">
+        <img class="d-block w-100" src="./assets/images/banners/{{banner.image}}" >
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -97,120 +88,26 @@
     <div id="carouselExampleControls2" class="carousel slide slide-banner col-lg-10 m-auto" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
         <!--First slide-->
-        <div class="carousel-item active">
+        <div class="carousel-item {{tourCatePaging.active}}" *ngFor="let tourCatePaging of tourCatePagings">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2" *ngFor="let cate of tourCatePaging.tourCate">
               <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
+                <img class="card-img-top" src="./assets/images/tour-categories/{{cate.image}}"
                      alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
+                  <a class="card-title stretched-link" href="#" >{{cate.name}}</a>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
-        <!--/.First slide-->
-
-        <!--Second slide-->
-        <div class="carousel-item">
-
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="./assets/images/proposal-flight.png"
-                     alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!--/.Second slide-->
       </div>
-      <a class="carousel-control-prev btn-outline-secondary" href="#carouselExampleControls2" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+      <a class="carousel-control-prev carousel-control-tour-cate btn-secondary" href="#carouselExampleControls2" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next btn-outline-secondary" href="#carouselExampleControls2" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="false"></span>
+      <a class="carousel-control-next carousel-control-tour-cate btn-secondary" href="#carouselExampleControls2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" ></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
@@ -221,21 +118,21 @@
         <div class="h3 mt-3 text-dark  text-center">HOTEST TOUR</div>
         <div class="mt-1 pb-1 text-dark border-bottom text-center">The hotest tours</div>
         <div class="row">
-          <div class="col-lg-3 mt-2 mb-2" *ngFor="let tour of hotestTours">
+          <div class="col-lg-3 mt-2 mb-2" *ngFor="let hotest of hotestTours">
             <div class="card">
-              <div id="{{tour.id}}">
-                <div id="count_{{tour.id}}" class="badge badge-pill badge-info coundown-date"></div>
-                <img class="card-img-top" src="./assets/images/tours/{{tour.image}}" alt="Card image">
-                <div class="date-departure2 badge badge-warning"><i class="far fa-calendar-alt text-secondary "></i> {{tour.departureDate|date:'dd/MM/yyyy'}} - 3 days</div>
-                <div class="slot2 badge badge-warning"><i class="fas fa-bus text-secondary "></i> {{tour.slot}} slot</div>
+              <div id="parent_hotest_{{hotest.id}}">
+                <div id="hotest_{{hotest.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                <img class="card-img-top" src="./assets/images/tours/{{hotest.image}}" alt="Card image">
+                <div class="date-departure2 badge badge-warning"><i class="far fa-calendar-alt text-secondary "></i> {{hotest.departureDate|date:'dd/MM/yyyy'}}</div>
+                <div class="slot2 badge badge-warning"><i class="fas fa-bus text-secondary "></i> {{hotest.slot}} slot</div>
               </div>
               <div class="card-body">
-                  <a href="#" class="stretched-link"><h4 class="card-title font-weight-bold">{{tour.name}}</h4></a>
+                  <a href="#" class="stretched-link"><h4 class="card-title font-weight-bold">{{hotest.name}}</h4></a>
                 <hr>
                 <p><a href="#" class="stretched-link" style="position: relative;"></a></p>
                 <div class="row mt-3">
-                  <div class="col-4 text-light font-italic badge badge-secondary mr-auto ml-3 tour-price"><s>8,622,000đ</s></div>
-                  <div class="col-4 text-light font-weight-bold badge badge-danger ml-auto mr-3 tour-price">7,423,000đ</div>
+                  <div class="col-4 text-light font-italic badge badge-secondary mr-auto ml-3 tour-price"><s>{{hotest.promotionPrice|currency }}</s></div>
+                  <div class="col-4 text-light font-weight-bold badge badge-danger ml-auto mr-3 tour-price">{{hotest.originalPrice|currency}}</div>
                 </div>
               </div>
             </div>
@@ -250,82 +147,21 @@
         <div class="h3 mt-3 text-dark  text-center">NEWEST TOUR</div>
         <div class="mt-1 pb-1 text-dark border-bottom text-center">The newest tours</div>
         <div class="row">
-          <div class="col-lg-3 mt-2 mb-2">
+          <div class="col-lg-3 mt-2 mb-2" *ngFor="let newest of newestTours">
             <div class="card">
-              <div>
-                <img class="card-img-top" src="./assets/images/flight.jpg" alt="Card image">
-                <div class="date-departure"><i class="far fa-calendar-alt text-secondary"></i> 9/11/2019 - 3 days</div>
-                <div class="slot"><i class="fas fa-bus text-secondary"></i> 12 slot</div>
+              <div id="parent_newest_{{newest.id}}">
+                <div id="newest_{{newest.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                <img class="card-img-top" src="./assets/images/tours/{{newest.image}}" alt="Card image">
+                <div class="date-departure2 badge badge-warning"><i class="far fa-calendar-alt text-secondary "></i> {{newest.departureDate|date:'dd/MM/yyyy'}}</div>
+                <div class="slot2 badge badge-warning"><i class="fas fa-bus text-secondary "></i> {{newest.slot}} slot</div>
               </div>
               <div class="card-body">
-                <p class="card-text bg-light" style="transform: rotate(0);">
-                  <a href="ctsp.html" class="stretched-link"><h4 class="card-title font-weight-bold">Lorem ipsum dolor sit amet</h4></a>
-                </p>
+                <a href="#" class="stretched-link"><h4 class="card-title font-weight-bold">{{newest.name}}</h4></a>
                 <hr>
                 <p><a href="#" class="stretched-link" style="position: relative;"></a></p>
                 <div class="row mt-3">
-                  <div class="col-lg-6 text-dark font-italic"><s>8,622,000đ</s></div>
-                  <div class="col-lg-6 text-danger font-weight-bold">7,423,000đ</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mt-2 mb-2">
-            <div class="card">
-              <div>
-                <img class="card-img-top" src="./assets/images/flight.jpg" alt="Card image">
-                <div class="date-departure"><i class="far fa-calendar-alt text-secondary"></i> 9/11/2019 - 3 days</div>
-                <div class="slot"><i class="fas fa-bus text-secondary"></i> 12 slot</div>
-              </div>
-              <div class="card-body">
-                <p class="card-text bg-light" style="transform: rotate(0);">
-                  <a href="ctsp.html" class="stretched-link"><h4 class="card-title font-weight-bold">Lorem ipsum dolor sit amet</h4></a>
-                </p>
-                <hr>
-                <p><a href="#" class="stretched-link" style="position: relative;"></a></p>
-                <div class="row mt-3">
-                  <div class="col-lg-6 text-dark font-italic"><s>8,622,000đ</s></div>
-                  <div class="col-lg-6 text-danger font-weight-bold">7,423,000đ</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mt-2 mb-2">
-            <div class="card">
-              <div>
-                <img class="card-img-top" src="./assets/images/flight.jpg" alt="Card image">
-                <div class="date-departure"><i class="far fa-calendar-alt text-secondary"></i> 9/11/2019 - 3 days</div>
-                <div class="slot"><i class="fas fa-bus text-secondary"></i> 12 slot</div>
-              </div>
-              <div class="card-body">
-                <p class="card-text bg-light" style="transform: rotate(0);">
-                  <a href="ctsp.html" class="stretched-link"><h4 class="card-title font-weight-bold">Lorem ipsum dolor sit amet</h4></a>
-                </p>
-                <hr>
-                <p><a href="#" class="stretched-link" style="position: relative;"></a></p>
-                <div class="row mt-3">
-                  <div class="col-lg-6 text-dark font-italic"><s>8,622,000đ</s></div>
-                  <div class="col-lg-6 text-danger font-weight-bold">7,423,000đ</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 mt-2 mb-2">
-            <div class="card">
-              <div>
-                <img class="card-img-top" src="./assets/images/flight.jpg" alt="Card image">
-                <div class="date-departure"><i class="far fa-calendar-alt text-secondary"></i> 9/11/2019 - 3 days</div>
-                <div class="slot"><i class="fas fa-bus text-secondary"></i> 12 slot</div>
-              </div>
-              <div class="card-body">
-                <p class="card-text bg-light" style="transform: rotate(0);">
-                  <a href="ctsp.html" class="stretched-link"><h4 class="card-title font-weight-bold">Lorem ipsum dolor sit amet</h4></a>
-                </p>
-                <hr>
-                <p><a href="#" class="stretched-link" style="position: relative;"></a></p>
-                <div class="row mt-3">
-                  <div class="col-lg-6 text-dark font-italic"><s>8,622,000đ</s></div>
-                  <div class="col-lg-6 text-danger font-weight-bold">7,423,000đ</div>
+                  <div class="col-4 text-light font-italic badge badge-secondary mr-auto ml-3 tour-price"><s>{{newest.promotionPrice|currency}}</s></div>
+                  <div class="col-4 text-light font-weight-bold badge badge-danger ml-auto mr-3 tour-price">{{newest.originalPrice|currency }}</div>
                 </div>
               </div>
             </div>

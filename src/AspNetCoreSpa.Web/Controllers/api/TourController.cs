@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using AspNetCoreSpa.Core;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -33,7 +35,68 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var tour = _uow.Tours.Get(id);
             return Ok(_mapper.Map<TourVM>(tour));
         }
-
+        [HttpGet("hotest")]
+        public IActionResult GetHotest()
+        {
+            var allTour = (from tour in _uow.Tours
+                join price in _uow.Prices
+                    on tour.Id equals price.TourId
+                join tourCate in _uow.TourCategories
+                    on tour.TourCategoryId equals tourCate.Id
+                join tourBooking in _uow.TourBookings on tour.Id equals tourBooking.TourId 
+                where price.TouristTypeId == TouristTypeEnum.Adult.ToTouristTypeInt()
+                        select new
+                            TourNewestVM()
+                        {
+                            Id = tour.Id,
+                            Description = tour.Description,
+                            DepartureDate = tour.DepartureDate,
+                            DepartureId = tour.DepartureId,
+                            Image = tour.Image,
+                            Name = tour.Name,
+                            Slot = tour.Slot,
+                            OriginalPrice = price.OriginalPrice,
+                            PromotionPrice = price.PromotionPrice,
+                            StartDatePro = price.StartDatePro,
+                            TouristTypeId = price.TouristTypeId
+                        }).Take(8);
+            var toursGrouped = allTour.GroupBy(n => n.Id).
+                Select(group =>
+                    new
+                    {
+                        TourId = group.Key,
+                        Tours = group.ToList(),
+                        Count = group.Count()
+                    }).OrderByDescending(x=>x.Count).ThenBy(x=>x.Tours[0].Name);
+            return Ok(toursGrouped);
+        }
+        [HttpGet("newest")]
+        public IActionResult GetNewest()
+        {
+            var allTour = (from tour in _uow.Tours
+                join price in _uow.Prices
+                    on tour.Id equals price.TourId
+                join tourCate in _uow.TourCategories
+                    on tour.TourCategoryId equals tourCate.Id
+                where price.TouristTypeId == TouristTypeEnum.Adult.ToTouristTypeInt()
+                select new
+                    TourNewestVM()
+                    {
+                        Id = tour.Id,
+                        Description = tour.Description,
+                        DepartureDate = tour.DepartureDate,
+                        DepartureId = tour.DepartureId,
+                        Image = tour.Image,
+                        Name = tour.Name,
+                        Slot = tour.Slot,
+                            OriginalPrice = price.OriginalPrice,
+                            PromotionPrice = price.PromotionPrice,
+                            StartDatePro = price.StartDatePro,
+                            TouristTypeId = price.TouristTypeId
+                            
+                    }).OrderByDescending(x=>x.DepartureDate).Take(8);
+            return Ok(allTour);
+        }
         // POST: api/Tour
         [HttpPost]
         public void Post([FromBody] TourVM tour)

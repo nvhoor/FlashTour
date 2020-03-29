@@ -24,7 +24,7 @@ namespace AspNetCoreSpa.Core.Entities
         [Column(TypeName = "NVARCHAR(255)")]
         public string Address {get; set;}
         public bool Deleted {get; set;}
-        public Guid RoleId {get; set;}
+        public int RoleId {get; set;}
         public Role Role { get; set; }
         public ICollection<TourBooking> TourBookings { get; set; }
     }

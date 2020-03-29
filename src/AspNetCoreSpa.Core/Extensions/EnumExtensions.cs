@@ -15,5 +15,13 @@ namespace AspNetCoreSpa.Core
 
             return enumDict;
         }
+        public static int ToRoleInt(this RoleEnum role)
+        {
+            return ((int) role);
+        }
+        public static int ToTouristTypeInt(this TouristTypeEnum touristType)
+        {
+            return ((int) touristType);
+        }
     }
 }

@@ -32,7 +32,6 @@ namespace AspNetCoreSpa.Infrastructure
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<ITourRepository, TourRepository>();
             services.AddTransient<ITourBookingRepository, TourBookingRepository>();
-            services.AddTransient<ITourBookingDetailRepository, TourBookingDetailRepository>();
             services.AddTransient<ITourCategoryRepository, TourCategoryRepository>();
             services.AddTransient<ITourCustomerRepository, TourCustomerRepository>();
             services.AddTransient<ITouristTypeRepository, TouristTypeRepository>();

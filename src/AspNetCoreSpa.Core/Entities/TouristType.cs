@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AspNetCoreSpa.Core.Entities
 {
-    public class TouristType : IEntityBase
+    public class TouristType 
     {
         [Key]
-        public Guid Id {get; set;}
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id {get; set;}
         [Column(TypeName="NVARCHAR(100)")]
         public string Name {get; set;}
         public ICollection<TourCustomer> TourCustomer { get; set; }

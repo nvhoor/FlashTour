@@ -23,10 +23,9 @@ namespace AspNetCoreSpa.Infrastructure
         private List<Guid> tourIds;
         private List<Guid> postIds;
         private List<Guid> postCategoriesIds;
-        private List<Guid> roleIds;
-        private List<Guid> touristTypeIds;
+        private List<int> roleIds;
+        private List<int> touristTypeIds;
         private List<Guid> tourBookingIds;
-        private List<Guid> tourBookingDetailIds;
         private List<Guid> priceIds;
         private List<Guid> provinceIds;
         public SeedData(
@@ -61,15 +60,17 @@ namespace AspNetCoreSpa.Infrastructure
            {
                postIds.Add(Guid.NewGuid());
            }
-           roleIds=new List<Guid>();
-           for (var i = 0; i < 3; i++)
+           roleIds=new List<int>();
            {
-               roleIds.Add(Guid.NewGuid());
+               roleIds.Add(RoleEnum.Admin.ToRoleInt());
+               roleIds.Add(RoleEnum.Staff.ToRoleInt());
+               roleIds.Add(RoleEnum.User.ToRoleInt());
            }
-           touristTypeIds=new List<Guid>();
-           for (var i = 0; i < 3; i++)
+           touristTypeIds=new List<int>();
            {
-               touristTypeIds.Add(Guid.NewGuid());
+               touristTypeIds.Add(TouristTypeEnum.Adult.ToTouristTypeInt());
+               touristTypeIds.Add(TouristTypeEnum.Children.ToTouristTypeInt());
+               touristTypeIds.Add(TouristTypeEnum.Kid.ToTouristTypeInt());
            }
            tourIds=new List<Guid>();
            for (var i = 0; i < 15; i++)
@@ -80,11 +81,6 @@ namespace AspNetCoreSpa.Infrastructure
            for (var i = 0; i < 10; i++)
            {
                tourBookingIds.Add(Guid.NewGuid());
-           }
-           tourBookingDetailIds=new List<Guid>();
-           for (var i = 0; i < 10; i++)
-           {
-               tourBookingDetailIds.Add(Guid.NewGuid());
            }
            tourCategoryIds=new List<Guid>();
            for (var i = 0; i < 10; i++)
@@ -274,6 +270,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Name = "TourCategory_" + i,
                         Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                             Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
+                        Image = "tourCate_"+i+".jpg"
                     });
                 }
                 _context.SaveChanges();
@@ -285,11 +282,11 @@ namespace AspNetCoreSpa.Infrastructure
                     _context.Tours.Add(new Tour
                     {
                         Id = tourIds[i],
-                        Name = "Post_" + i,
+                        Name = "Tour_" + i,
                         Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                             Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
                         DepartureDate = DateTime.UtcNow,
-                        Image = "tour_"+i+".jpg",
+                        Image = "tour_"+(i+1)+".jpg",
                         Images = "ImagesTour_.png",
                         Status = true,
                         Censorship = true,
@@ -332,25 +329,26 @@ namespace AspNetCoreSpa.Infrastructure
                         Note = "Note " + i,
                         Status = true,
                         Deleted = false,
-                        UserId = "user_"+i
+                        UserId = "user_"+i,
+                        TourId=tourIds[i]
                     });
                 }
                 _context.SaveChanges();
             }
-            if (!_context.TourBookingDetails.Any())
+            if (!_context.BookingPrices.Any())
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    _context.TourBookingDetails.Add(new TourBookingDetail
+                    _context.BookingPrices.Add(entity: new BookingPrice
                     {
-                        Id = tourBookingDetailIds[i],
-                        TourId = tourIds[i],
-                        TourBookingId = tourBookingIds[i]
+                        Id = Guid.NewGuid(),
+                        TourBookingId = tourBookingIds[i],
+                        TouristTypeId = touristTypeIds[new Random().Next(0,2)],
+                        Price = new Random().Next(1000,1000000)
                     });
                 }
                 _context.SaveChanges();
             }
-           
             if (!_context.TourCustomers.Any())
             {
                              for (int i = 0; i < 10; i++)

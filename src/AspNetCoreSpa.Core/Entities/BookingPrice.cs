@@ -8,9 +8,9 @@ namespace AspNetCoreSpa.Core.Entities
     {
         [Key]
         public Guid Id {get; set;}
-        public int BookingDetailId {get; set;}
-        public TourBookingDetail TourBookingDetail { get; set; }
-        public Guid TouristTypeId {get; set;}
+        public Guid TourBookingId {get; set;}
+        public TourBooking TourBooking { get; set; }
+        public int TouristTypeId {get; set;}
         public TouristType TouristType { get; set; }
         [Column(TypeName="decimal(18,2)")]
         public decimal Price {get; set;}

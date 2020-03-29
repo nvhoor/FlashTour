@@ -1,8 +1,9 @@
-﻿using AspNetCoreSpa.Core.Entities;
+﻿using System.Collections.Generic;
+using AspNetCoreSpa.Core.Entities;
 
 namespace AspNetCoreSpa.Infrastructure
 {
-    public interface ITourRepository : IRepository<Tour>
+    public interface ITourRepository : IRepository<Tour>,IEnumerable<Tour>
     {
         
     }

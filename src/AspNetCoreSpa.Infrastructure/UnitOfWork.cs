@@ -19,7 +19,6 @@
          IPriceRepository _prices ;
          IProvinceRepository _provinces ;
          IRoleRepository _roles ;
-         ITourBookingDetailRepository _tourBookingDetails ;
          ITourBookingRepository _tourBookings ;
          ITourCategoryRepository _tourCategories ;
          ITourCustomerRepository _tourCustomers ;
@@ -103,8 +102,7 @@
         public IProvinceRepository Provinces => _provinces ?? (_provinces = new ProvinceRepository(_context));
 
         public IRoleRepository Roles => _roles ?? (_roles = new RoleRepository(_context));
-
-        public ITourBookingDetailRepository TourBookingDetails => _tourBookingDetails ?? (_tourBookingDetails = new TourBookingDetailRepository(_context));
+        
 
         public ITourBookingRepository TourBookings => _tourBookings ?? (_tourBookings = new TourBookingRepository(_context));
 

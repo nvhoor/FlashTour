@@ -1,4 +1,6 @@
-﻿﻿using AspNetCoreSpa.Core.Entities;
+﻿﻿using System.Collections;
+ using System.Collections.Generic;
+ using AspNetCoreSpa.Core.Entities;
  using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreSpa.Infrastructure
@@ -9,5 +11,16 @@ namespace AspNetCoreSpa.Infrastructure
         {
         }
         private ApplicationDbContext _appContext => (ApplicationDbContext)_context;
+        public IEnumerator<Tour> GetEnumerator()
+        {
+            foreach (var tour in _appContext.Tours)
+            {
+              yield return  tour;
+            }
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
