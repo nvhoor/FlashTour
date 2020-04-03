@@ -1,6 +1,80 @@
-//.footer {
-//  bottom: 0;
-//  width: 100%;
-//  height: 60px;
-//  line-height: 60px;
-//}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+/*.row{
+	margin-left: 30px;
+	margin-right: -15px;
+}*/
+.footer-static .footer-static-title h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.footer-static .footer-static-content ul li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+.footer-static .footer-static-content ul li a:hover{
+  background-position: 0px -40px;
+  padding-left: 10px;
+  color: #ea7696;
+  transition: 1s;
+}
+.footer-static .footer-static-content ul li a{
+  text-decoration: none;
+  color: black;
+  padding-left: 1px;
+}
+.f-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+  flex-flow: row wrap;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-right: 2rem;
+}
+
+.f-grid-col {
+  flex: 1 0;
+  background-color: green;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: block;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  width: 100%;
+}
+
+.col-md-4 {
+  width: 33.33%;
+}
+.col-sm-4 {
+  width: 33.33%;
+  float: left;
+}
+.footer-static{
+  padding: 10px 118px 0px;
+  border-top: 3px solid #ed0080;
+  margin-top: 36px;
+  width: 100%;
+}
+.coppy{
+  color: black;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 13px;
+  padding-left: 50px;
+  margin-bottom: 20px;
+}
+.icon{
+  padding: 10px;
+}
