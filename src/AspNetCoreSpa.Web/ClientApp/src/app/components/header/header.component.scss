@@ -6,7 +6,13 @@ hr{
   margin-top: 0px;
 }
 .navbar-dark .navbar-nav .nav-link:hover{
-  color: red;
   font-weight: bold;
   font-size: 15px;
+}
+#imgLogo{
+  position: absolute;
+  left: 20px;
+  top:-8px;
+  max-height: 80px;
+  max-width: 200px;
 }

@@ -8,7 +8,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item {{image.active}}" *ngFor="let image of tourImages">
-                    <img class="d-block w-100" src="../../../assets/images/{{image.name}}" onerror="this.src='./assets/images/slide-1.jpg';" alt="First slide">
+                    <img class="d-block w-100" src="../../../assets/images/{{image.name}}" onerror="this.src='./assets/images/banners/banner_3.jpg';" alt="First slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -72,7 +72,7 @@
         <h1 class="h4 text-danger mt-3">Similar Tours</h1>
         <div class="row">
             <div class="col-lg-3 mt-2 mb-2" *ngFor="let tourCard of toursByCategory">
-                <div class="card">
+                <div class="card card-tour">
                     <div id="parent_similar_{{tourCard.id}}">
                         <div id="similar_{{tourCard.id}}" class="badge badge-pill badge-info coundown-date"></div>
                         <img class="card-img-top" src="./assets/images/tours/{{tourCard.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
@@ -84,8 +84,8 @@
                         <hr>
                         <p><a class="stretched-link" style="position: relative;"></a></p>
                         <div class="row mt-3">
-                            <div class="col-4 text-light font-italic badge badge-secondary mr-auto ml-3 tour-price"><s>{{tourCard.promotionPrice|currency}}</s></div>
-                            <div class="col-4 text-light font-weight-bold badge badge-danger ml-auto mr-3 tour-price">{{tourCard.originalPrice|currency }}</div>
+                            <h6 class="col-6"><span class="text-light font-italic badge badge-secondary tour-price"><s>{{tourCard.promotionPrice|currency}}</s></span></h6>
+                            <h6 class="col-6"><span class="text-light badge badge-danger tour-price">{{tourCard.originalPrice|currency }}</span></h6>
                         </div>
                     </div>
                 </div>

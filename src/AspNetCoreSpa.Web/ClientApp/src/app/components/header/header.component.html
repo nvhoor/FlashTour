@@ -4,18 +4,25 @@
 </header>
 <hr>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top mr-auto">
-    <img src="./assets/images/logotour.png" alt="Flash Tour">
-    <a class="navbar-brand" routerLinkActive="active" routerLink="">HOME</a>
+    <a class="navbar-brand" routerLinkActive="active" routerLink=""><img src="./assets/images/logo_flash_tour.png" id="imgLogo" alt="Flash Tour"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+    <div class="collapse navbar-collapse text-secondary ml-5" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-5">
             <li class="nav-item">
                 <a class="nav-link" href="#">Offers</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Travel Guide</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    News
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Travel guides</a>
+                    <a class="dropdown-item" href="#">Travel experiences</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Others</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -25,6 +32,7 @@
     <button id="dangnhap" type="button" class="btn btn-outline-primary" style="margin: 0 10px;">Sign in</button>
     <button id="dangky" type="button" class="btn btn-outline-success" style="margin: 0 10px;">Register</button>
 </nav>
+<hr>
 <!--<header>-->
 <!--    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">-->
 <!--        <a class="navbar-brand" href="{{'app_repo_url' | translate}}" target="_blank" rel="noopener">-->

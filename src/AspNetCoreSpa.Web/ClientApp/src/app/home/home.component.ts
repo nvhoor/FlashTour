@@ -104,7 +104,7 @@ export class HomeComponent implements OnInit,CanDeactivate<HomeComponent>{
                   }, 1000);
             }
         `;
-            var parentEle=this._document.getElementById("parent_hotest_" + tour.id);
+            var parentEle=this._document.getElementById("parent_newest_" + tour.id);
             parentEle&&this._renderer2.appendChild(parentEle, script);
         });
     }
