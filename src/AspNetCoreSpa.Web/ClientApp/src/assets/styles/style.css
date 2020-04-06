@@ -509,6 +509,8 @@ hr.dashed {
 	left: 10px;
 }
 .card-tour img{
-	height: 180px;
-	width: 230px;
+	min-height: 115px;
+	min-width: 165px;
+	max-height: 200px;
+	max-width: 250px;
 }
