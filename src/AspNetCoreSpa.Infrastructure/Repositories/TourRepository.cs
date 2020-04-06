@@ -1,4 +1,5 @@
-﻿﻿using System.Collections;
+﻿﻿using System;
+ using System.Collections;
  using System.Collections.Generic;
  using AspNetCoreSpa.Core.Entities;
  using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,23 @@ namespace AspNetCoreSpa.Infrastructure
               yield return  tour;
             }
         }
+
+        public int DecreaseSlotsLeft(Guid id,int slots)
+        {
+            var curSlot = _appContext.Tours.Find(id).Slot;
+            if (curSlot - slots < 0)
+            {
+                return -1;
+            }
+            else
+            {
+                curSlot = curSlot - slots;
+                _appContext.Tours.Find(id).Slot = curSlot;
+                _appContext.SaveChanges();
+                return curSlot;
+            }
+        }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

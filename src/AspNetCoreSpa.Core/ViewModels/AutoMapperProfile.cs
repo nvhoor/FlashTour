@@ -18,12 +18,12 @@ namespace AspNetCoreSpa.Core.ViewModels
             CreateMap<Price, PriceVM>().ReverseMap();
             CreateMap<Province, ProvinceVM>().ReverseMap();
             CreateMap<Resource, ResourceVM>().ReverseMap();
-            CreateMap<RoleVM, RoleVM>().ReverseMap();
+            CreateMap<Role, RoleVM>().ReverseMap();
             CreateMap<TourCategory, TourCategoryVM>().ReverseMap();
             CreateMap<TourCustomer, TourCustomerVM>().ReverseMap();
-            CreateMap<TouristType, TouristTypeVM>().ReverseMap();
             CreateMap<TourProgram, TourProgramVM>().ReverseMap();
             CreateMap<Tour, TourVM>().ReverseMap();
+            CreateMap<TourBooking, TourBookingVM>().ReverseMap();
         }
     }
 }

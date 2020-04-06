@@ -57,6 +57,9 @@ namespace AspNetCoreSpa.Web
 
             services.AddSignalR()
                 .AddMessagePackProtocol();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             services.AddCustomLocalization(HostingEnvironment);
 

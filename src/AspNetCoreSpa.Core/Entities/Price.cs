@@ -16,7 +16,7 @@ namespace AspNetCoreSpa.Core.Entities
         [Column(TypeName="decimal(18,2)")]
         public decimal PromotionPrice {get;set;}
         public DateTime StartDatePro {get; set;}
-        public int TouristTypeId {get;set;}
-        public TouristType TouristType { get; set; }
+        public DateTime EndDatePro {get; set;}
+        public int TouristType {get;set;}
     }
 }

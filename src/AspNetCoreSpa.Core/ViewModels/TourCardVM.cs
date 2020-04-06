@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
+using AspNetCoreSpa.Core.Entities;
 
 namespace AspNetCoreSpa.Core.ViewModels
 {
-    public class TourHostestVM
+    public class TourCardVM
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -11,9 +13,10 @@ namespace AspNetCoreSpa.Core.ViewModels
         public DateTime DepartureDate { get; set; }
         public Guid DepartureId { get; set; }
         public int Slot { get; set; }
+        public long ViewCount { get; set; }
         public decimal OriginalPrice {get;set;}
         public decimal PromotionPrice {get;set;}
         public DateTime StartDatePro {get; set;}
-        public int TouristTypeId {get;set;}
+        public Guid TourCategoryId {get;set;}
     }
 }

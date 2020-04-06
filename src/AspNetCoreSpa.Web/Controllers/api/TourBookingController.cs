@@ -34,7 +34,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     return Ok(_mapper.Map<TourBookingVM>(booking));
                 }
         
-                // POST: api/TourBookings
+                // POST: api/TourBooking
                 [HttpPost]
                 public void Post([FromBody] TourBookingVM tourBooking)
                 {
@@ -42,7 +42,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     _uow.SaveChanges();
                 }
         
-                // PUT: api/TourBookings/5
+                // PUT: api/TourBooking/5
                 [HttpPut("{id}")]
                 public void Put(Guid id, [FromBody] TourBookingVM tbooking)
                 {

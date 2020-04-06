@@ -31,7 +31,6 @@ namespace AspNetCoreSpa.Infrastructure
         public DbSet<TourBooking> TourBookings { get; set; }
         public DbSet<TourCategory> TourCategories { get; set; }
         public DbSet<TourCustomer> TourCustomers { get; set; }
-        public DbSet<TouristType> TouristTypes { get; set; }
         public DbSet<TourProgram> TourPrograms { get; set; }
         public DbSet<Culture> Cultures { get; set; }
         public DbSet<Resource> Resources { get; set; }

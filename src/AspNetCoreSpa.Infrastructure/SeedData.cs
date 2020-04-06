@@ -41,10 +41,10 @@ namespace AspNetCoreSpa.Infrastructure
 
         public void Initialise()
         {
-            _context.Database.Migrate();
-            InitListGuId();
-            AddLocalisedData();
-            AddTourData();
+//            _context.Database.Migrate();
+//            InitListGuId();
+//            AddLocalisedData();
+//            AddTourData();
            // AddShopData();
         }
 
@@ -73,12 +73,12 @@ namespace AspNetCoreSpa.Infrastructure
                touristTypeIds.Add(TouristTypeEnum.Kid.ToTouristTypeInt());
            }
            tourIds=new List<Guid>();
-           for (var i = 0; i < 15; i++)
+           for (var i = 0; i < 50; i++)
            {
                tourIds.Add(Guid.NewGuid());
            }
            tourBookingIds=new List<Guid>();
-           for (var i = 0; i < 10; i++)
+           for (var i = 0; i < 50; i++)
            {
                tourBookingIds.Add(Guid.NewGuid());
            }
@@ -233,18 +233,6 @@ namespace AspNetCoreSpa.Infrastructure
                     });
                 }
             }
-            if (!_context.TouristTypes.Any())
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    _context.TouristTypes.Add(new TouristType
-                    {
-                        Id = touristTypeIds[i],
-                        Name = "Touristype_" +i,
-                    });
-                }
-                _context.SaveChanges();
-            }
            
             if (!_context.Provinces.Any())
             {
@@ -277,7 +265,7 @@ namespace AspNetCoreSpa.Infrastructure
             }
             if (!_context.Tours.Any())
             {
-                for (int i = 0; i < 15; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     _context.Tours.Add(new Tour
                     {
@@ -285,13 +273,14 @@ namespace AspNetCoreSpa.Infrastructure
                         Name = "Tour_" + i,
                         Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                             Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
-                        DepartureDate = DateTime.UtcNow,
+                        DepartureDate = DateTime.UtcNow.AddDays(new Random().Next(0,30)),
                         Image = "tour_"+(i+1)+".jpg",
-                        Images = "ImagesTour_.png",
+                        Images = "tour_"+(i+1)+"_"+1+".jpg|tour_"+(i+1)+"_"+2+".jpg|tour_"+(i+1)+"_"+3+".jpg",
                         Status = true,
                         Censorship = true,
                         Deleted = false,
                         Slot = new Random().Next(1,20),
+                        ViewCount = new Random().Next(100,1000),
                         DepartureId = provinceIds[new Random().Next(0,9)],
                         TourCategoryId = tourCategoryIds[new Random().Next(0,9)],
                     });
@@ -300,24 +289,29 @@ namespace AspNetCoreSpa.Infrastructure
             }
             if (!_context.Prices.Any())
             {
-                for (int i = 0; i < 5; i++)
+                var id = 0;
+                tourIds.ForEach((x) =>
                 {
-                    _context.Prices.Add(new Price
+                    touristTypeIds.ForEach(y =>
                     {
-                        Id = Guid.NewGuid(),
-                        Name = "price_" + i,
-                        PromotionPrice = new Random().Next(100000,200000),
-                        OriginalPrice = new Random().Next(1000000,5000000),
-                        StartDatePro = DateTime.UtcNow,
-                        TourId = tourIds[i],
-                        TouristTypeId =touristTypeIds[new Random().Next(0,2)],
-                    });
-                }
+                        _context.Prices.Add(new Price
+                        {
+                            Id = Guid.NewGuid(),
+                            Name = "price_" + (id++),
+                            PromotionPrice = new Random().Next(100000,200000),
+                            OriginalPrice = new Random().Next(1000000,5000000),
+                            StartDatePro = DateTime.UtcNow,
+                            EndDatePro = DateTime.UtcNow.AddDays(new Random().Next(2,7)),
+                            TourId = x,
+                            TouristType =y,
+                        }); 
+                    }); 
+                });
                 _context.SaveChanges();
             }
             if (!_context.TourBookings.Any())
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     _context.TourBookings.Add(entity: new TourBooking
                     {
@@ -329,7 +323,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Note = "Note " + i,
                         Status = true,
                         Deleted = false,
-                        UserId = "user_"+i,
+                        UserId = "user_"+(new Random().Next(0,10)),
                         TourId=tourIds[i]
                     });
                 }
@@ -337,13 +331,13 @@ namespace AspNetCoreSpa.Infrastructure
             }
             if (!_context.BookingPrices.Any())
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     _context.BookingPrices.Add(entity: new BookingPrice
                     {
                         Id = Guid.NewGuid(),
                         TourBookingId = tourBookingIds[i],
-                        TouristTypeId = touristTypeIds[new Random().Next(0,2)],
+                        TouristType = touristTypeIds[new Random().Next(0,2)],
                         Price = new Random().Next(1000,1000000)
                     });
                 }
@@ -351,40 +345,49 @@ namespace AspNetCoreSpa.Infrastructure
             }
             if (!_context.TourCustomers.Any())
             {
-                             for (int i = 0; i < 10; i++)
+                var id = 0;
+                             tourBookingIds.ForEach((x) =>
                              {
-                                 _context.TourCustomers.Add(new TourCustomer
+                                 touristTypeIds.ForEach(y =>
                                  {
-                                     FullName = "Tony Nguyen " +i,
-                                     BirthDay = DateTime.Now.AddDays(i),
-                                     Gender = i % 2 == 0 ? Gender.Male : Gender.Female,
-                                     TourBookingId = tourBookingIds[i],
-                                     TouristTypeId = touristTypeIds[new Random().Next(0,2)],
-                                 });
-                             }
+                                     _context.TourCustomers.Add(new TourCustomer
+                                     {
+                                         Id = Guid.NewGuid(),
+                                         FullName = "Tony Nguyen " +id,
+                                         BirthDay = DateTime.Now.AddDays(id),
+                                         Gender = id % 2 == 0 ? Gender.Male : Gender.Female,
+                                         TourBookingId = x,
+                                         TouristType = y,
+                                     });
+                                     id++;
+                                 }); 
+                             });
                              _context.SaveChanges();
             }
           
             if (!_context.TourPrograms.Any())
             {
-                for (int i = 0; i < 10; i++)
+                tourIds.ForEach((x) =>
                 {
-                    _context.TourPrograms.Add(new TourProgram
+                    for (var j = 0; j < 3; j++)
                     {
-                        Id = Guid.NewGuid(),
-                        Date = DateTime.Now.AddDays(i),
-                        OrderNumber = 1 + i,
-                        Title = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn",
-                        Description = @"Lorem ipsum dolor sit amet Nulla quis sem at nibh elemen",
-                        Destination = "Hai Chau, Da Nang",
-                        TourId = tourIds[i],
-                    });
-                }
+                        _context.TourPrograms.Add(new TourProgram
+                        {
+                            Id = Guid.NewGuid(),
+                            Date = DateTime.Now.AddDays(j),
+                            OrderNumber = 1 + j,
+                            Title = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn",
+                            Description = @"Lorem ipsum dolor sit amet Nulla quis sem at nibh elemen",
+                            Destination = "Hai Chau, Da Nang",
+                            TourId = x,
+                        }); 
+                    }
+                });
                 _context.SaveChanges();
             }
             if (!_context.Evaluations.Any())
             {
-                for (int i = 0; i < 15; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     _context.Evaluations.Add(new Evaluation
                     {
@@ -408,7 +411,8 @@ namespace AspNetCoreSpa.Infrastructure
                         Id = Guid.NewGuid(),
                        Name = "Bander_" +i,
                        Image = "banner_"+i+".jpg",
-                       Description = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn"
+                       Description = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn",
+                       PostId = postIds[i]
                     });
                 }
                 _context.SaveChanges();

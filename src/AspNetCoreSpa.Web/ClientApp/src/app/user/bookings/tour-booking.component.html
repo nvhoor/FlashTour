@@ -1,0 +1,246 @@
+<div class="container" *ngIf="tour">
+
+    <div class="col-xs-12 mg-bot30 mt-3">
+        <div class="title1">TOUR INFOMATION</div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 w-25">
+        <img src="../../../assets/images/tours/{{tour.image}}" onerror="this.src='../../../assets/images/proposal-flight.png';" class="pic-title">
+        <a href="#" target="_blank" class="title-pic"></a>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 w-75">
+        <div class="tour-name">
+            <a href="#" target="_blank" title="" class="title-pic">{{tour.name}}</a>
+        </div>
+        <div class="frame-info">
+            <div class="row">
+                <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 mg-bot10">
+                    <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-code.png" alt="code"></div>
+                    <div class="f-left r">{{tour.id|uppercase}}</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 mg-bot10">
+                    <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-chair.png" alt="chair"></div>
+                    <div class="f-left r">Slots left: <span class="font500">{{tour.slot}}</span></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 mg-bot10">
+                    <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-date.png" alt="date"></div>
+                    <div class="f-left r">Departure date: <span class="font500">{{tour.departureDate|date:'dd/MM/yyyy'}}</span></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 mg-bot10">
+                    <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-date.png" alt="date"></div>
+                    <div class="f-left r"><a  target="_blank" class="b">Other days</a></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 mg-bot10">
+                    <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-clock.png" alt="clock"></div>
+                    <div class="f-left r">Days left: <span class="font500">{{tour.daysLeft}}</span></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                    <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-price.png" alt="price"></div>
+                    <div class="f-left r">Prices: <span class="font500 price">{{tour.promotionPrice|currency}}</span></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 mg-bot30">
+        <div class="chuy">
+            Female guests aged 55 and older, male guests aged 60 and older on a solo tour and guests with a pregnancy of 4 months (16 weeks) please register directly at FlashTour's office. Online booking registration is not applicable for guests aged 70 and above
+        </div>
+    </div>
+    <div class="col-xs-12 mg-bot30">
+        <div class="title1">BASIC PRICE</div>
+    </div>
+    <div class="col-xs-12 mg-bot30">
+        <table class="table table-bordered">
+            <thead>
+            <tr class="tb-title">
+                <td>Adult (From 12 years old and up)</td>
+                <td>Child (From 5 years old to under 12 years old)</td>
+                <td>Kid (From 2 years old to under 5 years old)</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngIf="tour.prices.length==3">
+                <td data-title="Adult">{{tour.prices[0].promotionPrice|currency }}</td>
+                <td data-title="Child">{{tour.prices[1].promotionPrice|currency }}</td>
+                <td data-title="Kid">{{tour.prices[2].promotionPrice|currency }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <form method="post">
+        <input name="__RequestVerificationToken" type="hidden" value=""><input data-val="true" data-val-required="The tour_id field is required." id="tour_id" name="tour_id" type="hidden" value="">        
+        <div class="col-xs-12 mg-bot30">
+        <div class="title1 mb-3">COMUNICATIONS</div>
+    </div>
+        <div class="col-xs-12 form-input mg-bot30">
+            <div class="row" *ngIf="comunication">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Full Name (<span class="star">*</span>)</label>
+                        <div>
+                            <input class="form-control" id="contact_name" name="contact_name" required="required" type="text" [(ngModel)]="comunication.fullName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone (<span class="star">*</span>)</label>
+                        <div>
+                            <input class="form-control" id="mobilephone" name="mobilephone"  required="required" type="phone" [(ngModel)]="comunication.mobile">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <div>
+                            <input class="form-control" id="address" name="address" type="text" [(ngModel)]="comunication.address">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Email (<span class="star">*</span>)</label>
+                        <div>
+                            <input class="form-control" id="email" name="email" required="required" type="email" [(ngModel)]="comunication.email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row" >
+                            <div class="col-md-3 col-sm-2 col-xs-6 mg-bot15">
+                                <label>Adult</label>
+                                <div>
+                                    <input class="form-control" id="adult" name="adult" max="{{tour.slot}}" min="0" type="number" (ngModelChange)="getTotal()" [(ngModel)]="comunication.adult">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-2 col-xs-6  mg-bot15">
+                                <label>Child</label>
+                                <div>
+                                    <input class="form-control" id="children11" name="children11" type="number" (ngModelChange)="getTotal()" [(ngModel)]="comunication.child">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6  mg-bot15">
+                                <label>Kid</label>
+                                <div>
+                                    <input class="form-control" id="children" name="children"  type="number" (ngModelChange)="getTotal()" [(ngModel)]="comunication.kid">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <label>Total tourists</label>
+                                <div>
+                                    <input class="form-control" id="guests" name="guests" readonly="readonly" type="number" value="{{totalCustomer}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Note</label>
+                        <div>
+                            <textarea class="form-control" cols="20" id="note" name="note" rows="4" [(ngModel)]="comunication.note"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DanhSachKhach">
+            <div class="col-xs-12 mg-bot30">
+                <div class="title1">LIST TOUR CUSTOMERS</div>
+            </div>
+            <div class="col-xs-12 mg-bot30 list">
+                <div *ngFor="let customer of listCustomer;let i=index">
+                    <div class="cus-num">Customer {{i+1}}</div>
+                    <div class="frame-cus">
+                        <div class="form-horizontal">
+                            <div class="row mg-bot10">
+                                <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12 mg-bot10">
+                                    <label class="mg-bot5">Full name (<span class="star">*</span>)</label>
+                                    <div>
+                                        <input class="form-control" name="fullname{{customer.touristType}}" required="required" type="text" [(ngModel)]="customer.fullName">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mg-bot10">
+                                    <label class="mg-bot5">Gender</label>
+                                    <div>
+                                        <select class="form-control" name="gender{{customer.touristType}}" [(ngModel)]="customer.gender">
+                                            <option value="true">Female</option>
+                                            <option value="false">Male</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mg-bot10">
+                                    <label class="mg-bot5">Birthday (<span class="star">*</span>)</label>
+                                    <div>
+                                        <input class="form-control" required="required" type="date" [(ngModel)]="customer.birthday" name="birthday{{customer.touristType}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mg-bot10">
+                                    <label class="mg-bot5">Tourist type:</label>
+                                    <div>
+                                        <select class="form-control" id="loaikhachAdult" [(ngModel)]="customer.touristType" name="loaikhach{{customer.touristType}}">
+                                            <option value="0">Adult</option>
+                                            <option value="1">Child</option>
+                                            <option value="2">Kid</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row total">
+                                <div class="col-md-12 col-sm-12 text-right">
+                                    Value: <span class="price text-danger" id="gianguyengoc{{customer.touristType}}">{{customer.value|currency}}</span>
+                                    <input class="form-control" disabled="disabled" id="price{{customer.touristType}}" name="price0" type="hidden" value="{{customer.value}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frame-cus">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 text-right font-weight-bold text-dark">
+                            Total: <span class="price font-weight-bold" id="tonggia">{{totalValue|currency}}</span>
+                            <input type="hidden" id="TotalPrice" disabled="disabled" class="form-control" value="{{totalValue}}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 mg-bot30">
+            <div class="title1">SELECT THE PAYMENT METHOD</div>
+        </div>
+        <div class="col-xs-12 mg-bot30">
+            <div class="frame-payment">
+                <div class="row">
+                    <div class="col-xs-12 bor-bot mg-bot20">
+                        <div class="radio tienmat">
+                            <label ><input type="radio" class="chkPayment" name="paymentID" value="1" checked="checked" id="tienmat"> <label class="lb_r ml-2" for="tienmat"> Cash</label></label>
+                        </div>
+                        <div class="radio chuyenkhoan">
+                            <label ><input type="radio" class="chkPayment" name="paymentID" value="2" id="chuyenkhoan"> <label class="lb_r ml-2" for="chuyenkhoan"> Transfer</label></label>
+                        </div>
+                        <div class="radio internet">
+                            <label><input type="radio" class="chkPayment" name="paymentID" value="9" id="internet"> <label class="lb_r ml-2" for="internet"> ATM / Internet Banking</label></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="frame-noidung" style="height:50px !important;">
+                            <div class="qr-ct" style="display: none;" id="divVNPay">
+                            </div>
+                            <div id="conditionPayment">
+                                <title></title>
+                                <p>Please pay at any Vietravel offices nationwide and foreign branches. <a href="#">Detail</a></p>
+                                <p>Please note, you should contact before arrival to know more about working hours and the documents to be prepared at checkout.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 text-center mg-bot30">
+            <button type="submit" class="btn btn-lg btn-danger mt-3" (click)="postTourBooking()">Book tour&nbsp;&nbsp;<i class="fas fa-arrow-right text-light"></i></button>
+        </div>
+    </form>    </div>

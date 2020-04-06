@@ -20,7 +20,6 @@ namespace AspNetCoreSpa.Infrastructure
         ITourBookingRepository TourBookings { get; }
         ITourCategoryRepository TourCategories { get; }
         ITourCustomerRepository TourCustomers { get; }
-        ITouristTypeRepository TouristTypes { get; }
         ITourProgramRepository TourPrograms { get; }
         ITourRepository Tours { get; }
         int SaveChanges();

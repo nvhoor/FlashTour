@@ -33,7 +33,21 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public IActionResult Get(Guid id)
         {
             var tour = _uow.Tours.Get(id);
-            return Ok(_mapper.Map<TourVM>(tour));
+            var tourCate = _uow.TourCategories.Get(tour.TourCategoryId);
+            var province = _uow.Provinces.Get(tour.DepartureId);
+            var price = _uow.Prices.Find(x=>x.TourId==tour.Id&&x.TouristType==TouristTypeEnum.Adult.ToTouristTypeInt()).SingleOrDefault();
+            var tourPrograms = _uow.TourPrograms.Find(x => x.TourId == id).OrderBy(o=>o.OrderNumber).ToList();
+            var prices = _uow.Prices.Find(x => x.TourId == id).OrderBy(o=>o.TouristType).ToList();
+            tour.TourPrograms = tourPrograms;
+            tour.Prices = prices;
+            var tourVM = _mapper.Map<TourVM>(tour);
+            tourVM.CategoryName = tourCate.Name;
+            tourVM.DepartureName = province.Name;
+            tourVM.PromotionPrice = price.PromotionPrice;
+            tourVM.OriginalPrice = price.OriginalPrice;
+            tourVM.StartDatePro = price.StartDatePro;
+            tourVM.EndDatePro = price.EndDatePro;
+            return Ok(tourVM);
         }
         [HttpGet("hotest")]
         public IActionResult GetHotest()
@@ -44,9 +58,9 @@ namespace AspNetCoreSpa.Web.Controllers.api
                 join tourCate in _uow.TourCategories
                     on tour.TourCategoryId equals tourCate.Id
                 join tourBooking in _uow.TourBookings on tour.Id equals tourBooking.TourId 
-                where price.TouristTypeId == TouristTypeEnum.Adult.ToTouristTypeInt()
+                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false
                         select new
-                            TourNewestVM()
+                            TourCardVM()
                         {
                             Id = tour.Id,
                             Description = tour.Description,
@@ -55,10 +69,11 @@ namespace AspNetCoreSpa.Web.Controllers.api
                             Image = tour.Image,
                             Name = tour.Name,
                             Slot = tour.Slot,
+                            ViewCount = tour.ViewCount,
                             OriginalPrice = price.OriginalPrice,
                             PromotionPrice = price.PromotionPrice,
                             StartDatePro = price.StartDatePro,
-                            TouristTypeId = price.TouristTypeId
+                            TourCategoryId = tour.TourCategoryId
                         }).Take(8);
             var toursGrouped = allTour.GroupBy(n => n.Id).
                 Select(group =>
@@ -78,9 +93,9 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     on tour.Id equals price.TourId
                 join tourCate in _uow.TourCategories
                     on tour.TourCategoryId equals tourCate.Id
-                where price.TouristTypeId == TouristTypeEnum.Adult.ToTouristTypeInt()
+                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false
                 select new
-                    TourNewestVM()
+                    TourCardVM()
                     {
                         Id = tour.Id,
                         Description = tour.Description,
@@ -89,12 +104,69 @@ namespace AspNetCoreSpa.Web.Controllers.api
                         Image = tour.Image,
                         Name = tour.Name,
                         Slot = tour.Slot,
+                        ViewCount = tour.ViewCount,
                             OriginalPrice = price.OriginalPrice,
                             PromotionPrice = price.PromotionPrice,
                             StartDatePro = price.StartDatePro,
-                            TouristTypeId = price.TouristTypeId
+                            TourCategoryId = tour.TourCategoryId
                             
                     }).OrderByDescending(x=>x.DepartureDate).Take(8);
+            return Ok(allTour);
+        }
+        [HttpGet("toursByCate/{id}")]
+        public IActionResult GetToursByCategory(Guid Id)
+        {
+            var tourE = _uow.Tours.Get(Id);
+            var tourCategoryE = _uow.TourCategories.Get(tourE.TourCategoryId);
+            var allTour = (from tour in _uow.Tours
+                join price in _uow.Prices
+                    on tour.Id equals price.TourId
+                join tourCate in _uow.TourCategories
+                    on tour.TourCategoryId equals tourCate.Id
+                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tourCate.Id==tourCategoryE.Id&&tour.Id!=Id
+                select new
+                    TourCardVM()
+                    {
+                        Id = tour.Id,
+                        Description = tour.Description,
+                        DepartureDate = tour.DepartureDate,
+                        DepartureId = tour.DepartureId,
+                        Image = tour.Image,
+                        Name = tour.Name,
+                        Slot = tour.Slot,
+                        ViewCount = tour.ViewCount,
+                        OriginalPrice = price.OriginalPrice,
+                        PromotionPrice = price.PromotionPrice,
+                        StartDatePro = price.StartDatePro,
+                        TourCategoryId = tour.TourCategoryId
+                            
+                    }).OrderByDescending(x=>x.DepartureDate).Take(4);
+            if (!allTour.Any())
+            {
+                allTour = (from tour in _uow.Tours
+                    join price in _uow.Prices
+                        on tour.Id equals price.TourId
+                    join tourCate in _uow.TourCategories
+                        on tour.TourCategoryId equals tourCate.Id
+                    where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Id!=Id
+                    select new
+                        TourCardVM()
+                        {
+                            Id = tour.Id,
+                            Description = tour.Description,
+                            DepartureDate = tour.DepartureDate,
+                            DepartureId = tour.DepartureId,
+                            Image = tour.Image,
+                            Name = tour.Name,
+                            Slot = tour.Slot,
+                            ViewCount = tour.ViewCount,
+                            OriginalPrice = price.OriginalPrice,
+                            PromotionPrice = price.PromotionPrice,
+                            StartDatePro = price.StartDatePro,
+                            TourCategoryId = tour.TourCategoryId
+                            
+                        }).OrderByDescending(x=>x.DepartureDate).Take(4);
+            }
             return Ok(allTour);
         }
         // POST: api/Tour
@@ -116,6 +188,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
             t.Description = tour.Description;
             t.DepartureDate = tour.DepartureDate;
             t.Slot = tour.Slot;
+            t.ViewCount = tour.ViewCount;
             t.Censorship = tour.Censorship;
             t.Status = tour.Status;
             t.Deleted = tour.Deleted;
@@ -124,7 +197,15 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var result = _uow.SaveChanges();
             
         }
-
+        // PUT: api/Tour/IncreaseViewCount/{id}
+        [HttpPut("IncreaseViewCount/{id}")]
+        public void Put(Guid id)
+        {
+            var t = _uow.Tours.Get(id);
+            t.ViewCount = t.ViewCount+1;
+            _uow.Tours.Update(t);
+            var result = _uow.SaveChanges();
+        }
         // DELETE: api/Tour/5
         [HttpDelete("{id}")]
         public void Delete(Guid id)

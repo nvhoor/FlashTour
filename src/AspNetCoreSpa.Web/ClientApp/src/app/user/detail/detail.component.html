@@ -1,0 +1,95 @@
+<div class="container w-75 m-auto" *ngIf="tour">
+    <h1 class="h4 text-danger mt-1">{{tour.name}}</h1>
+    <div class="font-weight-bold mb-2"><i class="fas fa-qrcode"></i> {{tour.id|uppercase}}</div>
+    <div class="row">
+        <div id="carouselExampleIndicators" class="carousel slide col-lg-7" data-ride="carousel" data-interval="false">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" ngClass="i == 0 ? 'active' : ''" *ngFor="let slide of tourImages;let i=index"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item {{image.active}}" *ngFor="let image of tourImages">
+                    <img class="d-block w-100" src="../../../assets/images/{{image.name}}" onerror="this.src='./assets/images/slide-1.jpg';" alt="First slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="col-lg-5">
+            <div class="star-rate">
+                <i class="fas fa-star h2 text-danger"></i>
+                <i class="fas fa-star h2 text-danger"></i>
+                <i class="fas fa-star h2 text-danger"></i>
+                <i class="fas fa-star h2 text-danger"></i>
+                <i class="fas fa-star-half h2 text-warning"></i>
+            </div>
+            <div><span>4.5/5</span><span> in</span><span> 179</span><span> evaluations</span></div>
+            <div><i class="fas fa-eye mt-1"></i><span> {{tour.viewCount}}</span> views</div>
+            <hr class="dashed mt-1">
+            <div class="ml-2 mt-2 row">
+                <div class="col-lg-5">Departure Date:</div>
+                <div class="col-lg-5">{{tour.departureDate|date:'dd/MM/yyyy'}}</div>
+            </div>
+            <div class="ml-2 mt-2 row">
+                <div class="col-lg-5">Days left:</div>
+                <div class="col-lg-5">{{tour.daysLeft}}</div>
+            </div>
+            <div class="ml-2 mt-2 row">
+                <div class="col-lg-5">Place of departure:</div>
+                <div class="col-lg-5">{{tour.departureName}}</div>
+            </div>
+            <hr class="dashed mt-1">
+            <h1 class="h4 text-danger mt-1 ml-3">{{tour.promotionPrice|currency}}</h1>
+            <div class="ml-2 mt-2 row">
+                <div class="col-lg-5 mt-3">Slots left:<span class="text-danger"> {{tour.slot}}</span></div>
+                <div class="col-lg-5"><a routerLinkActive="active" routerLink="../../tour-booking/{{tour.id}}" class="btn btn-info">Book Tour</a></div>
+            </div>
+        </div>
+    </div>
+    <div >
+        <h1 class="h4 text-danger mt-3">Tour Programs</h1>
+        <p class="mb-3">{{tour.description}}</p>
+        <div class="row" *ngFor="let tourProgram of tour.tourPrograms">
+            <div class="col-lg-3">
+                <div class="h1 text-danger ml-3 mt-5">{{tourProgram.orderNumber}}.</div>
+                <div>{{tourProgram.date|date:'HH:mm dd/MM/yyyy'}}</div>
+            </div>
+            <div class="border">
+<!--                <div class="circle-tour"><i class="fas fa-circle"></i></div>-->
+            </div>
+            <div class="col-lg pl-5">
+                <h1 class="h5 text-danger mt-3"><i class="fas fa-map-marker-alt"></i> {{tourProgram.destination}}-{{tourProgram.title}}</h1>
+                <div>{{tourProgram.description}}</div>
+                <hr class="dashed mt-3">
+            </div>
+        </div>
+
+        <h1 class="h4 text-danger mt-3">Similar Tours</h1>
+        <div class="row">
+            <div class="col-lg-3 mt-2 mb-2" *ngFor="let tourCard of toursByCategory">
+                <div class="card">
+                    <div id="parent_similar_{{tourCard.id}}">
+                        <div id="similar_{{tourCard.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                        <img class="card-img-top" src="./assets/images/tours/{{tourCard.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
+                        <div class="date-departure2 badge badge-warning"><i class="far fa-calendar-alt text-secondary "></i> {{tourCard.departureDate|date:'dd/MM/yyyy'}}</div>
+                        <div class="slot2 badge badge-warning"><i class="fas fa-bus text-secondary "></i> {{tourCard.slot}} slot</div>
+                    </div>
+                    <div class="card-body">
+                        <a routerLinkActive="active" routerLink="user/detail/{{tourCard.id}}" class="stretched-link"><h4 class="card-title font-weight-bold" >{{tourCard.name}}</h4></a>
+                        <hr>
+                        <p><a class="stretched-link" style="position: relative;"></a></p>
+                        <div class="row mt-3">
+                            <div class="col-4 text-light font-italic badge badge-secondary mr-auto ml-3 tour-price"><s>{{tourCard.promotionPrice|currency}}</s></div>
+                            <div class="col-4 text-light font-weight-bold badge badge-danger ml-auto mr-3 tour-price">{{tourCard.originalPrice|currency }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

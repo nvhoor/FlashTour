@@ -29,5 +29,6 @@ namespace AspNetCoreSpa.Core.Entities
         public bool Deleted { get; set; }
         public Guid PostCategoryId { get; set; }
         public PostCategory PostCategory { get; set; }
+        public ICollection<Post> Posts { get; set; }
     }
 }

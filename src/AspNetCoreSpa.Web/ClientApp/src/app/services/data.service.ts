@@ -1,5 +1,5 @@
 ﻿import { Injectable, Injector } from '@angular/core';
-import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
+import {HttpClient, HttpResponse, HttpParams, HttpHeaders} from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
 import { AuthService } from './auth.service';
@@ -46,7 +46,8 @@ export class DataService {
     }
 
     public post<T>(url: string, data?: any, params?: any): Observable<T> {
-        return this.http.post<T>(url, data, { params: params });
+        let headers = new HttpHeaders().set("content-type", "application/json");
+        return this.http.post<T>(url, data, { params: params,headers:headers });
     }
 
     public put<T>(url: string, data?: any, params?: any): Observable<T> {

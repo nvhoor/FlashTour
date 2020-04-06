@@ -52,7 +52,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             tpro.Title = tourProgram.Title;
             tpro.Description = tourProgram.Description;
             tpro.Destination = tourProgram.Destination;
-            tpro.TourId = tourProgram.TourId;
             _uow.TourPrograms.Update(tpro);
             var result = _uow.SaveChanges();
             

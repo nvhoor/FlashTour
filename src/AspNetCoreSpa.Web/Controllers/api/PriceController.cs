@@ -51,7 +51,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
             pr.OriginalPrice = price.OriginalPrice;
             pr.PromotionPrice = price.PromotionPrice;
             pr.StartDatePro = price.StartDatePro;
-            pr.TouristTypeId = price.TouristTypeId;
+            pr.TouristType = price.TouristType;
             _uow.Prices.Update(pr);
             var result = _uow.SaveChanges();
             

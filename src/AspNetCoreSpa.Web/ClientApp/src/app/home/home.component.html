@@ -122,14 +122,14 @@
             <div class="card">
               <div id="parent_hotest_{{hotest.id}}">
                 <div id="hotest_{{hotest.id}}" class="badge badge-pill badge-info coundown-date"></div>
-                <img class="card-img-top" src="./assets/images/tours/{{hotest.image}}" alt="Card image">
+                <img class="card-img-top" src="./assets/images/tours/{{hotest.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                 <div class="date-departure2 badge badge-warning"><i class="far fa-calendar-alt text-secondary "></i> {{hotest.departureDate|date:'dd/MM/yyyy'}}</div>
                 <div class="slot2 badge badge-warning"><i class="fas fa-bus text-secondary "></i> {{hotest.slot}} slot</div>
               </div>
               <div class="card-body">
-                  <a href="#" class="stretched-link"><h4 class="card-title font-weight-bold">{{hotest.name}}</h4></a>
+                  <a  class="stretched-link" routerLinkActive="active" routerLink="user/detail/{{hotest.id}}"><h4 class="card-title font-weight-bold">{{hotest.name}}</h4></a>
                 <hr>
-                <p><a href="#" class="stretched-link" style="position: relative;"></a></p>
+                <p><a  class="stretched-link" style="position: relative;"></a></p>
                 <div class="row mt-3">
                   <div class="col-4 text-light font-italic badge badge-secondary mr-auto ml-3 tour-price"><s>{{hotest.promotionPrice|currency }}</s></div>
                   <div class="col-4 text-light font-weight-bold badge badge-danger ml-auto mr-3 tour-price">{{hotest.originalPrice|currency}}</div>
@@ -151,14 +151,14 @@
             <div class="card">
               <div id="parent_newest_{{newest.id}}">
                 <div id="newest_{{newest.id}}" class="badge badge-pill badge-info coundown-date"></div>
-                <img class="card-img-top" src="./assets/images/tours/{{newest.image}}" alt="Card image">
+                <img class="card-img-top" src="./assets/images/tours/{{newest.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                 <div class="date-departure2 badge badge-warning"><i class="far fa-calendar-alt text-secondary "></i> {{newest.departureDate|date:'dd/MM/yyyy'}}</div>
                 <div class="slot2 badge badge-warning"><i class="fas fa-bus text-secondary "></i> {{newest.slot}} slot</div>
               </div>
               <div class="card-body">
-                <a href="#" class="stretched-link"><h4 class="card-title font-weight-bold">{{newest.name}}</h4></a>
+                <a routerLinkActive="active" routerLink="user/detail/{{newest.id}}" class="stretched-link"><h4 class="card-title font-weight-bold" >{{newest.name}}</h4></a>
                 <hr>
-                <p><a href="#" class="stretched-link" style="position: relative;"></a></p>
+                <p><a class="stretched-link" style="position: relative;"></a></p>
                 <div class="row mt-3">
                   <div class="col-4 text-light font-italic badge badge-secondary mr-auto ml-3 tour-price"><s>{{newest.promotionPrice|currency}}</s></div>
                   <div class="col-4 text-light font-weight-bold badge badge-danger ml-auto mr-3 tour-price">{{newest.originalPrice|currency }}</div>

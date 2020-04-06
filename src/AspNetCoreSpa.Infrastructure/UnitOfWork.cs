@@ -22,7 +22,6 @@
          ITourBookingRepository _tourBookings ;
          ITourCategoryRepository _tourCategories ;
          ITourCustomerRepository _tourCustomers ;
-         ITouristTypeRepository _touristTypes ;
          ITourProgramRepository _tourPrograms ;
          ITourRepository _tours ;
 
@@ -109,8 +108,7 @@
         public ITourCategoryRepository TourCategories => _tourCategories ?? (_tourCategories = new TourCategoryRepository(_context));
 
         public ITourCustomerRepository TourCustomers => _tourCustomers ?? (_tourCustomers = new TourCustomerRepository(_context));
-
-        public ITouristTypeRepository TouristTypes => _touristTypes ?? (_touristTypes = new TouristTypeRepository(_context));
+        
 
         public ITourProgramRepository TourPrograms => _tourPrograms ?? (_tourPrograms = new TourProgramRepository(_context));
 

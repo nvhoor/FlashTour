@@ -21,11 +21,14 @@ namespace AspNetCoreSpa.Core.Entities
         public Guid DepartureId { get; set; }
         public Province Departure { get; set; }
         public int Slot { get; set; }
+        public long ViewCount { get; set; }
         public bool Censorship { get; set; }
         public bool Status { get; set; }
         public bool Deleted { get; set; }
         public Guid TourCategoryId { get; set; }
         public TourCategory TourCategory { get; set; }
         public ICollection<Evaluation> Evaluations { get; set; }
+        public ICollection<Price> Prices { get; set; }
+        public ICollection<TourProgram> TourPrograms { get; set; }
     }
 }

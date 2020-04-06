@@ -16,7 +16,7 @@ namespace AspNetCoreSpa.Infrastructure
         void RemoveRange(IEnumerable<TEntity> entities);
 
         int Count();
-
+        
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
         TEntity GetSingleOrDefault(Expression<Func<TEntity, bool>> predicate);
         TEntity Get(Guid id);

@@ -14,5 +14,7 @@ namespace AspNetCoreSpa.Core.Entities
         public string Image { get; set; }
         [Column(TypeName = "NVARCHAR(500)")]
         public string Description { get; set; }
+        public Guid PostId { get; set; }
+        public Post Post { get; set; }
     }
 }
