@@ -22,27 +22,84 @@
         <div class="col-lg-5 dropdown-toggle" id="search-tour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="card">
             <img class="card-img-top" src="./assets/images/find-beach-icon.png" alt="Card image">
-
             <p class="card-title text-find-tour font-weight-bold">FIND TOUR</p>
           </div>
         </div>
         <div class="dropdown-menu form-search " aria-labelledby="search-tour">
           <div class="px-4 py-3">
-            <div class="form-group">
-              <label for="exampleDropdownFormEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-            </div>
-            <div class="form-group">
-              <label for="exampleDropdownFormPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownCheck">
-              <label class="form-check-label" for="dropdownCheck">
-                Remember me
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <div class="form-info-search bg-dltn pos-relative" style="display: block;">
+              <form action="/Tour/SearchFirst" method="post"><input name="" type="hidden" value="">
+                <div class="container">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="pad-tb">
+                      <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                          <div class="form-group">
+                            <label class="mg-b">Depart From:</label>
+                            <select class="form-control input-md" id="Departureid" name="departure_name">
+                              <option value="0">All</option>
+                              <option value="1">Da Nang</option>
+                              <option value="2">Ha Noi</option>
+                            </select>                            
+                            <input type="hidden" name="TourTypeId" value="1">
+                            <input type="hidden" name="ConCho" value="-1">
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                          <div class="form-group">
+                            <label class="mg-b">Destination:</label>
+                            <select class="form-control input-md" id="DetinationId" name="departure_name">
+                              <option value="0">All</option>
+                              <option value="1">Ha Noi</option>
+                              <option value="2">Ho Chi Minh</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                          <div class="form-group">
+                            <label class="mg-b">Date of departure:</label>
+                            <div class="pos-relative">
+                              <input autocomplete="off" class="form-control input-md" id="departure_date" name="DepartureDate" placeholder="10/04/2020" type="text" value="10/04/2020">
+                              <span class="i-calendar">
+                                <i class="far fa-calendar-alt fa-lg"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                          <div class="form-group">
+                            <label class="mg-b">Tour Category:</label>
+                            <select class="form-control input-md" id="tourCategory" name="TourCate">
+                              <option value="0">All</option>
+                              <option value="1">Tour Cate 01</option>
+                              <option value="2">Tour Cate 02</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                          <div class="form-group">
+                            <label class="mg-b">Price:</label>
+                            <select class="form-control input-md" id="priceID" name="PriceId">
+                              <option value="0">All</option>
+                              <option value="25"> Smaller than 100$</option>
+                              <option value="26"> 100-200$</option>
+                              <option value="27"> 200-400$</option>
+                              <option value="28"> Greater than 400$</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-md btn-search-tour btn-mg-t" onclick="return checkSearch('departureID'); ga('event','Search', 'SearchClick', 'keywords');"><i class="fas fa-search"></i>&nbsp;&nbsp;Tìm kiếm</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>    </div>
           </div>
         </div>
       </div>
@@ -50,27 +107,46 @@
         <div class="col-lg-5 dropdown-toggle" id="proposal-tour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="card">
             <img class="card-img-top" src="./assets/images/proposal-flight.png" alt="Card image">
-
             <p class="card-title text-proposal-tour font-weight-bold">FIND POST</p>
           </div>
         </div>
         <div class="dropdown-menu form-proposal" aria-labelledby="search-tour">
           <div class="px-4 py-3">
-            <div class="form-group">
-              <label for="exampleDropdownFormEmail1">Email address 2</label>
-              <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+            <div class="form-info-search bg-dltn pos-relative" style="display: block;">
+              <form action="/Tour/SearchFirst" method="post"><input name="" type="hidden" value="">
+                <div class="container">
+                      <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                          <div class="form-group">
+                            <label class="mg-b">KeyWord:</label>
+                            <input type="text" class="form-control" id="usr">
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                          <div class="form-group">
+                            <label class="mg-b">Post Category:</label>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                              <label class="btn btn-primary active">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked>Tour Guid
+                              </label>
+                              <label class="btn btn-success ">
+                                <input type="radio" name="options" id="option2" autocomplete="off">Tour Experiences
+                              </label>
+                              <label class="btn btn-info">
+                                <input type="radio" name="options" id="option3" autocomplete="off">All
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-md btn-search-post btn-mg-t" onclick="return checkSearch('departureID'); ga('event','Search', 'SearchClick', 'keywords');"><i class="fas fa-search"></i>Search</button>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+              </form>    
             </div>
-            <div class="form-group">
-              <label for="exampleDropdownFormPassword1">Password 2</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-              <label class="form-check-label" for="dropdownCheck">
-                Remember me 2
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in 2</button>
           </div>
         </div>
       </div>
