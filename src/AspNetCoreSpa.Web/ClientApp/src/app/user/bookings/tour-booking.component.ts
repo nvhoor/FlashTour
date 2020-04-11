@@ -4,7 +4,6 @@ import {DataService} from "@app/services";
 import {ActivatedRoute} from '@angular/router';
 import {AppFormComponent, FormsService} from "@app/shared";
 import {IFieldConfig} from "@app/models";
-import {HttpHeaders} from "@angular/common/http";
 
 @Component({
     selector: 'appc-user-tour-booking-component',

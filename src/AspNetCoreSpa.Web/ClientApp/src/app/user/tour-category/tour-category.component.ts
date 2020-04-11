@@ -10,7 +10,7 @@ import {HomeDetailComponent} from "@app/user/home-detail/home-detail.component";
 })
 export class TourCategoryComponent implements OnInit {
   public tourCatePagings: TourCatePagings[];
-  public pageNums:number[];
+  public pageNums:PageNum[];
   public tours:TourCard[];
   public tourPagings:TourPagings[];
   public name:string;
@@ -80,18 +80,20 @@ export class TourCategoryComponent implements OnInit {
       });
       let i=0;
       while (tours.length) {
-        pageNums.push(i);
+        pageNums.push({num:i,active:""});
         tourPagings.push({tours: tours.splice(0, 8), pageNum: i});
         i++
       }
       this.tourPagings = tourPagings;
       this.tours=this.tourPagings[this.currentPage].tours;
+      pageNums[0].active="active";
       this.pageNums= pageNums;
       console.log("Tour pagings:"+JSON.stringify(this.tourPagings),this.pageNums.length);
     }, error => console.error(error));
   }
 
   changePage(typeChosen:number,num: number) {
+    var curPape=this.currentPage;
     switch (typeChosen) {
       case this.typePagingChosen.Pre:
         if(this.currentPage-1>=0){
@@ -112,6 +114,8 @@ export class TourCategoryComponent implements OnInit {
         break;
     }
     console.log("Chosen page:",this.currentPage);
+    this.pageNums[curPape].active="";
+    this.pageNums[this.currentPage].active="active";
     this.tours=this.tourPagings[this.currentPage].tours;
   }
 }

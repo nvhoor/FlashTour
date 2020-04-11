@@ -60,11 +60,11 @@
                             <span class="sr-only">Previous</span>
                         </a>
                     </li>
-                    <li class="page-item" *ngFor="let num of pageNums">
-                        <a class="page-link btn-cate" (click)="changePage(typePagingChosen.Num,num)">{{num+1}}</a>
+                    <li class="page-item {{pageNum.active}}" *ngFor="let pageNum of pageNums">
+                        <a class="page-link btn-cate" (click)="changePage(typePagingChosen.Num,pageNum.num)">{{pageNum.num+1}}</a>
                     </li>
                     <li class="page-item">
-                        <a class="page-link" (click)="changePage(typePagingChosen.Next,0)" aria-label="Next">
+                        <a class="page-link btn-cate" (click)="changePage(typePagingChosen.Next,0)" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>
                         </a>

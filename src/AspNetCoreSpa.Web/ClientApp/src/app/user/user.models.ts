@@ -76,3 +76,7 @@ interface Customer {
     touristType:number,
     value:number
 }
+interface PageNum {
+    num:number,
+    active:string
+}
