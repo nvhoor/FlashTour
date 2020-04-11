@@ -38,6 +38,16 @@ namespace AspNetCoreSpa.Web.Controllers.api
                 [HttpPost]
                 public void Post([FromBody] TourBookingVM tourBooking)
                 {
+                    tourBooking.Id=Guid.NewGuid();
+                    foreach (var tourBookingBookingPrice in tourBooking.BookingPrices)
+                    {tourBookingBookingPrice.Id=Guid.NewGuid();
+                        tourBookingBookingPrice.TourBookingId = tourBooking.Id;
+                    }
+                    foreach (var tourBookingTourCustomer in tourBooking.TourCustomers)
+                    {
+                        tourBookingTourCustomer.Id=Guid.NewGuid();
+                        tourBookingTourCustomer.TourBookingId = tourBooking.Id;
+                    }
                     _uow.TourBookings.Add(_mapper.Map<TourBooking>(tourBooking));
                     _uow.SaveChanges();
                 }

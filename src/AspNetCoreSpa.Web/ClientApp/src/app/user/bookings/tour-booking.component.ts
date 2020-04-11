@@ -20,19 +20,18 @@ export class TourBookingComponent implements OnInit{
     @ViewChild(AppFormComponent, { static: true }) form: AppFormComponent;
     config: IFieldConfig[];
     @Input() comunication:Comunication;
-    constructor(
-        @Inject("BASE_URL") private baseUrl: string,
-        private route: ActivatedRoute,
-        private _renderer2: Renderer2,
-        private _dataService:DataService,
-        private formsService: FormsService,
+        constructor(
+            @Inject("BASE_URL") private baseUrl: string,
+            private route: ActivatedRoute,
+            private _renderer2: Renderer2,
+            private _dataService:DataService,
+            private formsService: FormsService,
         @Inject(DOCUMENT) private _document: Document,
     ) {
-    }
+        }
     public ngOnInit() {
-        var id=this.route.snapshot.params['id'];
-        this.comunication={
-            id:this.newGuid(),
+            var id=this.route.snapshot.params['id'];
+            this.comunication={
             fullName:"",
             address:"",
             email:"",
@@ -41,7 +40,9 @@ export class TourBookingComponent implements OnInit{
             adult:1,
             child:0,
             kid:0,
-            tourId:id
+                tourId:id,
+                tourCustomers:[],
+                bookingPrices:[]
         };
         this.totalCustomer=this.comunication.adult+this.comunication.child+this.comunication.kid;
         this.getTourById(id);
@@ -78,37 +79,31 @@ export class TourBookingComponent implements OnInit{
                   this.totalValue=0;
                   for (let i = 0; i < this.comunication.adult; i++) {
                       this.listCustomer.push({
-                          id:this.newGuid(), 
                           fullName: "",
                           gender: false,
                           birthday: new Date(),
                           touristType: 0,
-                          value:this.tour.prices[0].promotionPrice,
-                          tourBookingId:this.comunication.id
+                          value:this.tour.prices[0].promotionPrice
                       });
                       this.totalValue+=this.tour.prices[0].promotionPrice;
                   }
                   for (let j = 0; j < this.comunication.child; j++) {
                       this.listCustomer.push({
-                          id:this.newGuid(),
                           fullName: "",
                           gender: false,
                           birthday: new Date(),
                           touristType: 1,
-                          value:this.tour.prices[1].promotionPrice,
-                          tourBookingId:this.comunication.id
+                          value:this.tour.prices[1].promotionPrice
                       });
                       this.totalValue+=this.tour.prices[1].promotionPrice;
                   }
                   for (let k = 0; k < this.comunication.kid; k++) {
                       this.listCustomer.push({
-                          id:this.newGuid(),
                           fullName: "",
                           gender: false,
                           birthday: new Date(),
                           touristType: 2,
-                          value:this.tour.prices[2].promotionPrice,
-                          tourBookingId:this.comunication.id
+                          value:this.tour.prices[2].promotionPrice
                       });
                       this.totalValue+=this.tour.prices[2].promotionPrice;
                   }
@@ -123,27 +118,15 @@ export class TourBookingComponent implements OnInit{
             var prices=[];
             for(let i=0;i<3;i++){
                 prices.push({
-                    id:this.newGuid(),
-                    tourBookingId:this.comunication.id,
                     touristType:i,
                     price:this.tour.prices[i].promotionPrice
                 });
             }
+            this.comunication.bookingPrices=prices;
+            this.comunication.tourCustomers=this.listCustomer;
             console.log("Post tour booking:", JSON.stringify(this.comunication));
             this._dataService.post<Comunication>(`${this.baseUrl}api/TourBooking`, JSON.stringify(this.comunication)).subscribe(x => {
                 console.log("Book tour success!");
-                console.log("Post list customer:", JSON.stringify(this.listCustomer));
-                this._dataService.post<Customer[]>(`${this.baseUrl}api/TourCustomer/Array`,JSON.stringify(this.listCustomer)).subscribe(x => {
-                    console.log("Post tour customer success!");
-                    console.log("Post list prices:", JSON.stringify(prices));
-                    this._dataService.post<Customer[]>(`${this.baseUrl}api/BookingPrice/Array`,JSON.stringify(prices)).subscribe(x => {
-                        console.log("Post prices success!");
-                    }, error => {
-                        console.error(error);
-                    });
-                }, error => {
-                    console.error(error);
-                });
             }, error => {
                 console.error(error);
             });

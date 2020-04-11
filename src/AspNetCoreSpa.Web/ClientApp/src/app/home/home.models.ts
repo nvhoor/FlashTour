@@ -34,6 +34,10 @@ interface TourCatePagings{
     tourCate:Array<TourCategory>,
     active:string
 }
+interface TourPagings{
+    tours:Array<TourCard>,
+    pageNum:number
+}
 interface TourCategory {
     id:string,
     name:string,

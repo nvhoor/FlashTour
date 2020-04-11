@@ -113,8 +113,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     }).OrderByDescending(x=>x.DepartureDate).Take(8);
             return Ok(allTour);
         }
-        [HttpGet("toursByCate/{id}")]
-        public IActionResult GetToursByCategory(Guid Id)
+        [HttpGet("toursSameCate/{id}")]
+        public IActionResult GetToursSameCategory(Guid Id)
         {
             var tourE = _uow.Tours.Get(Id);
             var tourCategoryE = _uow.TourCategories.Get(tourE.TourCategoryId);
@@ -167,6 +167,34 @@ namespace AspNetCoreSpa.Web.Controllers.api
                             
                         }).OrderByDescending(x=>x.DepartureDate).Take(4);
             }
+            return Ok(allTour);
+        }
+        [HttpGet("toursByCateId/{id}")]
+        public IActionResult GetToursByCateId(Guid id)
+        {
+            var allTour = (from tour in _uow.Tours
+                join price in _uow.Prices
+                    on tour.Id equals price.TourId
+                join tourCate in _uow.TourCategories
+                    on tour.TourCategoryId equals tourCate.Id
+                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Deleted==false&&tourCate.Id==id
+                select new
+                    TourCardVM()
+                    {
+                        Id = tour.Id,
+                        Description = tour.Description,
+                        DepartureDate = tour.DepartureDate,
+                        DepartureId = tour.DepartureId,
+                        Image = tour.Image,
+                        Name = tour.Name,
+                        Slot = tour.Slot,
+                        ViewCount = tour.ViewCount,
+                        OriginalPrice = price.OriginalPrice,
+                        PromotionPrice = price.PromotionPrice,
+                        StartDatePro = price.StartDatePro,
+                        TourCategoryId = tour.TourCategoryId
+                            
+                    }).OrderByDescending(x=>x.DepartureDate);
             return Ok(allTour);
         }
         // POST: api/Tour

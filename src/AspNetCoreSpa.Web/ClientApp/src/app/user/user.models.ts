@@ -48,7 +48,6 @@ interface CarouselImage {
     active:string
 }
 interface Price {
-    id:string,
     tourId:string,
     name:string,
     originalPrice:number,
@@ -58,7 +57,6 @@ interface Price {
     touristType:number
 }
 interface Comunication {
-    id:string
     fullName:string,
     email:string,
     mobile:string,
@@ -67,14 +65,14 @@ interface Comunication {
     child:number,
     kid:number,
     note:string
-    tourId:string
+    tourId:string,
+    bookingPrices:Price[],
+    tourCustomers:Customer[]
 }
 interface Customer {
-    id:string,
     fullName:string,
     gender:boolean,
     birthday:Date,
     touristType:number,
-    value:number,
-    tourBookingId:string
+    value:number
 }

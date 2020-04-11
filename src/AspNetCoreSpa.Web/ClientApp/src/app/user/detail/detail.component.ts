@@ -12,6 +12,7 @@ export class DetailComponent implements OnInit{
     public tour:Tour;
     public toursByCategory:TourCard[];
     public tourImages:CarouselImage[];
+    public isCountDown=true;
     constructor(
         @Inject("BASE_URL") private baseUrl: string,
         private route: ActivatedRoute,
@@ -24,9 +25,13 @@ export class DetailComponent implements OnInit{
         var id=this.route.snapshot.params['id'];
         this.getTourById(id);
         this.getToursSameCategoryById(id);
-        setTimeout( () =>{
-            this.appendScriptCountDown();
-        },5000);
+        if(this.isCountDown){
+            this.isCountDown=false;
+            setTimeout( () =>{
+                this.appendScriptCountDown();
+                this.isCountDown=true;
+            },5000);
+        }
         console.log("ngOnInit");
             this._dataService.put<Tour>(`${this.baseUrl}api/Tour/IncreaseViewCount/${id}`,this.tour).subscribe(x=>{
                 console.log("increase view count success!");
@@ -69,7 +74,7 @@ export class DetailComponent implements OnInit{
     }
    
     private getToursSameCategoryById(id) {
-        var data = this._dataService.getFull<TourCard[]>(`${this.baseUrl}api/Tour/toursByCate/${id}`);
+        var data = this._dataService.getFull<TourCard[]>(`${this.baseUrl}api/Tour/toursSameCate/${id}`);
         let that = this;
         data.subscribe((result) => {
             // console.log("Respone:"+result.body);

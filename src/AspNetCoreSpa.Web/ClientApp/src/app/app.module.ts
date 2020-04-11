@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 // Services
 import { AppService, AuthService, DataService, GlobalErrorHandler, ModalService, ModalStateService, AuthInterceptor, TimingInterceptor } from '@app/services';
+import {UsersModule} from "@app/user/user.module";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -34,19 +35,20 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
     ModalTemplateDirective,
     PrivacyComponent
   ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    // PrebootModule.withConfig({ appRoot: 'appc-root' }),
-    BrowserAnimationsModule,
-    BrowserTransferStateModule,
-    HttpClientModule,
-    AppSharedModule,
-    // OAuthModule.forRoot(),
-    NgbModule,
-    ToastrModule.forRoot(),
-    RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-  ],
+    imports: [
+        BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
+        // PrebootModule.withConfig({ appRoot: 'appc-root' }),
+        BrowserAnimationsModule,
+        BrowserTransferStateModule,
+        HttpClientModule,
+        AppSharedModule,
+        // OAuthModule.forRoot(),
+        NgbModule,
+        ToastrModule.forRoot(),
+        RouterModule.forRoot(routes, {initialNavigation: 'enabled'}),
+        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        UsersModule,
+    ],
   providers: [
     AppService,
     AuthService,
