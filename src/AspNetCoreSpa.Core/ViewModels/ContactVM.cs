@@ -16,5 +16,8 @@ namespace AspNetCoreSpa.Core.ViewModels
         public string Address {get; set;}
         
         public string Title {get; set;}
+        public string Content {get; set;}
+        public string Information {get; set;}
+
     }
 }

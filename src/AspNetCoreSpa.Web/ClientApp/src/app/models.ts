@@ -88,3 +88,12 @@ export interface IOption {
     value: string;
     selected?: boolean;
 }
+export interface Contact {
+    information:string,
+    fullName:string,
+    email:string,
+    phone:string,
+    address:string,
+    title:string,
+    content:string,
+}

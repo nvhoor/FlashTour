@@ -18,5 +18,8 @@ namespace AspNetCoreSpa.Core.Entities
         public string Address {get; set;}
         [Column(TypeName = "NVARCHAR(100)")]
         public string Title {get; set;}
+        [Column(TypeName = "NVARCHAR(100)")]
+        public string Content {get; set;}
+        public string Information {get; set;}
     }
 }

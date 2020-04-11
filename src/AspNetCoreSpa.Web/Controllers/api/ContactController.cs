@@ -52,6 +52,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
             ct.Phone = contact.Phone;
             ct.Address = contact.Address;
             ct.Title = contact.Title;
+            ct.Content = contact.Content;
+            ct.Information = contact.Information;
             _uow.Contacts.Update(ct);
             var result = _uow.SaveChanges();
         }
