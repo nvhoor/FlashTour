@@ -20,6 +20,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 // Services
 import { AppService, AuthService, DataService, GlobalErrorHandler, ModalService, ModalStateService, AuthInterceptor, TimingInterceptor } from '@app/services';
+import {ContactComponent} from "@app/contact/contact.component";
+import {FormsModule} from "@angular/forms";
 import {UsersModule} from "@app/user/user.module";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
@@ -33,7 +35,8 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
     HeaderComponent,
     ModalComponent,
     ModalTemplateDirective,
-    PrivacyComponent
+    PrivacyComponent,
+    ContactComponent
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -47,6 +50,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
         ToastrModule.forRoot(),
         RouterModule.forRoot(routes, {initialNavigation: 'enabled'}),
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        FormsModule,
         UsersModule,
     ],
   providers: [
