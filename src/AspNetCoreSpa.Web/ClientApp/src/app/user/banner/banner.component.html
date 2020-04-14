@@ -25,82 +25,63 @@
                         <p class="card-title text-find-tour font-weight-bold">FIND TOUR</p>
                     </div>
                 </div>
-                <div class="dropdown-menu form-search " aria-labelledby="search-tour">
-                    <div class="px-4 py-3">
+                <div class="dropdown-menu form-search" aria-labelledby="search-tour">
                         <div class="form-info-search bg-dltn pos-relative" style="display: block;">
-                            <form action="/Tour/SearchFirst" method="post"><input name="" type="hidden" value="">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="pad-tb">
-                                                <div class="row">
-                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                            <form action="/Tour/SearchFirst" method="post">
+                                    <div class="row m-auto">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                         <div class="form-group">
                                                             <label class="mg-b">Depart From:</label>
-                                                            <select class="form-control input-md" id="Departureid" name="departure_name">
-                                                                <option value="0">All</option>
-                                                                <option value="1">Da Nang</option>
-                                                                <option value="2">Ha Noi</option>
+                                                            <select class="form-control input-md" id="Departureid" name="departure_name" [(ngModel)]="optionSearch.departureId">
+                                                                <option value="0">Depart from</option>
+                                                                <option value="{{departure.id}}" *ngFor="let departure of provinces">{{departure.name}}</option>
                                                             </select>
                                                             <input type="hidden" name="TourTypeId" value="1">
                                                             <input type="hidden" name="ConCho" value="-1">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                         <div class="form-group">
                                                             <label class="mg-b">Destination:</label>
-                                                            <select class="form-control input-md" id="DetinationId" name="departure_name">
+                                                            <select class="form-control input-md" id="DetinationId" name="departure_name" [(ngModel)]="optionSearch.destinationId">
                                                                 <option value="0">All</option>
-                                                                <option value="1">Ha Noi</option>
-                                                                <option value="2">Ho Chi Minh</option>
+                                                                <option value="{{destination.id}}" *ngFor="let destination of provinces">{{destination.name}}</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                         <div class="form-group">
                                                             <label class="mg-b">Date of departure:</label>
                                                             <div class="pos-relative">
-                                                                <input autocomplete="off" class="form-control input-md" id="departure_date" name="DepartureDate" placeholder="10/04/2020" type="text" value="10/04/2020">
-                                                                <span class="i-calendar">
-                                <i class="far fa-calendar-alt fa-lg"></i>
-                              </span>
+                                                                <input autocomplete="off" class="form-control input-md" id="departure_date" name="DepartureDate" type="date" [(ngModel)]="departureDate">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                         <div class="form-group">
                                                             <label class="mg-b">Tour Category:</label>
-                                                            <select class="form-control input-md" id="tourCategory" name="TourCate">
+                                                            <select class="form-control input-md" id="tourCategory" name="TourCate" [(ngModel)]="optionSearch.tourCategoryId">
                                                                 <option value="0">All</option>
-                                                                <option value="1">Tour Cate 01</option>
-                                                                <option value="2">Tour Cate 02</option>
+                                                                <option value="{{tourCate.id}}" *ngFor="let tourCate of tourCategories">{{tourCate.name}}</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                         <div class="form-group">
                                                             <label class="mg-b">Price:</label>
-                                                            <select class="form-control input-md" id="priceID" name="PriceId">
-                                                                <option value="0">All</option>
-                                                                <option value="25"> Smaller than 100$</option>
-                                                                <option value="26"> 100-200$</option>
-                                                                <option value="27"> 200-400$</option>
-                                                                <option value="28"> Greater than 400$</option>
+                                                            <select class="form-control input-md" id="priceID" name="PriceId" [(ngModel)]="optionSearch.priceId">
+                                                                <option value="{{price.id}}" *ngFor="let price of prices">{{price.value}}</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                                    <div class="col-2">
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn btn-md btn-search-tour btn-mg-t" onclick="return checkSearch('departureID'); ga('event','Search', 'SearchClick', 'keywords');"><i class="fas fa-search"></i>&nbsp;&nbsp;Tìm kiếm</button>
+                                                            <button type="submit" class="btn btn-info btn-md btn-search-tour btn-mg-t mt-4" id="btnSearchTour" (click)="onClickSearchTour()"><i class="fas fa-search"></i> Search</button>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
                             </form>    </div>
-                    </div>
+                    <hr>
                 </div>
             </div>
             <div class="dropdown find-dropdown-r">
@@ -111,7 +92,6 @@
                     </div>
                 </div>
                 <div class="dropdown-menu form-proposal" aria-labelledby="search-tour">
-                    <div class="px-4 py-3">
                         <div class="form-info-search bg-dltn pos-relative" style="display: block;">
                             <form action="/Tour/SearchFirst" method="post"><input name="" type="hidden" value="">
                                 <div class="container">
@@ -146,8 +126,8 @@
                                     </div>
                                 </div>
                             </form>
+                            <hr>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

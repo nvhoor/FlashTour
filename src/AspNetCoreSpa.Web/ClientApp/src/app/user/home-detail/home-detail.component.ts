@@ -9,7 +9,18 @@ import {DOCUMENT} from "@angular/common";
 export class HomeDetailComponent implements OnInit {
   public hotestTours: Hotest[];
   public newestTours: Newest[];
+  public searchingTours: TourCard[];
+  public emitSearch:EmitSearch;
   public isCountDown=true;
+  public isCountDownSearch=true;
+  public currentPage=0;
+  public pageNums:PageNum[];
+  public tourPagings:TourPagings[];
+  public typePagingChosen={
+    Pre:0,
+    Num:1,
+    Next:2
+  };
   constructor(  @Inject("BASE_URL") private baseUrl: string,
                 private _renderer2: Renderer2,
                 private _dataService: DataService,
@@ -90,6 +101,41 @@ export class HomeDetailComponent implements OnInit {
       var parentEle=this._document.getElementById("parent_newest_" + tour.id);
       parentEle&&this._renderer2.appendChild(parentEle, script);
     });
+
+  }
+  private appendScriptCountDownSearching() {
+    console.log("appendScriptCountDownSearching lenght:" + this.searchingTours.length);
+    this.searchingTours.forEach((tour) => {
+      let script = this._renderer2.createElement('script');
+      script.type = `text/javascript`;
+      let id = tour.id.replace(/-/g, "");
+      // console.log(id);
+      script.text = `
+            {
+                 let countDownDatesearch${id} = new Date("${tour.departureDate}").getTime();
+                  let xsearch${id} = setInterval(function() {
+                    let nowsearch${id} = new Date().getTime();
+                    let distancesearch${id} = countDownDatesearch${id} - nowsearch${id};
+                    let dayssearch${id} = Math.floor(distancesearch${id} / (1000 * 60 * 60 * 24));
+                    let hourssearch${id} = Math.floor((distancesearch${id} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutessearch${id} = Math.floor((distancesearch${id} % (1000 * 60 * 60)) / (1000 * 60));
+                    let secondssearch${id} = Math.floor((distancesearch${id} % (1000 * 60)) / 1000);
+                    try{
+                    document.getElementById("search_${tour.id}").innerHTML = dayssearch${id} + " days " + hourssearch${id} + "h "
+                            + minutessearch${id} + "m " + secondssearch${id} + "s ";
+                            }catch(e){
+                            clearInterval(xsearch${id});
+                            }
+                    if (distancesearch${id} < 0) {
+                      clearInterval(xsearch${id});
+                      document.getElementById("search_${tour.id}").innerHTML = "EXPIRED";
+                    }
+                  }, 1000);
+            }
+        `;
+      var parentEle=this._document.getElementById("parent_search_" + tour.id);
+      parentEle&&this._renderer2.appendChild(parentEle, script);
+    });
   }
 
   private getHostestTour() {
@@ -109,7 +155,8 @@ export class HomeDetailComponent implements OnInit {
           slot: d.tours[0].slot,
           originalPrice: d.tours[0].originalPrice,
           promotionPrice: d.tours[0].promotionPrice,
-          startDatePro: d.tours[0].startDatePro,
+            startDatePro: d.tours[0].startDatePro,
+            endDatePro: d.tours[0].endDatePro,
           touristType: d.tours[0].touristType,
         });
       });
@@ -135,7 +182,8 @@ export class HomeDetailComponent implements OnInit {
           slot: d.slot,
           originalPrice: d.originalPrice,
           promotionPrice: d.promotionPrice,
-          startDatePro: d.startDatePro,
+            startDatePro: d.startDatePro,
+            endDatePro: d.endDatePro,
           touristType: d.touristType,
         });
       });
@@ -143,7 +191,103 @@ export class HomeDetailComponent implements OnInit {
       console.log(that.newestTours);
     }, error => console.error(error));
   }
-  
-
-  
+  public getToursByOption(emit){
+    this.emitSearch=emit;
+    console.log("emit:",JSON.stringify(emit));
+    var data = this._dataService.get<TourCard[]>(`${this.baseUrl}api/Tour/Search`,emit.option);
+    let that = this;
+    data.subscribe((result) => {
+      // console.log("Respone:"+result.body);
+      let searchingTours = [];
+      let tourPagings=[];
+      let pageNums=[];
+      result.forEach((d) => {
+        searchingTours.push({
+          id: d.id,
+          name: d.name,
+          image: d.image,
+          description: d.description,
+          departureDate: d.departureDate,
+          departureId: d.departureId,
+          slot: d.slot,
+          originalPrice: d.originalPrice,
+          promotionPrice: d.promotionPrice,
+            startDatePro: d.startDatePro,
+            endDatePro: d.endDatePro,
+          touristType: d.touristType,
+        });
+      });
+      that.searchingTours = searchingTours;
+      let i=0;
+      while (searchingTours.length) {
+        pageNums.push({num:i,active:""});
+        tourPagings.push({tours: searchingTours.splice(0, 8), pageNum: i});
+        i++
+      }
+      this.tourPagings = tourPagings;
+      if(this.tourPagings.length>0){
+        this.searchingTours=this.tourPagings[this.currentPage].tours;
+        pageNums[0].active="active";
+        this.pageNums= pageNums;
+      }else{
+        this.searchingTours=[];
+        this.pageNums=[];
+      }
+      if(this.isCountDownSearch){
+        this.isCountDownSearch=false;
+        var timer=setTimeout(() => {
+          this.appendScriptCountDownSearching();
+          this.isCountDownSearch=true;
+        }, 5000);
+      }
+      
+      console.log(that.searchingTours);
+    }, error => console.error(error));
+  }
+  changePage(typeChosen:number,num: number) {
+    var curPape=this.currentPage;
+    switch (typeChosen) {
+      case this.typePagingChosen.Pre:
+        if(this.currentPage-1>=0){
+          this.currentPage--;
+        }else{
+          return;
+        }
+        break;
+      case this.typePagingChosen.Num:
+        this.currentPage=num;
+        break;
+      case this.typePagingChosen.Next:
+        if(this.currentPage+1<this.tourPagings.length){
+          this.currentPage++;
+        }else{
+          return;
+        }
+        break;
+    }
+    console.log("Chosen page:",this.currentPage);
+    this.pageNums[curPape].active="";
+    this.pageNums[this.currentPage].active="active";
+    this.searchingTours=this.tourPagings[this.currentPage].tours;
+    if(this.isCountDown){
+      this.isCountDown=false;
+      var timer=setTimeout(() => {
+        this.appendScriptCountDown();
+        this.isCountDown=true;
+      }, 5000);
+    }
+  }
+    checkExpiredPromotion(tour) {
+        var toCheck = new Date().getTime();
+        var startDatePro = new Date(tour.startDatePro).getTime();
+        var endDatePro = new Date(tour.endDatePro).getTime();
+        return toCheck >= startDatePro && toCheck <= endDatePro;
+    }
+    getPrice(tour) {
+        if (this.checkExpiredPromotion(tour)) {
+            return tour.promotionPrice;
+        } else {
+            return tour.originalPrice;
+        }
+    }
 }

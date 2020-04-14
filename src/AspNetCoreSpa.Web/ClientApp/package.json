@@ -43,6 +43,7 @@
     "@ng-bootstrap/ng-bootstrap": "5.1.2",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "@swimlane/ngx-datatable": "16.0.2",
+    "@types/underscore": "^1.9.4",
     "angularx-flatpickr": "6.1.1",
     "aspnet-prerendering": "3.0.1",
     "bootstrap": "4.3.1",

@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 mg-bot10">
                     <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-clock.png" alt="clock"></div>
-                    <div class="f-left r">Days left: <span class="font500">{{tour.daysLeft}}</span></div>
+                    <div class="f-left r">Total days: <span class="font500">{{tour.daysLeft}}</span></div>
                     <div class="clear"></div>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
@@ -111,19 +111,19 @@
                             <div class="col-md-3 col-sm-2 col-xs-6 mg-bot15">
                                 <label>Adult</label>
                                 <div>
-                                    <input class="form-control" id="adult" name="adult" max="{{tour.slot}}" min="0" type="number" (ngModelChange)="getTotal()" [(ngModel)]="comunication.adult">
+                                    <input class="form-control" id="adult" name="adult" max="{{tour.slot}}" min="0" type="number" (focusout)="getTotal('adult')" [(ngModel)]="comunication.adult">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-2 col-xs-6  mg-bot15">
                                 <label>Child</label>
                                 <div>
-                                    <input class="form-control" id="children11" name="children11" type="number" (ngModelChange)="getTotal()" [(ngModel)]="comunication.child">
+                                    <input class="form-control" id="children" name="children" type="number" (focusout)="getTotal('children')" [(ngModel)]="comunication.child">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-6  mg-bot15">
                                 <label>Kid</label>
                                 <div>
-                                    <input class="form-control" id="children" name="children"  type="number" (ngModelChange)="getTotal()" [(ngModel)]="comunication.kid">
+                                    <input class="form-control" id="kid" name="children"  type="number" (focusout)="getTotal('kid')" [(ngModel)]="comunication.kid">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-12">

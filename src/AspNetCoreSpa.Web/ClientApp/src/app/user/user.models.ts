@@ -31,7 +31,8 @@ interface TourCard {
     slot:number,
     originalPrice:number,
     promotionPrice:number,
-    startDatePro:Date,
+    startDatePro: Date,
+    endDatePro: Date,
     touristType:number
 }
 interface TourProgram {
@@ -79,4 +80,25 @@ interface Customer {
 interface PageNum {
     num:number,
     active:string
+}
+interface EmitSearch{
+    departureName:string,
+    destinationName:string,
+    option:OptionSearch
+}
+interface OptionSearch {
+    departureId:string,
+    destinationId:string,
+    departureDateStr:string,
+    tourCategoryId:string,
+    priceId:number
+}
+
+interface Province {
+    id:string,
+    name:string
+}
+interface SearchPrice {
+    id:number,
+    value:string
 }

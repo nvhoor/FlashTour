@@ -13,6 +13,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public string Description { get; set; }
         public DateTime DepartureDate { get; set; }
         public Guid DepartureId { get; set; }
+        public Guid DestinationId { get; set; }
         public string DepartureName { get; set; }
         public int Slot { get; set; }
         public long ViewCount { get; set; }

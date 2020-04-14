@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -22,7 +23,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet]
         public IActionResult Get()
         {
-            var allProvince = _uow.Provinces.GetAll();
+            var allProvince = _uow.Provinces.GetAll().OrderBy(x=>x.Name);
             return Ok(_mapper.Map<IEnumerable<ProvinceVM>>(allProvince));
         }
 

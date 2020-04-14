@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
-import {DataService} from "@app/services";
-import {ActivatedRoute} from '@angular/router';
+import { DataService } from "@app/services";
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'appc-user-detail-component',
@@ -16,6 +16,7 @@ export class DetailComponent implements OnInit{
     constructor(
         @Inject("BASE_URL") private baseUrl: string,
         private route: ActivatedRoute,
+        private _router: Router,
         private _renderer2: Renderer2,
         private _dataService:DataService,
         @Inject(DOCUMENT) private _document: Document,
@@ -90,7 +91,8 @@ export class DetailComponent implements OnInit{
                     slot:d.slot,
                     originalPrice:d.originalPrice,
                     promotionPrice:d.promotionPrice,
-                    startDatePro:d.startDatePro,
+                    startDatePro: d.startDatePro,
+                    endDatePro: d.endDatePro,
                     touristType:d.touristType
                 });
             });
@@ -104,8 +106,8 @@ export class DetailComponent implements OnInit{
         let that = this;
         data.subscribe((result) => {
             that.tour = result;
-            let date1 = new Date();
-            let date2 = new Date(that.tour.departureDate);
+            let date1 = new Date(that.tour.departureDate);
+            let date2 = new Date(that.tour.tourPrograms[that.tour.tourPrograms.length-1].date);
             // @ts-ignore
             let diffTime = Math.abs(date2 - date1);
             let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -119,5 +121,21 @@ export class DetailComponent implements OnInit{
             that.tourImages=carouselImages;
             this.tourImages[0].active="active";
         }, error => console.error(error));
+    }
+    checkExpiredPromotion(tour) {
+        var toCheck = new Date().getTime();
+        var startDatePro = new Date(tour.startDatePro).getTime();
+        var endDatePro = new Date(tour.endDatePro).getTime();
+        return toCheck >= startDatePro && toCheck <= endDatePro;
+    }
+    getPrice(tour) {
+        if (this.checkExpiredPromotion(tour)) {
+            return tour.promotionPrice;
+        } else {
+            return tour.originalPrice;
+        }
+    }
+    redirectMySelf(id) {
+        this.getTourById(id);
     }
 }

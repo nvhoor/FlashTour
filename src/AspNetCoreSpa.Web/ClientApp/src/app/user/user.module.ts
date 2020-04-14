@@ -19,7 +19,8 @@ import { TourCategoryComponent } from './tour-category/tour-category.component';
     ],
     exports: [
         BannerComponent,
-        HomeDetailComponent
+        HomeDetailComponent,
+        DetailComponent
     ],
     declarations: [DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent]
 })
