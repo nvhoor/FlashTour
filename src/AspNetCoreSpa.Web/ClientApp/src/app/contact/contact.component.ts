@@ -12,7 +12,9 @@ import {Contact} from  "@app/models"
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
   @Input() contact:Contact;
   constructor(@Inject("BASE_URL") private baseUrl: string,
               private router:Router,
