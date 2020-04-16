@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AspNetCoreSpa.Core;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
+using Microsoft.AspNetCore.Connections.Features;
 using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreSpa.Web.Controllers.api
 {
@@ -77,6 +79,29 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             _uow.TourCustomers.Remove(_uow.TourCustomers.Get(id));
             _uow.SaveChanges();
+        }
+        // Danh sach khach hang di tour - tim theo ID Tour
+        // GET: api/toucustomer/tourcustomerbytour
+        [HttpGet("cusbytour/{id}")]
+        public IActionResult GetTourCustomer(Guid id)
+        {
+            var t = _uow.Tours.Get(id); 
+            var allcustomer =
+                from tourcus in _uow.TourCustomers
+                join tourBooking in _uow.TourBookings on tourcus.TourBookingId equals tourBooking.Id
+                where t.Id == tourBooking.TourId
+                select new
+                    TourCustomerVM()
+                    {
+                        Id = tourcus.Id,
+                        FullName = tourcus.FullName,
+                        Gender = tourcus.Gender,
+                        BirthDay = tourcus.BirthDay,
+                        TourBookingId = tourcus.TourBookingId,
+                        TouristType = tourcus.TouristType,
+                        TourId = tourBooking.TourId
+                    };
+            return Ok(allcustomer);
         }
     }
 }

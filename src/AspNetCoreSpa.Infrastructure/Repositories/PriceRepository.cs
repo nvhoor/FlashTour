@@ -15,7 +15,7 @@ namespace AspNetCoreSpa.Infrastructure
         {
             foreach (var price in _appContext.Prices)
             {
-                yield return  price;
+                yield return price;
             }
         }
 

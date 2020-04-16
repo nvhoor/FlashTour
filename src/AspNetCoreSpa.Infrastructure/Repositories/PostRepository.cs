@@ -1,5 +1,7 @@
-﻿﻿using AspNetCoreSpa.Core.Entities;
- using Microsoft.EntityFrameworkCore;
+﻿using System.Collections;
+using System.Collections.Generic;
+using AspNetCoreSpa.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreSpa.Infrastructure
 {
@@ -9,5 +11,17 @@ namespace AspNetCoreSpa.Infrastructure
         { }
 
         private ApplicationDbContext _appContext => (ApplicationDbContext)_context;
+        public IEnumerator<Post> GetEnumerator()
+        {
+            foreach (var post in _appContext.Posts)
+            {
+                yield return post;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

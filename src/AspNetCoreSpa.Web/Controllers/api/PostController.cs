@@ -4,12 +4,12 @@ using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreSpa.Web.Controllers.api
 {
     public class PostController : BaseController
     {
-        
         private readonly IUnitOfWork _uow;
 
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
             _uow = uow;
             _mapper = mapper;
         }
-        // GET: api/Post
+        //GET: api/post
         [HttpGet]
         public IActionResult Get()
         {
@@ -27,15 +27,15 @@ namespace AspNetCoreSpa.Web.Controllers.api
             return Ok(_mapper.Map<IEnumerable<PostVM>>(allPost));
         }
 
-        // GET: api/Post/5
+        // GET: api/post/{id}
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
-            var post = _uow.Posts.Get(id);
-            return Ok(_mapper.Map<PostVM>(post));
+            var postid = _uow.Posts.Get(id);
+            return Ok(_mapper.Map<PostVM>(postid));
         }
 
-        // POST: api/Post
+        // POST: api/post
         [HttpPost]
         public void Post([FromBody] PostVM post)
         {
@@ -45,30 +45,71 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Post/5
         [HttpPut("{id}")]
-        public void Put(Guid id, [FromBody] PostVM post)
+        public void Put(Guid id, [FromBody] Post post)
         {
-            var p = _uow.Posts.Get(id);
-            p.Name = post.Name;
-            p.PostContent = post.PostContent;
-            p.Description = post.Description;
-            p.Image = post.Image;
-            p.MetaDescription = post.MetaDescription;
-            p.MetaKeyWord = post.MetaKeyWord;
-            p.Alias = post.Alias;
-            p.Status = post.Status;
-            p.Censorship = post.Censorship;
-            p.PostCategoryId = post.PostCategoryId;
-            _uow.Posts.Update(p);
-            var result = _uow.SaveChanges();
-            
+            var pos = _uow.Posts.Get(id);
+            pos.Name = post.Name;
         }
 
-        // DELETE: api/Tour/5
+        // DELETE: api/post/5
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {
             _uow.Posts.Remove(_uow.Posts.Get(id));
             _uow.SaveChanges();
         }
+        // Danh sach bai viet chua kiem duyet
+        // GET: 
+        [HttpGet("cencershippost")]
+        public IActionResult GetStatusPost()
+        {
+            var allPost =
+                from post in _uow.Posts
+                where post.Censorship == false
+                select new
+                    PostVM()
+                    {
+                        Id = post.Id,
+                        Name = post.Name,
+                        PostContent = post.PostContent,
+                        Description = post.Description,
+                        Image = post.Image,
+                        MetaDescription = post.MetaDescription,
+                        MetaKeyWord = post.MetaKeyWord,
+                        Alias = post.Alias,
+                        Status = post.Status,
+                        Censorship = post.Censorship,
+                        PostCategoryId = post.PostCategoryId,
+                    };
+            return Ok(allPost);
+        }
+        // Danh sach bai viet theo PostCate
+        [HttpGet("postsByCate/{id}")]
+        public IActionResult GetPostsByCategory(Guid id)
+        {
+            var posts = _uow.Posts.Get(id);
+            var postCategory = _uow.PostCategories.Get(posts.PostCategoryId);
+            var allPost = (from post in _uow.Posts
+                join postCate in _uow.PostCategories
+                    on post.PostCategoryId equals postCate.Id
+                where postCate.Id == postCategory.Id
+                select new
+                    PostVM()
+                    {
+                        Id = post.Id,
+                        Name = post.Name,
+                        PostContent = post.PostContent,
+                        Description = post.Description,
+                        Image = post.Image,
+                        MetaDescription = post.MetaDescription,
+                        MetaKeyWord = post.MetaKeyWord,
+                        Alias = post.Alias,
+                        Status = post.Status,
+                        Censorship = post.Censorship,
+                        PostCategoryId = post.PostCategoryId,
+                    }).Take(8);
+            return Ok(allPost);
+        }
+         
     }
 }
