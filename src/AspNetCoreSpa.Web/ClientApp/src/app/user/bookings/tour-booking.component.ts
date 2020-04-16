@@ -4,7 +4,6 @@ import {DataService} from "@app/services";
 import {ActivatedRoute} from '@angular/router';
 import {AppFormComponent, FormsService} from "@app/shared";
 import {IFieldConfig} from "@app/models";
-import {HttpHeaders} from "@angular/common/http";
 
 @Component({
     selector: 'appc-user-tour-booking-component',
@@ -16,23 +15,23 @@ export class TourBookingComponent implements OnInit{
     public listCustomer:Customer[];
     public totalCustomer=1;
     public totalValue=0;
+    public timerAlertOutOfSlot=true;
     public timeOutGenerateListCustomer=false;
     @ViewChild(AppFormComponent, { static: true }) form: AppFormComponent;
     config: IFieldConfig[];
     @Input() comunication:Comunication;
-    constructor(
-        @Inject("BASE_URL") private baseUrl: string,
-        private route: ActivatedRoute,
-        private _renderer2: Renderer2,
-        private _dataService:DataService,
-        private formsService: FormsService,
-        @Inject(DOCUMENT) private _document: Document,
+        constructor(
+            @Inject("BASE_URL") private baseUrl: string,
+            private route: ActivatedRoute,
+            private _renderer2: Renderer2,
+            private _dataService:DataService,
+            private formsService: FormsService,
+        @Inject(DOCUMENT) private _document: Document
     ) {
-    }
+        }
     public ngOnInit() {
-        var id=this.route.snapshot.params['id'];
-        this.comunication={
-            id:this.newGuid(),
+            var id=this.route.snapshot.params['id'];
+            this.comunication={
             fullName:"",
             address:"",
             email:"",
@@ -41,7 +40,9 @@ export class TourBookingComponent implements OnInit{
             adult:1,
             child:0,
             kid:0,
-            tourId:id
+                tourId:id,
+                tourCustomers:[],
+                bookingPrices:[]
         };
         this.totalCustomer=this.comunication.adult+this.comunication.child+this.comunication.kid;
         this.getTourById(id);
@@ -53,8 +54,8 @@ export class TourBookingComponent implements OnInit{
         let that = this;
         data.subscribe((result) => {
             that.tour = result;
-            let date1 = new Date();
-            let date2 = new Date(that.tour.departureDate);
+            let date1 = new Date(that.tour.departureDate);
+            let date2 = new Date(that.tour.tourPrograms[that.tour.tourPrograms.length-1].date);
             // @ts-ignore
             let diffTime = Math.abs(date2 - date1);
             let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -64,8 +65,18 @@ export class TourBookingComponent implements OnInit{
         
     }
 
-    getTotal() {
-        this.totalCustomer=this.comunication.adult+this.comunication.child+this.comunication.kid;
+    getTotal(elementId) {
+            var total=this.comunication.adult+this.comunication.child+this.comunication.kid;
+            if(total>this.tour.slot){
+                if(this.timerAlertOutOfSlot){
+                    this.timerAlertOutOfSlot=false;
+                    alert(`The number of seats remaining for this tour is ${this.tour.slot}. You need to re-select the number of guests`); 
+                    setTimeout(()=>{this.timerAlertOutOfSlot=true},1000);
+                }
+                this._document.getElementById(elementId).classList.add("");
+                return this.totalCustomer;
+            }
+        this.totalCustomer=total;
         this.initListCustomer(); 
         return this.totalCustomer;
     }
@@ -78,39 +89,33 @@ export class TourBookingComponent implements OnInit{
                   this.totalValue=0;
                   for (let i = 0; i < this.comunication.adult; i++) {
                       this.listCustomer.push({
-                          id:this.newGuid(), 
                           fullName: "",
                           gender: false,
                           birthday: new Date(),
                           touristType: 0,
-                          value:this.tour.prices[0].promotionPrice,
-                          tourBookingId:this.comunication.id
+                          value: this.getPrice(this.tour.prices[0])
                       });
-                      this.totalValue+=this.tour.prices[0].promotionPrice;
+                      this.totalValue += this.getPrice(this.tour.prices[0]);
                   }
                   for (let j = 0; j < this.comunication.child; j++) {
                       this.listCustomer.push({
-                          id:this.newGuid(),
                           fullName: "",
                           gender: false,
                           birthday: new Date(),
                           touristType: 1,
-                          value:this.tour.prices[1].promotionPrice,
-                          tourBookingId:this.comunication.id
+                          value: this.getPrice(this.tour.prices[1])
                       });
-                      this.totalValue+=this.tour.prices[1].promotionPrice;
+                      this.totalValue += this.getPrice(this.tour.prices[1]);
                   }
                   for (let k = 0; k < this.comunication.kid; k++) {
                       this.listCustomer.push({
-                          id:this.newGuid(),
                           fullName: "",
                           gender: false,
                           birthday: new Date(),
                           touristType: 2,
-                          value:this.tour.prices[2].promotionPrice,
-                          tourBookingId:this.comunication.id
+                          value: this.getPrice(this.tour.prices[2])
                       });
-                      this.totalValue+=this.tour.prices[2].promotionPrice;
+                      this.totalValue += this.getPrice(this.tour.prices[2]);
                   }
               }
               this.timeOutGenerateListCustomer=false;
@@ -121,30 +126,13 @@ export class TourBookingComponent implements OnInit{
         let ok=confirm("Are you sure to booking this tour?");
         if(ok) {
             var prices=[];
-            for(let i=0;i<3;i++){
-                prices.push({
-                    id:this.newGuid(),
-                    tourBookingId:this.comunication.id,
-                    touristType:i,
-                    price:this.tour.prices[i].promotionPrice
-                });
-            }
+            this.comunication.bookingPrices=prices;
+            this.comunication.tourCustomers=this.listCustomer;
             console.log("Post tour booking:", JSON.stringify(this.comunication));
             this._dataService.post<Comunication>(`${this.baseUrl}api/TourBooking`, JSON.stringify(this.comunication)).subscribe(x => {
-                console.log("Book tour success!");
-                console.log("Post list customer:", JSON.stringify(this.listCustomer));
-                this._dataService.post<Customer[]>(`${this.baseUrl}api/TourCustomer/Array`,JSON.stringify(this.listCustomer)).subscribe(x => {
-                    console.log("Post tour customer success!");
-                    console.log("Post list prices:", JSON.stringify(prices));
-                    this._dataService.post<Customer[]>(`${this.baseUrl}api/BookingPrice/Array`,JSON.stringify(prices)).subscribe(x => {
-                        console.log("Post prices success!");
-                    }, error => {
-                        console.error(error);
-                    });
-                }, error => {
-                    console.error(error);
-                });
+                alert("Book tour success!");
             }, error => {
+                alert("Book tour fail!");
                 console.error(error);
             });
         }
@@ -155,5 +143,18 @@ export class TourBookingComponent implements OnInit{
                 v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
+    }
+    checkExpiredPromotion(price) {
+        var toCheck = new Date().getTime();
+        var startDatePro = new Date(price.startDatePro).getTime();
+        var endDatePro = new Date(price.endDatePro).getTime();
+        return toCheck >= startDatePro && toCheck <= endDatePro;
+    }
+    getPrice(price) {
+        if (this.checkExpiredPromotion(price)) {
+            return price.promotionPrice;
+        } else {
+            return price.originalPrice;
+        }
     }
 }

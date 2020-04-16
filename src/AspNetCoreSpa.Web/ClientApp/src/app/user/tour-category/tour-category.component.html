@@ -1,0 +1,76 @@
+<div class="row mt-3 border-bottom">
+    <div id="carouselExampleControls2" class="carousel slide slide-banner col-lg-10 m-auto" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item {{tourCatePaging.active}}" *ngFor="let tourCatePaging of tourCatePagings">
+                <div class="row">
+                    <div class="col-md-2" *ngFor="let cate of tourCatePaging.tourCate">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="./assets/images/tour-categories/{{cate.image}}"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <a class="card-title stretched-link text-dark btn-cate" (click)="getTours(cate.id,cate.name,cate.description)" >{{cate.name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev carousel-control-tour-cate btn-secondary" href="#carouselExampleControls2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next carousel-control-tour-cate btn-secondary" href="#carouselExampleControls2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" ></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<div class="row" *ngIf="tourPagings">
+    <div class="col-lg-10 content m-auto">
+        <div class="container-fluid">
+            <div class="h3 mt-3 text-dark  text-center font-weight-bold">{{name}}</div>
+            <div class="mt-1 pb-1 text-dark border-bottom text-center">{{description}}</div>
+            <div class="row">
+                <div class="col-lg-3 mt-2 mb-2" *ngFor="let tour of tours">
+                    <div class="card card-tour">
+                        <div id="parent_cate_{{tour.id}}">
+                            <div id="cate_{{tour.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                            <img class="card-img-top mb-3" src="./assets/images/tours/{{tour.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
+                            <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt text-secondary "></i> {{tour.departureDate|date:'dd/MM/yyyy'}}</div>
+                            <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus text-secondary "></i> {{tour.slot}} slot</div>
+                        </div>
+                        <div class="card-body">
+                            <a  class="stretched-link" routerLinkActive="active" routerLink="user/detail/{{tour.id}}"><h4 class="card-title font-weight-bold">{{tour.name}}</h4></a>
+                            <hr>
+                            <p><a  class="stretched-link" style="position: relative;"></a></p>
+                            <div class="row">
+                                <h6 class="col-6"><span class="text-light font-italic badge badge-secondary tour-price"><s>{{tour.promotionPrice|currency}}</s></span></h6>
+                                <h6 class="col-6"><span class="text-light badge badge-danger tour-price">{{tour.originalPrice|currency }}</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div aria-label="Page navigation m-auto" *ngIf="pageNums.length>1">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link btn-cate" (click)="changePage(typePagingChosen.Pre,0)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item {{pageNum.active}}" *ngFor="let pageNum of pageNums">
+                        <a class="page-link btn-cate" (click)="changePage(typePagingChosen.Num,pageNum.num)">{{pageNum.num+1}}</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link btn-cate" (click)="changePage(typePagingChosen.Next,0)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

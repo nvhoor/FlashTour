@@ -14,9 +14,12 @@ namespace AspNetCoreSpa.Core.ViewModels
         public Guid DepartureId { get; set; }
         public int Slot { get; set; }
         public long ViewCount { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public bool Censorship { get; set; }
         public decimal OriginalPrice {get;set;}
         public decimal PromotionPrice {get;set;}
         public DateTime StartDatePro {get; set;}
+        public DateTime EndDatePro { get; set; }
         public Guid TourCategoryId {get;set;}
     }
 }

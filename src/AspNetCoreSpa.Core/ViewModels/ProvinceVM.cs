@@ -9,7 +9,5 @@ namespace AspNetCoreSpa.Core.ViewModels
         public string Name { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
-        public ICollection<TourVM> Tours { get; set; }
-        public ICollection<TourProgramVM> TourPrograms { get; set; }
     }
 }

@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { AppService, AuthService, DataService, GlobalErrorHandler, ModalService, ModalStateService, AuthInterceptor, TimingInterceptor } from '@app/services';
 import {ContactComponent} from "@app/contact/contact.component";
 import {FormsModule} from "@angular/forms";
+import {UsersModule} from "@app/user/user.module";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -50,6 +51,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
         RouterModule.forRoot(routes, {initialNavigation: 'enabled'}),
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
         FormsModule,
+        UsersModule,
     ],
   providers: [
     AppService,

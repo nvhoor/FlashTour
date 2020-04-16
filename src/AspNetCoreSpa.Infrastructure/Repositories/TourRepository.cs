@@ -36,6 +36,7 @@ namespace AspNetCoreSpa.Infrastructure
             }
         }
 
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

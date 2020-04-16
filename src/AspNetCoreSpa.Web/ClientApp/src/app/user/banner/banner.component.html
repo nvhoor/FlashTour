@@ -1,0 +1,135 @@
+<section id="slide">
+    <div id="carouselExampleControls" class="carousel slide slide-banner" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item {{banner.active}}" *ngFor="let banner of banners;let i=index;">
+                <img class="d-block w-100" src="./assets/images/banners/{{banner.image}}" >
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-find-tour">
+    <div class="container-fluid">
+        <div id="find-tour" class="row">
+            <div class="dropdown find-dropdown">
+                <div class="col-lg-5 dropdown-toggle" id="search-tour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/images/find-beach-icon.png" alt="Card image">
+                        <p class="card-title text-find-tour font-weight-bold">FIND TOUR</p>
+                    </div>
+                </div>
+                <div class="dropdown-menu form-search" aria-labelledby="search-tour">
+                        <div class="form-info-search bg-dltn pos-relative" style="display: block;">
+                            <form action="/Tour/SearchFirst" method="post">
+                                    <div class="row m-auto">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="mg-b">Depart From:</label>
+                                                            <select class="form-control input-md" id="Departureid" name="departure_name" [(ngModel)]="optionSearch.departureId">
+                                                                <option value="0">Depart from</option>
+                                                                <option value="{{departure.id}}" *ngFor="let departure of provinces">{{departure.name}}</option>
+                                                            </select>
+                                                            <input type="hidden" name="TourTypeId" value="1">
+                                                            <input type="hidden" name="ConCho" value="-1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="mg-b">Destination:</label>
+                                                            <select class="form-control input-md" id="DetinationId" name="departure_name" [(ngModel)]="optionSearch.destinationId">
+                                                                <option value="0">All</option>
+                                                                <option value="{{destination.id}}" *ngFor="let destination of provinces">{{destination.name}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="mg-b">Date of departure:</label>
+                                                            <div class="pos-relative">
+                                                                <input autocomplete="off" class="form-control input-md" id="departure_date" name="DepartureDate" type="date" [(ngModel)]="departureDate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="mg-b">Tour Category:</label>
+                                                            <select class="form-control input-md" id="tourCategory" name="TourCate" [(ngModel)]="optionSearch.tourCategoryId">
+                                                                <option value="0">All</option>
+                                                                <option value="{{tourCate.id}}" *ngFor="let tourCate of tourCategories">{{tourCate.name}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="mg-b">Price:</label>
+                                                            <select class="form-control input-md" id="priceID" name="PriceId" [(ngModel)]="optionSearch.priceId">
+                                                                <option value="{{price.id}}" *ngFor="let price of prices">{{price.value}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-info btn-md btn-search-tour btn-mg-t mt-4" id="btnSearchTour" (click)="onClickSearchTour()"><i class="fas fa-search"></i> Search</button>
+                                                        </div>
+                                                    </div>
+                                    </div>
+                            </form>    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="dropdown find-dropdown-r">
+                <div class="col-lg-5 dropdown-toggle" id="proposal-tour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/images/proposal-flight.png" alt="Card image">
+                        <p class="card-title text-proposal-tour font-weight-bold">FIND POST</p>
+                    </div>
+                </div>
+                <div class="dropdown-menu form-proposal" aria-labelledby="search-tour">
+                        <div class="form-info-search bg-dltn pos-relative" style="display: block;">
+                            <form action="/Tour/SearchFirst" method="post"><input name="" type="hidden" value="">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="mg-b">KeyWord:</label>
+                                                <input type="text" class="form-control" id="usr">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="mg-b">Post Category:</label>
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-primary active">
+                                                        <input type="radio" name="options" id="option1" autocomplete="off" checked>Tour Guid
+                                                    </label>
+                                                    <label class="btn btn-success ">
+                                                        <input type="radio" name="options" id="option2" autocomplete="off">Tour Experiences
+                                                    </label>
+                                                    <label class="btn btn-info">
+                                                        <input type="radio" name="options" id="option3" autocomplete="off">All
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-md btn-search-post btn-mg-t" onclick="return checkSearch('departureID'); ga('event','Search', 'SearchClick', 'keywords');"><i class="fas fa-search"></i>Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

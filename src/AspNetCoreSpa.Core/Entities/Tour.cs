@@ -19,7 +19,7 @@ namespace AspNetCoreSpa.Core.Entities
         public string Description { get; set; }
         public DateTime DepartureDate { get; set; }
         public Guid DepartureId { get; set; }
-        public Province Departure { get; set; }
+        public Guid DestinationId { get; set; }
         public int Slot { get; set; }
         public long ViewCount { get; set; }
         public bool Censorship { get; set; }

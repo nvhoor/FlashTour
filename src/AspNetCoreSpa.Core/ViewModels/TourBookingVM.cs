@@ -19,5 +19,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public Guid TourId {get;set;}
         public bool Status {get;set;}
         public bool Deleted {get;set;}
+        public ICollection<TourCustomerVM> TourCustomers { get; set; }
+        public ICollection<BookingPriceVM> BookingPrices { get; set; }
     }
 }

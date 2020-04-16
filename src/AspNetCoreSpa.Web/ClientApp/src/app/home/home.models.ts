@@ -9,7 +9,8 @@ interface Newest {
     slot:number,
     originalPrice:number,
     promotionPrice:number,
-    startDatePro:Date,
+    startDatePro: Date,
+    endDatePro: Date,
     touristType:number
 }
 interface Hotest {
@@ -22,7 +23,8 @@ interface Hotest {
     slot:number,
     originalPrice:number,
     promotionPrice:number,
-    startDatePro:Date,
+    startDatePro: Date,
+    endDatePro: Date,
     touristType:number
 }
 interface HotestGroup {
@@ -33,6 +35,10 @@ interface HotestGroup {
 interface TourCatePagings{
     tourCate:Array<TourCategory>,
     active:string
+}
+interface TourPagings{
+    tours:Array<TourCard>,
+    pageNum:number
 }
 interface TourCategory {
     id:string,

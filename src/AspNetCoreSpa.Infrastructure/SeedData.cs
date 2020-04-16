@@ -282,6 +282,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Slot = new Random().Next(1,20),
                         ViewCount = new Random().Next(100,1000),
                         DepartureId = provinceIds[new Random().Next(0,9)],
+                        DestinationId = provinceIds[new Random().Next(0,9)],
                         TourCategoryId = tourCategoryIds[new Random().Next(0,9)],
                     });
                 }
