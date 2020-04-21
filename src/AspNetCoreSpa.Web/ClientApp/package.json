@@ -51,6 +51,7 @@
     "flatpickr": "4.6.3",
     "font-awesome": "^4.7.0",
     "lodash": "4.17.15",
+    "ng-recaptcha": "^5.0.0",
     "oidc-client": "1.9.1",
     "preboot": "7.0.0",
     "rxjs": "6.5.3",

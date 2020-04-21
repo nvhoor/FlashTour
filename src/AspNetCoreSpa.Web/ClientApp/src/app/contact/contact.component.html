@@ -39,6 +39,10 @@
                         <label>Content (<span class="star">*</span>)</label>
                         <textarea class="form-control" cols="20" id="contact" name="contact" rows="4" [(ngModel)]="contact.content"></textarea>
                     </div>
+                    <div class="col-xs-12 mg-bot15">
+                        <re-captcha (resolved)="resolved($event)" siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+"></re-captcha>
+                    </div>
                     <div class="col-xs-12 text-center">
                         <button type="submit" class="btn btn-md btn-general" (click)="postContact()">Send<i class="fas fa-paper-plane"></i></button>
                     </div>

@@ -349,5 +349,27 @@ namespace AspNetCoreSpa.Web.Controllers.api
             _uow.Tours.Remove(_uow.Tours.Get(id));
             _uow.SaveChanges();
         }
+        // GET: api/tour/cencershiptour
+        [HttpGet("cencershiptour")]
+        public IActionResult GetStatusPost()
+        {
+            var allTour =
+                (from tour in _uow.Tours
+                    where tour.Censorship == false
+                select new
+                    TourCardVM()
+                    {
+                        Id = tour.Id,
+                        Description = tour.Description,
+                        DepartureDate = tour.DepartureDate,
+                        DepartureId = tour.DepartureId,
+                        Image = tour.Image,
+                        Name = tour.Name,
+                        Slot = tour.Slot,
+                        ViewCount = tour.ViewCount,
+                        TourCategoryId = tour.TourCategoryId
+                    }).OrderByDescending(x=>x.DepartureDate);
+            return Ok(allTour);
+        }
     }
 }

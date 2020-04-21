@@ -11,6 +11,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public Gender Gender {get;set;}
         public DateTime BirthDay {get; set;}
         public Guid TourBookingId {get;set;}  
-        public int TouristType {get;set;}    
+        public int TouristType {get;set;}
+        public Guid TourId { get; set; }
     }
 }
