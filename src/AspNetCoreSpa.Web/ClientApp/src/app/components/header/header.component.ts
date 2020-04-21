@@ -33,7 +33,8 @@ export class HeaderComponent implements OnInit {
     get currentCulture(): ICulture {
         return this.cultures.filter(x => x.current)[0];
     }
-    ngOnInit(): void { }
+    ngOnInit(): void { 
+    }
 
     toggleMenu() {
         this.isCollapsed = !this.isCollapsed;

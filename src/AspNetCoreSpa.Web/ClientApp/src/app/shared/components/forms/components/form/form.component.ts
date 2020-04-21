@@ -1,7 +1,9 @@
 import { Component, Input, OnChanges, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, NgForm, FormArray } from '@angular/forms';
+import {FormGroup, FormControl, FormBuilder, NgForm, FormArray} from '@angular/forms';
 
-import { FieldTypes, IFieldConfig } from '@app/models';
+import {FieldTypes, IFieldConfig} from '@app/models';
+import {DataService, ModalService} from "@app/services";
+import {ToastrService} from "@app/toastr";
 
 @Component({
     exportAs: 'appForm',
@@ -14,19 +16,30 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
     @Input() config: IFieldConfig[] = [];
     @Input() model: any;
     @Input() fullWidth: boolean;
+    @Input() customerData?:Customer[];
+    @Input() priceData?:BookingPrice[];
     form: FormGroup;
-
+    listCustomButtonName=["buttonCreateCustomer","buttonUpdateCustomer"];
+    currentSelectedRowIdx=0;
     get controls() { return this.config.filter(({ type }) => type !== FieldTypes.Button); }
     get changes() { return this.form.valueChanges; }
     get valid() { return this.form.valid; }
     get value() { return this.form.value; }
     get submitted() { return this.ngForm.submitted; }
+    get getCustomerData() { return this.customerData; }
+    get getPriceData() { return this.customerData; }
 
-    constructor(private fb: FormBuilder) { }
+    constructor(private fb: FormBuilder,private dataService: DataService,private toastr: ToastrService,
+                private modalService: ModalService,) { }
     ngOnInit() {
         this.form = this.createGroup();
+        this.config.forEach(fieldConfig=>{
+            console.log("fieldConfig",JSON.stringify(fieldConfig));
+            if(this.listCustomButtonName.indexOf(fieldConfig.name)!=-1){
+                this.addCustomFunction(fieldConfig);
+            }
+        });
     }
-
     ngAfterViewInit() {
         if (this.model) {
             setTimeout(() => {
@@ -47,7 +60,8 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
                 .filter((control) => !controls.includes(control))
                 .forEach((name) => {
                     const config = this.config.find((control) => control.name === name);
-                    this.form.addControl(name, this.createControl(config));
+                    let control=this.createControl(config);
+                    this.form.addControl(name,control );
                 });
         }
     }
@@ -92,5 +106,57 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
             const control = this.form.get(field);
             control.markAsTouched({ onlySelf: true });
         });
+    }
+
+    onClickSelectCustomer(idx) {
+        this.currentSelectedRowIdx=idx;
+        this.model=this.customerData[idx];
+      this.setValue("touristType",this.customerData[idx].touristType);
+        this.setValue("fullName",this.customerData[idx].fullName);
+        this.setValue("gender",this.customerData[idx].gender);
+        this.setValue("birthDay",this.customerData[idx].birthDay);
+    }
+
+    onClickSelectBookingPrice(idx) {
+        this.currentSelectedRowIdx=idx;
+        this.model=this.customerData[idx];
+        this.setValue("tourBookingId",this.priceData[idx].tourBookingId);
+        this.setValue("touristType",this.priceData[idx].touristType);
+        this.setValue("price",this.priceData[idx].price);
+    }
+    updateTourCustomer(){
+        console.log("updateTourCustomer",JSON.stringify( this.value));
+        this.dataService.put(`api/TourCustomer/${this.model.id}`, { ... this.value })
+            .subscribe(res => {
+                let id=this.customerData[this.currentSelectedRowIdx].id;
+                this.customerData[this.currentSelectedRowIdx]=this.value;
+                this.customerData[this.currentSelectedRowIdx].id=id;
+                this.toastr.success('Updated successfully.', 'Success');
+            });
+    }
+    createTourCustomer(){
+        console.log("createTourCustomer",JSON.stringify( this.value));
+        this.dataService.post(`api/TourCustomer`, { ...this.value})
+            .subscribe(res => {
+                this.dataService.get<any[]>(`api/TourCustomer/ByTourBooking`,{tourBookingId:this.value.tourBookingId,
+                touristType:this.value.touristType})
+                    .subscribe(data => {
+                        console.log("data",JSON.stringify(data));
+                        this.customerData=this.customerData.filter(x=>x.touristType!=this.value.touristType);
+                        this.customerData=this.customerData.concat(data);
+                        this.toastr.success('Created successfully.', 'Success');
+                    });
+            });
+    }
+    private addCustomFunction(config) {
+        switch (config.name) {
+            case "buttonCreateCustomer":
+                config.onSubmit=this.createTourCustomer.bind(this);
+                break;
+            case "buttonUpdateCustomer":
+                config.onSubmit=this.updateTourCustomer.bind(this);
+                break;
+        }
+        
     }
 }

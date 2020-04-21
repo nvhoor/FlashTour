@@ -24,7 +24,7 @@ export class HomeDetailComponent implements OnInit {
   constructor(  @Inject("BASE_URL") private baseUrl: string,
                 private _renderer2: Renderer2,
                 private _dataService: DataService,
-                @Inject(DOCUMENT) private _document: Document,) { }
+                @Inject(DOCUMENT) private _document: Document) { }
   ngOnInit() {
     this.getHostestTour();
     this.getNewsetTour();

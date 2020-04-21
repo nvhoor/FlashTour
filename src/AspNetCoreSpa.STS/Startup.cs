@@ -49,14 +49,9 @@ namespace AspNetCoreSpa.STS
                    var supportedCultures = new List<CultureInfo>
                        {
                             new CultureInfo("en-US"),
-                            new CultureInfo("de-DE"),
-                            new CultureInfo("de-CH"),
-                            new CultureInfo("it-IT"),
-                            new CultureInfo("gsw-CH"),
-                            new CultureInfo("fr-FR")
                        };
 
-                   options.DefaultRequestCulture = new RequestCulture(culture: "de-DE", uiCulture: "de-DE");
+                   options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
                    options.SupportedCultures = supportedCultures;
                    options.SupportedUICultures = supportedCultures;
 
@@ -219,7 +214,7 @@ namespace AspNetCoreSpa.STS
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

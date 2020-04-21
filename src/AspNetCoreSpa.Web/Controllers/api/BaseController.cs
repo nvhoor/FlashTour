@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreSpa.Web.Controllers.api
 {
-//    [Authorize]
+   // [Authorize]
     [ApiController]
     [ServiceFilter(typeof(ApiExceptionFilter))]
     [Route("api/[controller]")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -22,7 +23,28 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet]
         public IActionResult Get()
         {
-            var allTourTourBookings = _uow.TourBookings.GetAll();
+            var allTourTourBookings = _uow.TourBookings.GetAll().Where(x=>x.Status);
+            foreach (var allTourTourBooking in allTourTourBookings)
+            {
+                var toursCustomers = _uow.TourCustomers.Find(x => x.TourBookingId == allTourTourBooking.Id).OrderBy(o => o.TouristType).ToList();
+                allTourTourBooking.TourCustomers = toursCustomers;
+                var bookingPrices = _uow.BookingPrices.Find(x => x.TourBookingId == allTourTourBooking.Id).OrderBy(o => o.TouristType).ToList();
+                allTourTourBooking.BookingPrices = bookingPrices;
+            }
+            return Ok(_mapper.Map<IEnumerable<TourBookingVM>>(allTourTourBookings));
+        }
+        // GET: api/TourBooking/Sensorships
+        [HttpGet("Sensorships")]
+        public IActionResult GetCensorships()
+        {
+            var allTourTourBookings = _uow.TourBookings.GetAll().Where(x=>!x.Status);
+            foreach (var allTourTourBooking in allTourTourBookings)
+            {
+                var toursCustomers = _uow.TourCustomers.Find(x => x.TourBookingId == allTourTourBooking.Id).OrderBy(o => o.TouristType).ToList();
+                allTourTourBooking.TourCustomers = toursCustomers;
+                var bookingPrices = _uow.BookingPrices.Find(x => x.TourBookingId == allTourTourBooking.Id).OrderBy(o => o.TouristType).ToList();
+                allTourTourBooking.BookingPrices = bookingPrices;
+            }
             return Ok(_mapper.Map<IEnumerable<TourBookingVM>>(allTourTourBookings));
         }
 
@@ -31,6 +53,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public IActionResult Get(Guid id)
         {
             var booking = _uow.TourBookings.Get(id);
+            var toursCustomers = _uow.TourCustomers.Find(x => x.TourBookingId == id).OrderBy(o => o.TouristType).ToList();
+            booking.TourCustomers = toursCustomers;
             return Ok(_mapper.Map<TourBookingVM>(booking));
         }
 
@@ -85,7 +109,14 @@ namespace AspNetCoreSpa.Web.Controllers.api
             _uow.TourBookings.Update(booking);
             var result = _uow.SaveChanges();
         }
-
+        [HttpPut("Censorship/{id}")]
+        public void Put(Guid id)
+        {
+            var t = _uow.TourBookings.Get(id);
+            t.Status = true;
+            _uow.TourBookings.Update(t);
+            var result = _uow.SaveChanges();
+        }
         // DELETE: api/TourBookings/5
         [HttpDelete("{id}")]
         public void Delete(Guid id)

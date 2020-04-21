@@ -3,7 +3,10 @@ export enum Gender {
     Female,
     Male
 }
-
+export enum Status {
+    Enable,
+    Disable
+}
 export interface ICustomer {
     id: string;
     name: string;

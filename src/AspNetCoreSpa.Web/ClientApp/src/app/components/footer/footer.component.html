@@ -1,7 +1,7 @@
 
-<footer>
+<footer *ngIf="!IsNotUser" >
     <hr>
-    <section id="extra_content">
+    <section id="extra_content" >
         <article class="column">
             <h4 class="font-weight-bold">FLASH TOUR</h4>
             Flash tour is a tourism Company specializing in organizing domestic tourism tour and other prestigious and professional foreign tour. Book tours at flashtour.com with many domestic tours and international tours. Thoughtful support 24/7. Payment is diverse and secure.
@@ -24,6 +24,21 @@
             </ul>
         </article>
     </section>
+    <section id="page_owner_info">
+        <div class="wraper">
+            <div class="copyright">@ Copyright 2020 by <a href="#">FlashTour</a>. All Rights Reserved.
+            </div>
+            <div class="social">
+                <a href="#"><img src="./assets/images/youtube-logo.png" alt=""></a>
+                <a href="#"><img src="./assets/images/twitter-logo.png" alt=""></a>
+                <a href="#"><img src="./assets/images/instagram-logo.png" alt=""></a>
+                <a href="#"><img src="./assets/images/facebook-logo.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+</footer>
+<footer *ngIf="IsNotUser" class="footer-admin">
+    <hr>
     <section id="page_owner_info">
         <div class="wraper">
             <div class="copyright">@ Copyright 2020 by <a href="#">FlashTour</a>. All Rights Reserved.

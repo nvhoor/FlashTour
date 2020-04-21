@@ -34,7 +34,13 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var customer = _uow.TourCustomers.Get(id);
             return Ok(_mapper.Map<TourCustomerVM>(customer));
         }
-
+        [HttpGet("ByTourBooking")]
+        public IActionResult Get(Guid tourBookingId,int touristType)
+        {
+            var customer = _uow.TourCustomers.GetAll().Where(x=>x.TourBookingId==tourBookingId
+                                                      &&x.TouristType==touristType);
+            return Ok(_mapper.Map<IEnumerable<TourCustomerVM>>(customer));
+        }
         // POST: api/TourCustomer
         [HttpPost]
         public void Post([FromBody] TourCustomerVM tourcust)
@@ -70,7 +76,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var result = _uow.SaveChanges();
             
         }
-
         // DELETE: api/TourCustomer/5
         [HttpDelete("{id}")]
         public void Delete(Guid id)

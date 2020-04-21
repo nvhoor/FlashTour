@@ -11,6 +11,9 @@ a {
 	text-decoration: none;
 	color: inherit
 }
+router-outlet{
+	display: none;
+}
 a:hover{
 	text-decoration: none;
 	color: inherit

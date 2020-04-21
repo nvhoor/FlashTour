@@ -6,7 +6,10 @@ using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 namespace AspNetCoreSpa.Web.Controllers.api
 {
     public class TourController : BaseController
@@ -24,13 +27,23 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet]
         public IActionResult Get()
         {
-            var allTour = _uow.Tours.GetAll();
-            return Ok(_mapper.Map<IEnumerable<TourVM>>(allTour));
+            if (User.IsInRole("Admin"))
+            {
+                var allTour = _uow.Tours.GetAll();
+                return Ok(_mapper.Map<IEnumerable<TourVM>>(allTour));
+            }
+            else
+            {
+                var allTour = _uow.Tours.GetAll();
+                allTour = allTour.Where(x => x.Censorship && !x.Deleted && x.Status);
+                return Ok(_mapper.Map<IEnumerable<TourVM>>(allTour));
+            }
+            
         }
         [HttpGet("Search")]
-        public IActionResult Get(string departureId,string destinationId,string departureDateStr,string tourCategoryId,int priceId)
+        public IActionResult Get(string departureId,string destinationId,string departureDateTimeStamp,string tourCategoryId,int priceId)
         {
-            var departureDate = DateTime.Parse(departureDateStr);
+            var departureDate = (new DateTime(1970, 1, 1)).AddMilliseconds(double.Parse(departureDateTimeStamp));
             var conditionCate = tourCategoryId != "0";
             var conditionDestination=destinationId != "0";
             var conditionPrice=priceId != 0;
@@ -70,7 +83,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     on tour.Id equals price.TourId
                 join tourCate in _uow.TourCategories
                     on tour.TourCategoryId equals tourCate.Id
-                where (price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship
+                where (price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship&&tour.Status
                       &&(!conditionCate || tourCate.Id==Guid.Parse(tourCategoryId))
                       &&(!conditionDestination || tour.DestinationId==Guid.Parse(destinationId))
                       &&price.PromotionPrice>=startPriceCondition
@@ -84,7 +97,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                          &&departureDate.Day==tour.DepartureDate.Day
                           &&departureDate.Month==tour.DepartureDate.Month
                          &&departureDate.Year==tour.DepartureDate.Year
-            &&price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship)
+            &&price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship&&tour.Status)
                      
                 select new
                     TourCardVM()
@@ -110,12 +123,22 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
-            var tour = _uow.Tours.Get(id);
+            
+            var tour = User.IsInRole("Admin")||User.IsInRole("admin") ?  _uow.Tours.Get(id):_uow.Tours.SingleOrDefault(x => x.Id == id&&x.Censorship&&x.Status&&!x.Deleted);
+            if(tour==null)
+            {
+                    
+                var modelState = new ModelStateDictionary();
+                modelState.AddModelError("message", "errors found. Can't get this tour");
+                return BadRequest(modelState);
+            }
             var tourCate = _uow.TourCategories.Get(tour.TourCategoryId);
             var province = _uow.Provinces.Get(tour.DepartureId);
-            var price = _uow.Prices.Find(x=>x.TourId==tour.Id&&x.TouristType==TouristTypeEnum.Adult.ToTouristTypeInt()).SingleOrDefault();
-            var tourPrograms = _uow.TourPrograms.Find(x => x.TourId == id).OrderBy(o=>o.OrderNumber).ToList();
-            var prices = _uow.Prices.Find(x => x.TourId == id).OrderBy(o=>o.TouristType).ToList();
+            var price = _uow.Prices
+                .Find(x => x.TourId == tour.Id && x.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt())
+                .SingleOrDefault();
+            var tourPrograms = _uow.TourPrograms.Find(x => x.TourId == id).OrderBy(o => o.OrderNumber).ToList();
+            var prices = _uow.Prices.Find(x => x.TourId == id).OrderBy(o => o.TouristType).ToList();
             tour.TourPrograms = tourPrograms;
             tour.Prices = prices;
             var tourVM = _mapper.Map<TourVM>(tour);
@@ -136,7 +159,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                 join tourCate in _uow.TourCategories
                     on tour.TourCategoryId equals tourCate.Id
                 join tourBooking in _uow.TourBookings on tour.Id equals tourBooking.TourId 
-                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship
+                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship&&tour.Status
                         select new
                             TourCardVM()
                         {
@@ -172,7 +195,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     on tour.Id equals price.TourId
                 join tourCate in _uow.TourCategories
                     on tour.TourCategoryId equals tourCate.Id
-                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship
+                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Censorship&&tour.Status
                 select new
                     TourCardVM()
                     {
@@ -203,7 +226,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     on tour.Id equals price.TourId
                 join tourCate in _uow.TourCategories
                     on tour.TourCategoryId equals tourCate.Id
-                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tourCate.Id==tourCategoryE.Id&&tour.Id!=Id&&tour.Censorship
+                where price.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt()&&tour.Slot>0&&tour.Deleted==false&&tour.Status&&tourCate.Id==tourCategoryE.Id&&tour.Id!=Id&&tour.Censorship
                 select new
                     TourCardVM()
                     {
@@ -290,6 +313,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Tour/5
         [HttpPut("{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void Put(Guid id, [FromBody] TourVM tour)
         {
             var t = _uow.Tours.Get(id);
@@ -319,6 +343,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // DELETE: api/Tour/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void Delete(Guid id)
         {
             _uow.Tours.Remove(_uow.Tours.Get(id));

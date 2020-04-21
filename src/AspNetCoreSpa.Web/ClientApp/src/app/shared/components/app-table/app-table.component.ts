@@ -1,10 +1,18 @@
-import { Component, ViewChild, Input, ChangeDetectionStrategy, TemplateRef, OnInit, ChangeDetectorRef } from '@angular/core';
-import { DatatableComponent } from '@swimlane/ngx-datatable';
-import { clone } from 'lodash';
+import {
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    Input,
+    OnInit,
+    TemplateRef,
+    ViewChild
+} from '@angular/core';
+import {DatatableComponent} from '@swimlane/ngx-datatable';
+import {clone} from 'lodash';
 
-import { DataService, ModalService } from '@app/services';
-import { IFieldConfig, IAppTableOptions, FieldTypes } from '@app/models';
-import { ToastrService } from '@app/toastr';
+import {DataService, ModalService} from '@app/services';
+import {FieldTypes, IAppTableOptions, IFieldConfig} from '@app/models';
+import {ToastrService} from '@app/toastr';
 
 @Component({
     selector: 'appc-table',
@@ -13,7 +21,6 @@ import { ToastrService } from '@app/toastr';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppTableComponent implements OnInit {
-
     @ViewChild('appTable', { static: true }) table: DatatableComponent;
     @ViewChild('formTemplate', { static: true }) formTemplate: TemplateRef<any>;
     @Input() options: IAppTableOptions<any>;
@@ -38,6 +45,16 @@ export class AppTableComponent implements OnInit {
                 this.cd.markForCheck();
             });
     }
+    updateData(apiUrl){
+        this.dataService.get<Array<any>>(apiUrl)
+            .subscribe(data => {
+                this.options.rows = data;
+                this.rowKeys = Object.keys(data[0]);
+                this.tempRows = [...data];
+                this.toastr.info('Data loaded.', 'Info');
+                this.cd.markForCheck();
+            }); 
+    }
     create() {
         this.createOrEdit()
             .then(() => {
@@ -50,6 +67,16 @@ export class AppTableComponent implements OnInit {
             .then(() => {
 
             }, () => { });
+    }
+    acceptTourBooking(row, rowIndex) {
+        // Form Template
+        var agree=confirm("Are you sure to accept this tour booking?");
+        if(agree){
+            this.dataService.put<Tour>(`api/TourBooking/Censorship/${row.id}`).subscribe(x=>{
+                console.log("Accept tour booking success!");
+                this.updateData('api/TourBooking/Sensorships');
+            },error => {  console.error(error);});
+        }
     }
     delete(row, rowIndex) {
         this.modalService.confirm({
@@ -65,12 +92,11 @@ export class AppTableComponent implements OnInit {
         }, () => { });
     }
     updateFilter(event) {
-        const val = event.target.value.toLowerCase();
+        const val = event.toLowerCase();
         // filter our data
         const temp = this.tempRows.filter(d => {
-            return d.name.toLowerCase().indexOf(val) !== -1 || !val;
+            return d.id.toLowerCase().indexOf(val) !== -1 || !val;
         });
-
         // update the rows
         this.options.rows = temp;
         // Whenever the filter changes, always go back to the first page
@@ -91,12 +117,19 @@ export class AppTableComponent implements OnInit {
         const fields = this.options.columns
             .filter(f => f.fieldType)
             .map(x => {
+                var onSubmit;
+                if(x.fieldType==FieldTypes.Button){
+                    onSubmit=x.onSubmit.bind(this,this.modalService,this.formTemplate,x.subTableColumn,row);
+                }else{
+                    onSubmit=null;
+                }
                 const field: IFieldConfig = {
                     name: x.prop.toString(),
                     type: x.fieldType,
                     label: x.name,
                     validation: x.fieldValidations,
                     options: x.fieldOptions,
+                    onSubmit:onSubmit
                 };
                 return field;
             });
@@ -131,13 +164,12 @@ export class AppTableComponent implements OnInit {
                     });
             }
         }
-
         const template = clone(<any>this.formTemplate);
         template.data = { formConfig: fields, formModel: (row || {}) };
-
+        console.log("row:",JSON.stringify(row));
         return this.modalService.confirm({
             title,
-            template,
+            template
         });
 
     }

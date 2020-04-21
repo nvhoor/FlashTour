@@ -89,19 +89,24 @@ export class TourBookingComponent implements OnInit{
                   this.totalValue=0;
                   for (let i = 0; i < this.comunication.adult; i++) {
                       this.listCustomer.push({
+                          id:"",
+                          tourBookingId:"",
                           fullName: "",
                           gender: false,
-                          birthday: new Date(),
+                          birthDay: new Date(),
                           touristType: 0,
                           value: this.getPrice(this.tour.prices[0])
                       });
                       this.totalValue += this.getPrice(this.tour.prices[0]);
                   }
+                  console.log("getPrice",this.getPrice(this.tour.prices[0]));
                   for (let j = 0; j < this.comunication.child; j++) {
                       this.listCustomer.push({
+                          id:"",
+                          tourBookingId:"",
                           fullName: "",
                           gender: false,
-                          birthday: new Date(),
+                          birthDay: new Date(),
                           touristType: 1,
                           value: this.getPrice(this.tour.prices[1])
                       });
@@ -109,12 +114,15 @@ export class TourBookingComponent implements OnInit{
                   }
                   for (let k = 0; k < this.comunication.kid; k++) {
                       this.listCustomer.push({
+                          id:"",
+                          tourBookingId:"",
                           fullName: "",
                           gender: false,
-                          birthday: new Date(),
+                          birthDay: new Date(),
                           touristType: 2,
                           value: this.getPrice(this.tour.prices[2])
                       });
+                      
                       this.totalValue += this.getPrice(this.tour.prices[2]);
                   }
               }

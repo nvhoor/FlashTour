@@ -71,11 +71,18 @@ interface Comunication {
     tourCustomers:Customer[]
 }
 interface Customer {
+    id:string,
+    tourBookingId:string,
     fullName:string,
     gender:boolean,
-    birthday:Date,
+    birthDay:Date,
     touristType:number,
     value:number
+}
+interface BookingPrice {
+    tourBookingId:string,
+    touristType:number,
+    price:number
 }
 interface PageNum {
     num:number,
@@ -89,7 +96,7 @@ interface EmitSearch{
 interface OptionSearch {
     departureId:string,
     destinationId:string,
-    departureDateStr:string,
+    departureDateTimeStamp:string,
     tourCategoryId:string,
     priceId:number
 }

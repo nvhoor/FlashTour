@@ -23,6 +23,21 @@ import { AppService, AuthService, DataService, GlobalErrorHandler, ModalService,
 import {ContactComponent} from "@app/contact/contact.component";
 import {FormsModule} from "@angular/forms";
 import {UsersModule} from "@app/user/user.module";
+import {AdminComponent} from "@app/admin/admin.component";
+import {DashboardComponent} from "@app/admin/dashboard/dashboard.component";
+import {SharedModule} from "@app/shared";
+import {DetailComponent} from "@app/user/detail/detail.component";
+import {TourBookingComponent} from "@app/user/bookings/tour-booking.component";
+import {UserComponent} from "@app/user/user.component";
+import {BannerComponent} from "@app/user/banner/banner.component";
+import {HomeDetailComponent} from "@app/user/home-detail/home-detail.component";
+import {TourCategoryComponent} from "@app/user/tour-category/tour-category.component";
+import {AutoLoginComponent} from "@app/user/auto-login/auto-login.component";
+import {ManageToursComponent} from "@app/admin/manage-tours/manage-tours.component";
+import {ManageTourBookingsComponent} from "@app/admin/manage-tour-bookings/manage-tour-bookings.component";
+import {ManageTourCategoriesComponent} from "@app/admin/manage-tour-categories/manage-tour-categories.component";
+import {ManageAccountsComponent} from "@app/admin/manage-accounts/manage-accounts.component";
+import {ManagePostsComponent} from "@app/admin/manage-posts/manage-posts.component";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -36,7 +51,11 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
     ModalComponent,
     ModalTemplateDirective,
     PrivacyComponent,
-    ContactComponent
+    ContactComponent,
+      AdminComponent,
+      DashboardComponent,
+      DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,
+       ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -52,6 +71,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
         FormsModule,
         UsersModule,
+        SharedModule
     ],
   providers: [
     AppService,
@@ -64,7 +84,10 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
     { provide: APP_INITIALIZER, useFactory: appServiceFactory, deps: [AppService, AuthService], multi: true },
     { provide: ErrorHandler, useClass: GlobalErrorHandler }
   ],
-  exports: [],
+    exports: [
+        HeaderComponent,
+        FooterComponent
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

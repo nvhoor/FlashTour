@@ -2,3 +2,59 @@
     <ng-container *ngFor="let field of config" appFormField [config]="field">
     </ng-container>
 </form>
+<table class="table mt-3" *ngIf="customerData">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tourist Type</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birthday</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let customer of customerData;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>
+          {{customer.touristType==0?"Adult":customer.touristType==1?"Children":"Kid"}}
+        </td>
+        <td>{{customer.fullName}}</td>
+        <td>{{customer.gender}}</td>
+        <td>{{customer.birthDay}}</td>
+        <td><div class="btn-group">
+            <button class="btn btn-sm btn-primary" (click)="onClickSelectCustomer(i)">
+                <i class="fa fa-search"></i> &nbsp; Select
+            </button>
+        </div></td>
+    </tr>
+   
+    </tbody>
+</table>
+<table class="table mt-3" *ngIf="priceData">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tourist Type</th>
+        <th scope="col">Tour Booking Id</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let price of priceData;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>
+            {{price.touristType==0?"Adult":price.touristType==1?"Children":"Kid"}}
+        </td>
+        <td>{{price.tourBookingId}}</td>
+        <td>{{price.price}}</td>
+        <td><div class="btn-group">
+            <button class="btn btn-sm btn-primary" (click)="onClickSelectBookingPrice(i)">
+                <i class="fa fa-search"></i> &nbsp; Select
+            </button>
+        </div></td>
+    </tr>
+
+    </tbody>
+</table>

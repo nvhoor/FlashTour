@@ -34,14 +34,20 @@ export interface ITableColumn extends TableColumn {
     fieldType?: FieldTypes;
     fieldOptions?: IOption[];
     fieldValidations?: ValidatorFn[];
+    onSubmit?:Function;
+    subTableColumn?:ITableColumn[];
 }
 
 export interface IAppTableOptions<T> {
+    id?:string;
     title?: string;
     rows?: Array<T>;
     columns?: ITableColumn[];
     disableEditing?: boolean;
+    disableUpdate?: boolean;
+    disableDelete?: boolean;
     disableFilter?: boolean;
+    enableCensorship?: boolean;
     apiUrl?: string;
     detailsTemplate?: TemplateRef<any>;
 }
@@ -66,7 +72,10 @@ export enum FieldTypes {
     Checkboxlist = 'checkboxlist',
     Button = 'button'
 }
-
+export enum SubDataTable {
+    BOOKING_PRICE='booking-price',
+    TOUR_CUSTOMER='tour-customer'
+}
 export interface Field {
     config: IFieldConfig;
 }

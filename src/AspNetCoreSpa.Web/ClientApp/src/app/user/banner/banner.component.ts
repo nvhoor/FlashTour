@@ -37,7 +37,7 @@ export class BannerComponent implements OnInit {
     this.optionSearch={
       departureId:"0",
       destinationId:"0",
-      departureDateStr:this.convertDate(this.departureDate),
+      departureDateTimeStamp:this.departureDate.getTime()+'',
       tourCategoryId:"0",
       priceId:0
     }
@@ -58,7 +58,7 @@ export class BannerComponent implements OnInit {
           return;
       }
       departureSelect.classList.remove("btn-outline-danger");
-      this.optionSearch.departureDateStr=this.convertDate(this.departureDate);
+      this.optionSearch.departureDateTimeStamp=this.departureDate.getTime()+'';
       this.selectedDeparture=this.provinces.find(x=>x.id==this.optionSearch.departureId).name;
       this.emitSearch={departureName:this.selectedDeparture,destinationName:"",option:this.optionSearch};
     this.myEvent.emit(this.emitSearch);

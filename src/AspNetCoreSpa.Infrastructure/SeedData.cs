@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.DependencyModel;
 
 namespace AspNetCoreSpa.Infrastructure
 {
@@ -41,10 +42,10 @@ namespace AspNetCoreSpa.Infrastructure
 
         public void Initialise()
         {
-//            _context.Database.Migrate();
-//            InitListGuId();
-//            AddLocalisedData();
-//            AddTourData();
+            // _context.Database.Migrate();
+            // InitListGuId();
+            // AddLocalisedData();
+            // AddTourData();
            // AddShopData();
         }
 
@@ -322,7 +323,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Address = "Address_" + i,
                         Mobile = "037489202"+i,
                         Note = "Note " + i,
-                        Status = true,
+                        Status = i%2==0,
                         Deleted = false,
                         UserId = "user_"+(new Random().Next(0,10)),
                         TourId=tourIds[i]
@@ -330,20 +331,7 @@ namespace AspNetCoreSpa.Infrastructure
                 }
                 _context.SaveChanges();
             }
-            if (!_context.BookingPrices.Any())
-            {
-                for (int i = 0; i < 50; i++)
-                {
-                    _context.BookingPrices.Add(entity: new BookingPrice
-                    {
-                        Id = Guid.NewGuid(),
-                        TourBookingId = tourBookingIds[i],
-                        TouristType = touristTypeIds[new Random().Next(0,2)],
-                        Price = new Random().Next(1000,1000000)
-                    });
-                }
-                _context.SaveChanges();
-            }
+         
             if (!_context.TourCustomers.Any())
             {
                 var id = 0;
@@ -359,6 +347,13 @@ namespace AspNetCoreSpa.Infrastructure
                                          Gender = id % 2 == 0 ? Gender.Male : Gender.Female,
                                          TourBookingId = x,
                                          TouristType = y,
+                                     });
+                                     _context.BookingPrices.Add(entity: new BookingPrice
+                                     {
+                                         Id = Guid.NewGuid(),
+                                         TourBookingId = x,
+                                         TouristType = y,
+                                         Price = new Random().Next(1000,1000000)
                                      });
                                      id++;
                                  }); 

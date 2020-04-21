@@ -62,6 +62,7 @@ export class AuthService {
         this.userManager.getUser().then(user => {
             if (user && !user.expired) {
                 this.user = user;
+                console.log("user",JSON.stringify(user));
                 // this.loadSecurityContext();
             }
         });

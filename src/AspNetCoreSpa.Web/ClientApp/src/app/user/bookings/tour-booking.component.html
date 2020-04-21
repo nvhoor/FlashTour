@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                     <div class="f-left l"><img src="../../../assets/images/tour-bookings/i-price.png" alt="price"></div>
-                    <div class="f-left r">Prices: <span class="font500 price">{{tour.promotionPrice|currency}}</span></div>
+                    <div class="f-left r">Prices: <span class="font500 price">{{getPrice(tour.prices[0])|currency}}</span></div>
                     <div class="clear"></div>
                 </div>
             </div>
@@ -65,9 +65,9 @@
             </thead>
             <tbody>
             <tr *ngIf="tour.prices.length==3">
-                <td data-title="Adult">{{tour.prices[0].promotionPrice|currency }}</td>
-                <td data-title="Child">{{tour.prices[1].promotionPrice|currency }}</td>
-                <td data-title="Kid">{{tour.prices[2].promotionPrice|currency }}</td>
+                <td data-title="Adult">{{getPrice(tour.prices[0])|currency }}</td>
+                <td data-title="Child">{{getPrice(tour.prices[1])|currency }}</td>
+                <td data-title="Kid">{{getPrice(tour.prices[2])|currency }}</td>
             </tr>
             </tbody>
         </table>
@@ -173,7 +173,7 @@
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mg-bot10">
                                     <label class="mg-bot5">Birthday (<span class="star">*</span>)</label>
                                     <div>
-                                        <input class="form-control" required="required" type="date" [(ngModel)]="customer.birthday" name="birthday{{customer.touristType}}">
+                                        <input class="form-control" required="required" type="date" [(ngModel)]="customer.birthDay" name="birthday{{customer.touristType}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mg-bot10">

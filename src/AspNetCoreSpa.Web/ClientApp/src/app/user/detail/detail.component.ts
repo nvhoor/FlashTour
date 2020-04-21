@@ -34,7 +34,7 @@ export class DetailComponent implements OnInit{
             },5000);
         }
         console.log("ngOnInit");
-            this._dataService.put<Tour>(`${this.baseUrl}api/Tour/IncreaseViewCount/${id}`,this.tour).subscribe(x=>{
+            this._dataService.put<Tour>(`${this.baseUrl}api/Tour/IncreaseViewCount/${id}`).subscribe(x=>{
                 console.log("increase view count success!");
             },error => {  console.error(error);});
         

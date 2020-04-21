@@ -1,0 +1,31 @@
+<section class="container-fluid " id="noidung">
+    <div class="row">
+        <div class="col-md-3 col-lg-2 bg-light border-right sidebar">
+            <nav class="navbar bg-light navbar-light">
+                <p class="navbar-brand">CATEGORIES</p>
+            </nav>
+            <hr class="mt-1">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="manage-tours">Tours</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="manage-tour-categories">Tour's categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="manage-tour-bookings">Tour's booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="manage-accounts">User accounts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="manage-posts">Posts</a>
+                </li>
+            </ul>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</section>

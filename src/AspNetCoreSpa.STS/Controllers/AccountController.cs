@@ -111,7 +111,7 @@ namespace AspNetCoreSpa.STS.Controllers
                     await _interaction.GrantConsentAsync(context, ConsentResponse.Denied);
 
                     // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
-                    return Redirect(model.ReturnUrl);
+                    return Redirect("Login");
                 }
                 else
                 {
@@ -139,25 +139,25 @@ namespace AspNetCoreSpa.STS.Controllers
                     // the IsLocalUrl check is only necessary if you want to support additional local pages, otherwise IsValidReturnUrl is more strict
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        return Redirect(model.ReturnUrl);
+                        return Redirect(model.ReturnUrl+"/user/auto-login");
                     }
 
-                    return Redirect("~/");
+                    return Redirect(model.ReturnUrl+"/user/auto-login");
                 }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToAction(nameof(VerifyCode), new { ReturnUrl = returnUrl, RememberMe = model.RememberLogin });
-                }
-                if (result.IsLockedOut)
-                {
-                    _logger.LogWarning(2, "User account locked out.");
-                    return View("Lockout");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, _sharedLocalizer["INVALID_LOGIN_ATTEMPT"]);
-                    return View(await BuildLoginViewModelAsync(model));
-                }
+                // if (result.RequiresTwoFactor)
+                // {
+                //     return RedirectToAction(nameof(VerifyCode), new { ReturnUrl = returnUrl, RememberMe = model.RememberLogin });
+                // }
+                // if (result.IsLockedOut)
+                // {
+                //     _logger.LogWarning(2, "User account locked out.");
+                //     return View("Lockout");
+                // }
+                // else
+                // {
+                //     ModelState.AddModelError(string.Empty, _sharedLocalizer["INVALID_LOGIN_ATTEMPT"]);
+                //     return View(await BuildLoginViewModelAsync(model));
+                // }
             }
 
             // something went wrong, show form with error
@@ -354,7 +354,7 @@ namespace AspNetCoreSpa.STS.Controllers
         {
             if (button != "register")
             {
-                return Redirect(returnUrl);
+                return Redirect("Register");
             }
 
             ViewData["ReturnUrl"] = returnUrl;
