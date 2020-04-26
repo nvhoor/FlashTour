@@ -14,6 +14,7 @@ import {ManageTourBookingsComponent} from "@app/admin/manage-tour-bookings/manag
 import {ManageTourCategoriesComponent} from "@app/admin/manage-tour-categories/manage-tour-categories.component";
 import {ManageAccountsComponent} from "@app/admin/manage-accounts/manage-accounts.component";
 import {ManagePostsComponent} from "@app/admin/manage-posts/manage-posts.component";
+import {ManageContactsComponent} from "@app/admin/manage-contacts/manage-contacts.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: { state: 'home' } },
@@ -33,8 +34,10 @@ export const routes: Routes = [
           { path: 'manage-tour-bookings', component: ManageTourBookingsComponent },
           { path: 'manage-tour-categories', component: ManageTourCategoriesComponent },
           { path: 'manage-accounts', component: ManageAccountsComponent },
-          { path: 'manage-posts', component: ManagePostsComponent }
-    ]},
+          { path: 'manage-posts', component: ManagePostsComponent },
+          { path: 'manage-contacts', component: ManageContactsComponent }
+
+      ]},
   { path: 'privacy', component: PrivacyComponent }
     
 ];

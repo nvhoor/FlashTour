@@ -16,6 +16,7 @@ export class ManageTourCategoriesComponent implements OnInit {
     this.options = {
       title: 'Tour categories',
       apiUrl: 'api/tourcategory',
+      disableFilter: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'Description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
