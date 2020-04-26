@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 
 namespace AspNetCoreSpa.Core.ViewModels
@@ -19,5 +20,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public Guid PostCategoryId { get; set; }
         public PostCategory PostCategory { get; set; }
         public string PostCategoryName { get; set; }
+        public ICollection<BannerVM> Tours { get; set; }  
+
     }
 }

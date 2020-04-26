@@ -50,6 +50,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
             b.Name = banner.Name;
             b.Image = banner.Image;
             b.Description = banner.Description;
+            b.PostId = banner.PostId;
             _uow.Banners.Update(b);
             var result = _uow.SaveChanges();
             
