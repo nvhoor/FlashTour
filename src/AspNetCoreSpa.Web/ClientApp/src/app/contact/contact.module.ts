@@ -1,4 +1,4 @@
-﻿import { RecaptchaModule } from 'ng-recaptcha';
+﻿/*import { RecaptchaModule } from 'ng-recaptcha';
 import { BrowserModule }  from '@angular/platform-browser';
 import {NgModule} from "@angular/core";
 
@@ -9,4 +9,4 @@ import {NgModule} from "@angular/core";
         // RecaptchaFormsModule, // if you need forms support
     ],
 })
-export class ContactModule { }
+export class ContactModule { } */
