@@ -27,17 +27,13 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet]
         public IActionResult Get()
         {
-            if (User.IsInRole("Admin"))
+            var allTours = _uow.Tours.GetAll().Where(x=>x.Status && x.Censorship);
+            foreach (var allTour in allTours )
             {
-                var allTour = _uow.Tours.GetAll();
-                return Ok(_mapper.Map<IEnumerable<TourVM>>(allTour));
+                var prices = _uow.Prices.Find(x => x.TourId == allTour.Id).OrderBy(o => o.TouristType).ToList();
+                allTour.Prices = prices;
             }
-            else
-            {
-                var allTour = _uow.Tours.GetAll();
-                allTour = allTour.Where(x => x.Censorship && !x.Deleted && x.Status);
-                return Ok(_mapper.Map<IEnumerable<TourVM>>(allTour));
-            }
+            return Ok(_mapper.Map<IEnumerable<TourVM>>(allTours));
             
         }
         [HttpGet("Search")]
@@ -351,25 +347,33 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // GET: api/tour/cencershiptour
         [HttpGet("cencershiptour")]
-        public IActionResult GetStatusPost()
+        public IActionResult GetCencershiptour()
         {
-            var allTour =
-                (from tour in _uow.Tours
-                    where tour.Censorship == false
-                select new
-                    TourCardVM()
-                    {
-                        Id = tour.Id,
-                        Description = tour.Description,
-                        DepartureDate = tour.DepartureDate,
-                        DepartureId = tour.DepartureId,
-                        Image = tour.Image,
-                        Name = tour.Name,
-                        Slot = tour.Slot,
-                        ViewCount = tour.ViewCount,
-                        TourCategoryId = tour.TourCategoryId
-                    }).OrderByDescending(x=>x.DepartureDate);
-            return Ok(allTour);
+            var allTours = _uow.Tours.GetAll().Where(x=>!x.Censorship);
+            foreach (var allTour in allTours )
+            {
+                var prices = _uow.Prices.Find(x => x.TourId == allTour.Id).OrderBy(o => o.TouristType).ToList();
+                allTour.Prices = prices;
+            }
+            return Ok(_mapper.Map<IEnumerable<TourVM>>(allTours));
+        }
+        // PUT: api/tour/accepttour/{id}
+        [HttpPut("accepttour/{id}")]
+        public void Putt(Guid id)
+        {
+            var t = _uow.Tours.Get(id);
+            t.Censorship = true;
+            _uow.Tours.Update(t);
+            var result = _uow.SaveChanges();
+        }
+        // PUT: api/tour/statustour/{id}
+        [HttpPut("statustour/{id}")]
+        public void Puttt(Guid id)
+        {
+            var t = _uow.Tours.Get(id);
+            t.Status = false;
+            _uow.Tours.Update(t);
+            var result = _uow.SaveChanges();
         }
     }
 }

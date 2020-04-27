@@ -1,1 +1,20 @@
-<appc-table [options]="options"></appc-table>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a [ngClass]="chosenEdit?'nav-link active':'nav-link'" (click)="newTour()" >Edit tours</a>
+    </li>
+    <li class="nav-item">
+        <a [ngClass]="!chosenEdit?'nav-link active':'nav-link'" (click)="clickCensorship()">Sensorship</a>
+    </li>
+</ul>
+<appc-table #table [options]="options"></appc-table>
+<ng-template #statusTemplate let-row="row" let-value="value">
+    <input class="form-check-input" type="checkbox" checked *ngIf="value==1"/>
+    <input class="form-check-input" type="checkbox" *ngIf="value==0"/>
+    {{value == 1 ? 'Enable' : 'Disable'}}
+</ng-template>
+<ng-template #tourPricesTemplate let-row="row" let-value="value">
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[7].subTableColumn,row)">Prices</button>
+</ng-template>
+<ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel" let-formTableData="formTableData" let-pricesData="pricesData" >
+    <app-form [config]="formConfig" [model]="formModel" #form="appForm" [pricesData]="pricesData"></app-form>
+</ng-template>

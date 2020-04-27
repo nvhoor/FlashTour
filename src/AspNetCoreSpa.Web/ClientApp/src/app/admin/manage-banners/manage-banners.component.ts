@@ -20,7 +20,6 @@ export class ManageBannersComponent implements OnInit {
       disableFilter: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'postId', name: 'PostId',
           fieldType: FieldTypes.Select,
@@ -28,7 +27,8 @@ export class ManageBannersComponent implements OnInit {
             {key:"ecacca37-bf93-46e7-84a8-3f1f246bb860",value:'Khuyến Mãi siêu hot'},
             {key:"ecacca37-bf93-46e7-84a8-3f1f246bb860",value:'Flash Deal'},
           ]},
-    ]};
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required] },
+      ]};
   }
 
 }

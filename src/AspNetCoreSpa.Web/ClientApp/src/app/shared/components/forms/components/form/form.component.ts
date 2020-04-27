@@ -18,8 +18,9 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
     @Input() fullWidth: boolean;
     @Input() customerData?:Customer[];
     @Input() priceData?:BookingPrice[];
+    @Input() pricesData?:Price[];
     form: FormGroup;
-    listCustomButtonName=["buttonCreateCustomer","buttonUpdateCustomer"];
+    listCustomButtonName=["buttonCreateCustomer","buttonUpdateCustomer","buttonCreatePrice","buttonUpdatePrice"];
     currentSelectedRowIdx=0;
     get controls() { return this.config.filter(({ type }) => type !== FieldTypes.Button); }
     get changes() { return this.form.valueChanges; }
@@ -156,7 +157,49 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
             case "buttonUpdateCustomer":
                 config.onSubmit=this.updateTourCustomer.bind(this);
                 break;
+            case "buttonCreatePrice":
+                config.onSubmit=this.createTourPrice.bind(this);
+                break;
+            case "buttonUpdatePrice":
+                config.onSubmit=this.updateTourPrice.bind(this);
+                break;
         }
         
+    }
+    /* Tour Prices*/
+
+    onClickSelectTourPrice(idx){
+        this.currentSelectedRowIdx=idx;
+        this.model=this.pricesData[idx];
+        this.setValue("name",this.pricesData[idx].name);
+        this.setValue("originalPrice",this.pricesData[idx].originalPrice);
+        this.setValue("promotionPrice",this.pricesData[idx].promotionPrice);
+        this.setValue("startDatePro",this.pricesData[idx].startDatePro);
+        this.setValue("endDatePro",this.pricesData[idx].endDatePro);
+        this.setValue("touristType",this.pricesData[idx].touristType);
+    }
+    updateTourPrice(){
+        console.log("updateTourPrice",JSON.stringify( this.value));
+        this.dataService.put(`api/price/${this.model.id}`, { ... this.value })
+            .subscribe(res => {
+                let id=this.pricesData[this.currentSelectedRowIdx].tourId;
+                this.pricesData[this.currentSelectedRowIdx]=this.value;
+                this.pricesData[this.currentSelectedRowIdx].tourId=id;
+                this.toastr.success('Updated successfully.', 'Success');
+            });
+    }
+    createTourPrice(){
+        console.log("createTourPrice",JSON.stringify( this.value));
+        this.dataService.post(`api/price`, { ...this.value})
+            .subscribe(res => {
+                this.dataService.get<any[]>(`api/price`,{tourId:this.value.tourId,
+                    touristType:this.value.touristType})
+                    .subscribe(data => {
+                        console.log("data",JSON.stringify(data));
+                        this.pricesData=this.pricesData.filter(x=>x.touristType!=this.value.touristType);
+                        this.pricesData=this.pricesData.concat(data);
+                        this.toastr.success('Created successfully.', 'Success');
+                    });
+            });
     }
 }

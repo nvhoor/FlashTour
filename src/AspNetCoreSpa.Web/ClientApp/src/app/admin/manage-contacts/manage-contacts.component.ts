@@ -24,13 +24,13 @@ export class ManageContactsComponent implements OnInit {
       disableEditing: true,
       disableFilter: true,
       columns: [
-        { prop: 'FullName', name: 'FullName', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'Email', name: 'Email', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'Address', name: 'Address', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'Phone', name: 'Phone', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'Title', name: 'Title', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'Content', name: 'Content', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'Information', name: 'Information', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'fullName', name: 'FullName', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'phone', name: 'Phone', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'content', name: 'Content', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'information', name: 'Information', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
       ]
     };
   }

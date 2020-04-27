@@ -39,6 +39,7 @@ import {ManageTourCategoriesComponent} from "@app/admin/manage-tour-categories/m
 import {ManageAccountsComponent} from "@app/admin/manage-accounts/manage-accounts.component";
 import {ManagePostsComponent} from "@app/admin/manage-posts/manage-posts.component";
 import {ManageContactsComponent} from "@app/admin/manage-contacts/manage-contacts.component";
+import {ManageBannersComponent} from "@app/admin/manage-banners/manage-banners.component";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -56,7 +57,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
       AdminComponent,
       DashboardComponent,
       DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,
-       ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent
+       ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent,ManageBannersComponent
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
