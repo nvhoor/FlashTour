@@ -1,8 +1,7 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit, ViewChild} from '@angular/core';
 import {FieldTypes, IAppTableOptions} from "@app/models";
 import {Validators} from "@angular/forms";
-import {IProduct} from "@app/+examples/examples/crud-shop/crud-shop.models";
-
+import {AppTableComponent} from "@app/shared";
 @Component({
   selector: 'appc-manage-tour-categories',
   templateUrl: './manage-tour-categories.component.html',
@@ -11,24 +10,22 @@ import {IProduct} from "@app/+examples/examples/crud-shop/crud-shop.models";
 export class ManageTourCategoriesComponent implements OnInit {
   @HostBinding('class')
   elementClass = 'col-lg-10 col-md-9 bg-light content';
-  options: IAppTableOptions<IProduct>;
+  options: IAppTableOptions<Comunication>;
+  @ViewChild('table', { static: true }) table:AppTableComponent;
   constructor() { }
 
   ngOnInit() {
     this.options = {
       title: 'Tour categories',
-      apiUrl: 'api/product',
+      apiUrl: 'api/tourcategory',
+      disableFilter: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea },
-        { prop: 'icon', name: 'Icon', fieldType: FieldTypes.Textbox },
-        { prop: 'buyingPrice', name: 'Buying price', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
-        { prop: 'sellingPrice', name: 'Selling price', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
-        { prop: 'unitsInStock', name: 'Units in stock', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
-        { prop: 'isActive', name: 'Is active', fieldType: FieldTypes.Checkbox },
-        { prop: 'isDiscontinued', name: 'Is discontinued', fieldType: FieldTypes.Checkbox },
+        { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload, fieldValidations: [Validators.required] },
       ]
     };
+    this.table.updateData('api/tourcategory');
   }
 
 }

@@ -55,6 +55,40 @@
             </button>
         </div></td>
     </tr>
+    </tbody>
+</table>
+
+<table class="table table-hover w-auto" *ngIf="pricesData">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Original Price</th>
+        <th scope="col">Promotion Price</th>
+        <th scope="col">Start Date Promotion</th>
+        <th scope="col">End Date Promotion</th>
+        <th scope="col">Tourist Type</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let prices of pricesData;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>
+            {{prices.name}}
+        </td>
+        <td>{{prices.originalPrice}}</td>
+        <td>{{prices.promotionPrice}}</td>
+        <td>{{prices.startDatePro}}</td>
+        <td>{{prices.endDatePro}}</td>
+        <td>{{prices.touristType==0?"Adult":prices.touristType==1?"Children":"Kid"}}
+        </td>
+        <td><div class="btn-group">
+            <button class="btn btn-sm btn-primary" (click)="onClickSelectTourPrice(i)">
+                <i class="fa fa-search"></i> &nbsp; Select
+            </button>
+        </div></td>
+    </tr>
 
     </tbody>
 </table>

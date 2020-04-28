@@ -39,6 +39,8 @@ export interface ITableColumn extends TableColumn {
 }
 
 export interface IAppTableOptions<T> {
+    changetour?: boolean;
+    enabletourCensorship?: boolean;
     id?:string;
     title?: string;
     rows?: Array<T>;

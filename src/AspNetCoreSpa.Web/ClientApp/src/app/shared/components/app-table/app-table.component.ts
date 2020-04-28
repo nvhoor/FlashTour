@@ -78,6 +78,26 @@ export class AppTableComponent implements OnInit {
             },error => {  console.error(error);});
         }
     }
+    acceptTour(row, rowIndex) {
+        // Form Template
+        var agree=confirm("Are you sure to accept this tour?");
+        if(agree){
+            this.dataService.put<Tour>(`api/tour/accepttour/${row.id}`).subscribe(x=>{
+                console.log("Accept tour booking success!");
+                this.updateData('api/tour/cencershiptour');
+            },error => {  console.error(error);});
+        }
+    }
+    deleteTour(row, rowIndex) {
+        // Form Template
+        var agree=confirm("Are you sure close this tour?");
+        if(agree){
+            this.dataService.put<Tour>(`api/tour/statustour/${row.id}`).subscribe(x=>{
+                console.log("Close tour success!");
+                this.updateData('api/tour');
+            },error => {  console.error(error);});
+        }
+    }
     delete(row, rowIndex) {
         this.modalService.confirm({
             title: 'Delete',

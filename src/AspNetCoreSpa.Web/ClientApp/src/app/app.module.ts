@@ -20,7 +20,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 // Services
 import { AppService, AuthService, DataService, GlobalErrorHandler, ModalService, ModalStateService, AuthInterceptor, TimingInterceptor } from '@app/services';
-//import {ContactComponent} from "@app/contact/contact.component";
+import {ContactComponent} from "@app/contact/contact.component";
 import {FormsModule} from "@angular/forms";
 import {UsersModule} from "@app/user/user.module";
 import {AdminComponent} from "@app/admin/admin.component";
@@ -38,6 +38,8 @@ import {ManageTourBookingsComponent} from "@app/admin/manage-tour-bookings/manag
 import {ManageTourCategoriesComponent} from "@app/admin/manage-tour-categories/manage-tour-categories.component";
 import {ManageAccountsComponent} from "@app/admin/manage-accounts/manage-accounts.component";
 import {ManagePostsComponent} from "@app/admin/manage-posts/manage-posts.component";
+import {ManageContactsComponent} from "@app/admin/manage-contacts/manage-contacts.component";
+import {ManageBannersComponent} from "@app/admin/manage-banners/manage-banners.component";
 import {AutoLoginAdminComponent} from "@app/admin/auto-login-admin/auto-login-admin.component";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
@@ -52,11 +54,11 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
     ModalComponent,
     ModalTemplateDirective,
     PrivacyComponent,
-   // ContactComponent,
+    ContactComponent,
       AdminComponent,
       DashboardComponent,
       DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,
-       ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,
+       ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent,ManageBannersComponent
       AutoLoginAdminComponent,
   ],
     imports: [
