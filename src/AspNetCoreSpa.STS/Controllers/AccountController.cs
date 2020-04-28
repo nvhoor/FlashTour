@@ -139,10 +139,11 @@ namespace AspNetCoreSpa.STS.Controllers
                     // the IsLocalUrl check is only necessary if you want to support additional local pages, otherwise IsValidReturnUrl is more strict
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        return Redirect(model.ReturnUrl+"/user/auto-login");
+                        return user.IsAdmin ? Redirect(model.ReturnUrl+"/admin/auto-login-admin") : Redirect(model.ReturnUrl+"/user/auto-login");
                     }
 
-                    return Redirect(model.ReturnUrl+"/user/auto-login");
+                    return user.IsAdmin ? Redirect(model.ReturnUrl+"/admin/auto-login-admin") : Redirect(model.ReturnUrl+"/user/auto-login");
+                    
                 }
                 // if (result.RequiresTwoFactor)
                 // {
@@ -354,7 +355,7 @@ namespace AspNetCoreSpa.STS.Controllers
         {
             if (button != "register")
             {
-                return Redirect("Register");
+                return Redirect("Login");
             }
 
             ViewData["ReturnUrl"] = returnUrl;
@@ -379,7 +380,7 @@ namespace AspNetCoreSpa.STS.Controllers
 
                     // await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
-                    return Redirect(returnUrl);
+                    return Redirect("Login");
                 }
                 AddErrors(result);
             }

@@ -4,6 +4,7 @@ import { User } from 'oidc-client';
 import { AppService, AuthService } from '@app/services';
 
 import { routes } from '../../+examples/examples.routes';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'appc-header',
@@ -17,7 +18,8 @@ export class HeaderComponent implements OnInit {
 
     constructor(
         private authService: AuthService,
-        private appService: AppService
+        private appService: AppService,
+        private router: Router
     ) { }
 
     get isLoggedIn(): boolean {
@@ -25,6 +27,10 @@ export class HeaderComponent implements OnInit {
     }
     get user(): User {
         return this.authService.user;
+
+    }
+    get isAdmin(): boolean {
+        return this.authService.getIsAdmin();
 
     }
     get cultures(): ICulture[] {
@@ -50,5 +56,13 @@ export class HeaderComponent implements OnInit {
     }
     logout() {
         this.authService.logout();
+    }
+
+    redirectHome() {
+        if(this.isAdmin){
+            this.router.navigate(["admin"]);
+        }else{
+            this.router.navigate([""]); 
+        }
     }
 }

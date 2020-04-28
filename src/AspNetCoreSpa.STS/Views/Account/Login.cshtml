@@ -38,7 +38,7 @@
                                                }
                            </div>
                         <button class="btn btn-primary bnt-dk-dk mr-2" name="button" value="login"  asp-route-returnurl="@OptionsStsConfig.Value.ClientUrl">@SharedLocalizer.GetLocalizedHtmlString("ACCOUNT_LOGIN")</button>
-                         <button class="btn btn-default btn-success bnt-dk-dk cancel" name="button" asp-action="Register" asp-route-returnurl="@Model.ReturnUrl">@SharedLocalizer.GetLocalizedHtmlString("REGISTER")</button>
+                         <button class="btn btn-default btn-success bnt-dk-dk cancel" formmethod="get" asp-action="Register">@SharedLocalizer.GetLocalizedHtmlString("REGISTER")</button>
                           </div>
                         <p>
                             <a asp-action="ForgotPassword">@SharedLocalizer.GetLocalizedHtmlString("FORGOT_YOUR_PASSWORD")</a>

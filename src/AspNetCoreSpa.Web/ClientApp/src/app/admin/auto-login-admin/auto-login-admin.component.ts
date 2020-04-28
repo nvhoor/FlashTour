@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "@app/services";
-import { Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {User} from "oidc-client";
 
 @Component({
-  selector: 'appc-auto-login',
-  templateUrl: './auto-login.component.html',
-  styleUrls: ['./auto-login.component.scss']
+  selector: 'appc-auto-login-admin',
+  templateUrl: './auto-login-admin.component.html',
+  styleUrls: ['./auto-login-admin.component.scss']
 })
-export class AutoLoginComponent implements OnInit {
+export class AutoLoginAdminComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router:Router) { }
@@ -24,10 +24,9 @@ export class AutoLoginComponent implements OnInit {
     }
   }
   login() {
-    this.authService.loginSilent();
-    if(this.IsNotUser){
-      this.router.navigate(["admin"]);
-    }
+    this.authService.loginSilent().then((user)=>{
+      window.location.href = "https://localhost:5005/admin";
+    });
   }
   get user(): User {
     return this.authService.user;
@@ -35,13 +34,13 @@ export class AutoLoginComponent implements OnInit {
   }
   get IsNotUser():boolean{
     var isNotUser=false;
-     try{
+    try{
       isNotUser = this.authService.user.profile.role.some(x=>{
         return x=="admin"||x=="Admin" ||x=="staff"||x=="Staff";
       });
-     }catch (e) {
-       isNotUser=false;
-     }
+    }catch (e) {
+      isNotUser=false;
+    }
     return isNotUser;
   }
   getIsAdmin():boolean{
@@ -66,4 +65,5 @@ export class AutoLoginComponent implements OnInit {
     }
     return isStaff;
   }
+
 }

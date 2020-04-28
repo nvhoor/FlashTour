@@ -5,6 +5,7 @@ using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreSpa.Web.Controllers.api
 {
@@ -35,6 +36,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // GET: api/TourBooking/Sensorships
         [HttpGet("Sensorships")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public IActionResult GetCensorships()
         {
             var allTourTourBookings = _uow.TourBookings.GetAll().Where(x=>!x.Status);
@@ -95,6 +97,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/TourBooking/5
         [HttpPut("{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void Put(Guid id, [FromBody] TourBookingVM tbooking)
         {
             var booking = _uow.TourBookings.Get(id);
@@ -110,6 +113,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var result = _uow.SaveChanges();
         }
         [HttpPut("Censorship/{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void Put(Guid id)
         {
             var t = _uow.TourBookings.Get(id);
@@ -119,6 +123,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // DELETE: api/TourBookings/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void Delete(Guid id)
         {
             _uow.TourBookings.Remove(_uow.TourBookings.Get(id));

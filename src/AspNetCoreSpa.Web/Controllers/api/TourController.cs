@@ -351,6 +351,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // GET: api/tour/cencershiptour
         [HttpGet("cencershiptour")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public IActionResult GetStatusPost()
         {
             var allTour =

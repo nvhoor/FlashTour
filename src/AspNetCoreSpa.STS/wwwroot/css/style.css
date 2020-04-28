@@ -235,7 +235,6 @@ footer.footer-admin{
 	padding: 0 0 10px 25px;
 	margin-bottom: 10px;
 	border-bottom: 1px solid #444444;
-	background: url("image/arrow.png") left 6px no-repeat;
 }
 #extra_content .column.midlist ul li a:hover{
 	color: #fff;
@@ -361,7 +360,7 @@ table.tb-giohang a:hover{
 }
 #dk-content{
 	width: 600px;
-	height: 650px;
+	height: 380px;
 	position: absolute;
     top: 50%;
     left: 50%;

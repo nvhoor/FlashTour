@@ -1,11 +1,11 @@
-﻿import { RecaptchaModule } from 'ng-recaptcha';
+﻿//import { RecaptchaModule } from 'ng-recaptcha';
 import { BrowserModule }  from '@angular/platform-browser';
 import {NgModule} from "@angular/core";
 
 @NgModule({
     imports: [
         BrowserModule,
-        RecaptchaModule,
+        //RecaptchaModule,
         // RecaptchaFormsModule, // if you need forms support
     ],
 })

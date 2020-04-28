@@ -47,7 +47,8 @@
             <h1 class="h4 text-danger mt-1 ml-3">{{tour.promotionPrice|currency}}</h1>
             <div class="ml-2 mt-2 row">
                 <div class="col-lg-5 mt-3">Slots left:<span class="text-danger"> {{tour.slot}}</span></div>
-                <div class="col-lg-5"><a routerLinkActive="active" routerLink="../../tour-booking/{{tour.id}}" class="btn btn-info">Book Tour</a></div>
+                <div class="col-lg-5">
+                    <a routerLinkActive="active" routerLink="../../tour-booking/{{tour.id}}" [ngClass]="isCanBooking()?'btn btn-info':'btn btn-info disabled'">Book Tour</a></div>
             </div>
         </div>
     </div>

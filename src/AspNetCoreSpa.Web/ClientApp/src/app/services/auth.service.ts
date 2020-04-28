@@ -22,7 +22,52 @@ export class AuthService {
         //     console.log(res);
         // });
     }
+    loginSilent(): Promise<any> {
+        return this.userManager.signinSilent();
 
+        // this.dataService.post(this.userManager.settings.authority + '/connect/token', {
+        //     grant_type: 'password',
+        //     scope: 'openid profile aspnetcorespa-api offline_access roles',
+        //     username: 'admin@admin.com',
+        //     password: 'P@ssw0rd!',
+        //     client_id: 'spa-client'
+        // }).subscribe(res => {
+        //     console.log(res);
+        // });
+    }
+    get IsNotUser():boolean{
+        var isNotUser=false;
+        try{
+            isNotUser = this.user.profile.role.some(x=>{
+                return x=="admin"||x=="Admin" ||x=="staff"||x=="Staff";
+            });
+        }catch (e) {
+            isNotUser=false;
+        }
+        return isNotUser;
+    }
+    getIsAdmin():boolean{
+        var isAdmin=false;
+        try{
+            isAdmin = this.user.profile.role.some(x=>{
+                return x=="admin"||x=="Admin"
+            });
+        }catch (e) {
+            isAdmin=false;
+        }
+        return isAdmin;
+    }
+    getIsStaff():boolean{
+        var isStaff=false;
+        try{
+            isStaff = this.user.profile.role.some(x=>{
+                return x=="staff"||x=="Staff"
+            });
+        }catch (e) {
+            isStaff=false;
+        }
+        return isStaff;
+    }
     register() {
         location.href = `${this.userManager.settings.authority}/account/register?returnUrl=${location.href}`;
     }

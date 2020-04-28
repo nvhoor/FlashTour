@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '@app/home/home.component';
 import { PrivacyComponent } from '@app/components';
-import { ContactComponent } from '@app/contact/contact.component';
+//import { ContactComponent } from '@app/contact/contact.component';
 import {AdminComponent} from "@app/admin/admin.component";
 import {DashboardComponent} from "@app/admin/dashboard/dashboard.component";
 import {UserComponent} from "@app/user/user.component";
@@ -14,10 +14,11 @@ import {ManageTourBookingsComponent} from "@app/admin/manage-tour-bookings/manag
 import {ManageTourCategoriesComponent} from "@app/admin/manage-tour-categories/manage-tour-categories.component";
 import {ManageAccountsComponent} from "@app/admin/manage-accounts/manage-accounts.component";
 import {ManagePostsComponent} from "@app/admin/manage-posts/manage-posts.component";
+import {AutoLoginAdminComponent} from "@app/admin/auto-login-admin/auto-login-admin.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: { state: 'home' } },
-  { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
+//  { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
   { path: 'examples', loadChildren: () => import('./+examples/examples.module').then(m => m.ExamplesModule) },
   { path: 'user',component: UserComponent,children : [
           { path: '', redirectTo:"home-detail",pathMatch:"full" },
@@ -29,6 +30,7 @@ export const routes: Routes = [
   { path: 'admin', component: AdminComponent,children : [
       { path: '', redirectTo:"dashboard",pathMatch:"full" },
       { path: 'dashboard', component: DashboardComponent },
+          { path: 'auto-login-admin', component: AutoLoginAdminComponent },
           { path: 'manage-tours', component: ManageToursComponent },
           { path: 'manage-tour-bookings', component: ManageTourBookingsComponent },
           { path: 'manage-tour-categories', component: ManageTourCategoriesComponent },

@@ -138,4 +138,10 @@ export class DetailComponent implements OnInit{
     redirectMySelf(id) {
         this.getTourById(id);
     }
+    isCanBooking(){
+        let countDownDateSimilar = new Date(this.tour.departureDate).getTime();
+            let nowSimilar = new Date().getTime();
+            let distanceSimilar = countDownDateSimilar - nowSimilar;
+            return distanceSimilar>0&&this.tour.slot>0;
+    }
 }
