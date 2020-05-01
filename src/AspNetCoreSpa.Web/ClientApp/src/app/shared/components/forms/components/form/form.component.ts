@@ -112,7 +112,7 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
     onClickSelectCustomer(idx) {
         this.currentSelectedRowIdx=idx;
         this.model=this.customerData[idx];
-      this.setValue("touristType",this.customerData[idx].touristType);
+        this.setValue("touristType",this.customerData[idx].touristType);
         this.setValue("fullName",this.customerData[idx].fullName);
         this.setValue("gender",this.customerData[idx].gender);
         this.setValue("birthDay",this.customerData[idx].birthDay);
@@ -201,5 +201,16 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
                         this.toastr.success('Created successfully.', 'Success');
                     });
             });
+    }
+    viewContact(idx){
+        this.currentSelectedRowIdx=idx;
+        this.model=this.pricesData[idx];
+        this.setValue("FullName",this.pricesData[idx].name);
+        this.setValue("Email",this.pricesData[idx].originalPrice);
+        this.setValue("Address",this.pricesData[idx].promotionPrice);
+        this.setValue("Phone",this.pricesData[idx].startDatePro);
+        this.setValue("Titile",this.pricesData[idx].endDatePro);
+        this.setValue("Content",this.pricesData[idx].touristType);
+        this.setValue("Information",this.pricesData[idx].touristType);
     }
 }

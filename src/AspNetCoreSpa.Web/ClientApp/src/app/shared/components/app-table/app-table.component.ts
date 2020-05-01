@@ -193,5 +193,50 @@ export class AppTableComponent implements OnInit {
         });
 
     }
+    private view(row = null, rowIndex = null): Promise<any> {
+        const title = row ? 'Close' : "";
+        const fields = this.options.columns
+            .filter(f => f.fieldType)
+            .map(x => {
+                var onSubmit;
+                if(x.fieldType==FieldTypes.Button){
+                    onSubmit=x.onSubmit.bind(this,this.modalService,this.formTemplate,x.subTableColumn,row);
+                }else{
+                    onSubmit=null;
+                }
+                const field: IFieldConfig = {
+                    name: x.prop.toString(),
+                    type: x.fieldType,
+                    label: x.name,
+                    validation: x.fieldValidations,
+                    options: x.fieldOptions,
+                    onSubmit:onSubmit
+                };
+                return field;
+            });
 
+        fields.push({
+            name: 'button',
+            type: FieldTypes.Button,
+            label: title,
+            onSubmit: row ? close.bind(this) : 0
+        });
+
+        function close(form) {
+            this.modalService.close();
+        }
+        const template = clone(<any>this.formTemplate);
+        template.data = { formConfig: fields, formModel: (row || {}) };
+        console.log("row:",JSON.stringify(row));
+        return this.modalService.confirm({
+            title,
+            template
+        });
+    }
+    viewContact(row, rowIndex) {
+        this.view(row, rowIndex)
+            .then(() => {
+
+            }, () => { });
+    }
 }

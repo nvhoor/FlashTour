@@ -77,9 +77,9 @@ export class ManageToursComponent implements OnInit {
       id:'tour',
       apiUrl: 'api/tour/',
       disableDelete:true,
-      //changetour: true,
       enabletourCensorship: false,
       disableFilter: false,
+      disableviewContact: true,
       //changetour: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
