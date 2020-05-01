@@ -11,7 +11,7 @@
     "typescript"
   ],
   "repository": "https://github.com/nvhoor/FlashTour.git",
-  "author": "Asad Sahi <asadazmat@gmail.com>",
+  "author": "NV Hoor <nvhoor@gmail.com>",
   "scripts": {
     "ng": "ng",
     "clean:install": "rimraf node_modules & yarn",

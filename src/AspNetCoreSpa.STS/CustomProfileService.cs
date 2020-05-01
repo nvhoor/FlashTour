@@ -25,7 +25,7 @@ namespace AspNetCoreSpa.STS
             var sub = context.Subject.GetSubjectId();
             var user = await _userManager.FindByIdAsync(sub);
             var principal = await _claimsFactory.CreateAsync(user);
-
+            var isStaff = await _userManager.IsInRoleAsync(user, "Staff");
             var claims = principal.Claims.ToList();
 
             // claims = claims.Where(claim => context.RequestedClaimTypes.Contains(claim.Type)).ToList();
@@ -45,7 +45,14 @@ namespace AspNetCoreSpa.STS
             }
             else
             {
-                claims.Add(new Claim(JwtClaimTypes.Role, "user"));
+                if (isStaff)
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "staff"));
+                }
+                else
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "user")); 
+                }
             }
 
             if (user.DataEventRecordsRole == "dataEventRecords.admin")
@@ -57,9 +64,20 @@ namespace AspNetCoreSpa.STS
             }
             else
             {
-                claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords.user"));
-                claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords"));
-                claims.Add(new Claim(JwtClaimTypes.Scope, "dataEventRecords"));
+                if (isStaff)
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords.staff"));
+                    claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords.user"));
+                    claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords"));
+                    claims.Add(new Claim(JwtClaimTypes.Scope, "dataEventRecords")); 
+                }
+                else
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords.user"));
+                    claims.Add(new Claim(JwtClaimTypes.Role, "dataEventRecords"));
+                    claims.Add(new Claim(JwtClaimTypes.Scope, "dataEventRecords"));  
+                }
+          
             }
 
             if (user.SecuredFilesRole == "securedFiles.admin")
@@ -71,9 +89,20 @@ namespace AspNetCoreSpa.STS
             }
             else
             {
-                claims.Add(new Claim(JwtClaimTypes.Role, "securedFiles.user"));
-                claims.Add(new Claim(JwtClaimTypes.Role, "securedFiles"));
-                claims.Add(new Claim(JwtClaimTypes.Scope, "securedFiles"));
+                if (isStaff)
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "securedFiles.staff"));
+                    claims.Add(new Claim(JwtClaimTypes.Role, "securedFiles.user"));
+                    claims.Add(new Claim(JwtClaimTypes.Role, "securedFiles"));
+                    claims.Add(new Claim(JwtClaimTypes.Scope, "securedFiles"));  
+                }
+                else
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "securedFiles.user"));
+                    claims.Add(new Claim(JwtClaimTypes.Role, "securedFiles"));
+                    claims.Add(new Claim(JwtClaimTypes.Scope, "securedFiles"));  
+                }
+                
             }
 
             // claims.Add(new Claim(IdentityServerConstants.StandardScopes.Email, user.Email));

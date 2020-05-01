@@ -20,7 +20,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 // Services
 import { AppService, AuthService, DataService, GlobalErrorHandler, ModalService, ModalStateService, AuthInterceptor, TimingInterceptor } from '@app/services';
-import {ContactComponent} from "@app/contact/contact.component";
+//import {ContactComponent} from "@app/contact/contact.component";
 import {FormsModule} from "@angular/forms";
 import {UsersModule} from "@app/user/user.module";
 import {AdminComponent} from "@app/admin/admin.component";
@@ -41,6 +41,11 @@ import {ManagePostsComponent} from "@app/admin/manage-posts/manage-posts.compone
 import {ManageContactsComponent} from "@app/admin/manage-contacts/manage-contacts.component";
 import {ManageBannersComponent} from "@app/admin/manage-banners/manage-banners.component";
 import {AutoLoginAdminComponent} from "@app/admin/auto-login-admin/auto-login-admin.component";
+import {StaffComponent} from "@app/staff/staff.component";
+import {AutoLoginStaffComponent} from "@app/staff/auto-login-staff/auto-login-staff.component";
+import {ManageToursStaffComponent} from "@app/staff/manage-tours-staff/manage-tours-staff.component";
+import {ManageTourBookingsStaffComponent} from "@app/staff/manage-tour-bookings-staff/manage-tour-bookings-staff.component";
+import {ManagePostsStaffComponent} from "@app/staff/manage-posts-staff/manage-posts-staff.component";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -54,12 +59,12 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
     ModalComponent,
     ModalTemplateDirective,
     PrivacyComponent,
-    ContactComponent,
+   // ContactComponent,
       AdminComponent,
       DashboardComponent,
       DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,
-       ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent,ManageBannersComponent
-      AutoLoginAdminComponent,
+       ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent,ManageBannersComponent,
+      AutoLoginAdminComponent,StaffComponent,AutoLoginStaffComponent,ManageToursStaffComponent, ManageTourBookingsStaffComponent, ManagePostsStaffComponent
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),

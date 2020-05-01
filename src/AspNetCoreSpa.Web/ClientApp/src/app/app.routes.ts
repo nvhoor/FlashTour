@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '@app/home/home.component';
 import { PrivacyComponent } from '@app/components';
-import { ContactComponent } from '@app/contact/contact.component';
+//import { ContactComponent } from '@app/contact/contact.component';
 import {AdminComponent} from "@app/admin/admin.component";
 import {DashboardComponent} from "@app/admin/dashboard/dashboard.component";
 import {UserComponent} from "@app/user/user.component";
@@ -17,10 +17,15 @@ import {ManagePostsComponent} from "@app/admin/manage-posts/manage-posts.compone
 import {AutoLoginAdminComponent} from "@app/admin/auto-login-admin/auto-login-admin.component";
 import {ManageContactsComponent} from "@app/admin/manage-contacts/manage-contacts.component";
 import { ManageBannersComponent } from '@app/admin/manage-banners/manage-banners.component';
+import {StaffComponent} from "@app/staff/staff.component";
+import {AutoLoginStaffComponent} from "@app/staff/auto-login-staff/auto-login-staff.component";
+import {ManageToursStaffComponent} from "@app/staff/manage-tours-staff/manage-tours-staff.component";
+import {ManageTourBookingsStaffComponent} from "@app/staff/manage-tour-bookings-staff/manage-tour-bookings-staff.component";
+import {ManagePostsStaffComponent} from "@app/staff/manage-posts-staff/manage-posts-staff.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: { state: 'home' } },
-  { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
+ // { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
   { path: 'examples', loadChildren: () => import('./+examples/examples.module').then(m => m.ExamplesModule) },
   { path: 'user',component: UserComponent,children : [
           { path: '', redirectTo:"home-detail",pathMatch:"full" },
@@ -42,6 +47,13 @@ export const routes: Routes = [
           { path: 'manage-banners', component: ManageBannersComponent }
 
       ]},
+    { path: 'staff', component: StaffComponent,children : [
+            { path: '', redirectTo:"manage-tour-bookings-staff",pathMatch:"full" },
+            { path: 'auto-login-staff', component: AutoLoginStaffComponent },
+            { path: 'manage-tours-staff', component: ManageToursStaffComponent },
+            { path: 'manage-tour-bookings-staff', component: ManageTourBookingsStaffComponent },
+            { path: 'manage-posts-staff', component: ManagePostsStaffComponent },
+        ]},
   { path: 'privacy', component: PrivacyComponent }
     
 ];

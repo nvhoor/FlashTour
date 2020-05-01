@@ -134,15 +134,14 @@ namespace AspNetCoreSpa.STS.Controllers
                     _logger.LogInformation(1, "User logged in.");
                     var user = await _userManager.FindByNameAsync(model.Email);
                     await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName));
-
                     // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
                     // the IsLocalUrl check is only necessary if you want to support additional local pages, otherwise IsValidReturnUrl is more strict
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        return user.IsAdmin ? Redirect(model.ReturnUrl+"/admin/auto-login-admin") : Redirect(model.ReturnUrl+"/user/auto-login");
+                        return user.IsAdmin ? Redirect(model.ReturnUrl+"/admin/auto-login-admin") :await _userManager.IsInRoleAsync(user,"Staff")?Redirect(model.ReturnUrl+"/staff/auto-login-staff"): Redirect(model.ReturnUrl+"/user/auto-login");
                     }
 
-                    return user.IsAdmin ? Redirect(model.ReturnUrl+"/admin/auto-login-admin") : Redirect(model.ReturnUrl+"/user/auto-login");
+                    return user.IsAdmin ? Redirect(model.ReturnUrl+"/admin/auto-login-admin") :await _userManager.IsInRoleAsync(user,"Staff")?Redirect(model.ReturnUrl+"/staff/auto-login-staff"): Redirect(model.ReturnUrl+"/user/auto-login");
                     
                 }
                 // if (result.RequiresTwoFactor)

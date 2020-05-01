@@ -62,6 +62,7 @@ export class ManageToursComponent implements OnInit {
       type: FieldTypes.Button,
       label: 'Update',
     });
+    console.log("price",row.prices);
     const template = clone(<any>this.formTemplate);
     template.data = { formConfig: fields, formModel: (model || {}),pricesData: row.prices,parenTable:this.table};
     return this.modalService.confirm({

@@ -81,7 +81,8 @@ namespace AspNetCoreSpa.STS
         {
             var rolesToAdd = new List<ApplicationRole>(){
                 new ApplicationRole { Name = "Admin", Description = "Role with full rights" },
-                new ApplicationRole { Name = "User", Description = "Role with limited rights" }
+                new ApplicationRole { Name = "User", Description = "Role with limited rights" },
+                new ApplicationRole { Name = "Staff", Description = "Role with staff's rights" }
             };
             foreach (var role in rolesToAdd)
             {
@@ -99,7 +100,10 @@ namespace AspNetCoreSpa.STS
                 _userManager.CreateAsync(adminUser, "P@ssw0rd!").Result.ToString();
                 _userManager.AddClaimAsync(adminUser, new Claim(IdentityServerConstants.StandardScopes.Phone, adminUser.Mobile.ToString(), ClaimValueTypes.Integer)).Result.ToString();
                 _userManager.AddToRoleAsync(_userManager.FindByNameAsync("admin@admin.com").GetAwaiter().GetResult(), "Admin").Result.ToString();
-
+                var staffUser = new ApplicationUser { UserName = "staff@staff.com", FirstName = "Staff first", LastName = "Staff last", Email = "staff@staff.com", Mobile = "0123456789", EmailConfirmed = true, CreatedDate = DateTime.Now, IsEnabled = true };
+                _userManager.CreateAsync(staffUser, "P@ssw0rd!").Result.ToString();
+                _userManager.AddClaimAsync(staffUser, new Claim(IdentityServerConstants.StandardScopes.Phone, staffUser.Mobile.ToString(), ClaimValueTypes.Integer)).Result.ToString();
+                _userManager.AddToRoleAsync(_userManager.FindByNameAsync("staff@staff.com").GetAwaiter().GetResult(), "Staff").Result.ToString();
                 var normalUser = new ApplicationUser { UserName = "user@user.com", FirstName = "First", LastName = "Last", Email = "user@user.com", Mobile = "0123456789", EmailConfirmed = true, CreatedDate = DateTime.Now, IsEnabled = true };
                 _userManager.CreateAsync(normalUser, "P@ssw0rd!").Result.ToString();
                 _userManager.AddClaimAsync(adminUser, new Claim(IdentityServerConstants.StandardScopes.Phone, adminUser.Mobile.ToString(), ClaimValueTypes.Integer)).Result.ToString();

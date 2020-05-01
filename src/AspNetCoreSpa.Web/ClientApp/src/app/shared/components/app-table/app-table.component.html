@@ -62,7 +62,7 @@
           <i class="fa fa-trash"></i> &nbsp; Delete
         </button>
         <button class="btn btn-sm btn-danger mr-5" *ngIf="!options?.changetour" (click)="deleteTour(row, rowIndex)">
-          <i class="fa fa-trash"></i> &nbsp; Change
+          <i class="fa fa-trash"></i> &nbsp; Delete
         </button>
       </div>
     </ng-template>
@@ -110,8 +110,8 @@
     </ng-template>
   </ngx-datatable-footer>
 
-  <ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel"  let-customerData="customerData" let-priceData="priceData">
-    <app-form [config]="formConfig" [model]="formModel" [customerData]="customerData" [priceData]="priceData" #form="appForm"></app-form>
+  <ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel"  let-customerData="customerData" let-priceData="priceData" let-pricesData="pricesData">
+    <app-form [config]="formConfig" [model]="formModel" [customerData]="customerData" [priceData]="priceData" [pricesData]="pricesData" #form="appForm"></app-form>
   </ng-template>
 
 </ngx-datatable>

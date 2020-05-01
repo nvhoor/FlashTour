@@ -62,7 +62,12 @@ export class HeaderComponent implements OnInit {
         if(this.isAdmin){
             this.router.navigate(["admin"]);
         }else{
-            this.router.navigate([""]); 
+            if(this.authService.getIsStaff()){
+                this.router.navigate(["staff"]);
+            }else{
+                this.router.navigate([""]);
+            }
+  
         }
     }
 }

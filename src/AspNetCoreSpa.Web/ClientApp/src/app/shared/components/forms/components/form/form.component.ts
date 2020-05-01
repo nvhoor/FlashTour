@@ -28,7 +28,7 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
     get value() { return this.form.value; }
     get submitted() { return this.ngForm.submitted; }
     get getCustomerData() { return this.customerData; }
-    get getPriceData() { return this.customerData; }
+    get getPriceData() { return this.priceData; }
 
     constructor(private fb: FormBuilder,private dataService: DataService,private toastr: ToastrService,
                 private modalService: ModalService,) { }
