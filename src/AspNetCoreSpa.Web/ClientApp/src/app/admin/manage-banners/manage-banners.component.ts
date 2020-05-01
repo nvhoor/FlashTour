@@ -18,6 +18,8 @@ export class ManageBannersComponent implements OnInit {
       title: 'Banner',
       apiUrl: 'api/banner',
       disableFilter: true,
+      disablechangetour: true,
+      disableviewContact: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },

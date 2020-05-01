@@ -108,6 +108,8 @@ export class ManageTourBookingsComponent implements OnInit {
       title: 'Edit tour bookings',
       apiUrl: 'api/TourBooking',
       disableDelete:true,
+      disablechangetour: true,
+      disableviewContact: true,
       columns: [
         { prop: 'id', name: 'Id'},
         { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },
@@ -155,6 +157,8 @@ export class ManageTourBookingsComponent implements OnInit {
       apiUrl: 'api/TourBooking/Sensorships',
       disableEditing:true,
       enableCensorship:true,
+      disablechangetour: true,
+      disableviewContact: true,
       columns: [
         { prop: 'id', name: 'Id'},
         { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },
@@ -194,5 +198,4 @@ export class ManageTourBookingsComponent implements OnInit {
     this.chosenEdit=false;
     this.table.updateData('api/TourBooking/Sensorships');
   }
-
 }

@@ -9,4 +9,5 @@ import {NgModule} from "@angular/core";
         // RecaptchaFormsModule, // if you need forms support
     ],
 })
-export class ContactModule { } */
+export class ContactModule { }
+*/
