@@ -46,6 +46,8 @@ import {AutoLoginStaffComponent} from "@app/staff/auto-login-staff/auto-login-st
 import {ManageToursStaffComponent} from "@app/staff/manage-tours-staff/manage-tours-staff.component";
 import {ManageTourBookingsStaffComponent} from "@app/staff/manage-tour-bookings-staff/manage-tour-bookings-staff.component";
 import {ManagePostsStaffComponent} from "@app/staff/manage-posts-staff/manage-posts-staff.component";
+import {ManageBannersStaffComponent} from "@app/staff/manage-banners-staff/manage-banners-staff.component";
+import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/manage-contacts-staff.component";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -64,7 +66,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
       DashboardComponent,
       DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,
        ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent,ManageBannersComponent,
-      AutoLoginAdminComponent,StaffComponent,AutoLoginStaffComponent,ManageToursStaffComponent, ManageTourBookingsStaffComponent, ManagePostsStaffComponent
+      AutoLoginAdminComponent,StaffComponent,AutoLoginStaffComponent,ManageToursStaffComponent, ManageTourBookingsStaffComponent, ManagePostsStaffComponent, ManageBannersStaffComponent,ManageContactsStaffComponent
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
