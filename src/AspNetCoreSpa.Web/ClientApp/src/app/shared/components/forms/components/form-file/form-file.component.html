@@ -1,13 +1,15 @@
 <div [formGroup]="formGroup" class="form-group">
-    <label for="{{config.name}}">
-        {{ config.label }}
-        
-        <ng-container *ngIf="showAsterisk(config)">
-            *
-        </ng-container>
-    </label>
-    <input type="file" [formControlName]="config.name" class="form-control-file" [id]="config.name">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" (change)="onFileChange($event)">
+            <input type="hidden" [formControlName]="config.name" [id]="config.name"/>
+            <label class="custom-file-label" for="{{config.name}}">
+                {{ config.label }}
 
+                <ng-container *ngIf="showAsterisk(config)">
+                    *
+                </ng-container>
+            </label>
+        </div>
     <div appFormFieldError class="invalid-feedback" [fieldConfig]="config"></div>
 
 </div>

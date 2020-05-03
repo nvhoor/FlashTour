@@ -1,5 +1,5 @@
 import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {FieldTypes, IAppTableOptions, IFieldConfig} from "@app/models";
+import {FieldTypes, IAppTableOptions, IFieldConfig, IOption} from "@app/models";
 import {Validators} from "@angular/forms";
 import {clone} from 'lodash';
 import {AppFormComponent, AppTableComponent} from "@app/shared";
@@ -16,9 +16,12 @@ export class ManageToursComponent implements OnInit {
   elementClass = 'col-lg-10 col-md-9 bg-light content';
   options: IAppTableOptions<Comunication>;
   chosenEdit=true;
+  departuresFieldOption:IOption[];
   @ViewChild('tourPricesTemplate', { static: true }) tourPricesTemplate: TemplateRef<any>;
   @ViewChild('sensorshipTourTemplate', { static: true }) sensorshipTourTemplate: TemplateRef<any>;
   @ViewChild('formTemplate', { static: true }) formTemplate: AppFormComponent;
+  @ViewChild('tourCategoriesTemplate', { static: true }) tourCategoriesTemplate: TemplateRef<any>;
+  @ViewChild('departureTemplate', { static: true }) departureTemplate: TemplateRef<any>;
   @ViewChild('table', { static: true }) table:AppTableComponent;
   constructor(
       @Inject("BASE_URL") private baseUrl: string,
@@ -28,7 +31,22 @@ export class ManageToursComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.newTour();
+    this.options={apiUrl:'api/tour/'};
+    var data = this._dataService.getFull<Province[]>(`${this.baseUrl}api/Province`);
+    let that = this;
+    data.subscribe((result) => {
+      console.log("All Province: ",JSON.stringify(result.body));
+      var fieldOptions=[];
+      result.body.forEach((d, i) => {
+        fieldOptions.push({
+          key:d.id,
+          value:d.name
+        });
+      });
+      this.departuresFieldOption=fieldOptions;
+      this.newTour();
+    });
+   
   }
   private onClickTourPrices(columns,row) {
     var model = row.prices[0];
@@ -80,20 +98,22 @@ export class ManageToursComponent implements OnInit {
       enabletourCensorship: false,
       disableFilter: false,
       disableviewContact: true,
+      disableView:true,
       //changetour: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.Textbox },
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload },
         { prop: 'images', name: 'Images', fieldType: FieldTypes.Textbox },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        //{ prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Textbox, },
+        { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
+        cellTemplate: this.departureTemplate},
         { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
-        { prop: 'tourCategoryId', name: 'Tour cateogry', fieldType: FieldTypes.Select,
+        { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,
           fieldOptions:[
             {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hà Nội'},
             {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hồ Chí Minh'},
-          ]},
+          ],cellTemplate: this.tourCategoriesTemplate},
         { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
           subTableColumn:[
             { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },

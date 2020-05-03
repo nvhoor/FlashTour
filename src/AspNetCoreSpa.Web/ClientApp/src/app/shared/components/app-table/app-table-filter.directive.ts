@@ -35,6 +35,7 @@ export class AppTableFilteringDirective {
         this.element = element;
         this.renderer = renderer;
         // Set default value for filter
+        console.log("asfgdsagsdg");
         setProperty(this.renderer, this.element, 'value', this.appTableFiltering.filterString);
     }
 }

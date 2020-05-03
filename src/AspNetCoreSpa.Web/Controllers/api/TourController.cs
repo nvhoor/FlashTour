@@ -35,7 +35,23 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     var prices = _uow.Prices.Find(x => x.TourId == allTour.Id).OrderBy(o => o.TouristType).ToList();
                     allTour.Prices = prices;
                 }
-                return Ok(_mapper.Map<IEnumerable<TourVM>>(allTours));
+
+                var allToursVm = _mapper.Map<IEnumerable<TourVM>>(allTours);
+                foreach (var tourVm in allToursVm)
+                {
+                    var tourCategory = _uow.TourCategories.GetSingleOrDefault(x=>x.Id==tourVm.TourCategoryId);
+                    if (tourCategory!=null)
+                    {
+                        tourVm.CategoryName = tourCategory.Name;
+                    }
+                    var departureName = _uow.Provinces.GetSingleOrDefault(x=>x.Id==tourVm.DepartureId);
+                    if (departureName!=null)
+                    {
+                        tourVm.DepartureName = departureName.Name;
+                    }
+                }
+                
+                return Ok(allToursVm);
             }
             else
             {
