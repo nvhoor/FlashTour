@@ -15,7 +15,6 @@ namespace AspNetCoreSpa.Core.ViewModels
         public string Address {get; set;}
         public string Note {get; set;}
         public string UserId {get;set;}
-        public Account User { get; set; }
         public Guid TourId {get;set;}
         public bool Status {get;set;}
         public bool Deleted {get;set;}

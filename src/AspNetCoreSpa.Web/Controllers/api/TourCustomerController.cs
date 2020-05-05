@@ -72,8 +72,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             cust.FullName = customer.FullName;
             cust.Gender = customer.Gender;
             cust.BirthDay = customer.BirthDay;
-            cust.TourBookingId = customer.TourBookingId;
-            cust.TouristType = customer.TouristType;
             _uow.TourCustomers.Update(cust);
             var result = _uow.SaveChanges();
             

@@ -75,7 +75,7 @@ interface Customer {
     tourBookingId:string,
     fullName:string,
     gender:boolean,
-    birthDay:Date,
+    birthDay:number,
     touristType:number,
     value:number
 }

@@ -93,7 +93,7 @@ export class TourBookingComponent implements OnInit{
                           tourBookingId:"",
                           fullName: "",
                           gender: false,
-                          birthDay: new Date(),
+                          birthDay: new Date().getTime(),
                           touristType: 0,
                           value: this.getPrice(this.tour.prices[0])
                       });
@@ -106,7 +106,7 @@ export class TourBookingComponent implements OnInit{
                           tourBookingId:"",
                           fullName: "",
                           gender: false,
-                          birthDay: new Date(),
+                          birthDay: new Date().getTime(),
                           touristType: 1,
                           value: this.getPrice(this.tour.prices[1])
                       });
@@ -118,7 +118,7 @@ export class TourBookingComponent implements OnInit{
                           tourBookingId:"",
                           fullName: "",
                           gender: false,
-                          birthDay: new Date(),
+                          birthDay: new Date().getTime(),
                           touristType: 2,
                           value: this.getPrice(this.tour.prices[2])
                       });
