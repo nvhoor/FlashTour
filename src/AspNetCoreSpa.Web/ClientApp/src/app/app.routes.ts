@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '@app/home/home.component';
 import { PrivacyComponent } from '@app/components';
-//import { ContactComponent } from '@app/contact/contact.component';
+import { ContactComponent } from '@app/contact/contact.component';
 import {AdminComponent} from "@app/admin/admin.component";
 import {DashboardComponent} from "@app/admin/dashboard/dashboard.component";
 import {UserComponent} from "@app/user/user.component";
@@ -22,10 +22,12 @@ import {AutoLoginStaffComponent} from "@app/staff/auto-login-staff/auto-login-st
 import {ManageToursStaffComponent} from "@app/staff/manage-tours-staff/manage-tours-staff.component";
 import {ManageTourBookingsStaffComponent} from "@app/staff/manage-tour-bookings-staff/manage-tour-bookings-staff.component";
 import {ManagePostsStaffComponent} from "@app/staff/manage-posts-staff/manage-posts-staff.component";
+import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/manage-contacts-staff.component";
+import {ManageBannersStaffComponent} from "@app/staff/manage-banners-staff/manage-banners-staff.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: { state: 'home' } },
- // { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
+    { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
   { path: 'examples', loadChildren: () => import('./+examples/examples.module').then(m => m.ExamplesModule) },
   { path: 'user',component: UserComponent,children : [
           { path: '', redirectTo:"home-detail",pathMatch:"full" },
@@ -53,6 +55,8 @@ export const routes: Routes = [
             { path: 'manage-tours-staff', component: ManageToursStaffComponent },
             { path: 'manage-tour-bookings-staff', component: ManageTourBookingsStaffComponent },
             { path: 'manage-posts-staff', component: ManagePostsStaffComponent },
+            { path: 'manage-banners-staff', component: ManageBannersStaffComponent },
+            { path: 'manage-contacts-staff', component: ManageContactsStaffComponent },
         ]},
   { path: 'privacy', component: PrivacyComponent }
     

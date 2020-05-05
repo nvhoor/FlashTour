@@ -52,4 +52,5 @@ interface Banner {
     description:string,
     image:string
     active:string
+    forEach(param: (d, i) => void): void;
 }
