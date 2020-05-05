@@ -403,8 +403,9 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var result = _uow.SaveChanges();
         }
         // PUT: api/tour/uploadImage
-        [HttpPut("statustour/{id}")]
-        [HttpPost, DisableRequestSizeLimit]
+        [HttpPost("UploadImage")]
+        [DisableRequestSizeLimit]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public IActionResult UploadImage()
         {
             try

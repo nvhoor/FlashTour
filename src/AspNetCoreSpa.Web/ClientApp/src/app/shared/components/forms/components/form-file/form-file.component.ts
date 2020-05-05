@@ -12,23 +12,24 @@ declare var $: any;
 export class FormFileComponent extends FieldBaseComponent{
     public progress: number;
     public message: string;
+    public imageSrc:string;
     onFileChange($event) {
         let file = $event.target.files[0]; // <--- File Object for future use.
         this.formGroup.controls[this.config.name].setValue(file ? file.name : ''); // <-- Set Value for Validation
             var fileName = $event.target.value.split("\\").pop();
         $(".custom-file-label").addClass("selected").html(fileName);
-        
+        this.readURL($event.target);
+       this.formGroup.value.image=fileName;
     }
     public uploadFile = (files) => {
         if (files.length === 0) {
             return;
         }
-
         let fileToUpload = <File>files[0];
         const formData = new FormData();
         formData.append('file', fileToUpload, fileToUpload.name);
 
-        this.http.post('https://localhost:5005/api/Tour/UploadImage', formData, {reportProgress: true, observe: 'events'})
+        this.http.post(`${this.baseUrl}api/Tour/UploadImage`, formData, {reportProgress: true, observe: 'events'})
             .subscribe(event => {
                 if (event.type === HttpEventType.UploadProgress)
                     this.progress = Math.round(100 * event.loaded / event.total);
@@ -36,5 +37,15 @@ export class FormFileComponent extends FieldBaseComponent{
                     this.message = 'Upload success.';
                 }
             });
+    };
+    public readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#image-preview').attr('src', e.target.result);
+            }.bind(this);
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
     }
 }

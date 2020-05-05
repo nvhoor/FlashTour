@@ -31,7 +31,7 @@ export class ManageToursComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.options={apiUrl:'api/tour/'};
+    this.options={apiUrl:'api/Tour'};
     var data = this._dataService.getFull<Province[]>(`${this.baseUrl}api/Province`);
     let that = this;
     data.subscribe((result) => {
@@ -93,7 +93,7 @@ export class ManageToursComponent implements OnInit {
     this.options = {
       title: 'Tours',
       id:'tour',
-      apiUrl: 'api/tour/',
+      apiUrl: 'api/Tour',
       disableDelete:true,
       enabletourCensorship: false,
       disableFilter: false,
@@ -133,13 +133,13 @@ export class ManageToursComponent implements OnInit {
       ]
     };
     this.chosenEdit=true;
-    this.table.updateData('api/tour');
+    this.table.updateData('api/Tour');
   }
   clickCensorship(){
     this.options = {
       title: 'Cencership Tours',
       id:'tour',
-      apiUrl: 'api/tour/cencershiptour',
+      apiUrl: 'api/Tour/cencershiptour',
       disableEditing:true,
       enabletourCensorship:true,
       columns: [
@@ -174,7 +174,7 @@ export class ManageToursComponent implements OnInit {
       ]
     };
     this.chosenEdit=false;
-    this.table.updateData('api/tour/cencershiptour');
+    this.table.updateData('api/Tour/cencershiptour');
   }
   /*
       clicktourCustomer(){
