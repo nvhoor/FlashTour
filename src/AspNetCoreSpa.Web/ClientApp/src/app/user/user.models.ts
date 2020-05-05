@@ -105,7 +105,17 @@ interface Province {
     id:string,
     name:string
 }
+interface Tourcate {
+    id:string,
+    name:string
+}
 interface SearchPrice {
     id:number,
     value:string
+}
+interface Post{
+    id:string,
+    name:string
+
+    forEach(param: (d, i) => void): void;
 }

@@ -16,7 +16,7 @@ export class ManageContactsComponent implements OnInit {
 
   ngOnInit() {
     this.options = {
-      title: 'Tour categories',
+      title: 'Contacts',
       apiUrl: 'api/contact',
       disableFilter: true,
       disableDelete:true,

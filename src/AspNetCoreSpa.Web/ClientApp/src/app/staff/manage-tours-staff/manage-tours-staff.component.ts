@@ -1,5 +1,6 @@
 import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {FieldTypes, IAppTableOptions, IFieldConfig} from "@app/models";
+import {FieldTypes, IAppTableOptions, IFieldConfig, IOption} from "@app/models";
+import {clone} from 'lodash';
 import {Validators} from "@angular/forms";
 import {AppFormComponent, AppTableComponent} from "@app/shared";
 import {DataService, ModalService} from "@app/services";
@@ -16,9 +17,12 @@ export class ManageToursStaffComponent implements OnInit {
   options: IAppTableOptions<Comunication>;
   chosenEdit=true;
   @ViewChild('tourPricesTemplate', { static: true }) tourPricesTemplate: TemplateRef<any>;
-  @ViewChild('sensorshipTourTemplate', { static: true }) sensorshipTourTemplate: TemplateRef<any>;
+  @ViewChild('tourCategoriesTemplate', { static: true }) tourCategoriesTemplate: TemplateRef<any>;
   @ViewChild('formTemplate', { static: true }) formTemplate: AppFormComponent;
   @ViewChild('table', { static: true }) table:AppTableComponent;
+  @ViewChild('departureTemplate', { static: true }) departureTemplate: TemplateRef<any>;
+  departuresFieldOption:IOption[];
+  private tourcategoryFieldOption: IOption[];
   constructor(
       @Inject("BASE_URL") private baseUrl: string,
       private modalService: ModalService,
@@ -26,7 +30,35 @@ export class ManageToursStaffComponent implements OnInit {
       private toastr: ToastrService,
   ) { }
   ngOnInit() {
-    this.newTour();
+    this.options={apiUrl:'api/tour/'};
+    var data = this._dataService.getFull<Province[]>(`${this.baseUrl}api/Province`);
+    let that = this;
+    data.subscribe((result) => {
+      console.log("All Province: ",JSON.stringify(result.body));
+      var fieldOptions=[];
+      result.body.forEach((d, i) => {
+        fieldOptions.push({
+          key:d.id,
+          value:d.name
+        });
+      });
+      this.departuresFieldOption=fieldOptions;
+      this.newTour();
+    });
+    var datatourcate = this._dataService.getFull<Tourcate[]>(`${this.baseUrl}api/tourcategory`);
+    let thattourcate = this;
+    datatourcate.subscribe((result) => {
+      console.log("All tourcategory: ",JSON.stringify(result.body));
+      var fieldOptions=[];
+      result.body.forEach((d, i) => {
+        fieldOptions.push({
+          key:d.id,
+          value:d.name
+        });
+      });
+      this.tourcategoryFieldOption=fieldOptions;
+      this.newTour();
+    });
   }
 
   private onClickTourPrices(columns,row) {
@@ -82,17 +114,14 @@ export class ManageToursStaffComponent implements OnInit {
       //changetour: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.Textbox },
-        { prop: 'images', name: 'Images', fieldType: FieldTypes.Textbox },
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload },
+        { prop: 'images', name: 'Images', fieldType: FieldTypes.FileUpload },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        //{ prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Textbox, },
-        { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
-        { prop: 'tourCategoryId', name: 'Tour cateogry', fieldType: FieldTypes.Select,
-          fieldOptions:[
-            {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hà Nội'},
-            {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hồ Chí Minh'},
-          ]},
+        { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
+          cellTemplate: this.departureTemplate},        { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
+        { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,
+          fieldOptions: this.tourcategoryFieldOption,cellTemplate: this.tourCategoriesTemplate},
         { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
           subTableColumn:[
             { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
@@ -113,46 +142,5 @@ export class ManageToursStaffComponent implements OnInit {
     };
     this.chosenEdit=true;
     this.table.updateData('api/tour');
-  }
-  clickCensorship(){
-    this.options = {
-      title: 'Cencership Tours',
-      id:'tour',
-      apiUrl: 'api/tour/cencershiptour',
-      disableEditing:true,
-      enabletourCensorship:true,
-      columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.Textbox },
-        { prop: 'images', name: 'Images', fieldType: FieldTypes.Textbox },
-        { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
-        { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        //{ prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Textbox, },
-        { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
-        { prop: 'tourCategoryId', name: 'Tour cateogry', fieldType: FieldTypes.Select,
-          fieldOptions:[
-            {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hà Nội'},
-            {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hồ Chí Minh'},
-          ]},
-        { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
-          subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
-            { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
-            { prop: 'originalPrice', name: 'Original Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
-            { prop: 'promotionPrice', name: 'promotionPrice', fieldType: FieldTypes.Textbox,},
-            { prop: 'startDatePro', name: 'Start Date Promotion', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-            { prop: 'endDatePro', name: 'End Date Promotion', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-            { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
-              fieldOptions:[
-                {key:0,value:'Adult'},
-                {key:1,value:'Children'},
-                {key:2,value:'Kid'},
-              ]},
-          ]
-        }
-      ]
-    };
-    this.chosenEdit=false;
-    this.table.updateData('api/tour/cencershiptour');
   }
 }

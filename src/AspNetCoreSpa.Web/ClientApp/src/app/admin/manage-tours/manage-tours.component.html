@@ -13,7 +13,7 @@
     {{value == 1 ? 'Enable' : 'Disable'}}
 </ng-template>
 <ng-template #tourPricesTemplate let-row="row" let-value="value">
-    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[7].subTableColumn,row)">Prices</button>
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[8].subTableColumn,row)">Prices</button>
 </ng-template>
 <ng-template #tourCategoriesTemplate let-row="row" let-value="value">
     {{row.categoryName}}

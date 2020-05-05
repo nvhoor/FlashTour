@@ -21,10 +21,27 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         //GET: api/post
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetAll()
         {
-            var allPost = _uow.Posts.GetAll();
-            return Ok(_mapper.Map<IEnumerable<PostVM>>(allPost));
+            var allPost =
+                from post in _uow.Posts
+                where post.Censorship && post.Deleted == false
+                select new
+                    PostVM()
+                    {
+                        Id = post.Id,
+                        Name = post.Name,
+                        PostContent = post.PostContent,
+                        Description = post.Description,
+                        Image = post.Image,
+                        MetaDescription = post.MetaDescription,
+                        MetaKeyWord = post.MetaKeyWord,
+                        Alias = post.Alias,
+                        Status = post.Status,
+                        Censorship = post.Censorship,
+                        PostCategoryId = post.PostCategoryId,
+                    };
+            return Ok(allPost);
         }
 
         // GET: api/post/{id}

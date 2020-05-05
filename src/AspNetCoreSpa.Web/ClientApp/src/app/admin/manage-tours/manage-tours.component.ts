@@ -23,6 +23,7 @@ export class ManageToursComponent implements OnInit {
   @ViewChild('tourCategoriesTemplate', { static: true }) tourCategoriesTemplate: TemplateRef<any>;
   @ViewChild('departureTemplate', { static: true }) departureTemplate: TemplateRef<any>;
   @ViewChild('table', { static: true }) table:AppTableComponent;
+  tourcategoryFieldOption: IOption[];
   constructor(
       @Inject("BASE_URL") private baseUrl: string,
       private modalService: ModalService,
@@ -46,7 +47,20 @@ export class ManageToursComponent implements OnInit {
       this.departuresFieldOption=fieldOptions;
       this.newTour();
     });
-   
+    var datatourcate = this._dataService.getFull<Tourcate[]>(`${this.baseUrl}api/tourcategory`);
+    let thattourcate = this;
+    datatourcate.subscribe((result) => {
+      console.log("All tourcategory: ",JSON.stringify(result.body));
+      var fieldOptions=[];
+      result.body.forEach((d, i) => {
+        fieldOptions.push({
+          key:d.id,
+          value:d.name
+        });
+      });
+      this.tourcategoryFieldOption=fieldOptions;
+      this.newTour();
+    });
   }
   private onClickTourPrices(columns,row) {
     var model = row.prices[0];
@@ -103,17 +117,14 @@ export class ManageToursComponent implements OnInit {
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload },
-        { prop: 'images', name: 'Images', fieldType: FieldTypes.Textbox },
+        { prop: 'images', name: 'Images', fieldType: FieldTypes.FileUpload },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
         { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
         cellTemplate: this.departureTemplate},
         { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
         { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,
-          fieldOptions:[
-            {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hà Nội'},
-            {key:"67bb3560-7621-42fc-bf20-bdf183cd222e",value:'Tour Hồ Chí Minh'},
-          ],cellTemplate: this.tourCategoriesTemplate},
+          fieldOptions: this.tourcategoryFieldOption,cellTemplate: this.tourCategoriesTemplate},
         { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
           subTableColumn:[
             { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
@@ -148,7 +159,8 @@ export class ManageToursComponent implements OnInit {
         { prop: 'images', name: 'Images', fieldType: FieldTypes.Textbox },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        //{ prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Textbox, },
+        { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
+          cellTemplate: this.departureTemplate},
         { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
         { prop: 'tourCategoryId', name: 'Tour cateogry', fieldType: FieldTypes.Select,
           fieldOptions:[

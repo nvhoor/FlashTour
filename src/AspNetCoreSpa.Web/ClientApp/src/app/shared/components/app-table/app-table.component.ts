@@ -115,7 +115,7 @@ export class AppTableComponent implements OnInit {
         const val = event.toLowerCase();
         // filter our data
         const temp = this.tempRows.filter(d => {
-            return d.id.toLowerCase().indexOf(val) !== -1 || !val;
+            return d.name.toLowerCase().indexOf(val) !== -1 || !val;
         });
         // update the rows
         this.options.rows = temp;

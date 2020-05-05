@@ -20,7 +20,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 // Services
 import { AppService, AuthService, DataService, GlobalErrorHandler, ModalService, ModalStateService, AuthInterceptor, TimingInterceptor } from '@app/services';
-//import {ContactComponent} from "@app/contact/contact.component";
+import {ContactComponent} from "@app/contact/contact.component";
 import {FormsModule} from "@angular/forms";
 import {UsersModule} from "@app/user/user.module";
 import {AdminComponent} from "@app/admin/admin.component";
@@ -53,7 +53,6 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
 }
 @NgModule({
   declarations: [
-    // Components
     AppComponent,
     HomeComponent,
     FooterComponent,
@@ -61,7 +60,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
     ModalComponent,
     ModalTemplateDirective,
     PrivacyComponent,
-   // ContactComponent,
+    ContactComponent,
       AdminComponent,
       DashboardComponent,
       DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,

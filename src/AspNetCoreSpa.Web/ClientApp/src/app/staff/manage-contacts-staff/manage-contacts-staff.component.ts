@@ -16,7 +16,7 @@ export class ManageContactsStaffComponent implements OnInit {
   constructor() { }
   ngOnInit() {
     this.options = {
-      title: 'Tour categories',
+      title: 'Contacts',
       apiUrl: 'api/contact',
       disableFilter: true,
       disableDelete:true,
@@ -30,7 +30,7 @@ export class ManageContactsStaffComponent implements OnInit {
         { prop: 'phone', name: 'Phone', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'content', name: 'Content', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
-        { prop: 'information', name: 'Information', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'information', name: 'Information', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required],},
       ]
     };
     this.table.updateData('api/contact');

@@ -1,10 +1,10 @@
 import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {FieldTypes, IAppTableOptions, IFieldConfig} from "@app/models";
+import {FieldTypes, IAppTableOptions, IFieldConfig, IOption} from "@app/models";
+import {Validators} from "@angular/forms";
+import {clone} from 'lodash';
 import {AppFormComponent, AppTableComponent} from "@app/shared";
 import {DataService, ModalService} from "@app/services";
 import {ToastrService} from "@app/toastr";
-import {Validators} from "@angular/forms";
-
 @Component({
   selector: 'appc-manage-tour-bookings-staff',
   templateUrl: './manage-tour-bookings-staff.component.html',
@@ -147,53 +147,52 @@ export class ManageTourBookingsStaffComponent implements OnInit {
     this.chosenEdit=true;
     this.table.updateData('api/TourBooking');
   }
-
-//  clickCensorship() {
-//    this.options = {
-//      id:'tour-booking',
-//      title: 'Censorship tour bookings',
-//      apiUrl: 'api/TourBooking/Sensorships',
-//      disableEditing:true,
-//      enableCensorship:true,
-//      disablechangetour: true,
-//      disableviewContact: true,
-//      columns: [
-//        { prop: 'id', name: 'Id'},
-//        { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },
-//        { prop: 'fullName', name: 'Full name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-//        { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox },
-//        { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox },
-//        { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox },
-//        { prop: 'note', name: 'Note', fieldType: FieldTypes.Textarea },
-//        { prop: 'tourCustomers', name: 'Tour Customer',cellTemplate:this.customersTemplate,
-//          subTableColumn:[
-//            { prop: 'tourBookingId', name: 'Tour Booking Id', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
-//            { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
-//              fieldOptions:[
-//                {key:0,value:'Adult'},
-//                {key:1,value:'Children'},
-//                {key:2,value:'Kid'},
-//              ]},
-//            { prop: 'fullName', name: 'Full Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
-//            { prop: 'gender', name: 'Gender', fieldType: FieldTypes.Textbox },
-//            { prop: 'birthDay', name: 'Birthday', fieldType: FieldTypes.Textbox}
-//          ]
-//        },
-//        { prop: 'bookingPrices', name: 'Booking Prices',cellTemplate:this.bookingPricesTemplate,
-//          subTableColumn:[
-//            { prop: 'tourBookingId', name: 'Tour Booking Id', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
-//            { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
-//              fieldOptions:[
-//                {key:0,value:'Adult'},
-//                {key:1,value:'Children'},
-//                {key:2,value:'Kid'},
-//              ]},
-//            { prop: 'price', name: 'Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  }
-//          ]
-//        }
-//      ]
-//    };
-//    this.chosenEdit=false;
-//    this.table.updateData('api/TourBooking/Sensorships');
-//  }
-//}
+ clickCensorship() {
+   this.options = {
+     id:'tour-booking',
+     title: 'Censorship tour bookings',
+     apiUrl: 'api/TourBooking/Sensorships',
+     disableEditing:true,
+     enableCensorship:true,
+     disablechangetour: true,
+     disableviewContact: true,
+     columns: [
+       { prop: 'id', name: 'Id'},
+       { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },
+       { prop: 'fullName', name: 'Full name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+       { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox },
+       { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox },
+       { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox },
+       { prop: 'note', name: 'Note', fieldType: FieldTypes.Textarea },
+       { prop: 'tourCustomers', name: 'Tour Customer',cellTemplate:this.customersTemplate,
+         subTableColumn:[
+           { prop: 'tourBookingId', name: 'Tour Booking Id', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
+           { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
+             fieldOptions:[
+               {key:0,value:'Adult'},
+               {key:1,value:'Children'},
+               {key:2,value:'Kid'},
+             ]},
+           { prop: 'fullName', name: 'Full Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
+           { prop: 'gender', name: 'Gender', fieldType: FieldTypes.Textbox },
+           { prop: 'birthDay', name: 'Birthday', fieldType: FieldTypes.Textbox}
+         ]
+       },
+       { prop: 'bookingPrices', name: 'Booking Prices',cellTemplate:this.bookingPricesTemplate,
+         subTableColumn:[
+           { prop: 'tourBookingId', name: 'Tour Booking Id', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
+           { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
+             fieldOptions:[
+               {key:0,value:'Adult'},
+               {key:1,value:'Children'},
+               {key:2,value:'Kid'},
+             ]},
+           { prop: 'price', name: 'Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  }
+         ]
+       }
+     ]
+   };
+   this.chosenEdit=false;
+   this.table.updateData('api/TourBooking/Sensorships');
+ }
+}
