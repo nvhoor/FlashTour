@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using AspNetCoreSpa.Core;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
@@ -399,6 +401,40 @@ namespace AspNetCoreSpa.Web.Controllers.api
             t.Status = false;
             _uow.Tours.Update(t);
             var result = _uow.SaveChanges();
+        }
+        // PUT: api/tour/uploadImage
+        [HttpPut("statustour/{id}")]
+        [HttpPost, DisableRequestSizeLimit]
+        public IActionResult UploadImage()
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+                var folderName = Path.Combine("ClientApp", "src","assets","images","tours");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+ 
+                if (file.Length > 0)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName);
+ 
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+ 
+                    return Ok(new { dbPath });
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex}");
+            }
         }
     }
 }

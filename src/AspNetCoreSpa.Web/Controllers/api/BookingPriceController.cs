@@ -57,8 +57,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public void Put(Guid id, [FromBody] BookingPriceVM bookingPrice)
         {
             var bookingPriceE= _uow.BookingPrices.Get(id);
-            bookingPriceE.TouristType = bookingPrice.TouristType;
-            bookingPriceE.TourBookingId = bookingPrice.TourBookingId;
             bookingPriceE.Price = bookingPrice.Price;
             _uow.BookingPrices.Update(bookingPriceE);
             var result = _uow.SaveChanges();

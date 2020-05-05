@@ -9,11 +9,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
+using System.IO;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Hosting;
 using AspNetCoreSpa.Core.ViewModels;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.Extensions.FileProviders;
 
 namespace AspNetCoreSpa.Web
 {
@@ -79,7 +82,11 @@ namespace AspNetCoreSpa.Web
             {
                 configuration.RootPath = "ClientApp/dist/aspnetcorespa";
             });
-
+            services.Configure<FormOptions>(o => {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspNetCoreSpa", Version = "v1" });
@@ -148,6 +155,11 @@ namespace AspNetCoreSpa.Web
             app.UseStaticFiles();
 
             app.UseSpaStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"ClientApp")),
+                RequestPath = new PathString("/ClientApp")
+            });
 
             app.UseRouting();
 
