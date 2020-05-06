@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreSpa.Web.Controllers.api
 {
@@ -23,25 +23,17 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet]
         public IActionResult GetAll()
         {
-            var allPost =
-                from post in _uow.Posts
-                where post.Censorship && post.Deleted == false
-                select new
-                    PostVM()
-                    {
-                        Id = post.Id,
-                        Name = post.Name,
-                        PostContent = post.PostContent,
-                        Description = post.Description,
-                        Image = post.Image,
-                        MetaDescription = post.MetaDescription,
-                        MetaKeyWord = post.MetaKeyWord,
-                        Alias = post.Alias,
-                        Status = post.Status,
-                        Censorship = post.Censorship,
-                        PostCategoryId = post.PostCategoryId,
-                    };
-            return Ok(allPost);
+            var allPosts = _uow.Posts.GetAll().Where(x => x.Censorship && !x.Deleted && x.Status);
+            var allPostsVm = _mapper.Map<IEnumerable<PostVM>>(allPosts);
+            foreach (var postVm in allPostsVm)
+            {
+                var postCategory = _uow.PostCategories.GetSingleOrDefault(x => x.Id == postVm.PostCategoryId);
+                if (postCategory!=null)
+                {
+                    postVm.CategoryName = postCategory.Name;
+                }
+            }
+            return Ok(allPostsVm);
         }
 
         // GET: api/post/{id}
@@ -60,15 +52,24 @@ namespace AspNetCoreSpa.Web.Controllers.api
             _uow.SaveChanges();
         }
 
-        // PUT: api/Post/5
+        // PUT: api/post/
         [HttpPut("{id}")]
         public void Put(Guid id, [FromBody] Post post)
         {
             var pos = _uow.Posts.Get(id);
             pos.Name = post.Name;
+            pos.PostContent = post.PostContent;
+            pos.Description = post.Description;
+            pos.Image = post.Image;
+            pos.MetaDescription = post.MetaDescription;
+            pos.MetaKeyWord = post.MetaKeyWord;
+            pos.Alias = post.Alias;
+            pos.PostCategoryId = post.PostCategoryId;
+            _uow.Posts.Update(pos);
+            var result = _uow.SaveChanges();
         }
 
-        // DELETE: api/post/5
+        // DELETE: api/post/
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {
@@ -127,6 +128,14 @@ namespace AspNetCoreSpa.Web.Controllers.api
                     }).Take(8);
             return Ok(allPost);
         }
-         
+         // PUT: api/post/accepttour/{id}
+                 [HttpPut("acceptpost/{id}")]
+                 public void Putt(Guid id)
+                 {
+                     var p = _uow.Posts.Get(id);
+                     p.Censorship = true;
+                     _uow.Posts.Update(p);
+                     var result = _uow.SaveChanges();
+                 }
     }
 }

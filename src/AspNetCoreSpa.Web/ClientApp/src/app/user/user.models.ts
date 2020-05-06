@@ -116,6 +116,10 @@ interface SearchPrice {
 interface Post{
     id:string,
     name:string
-
+    forEach(param: (d, i) => void): void;
+}
+interface PostCate{
+    id:string,
+    name:string
     forEach(param: (d, i) => void): void;
 }

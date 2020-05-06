@@ -115,7 +115,7 @@ export class ManageTourBookingsComponent implements OnInit {
         { prop: 'id', name: 'Id'},
         { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },
         { prop: 'fullName', name: 'Full name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox },
+        { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.email, Validators.required]   },
         { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox },
         { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox },
         { prop: 'note', name: 'Note', fieldType: FieldTypes.Textarea },

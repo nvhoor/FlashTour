@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using AspNetCoreSpa.Core.Entities;
 
@@ -18,7 +18,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public bool Censorship { get; set; }
         public bool Deleted { get; set; }
         public Guid PostCategoryId { get; set; }
+        public string CategoryName { get; set; }
         public ICollection<BannerVM> Banners { get; set; }  
-
     }
 }

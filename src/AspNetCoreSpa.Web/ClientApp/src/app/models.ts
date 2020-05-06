@@ -43,6 +43,7 @@ export interface IAppTableOptions<T> {
     disableviewContact?: boolean;
     disablechangetour?: boolean;
     enabletourCensorship?: boolean;
+    enablepostCensorship?: boolean;
     id?:string;
     title?: string;
     rows?: Array<T>;

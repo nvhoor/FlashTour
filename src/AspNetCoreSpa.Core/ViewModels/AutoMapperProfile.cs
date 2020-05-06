@@ -14,6 +14,7 @@ namespace AspNetCoreSpa.Core.ViewModels
             CreateMap<Contact, ContactVM>().ReverseMap();
             CreateMap<Evaluation, EvaluationVM>().ReverseMap();
             CreateMap<PostCategory, PostCategoryVM>().ReverseMap();
+            CreateMap<Post, PostVM>().ReverseMap();
             CreateMap<Post, PostCategoryVM>().ReverseMap();
             CreateMap<Price, PriceVM>().ReverseMap();
             CreateMap<Province, ProvinceVM>().ReverseMap();

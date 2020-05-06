@@ -88,6 +88,16 @@ export class AppTableComponent implements OnInit {
             },error => {  console.error(error);});
         }
     }
+    acceptPost(row, rowIndex) {
+        // Form Template
+        var agree=confirm("Are you sure to accept this post?");
+        if(agree){
+            this.dataService.put<Tour>(`api/post/acceptpost/${row.id}`).subscribe(x=>{
+                console.log("Accept tour booking success!");
+                this.updateData('api/post/cencershippost');
+            },error => {  console.error(error);});
+        }
+    }
     deleteTour(row, rowIndex) {
         // Form Template
         var agree=confirm("Are you sure close this tour?");
