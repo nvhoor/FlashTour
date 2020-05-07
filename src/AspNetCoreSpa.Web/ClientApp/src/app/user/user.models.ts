@@ -41,7 +41,9 @@ interface TourProgram {
     title:string,
     description:string,
     destination:string,
-    date:Date
+    date:Date,
+    tourId:string,
+    tourName: string,
 }
 interface CarouselImage {
     index:number,

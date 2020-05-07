@@ -39,6 +39,7 @@ export interface ITableColumn extends TableColumn {
 }
 
 export interface IAppTableOptions<T> {
+    disableFilterr?: boolean;
     disableView?: boolean;
     disableviewContact?: boolean;
     disablechangetour?: boolean;

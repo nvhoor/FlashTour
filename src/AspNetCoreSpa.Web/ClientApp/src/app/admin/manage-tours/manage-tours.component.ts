@@ -111,6 +111,7 @@ export class ManageToursComponent implements OnInit {
       disableDelete:true,
       enabletourCensorship: false,
       disableFilter: false,
+      disableFilterr: true,
       disableviewContact: true,
       disableView:true,
       //changetour: true,

@@ -111,6 +111,7 @@ export class ManageToursStaffComponent implements OnInit {
       enabletourCensorship: false,
       disableFilter: false,
       disableviewContact: true,
+      disableFilterr: true,
       //changetour: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },

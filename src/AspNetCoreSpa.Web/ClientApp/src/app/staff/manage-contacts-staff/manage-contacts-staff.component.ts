@@ -23,6 +23,7 @@ export class ManageContactsStaffComponent implements OnInit {
       disableUpdate:true,
       disableEditing: true,
       disablechangetour: true,
+      disableFilterr: true,
       columns: [
         { prop: 'fullName', name: 'FullName', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },

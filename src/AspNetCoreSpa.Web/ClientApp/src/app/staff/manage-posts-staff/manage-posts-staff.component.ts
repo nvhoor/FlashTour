@@ -45,10 +45,11 @@ export class ManagePostsStaffComponent implements OnInit {
     this.options = {
       title: 'Post',
       apiUrl: 'api/post',
-      disableFilter: true,
+      disableFilter: false,
       disablechangetour: true,
       disableviewContact: true,
       enablepostCensorship: false,
+      disableFilterr: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'postContent', name: 'PostContent', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },

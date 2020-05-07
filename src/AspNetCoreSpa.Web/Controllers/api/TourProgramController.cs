@@ -5,6 +5,7 @@ using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+
 namespace AspNetCoreSpa.Web.Controllers.api
 {
     public class TourProgramController : BaseController
@@ -18,15 +19,15 @@ namespace AspNetCoreSpa.Web.Controllers.api
             _uow = uow;
             _mapper = mapper;
         }
-        // GET: api/TourProgram
+        // GET: api/TourCategories
         [HttpGet]
         public IActionResult Get()
         {
-            var allTourProgram = _uow.TourPrograms.GetAll();
-            return Ok(_mapper.Map<IEnumerable<TourVM>>(allTourProgram));
+            var allTourCategories = _uow.TourPrograms.GetAll();
+            return Ok(_mapper.Map<IEnumerable<TourProgramVM>>(allTourCategories));
         }
 
-        // GET: api/TourProgram/5
+        //GET: api/TourProgram/5
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
@@ -54,7 +55,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             tpro.Destination = tourProgram.Destination;
             _uow.TourPrograms.Update(tpro);
             var result = _uow.SaveChanges();
-            
         }
 
         // DELETE: api/TourProgram/5

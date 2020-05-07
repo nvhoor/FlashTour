@@ -132,6 +132,17 @@ export class AppTableComponent implements OnInit {
         // Whenever the filter changes, always go back to the first page
         this.table.offset = 0;
     }
+    updateFilterr(event) {
+        const val = event.toLowerCase();
+        // filter our data
+        const temp = this.tempRows.filter(d => {
+            return d.tourId.toLowerCase().indexOf(val) !== -1 || !val;
+        });
+        // update the rows
+        this.options.rows = temp;
+        // Whenever the filter changes, always go back to the first page
+        this.table.offset = 0;
+    }
     toggleExpandRow(row) {
         console.log('Toggled Expand Row!', row);
         this.table.rowDetail.toggleExpandRow(row);
