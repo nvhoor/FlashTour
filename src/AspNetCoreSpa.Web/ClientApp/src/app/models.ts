@@ -95,6 +95,7 @@ export interface IFieldConfig {
     validation?: ValidatorFn[];
     value?: any;
     onSubmit?: Function;
+    file?:File;
     errorMessages?: Object;
 }
 

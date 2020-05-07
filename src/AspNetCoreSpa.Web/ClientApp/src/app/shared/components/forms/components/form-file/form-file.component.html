@@ -1,6 +1,7 @@
 <div [formGroup]="formGroup" class="form-group">
+    <img class="img-tour-preview mb-1 mt-1" id="image-preview" src="./assets/images/tours/{{formGroup.value.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
         <div class="custom-file">
-            <input type="file" class="custom-file-input" (change)="onFileChange($event)">
+            <input type="file" class="custom-file-input" (change)="onFileChange($event)" #file />
             <input type="hidden" [formControlName]="config.name" [id]="config.name"/>
             <label class="custom-file-label" for="{{config.name}}">
                 {{ config.label }}
@@ -9,6 +10,11 @@
                     *
                 </ng-container>
             </label>
+            <div class="btn-group mt-1 mb-1">
+                <button class="btn btn-sm btn-success" (click)="uploadFile(file.files)">
+                    <i class="fa fa-upload"></i> &nbsp; UploadImage
+                </button>
+            </div>
         </div>
     <div appFormFieldError class="invalid-feedback" [fieldConfig]="config"></div>
 

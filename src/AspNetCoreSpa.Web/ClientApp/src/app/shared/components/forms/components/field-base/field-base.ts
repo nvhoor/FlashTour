@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { format } from 'date-fns';
 
@@ -11,6 +11,7 @@ import {HttpClient} from "@angular/common/http";
 export abstract class FieldBaseComponent implements Field {
     config: IFieldConfig;
     constructor(
+        @Inject("BASE_URL") public baseUrl: string,
         public fc: AppFormComponent,
         private formService: FormsService,
         public http: HttpClient) { }

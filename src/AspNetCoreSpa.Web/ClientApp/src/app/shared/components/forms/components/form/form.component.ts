@@ -35,7 +35,7 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
     ngOnInit() {
         this.form = this.createGroup();
         this.config.forEach(fieldConfig=>{
-            console.log("fieldConfig",JSON.stringify(fieldConfig));
+            //console.log("fieldConfig",JSON.stringify(fieldConfig));
             if(this.listCustomButtonName.indexOf(fieldConfig.name)!=-1){
                 this.addCustomFunction(fieldConfig);
             }
