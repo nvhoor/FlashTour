@@ -442,7 +442,7 @@ table.tb-giohang a:hover{
     width:323%;
 }
 #search-tour .card:hover{
-	border: 2px solid rgba(0, 61, 132, 1);
+	border: 3px solid rgba(0, 61, 132, 1);
 }
 #find-tour img{
 	width: 100px;
@@ -453,7 +453,7 @@ table.tb-giohang a:hover{
 	color: rgba(253, 134, 8, 1);
 }
 #proposal-tour .card:hover{
-	border: 2px solid rgba(253, 134, 8, 1);
+	border: 3px solid rgba(253, 134, 8, 1);
 }
 
 .slide-banner img{
@@ -516,4 +516,10 @@ hr.dashed {
 	min-width: 165px;
 	max-height: 200px;
 	max-width: 250px;
+}
+.card-tour:hover{
+	border: 3px solid rgba(229, 96, 56, 1);
+}
+.card-cate:hover{
+	border: 3px solid rgba(229, 96, 56, 1);
 }

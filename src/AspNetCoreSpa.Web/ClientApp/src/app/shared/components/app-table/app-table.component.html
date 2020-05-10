@@ -138,8 +138,8 @@
     </ng-template>
   </ngx-datatable-footer>
 
-  <ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel"  let-customerData="customerData" let-priceData="priceData" let-pricesData="pricesData">
-    <app-form [config]="formConfig" [model]="formModel" [customerData]="customerData" [priceData]="priceData" [pricesData]="pricesData" #form="appForm"></app-form>
+  <ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel"  let-customerData="customerData" let-priceData="priceData" let-pricesData="pricesData" let-imagesData="imagesData" let-tourIdChosen="tourIdChosen">
+    <app-form [config]="formConfig" [model]="formModel" [customerData]="customerData" [priceData]="priceData" [pricesData]="pricesData" [imagesData]="imagesData" [tourIdChosen]="tourIdChosen" #form="appForm"></app-form>
   </ng-template>
 
 </ngx-datatable>

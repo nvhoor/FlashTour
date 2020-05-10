@@ -12,7 +12,6 @@ declare var $: any;
 export class FormFileComponent extends FieldBaseComponent{
     public progress: number;
     public message: string;
-    public imageSrc:string;
     onFileChange($event) {
         let file = $event.target.files[0]; // <--- File Object for future use.
         this.formGroup.controls[this.config.name].setValue(file ? file.name : ''); // <-- Set Value for Validation
@@ -29,7 +28,7 @@ export class FormFileComponent extends FieldBaseComponent{
         const formData = new FormData();
         formData.append('file', fileToUpload, fileToUpload.name);
 
-        this.http.post(`${this.baseUrl}api/Tour/UploadImage`, formData, {reportProgress: true, observe: 'events'})
+        this.http.post(`${this.baseUrl+this.config.imgSrcUrl}`, formData, {reportProgress: true, observe: 'events'})
             .subscribe(event => {
                 if (event.type === HttpEventType.UploadProgress)
                     this.progress = Math.round(100 * event.loaded / event.total);

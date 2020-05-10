@@ -21,6 +21,9 @@
 <ng-template #departureTemplate let-row="row" let-value="value">
     {{row.departureName}}
 </ng-template>
-<ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel" let-formTableData="formTableData" let-pricesData="pricesData" >
-    <app-form [config]="formConfig" [model]="formModel" #form="appForm" [pricesData]="pricesData"></app-form>
+<ng-template #imagesTemplate let-row="row" let-value="value">
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickImages(this.options.columns[2].subTableColumn,row)">Images</button>
+</ng-template>
+<ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel" let-formTableData="formTableData" let-pricesData="pricesData"  let-imagesData="imagesData" let-tourIdChosen="tourIdChosen">
+    <app-form [config]="formConfig" [model]="formModel" #form="appForm" [pricesData]="pricesData" [imagesData]="imagesData" [tourIdChosen]="tourIdChosen"></app-form>
 </ng-template>

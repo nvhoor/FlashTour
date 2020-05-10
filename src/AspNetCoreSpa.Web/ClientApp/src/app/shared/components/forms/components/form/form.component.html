@@ -93,3 +93,31 @@
     </tbody>
 </table>
 <!-- Viewcontact -->
+
+<table class="table mt-3" *ngIf="imagesData">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let image of imagesData;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{image.image}}</td>
+        <td><div class="btn-group">
+            <button class="btn btn-sm btn-primary" (click)="onClickSelectImages(i)">
+                <i class="fa fa-search"></i> &nbsp; Select
+            </button>
+        </div></td>
+        <td><div class="btn-group">
+            <button class="btn btn-sm btn-danger" (click)="onClickDeleteImage(i)">
+                <i class="fa fa-remove"></i> &nbsp; Delete
+            </button>
+        </div></td>
+    </tr>
+
+    </tbody>
+</table>

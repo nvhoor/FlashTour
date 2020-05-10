@@ -5,7 +5,7 @@
             <div class="carousel-item {{tourCatePaging.active}}" *ngFor="let tourCatePaging of tourCatePagings">
                 <div class="row">
                     <div class="col-md-2" *ngFor="let cate of tourCatePaging.tourCate">
-                        <div class="card mb-2">
+                        <div class="card mb-2 card-cate">
                             <img class="card-img-top" src="./assets/images/tour-categories/{{cate.image}}"
                                  alt="Card image cap">
                             <div class="card-body">
@@ -35,7 +35,7 @@
                 <div class="col-lg-3 mt-2 mb-2" *ngFor="let tour of tours">
                     <div class="card card-tour">
                         <div id="parent_cate_{{tour.id}}">
-                            <div id="cate_{{tour.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                            <div id="cate_{{tour.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
                             <img class="card-img-top mb-3" src="./assets/images/tours/{{tour.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                             <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt text-secondary "></i> {{tour.departureDate|date:'dd/MM/yyyy'}}</div>
                             <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus text-secondary "></i> {{tour.slot}} slot</div>

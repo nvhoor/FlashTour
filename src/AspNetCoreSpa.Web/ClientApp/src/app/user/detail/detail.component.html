@@ -75,7 +75,7 @@
             <div class="col-lg-3 mt-2 mb-2" *ngFor="let tourCard of toursByCategory">
                 <div class="card card-tour">
                     <div id="parent_similar_{{tourCard.id}}">
-                        <div id="similar_{{tourCard.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                        <div id="similar_{{tourCard.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
                         <img class="card-img-top mb-3" src="./assets/images/tours/{{tourCard.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                         <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt text-secondary "></i> {{tourCard.departureDate|date:'dd/MM/yyyy'}}</div>
                         <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus text-secondary "></i> {{tourCard.slot}} slot</div>

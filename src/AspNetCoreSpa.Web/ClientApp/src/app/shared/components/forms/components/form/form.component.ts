@@ -17,10 +17,12 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
     @Input() model: any;
     @Input() fullWidth: boolean;
     @Input() customerData?:Customer[];
+    @Input() imagesData?:ImageTour[];
     @Input() priceData?:BookingPrice[];
     @Input() pricesData?:Price[];
+    @Input() tourIdChosen?:string;
     form: FormGroup;
-    listCustomButtonName=["buttonCreateCustomer","buttonUpdateCustomer","buttonCreatePrice","buttonUpdatePrice"];
+    listCustomButtonName=["buttonCreateCustomer","buttonUpdateCustomer","buttonCreatePrice","buttonUpdatePrice","buttonAddImage"];
     currentSelectedRowIdx=0;
     get controls() { return this.config.filter(({ type }) => type !== FieldTypes.Button); }
     get changes() { return this.form.valueChanges; }
@@ -117,6 +119,34 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
         this.setValue("gender",this.customerData[idx].gender);
         this.setValue("birthDay",this.customerData[idx].birthDay);
     }
+    onClickSelectImages(idx) {
+        this.currentSelectedRowIdx=idx;
+        this.setValue("image",this.imagesData[idx].image);
+    }
+    onClickDeleteImage(idx) {
+        console.log("onClickDeleteImage",this.imagesData[idx].image);
+        this.dataService.put(`api/Tour/DeleteImage/${this.imagesData[idx].tourId}`,
+            { tourId: this.imagesData[idx].tourId,image:this.imagesData[idx].image })
+            .subscribe(res => {
+                var imgEx=this.imagesData[idx].image;
+                this.imagesData= this.imagesData.filter(image=>{
+                    return image.image!=imgEx;
+                });
+                console.log("onClickDeleteImage success!")
+            });
+    }
+    updateTourImages(){
+        console.log("updateTourImages",this.value);
+        this.dataService.put(`api/Tour/AddImage/${this.tourIdChosen}`,
+            this.value )
+            .subscribe(res => {
+                this.imagesData.push({
+                   tourId: this.tourIdChosen,
+                    image: this.value.image
+                });
+                console.log("updateTourImages success!")
+            });
+    }
 
     onClickSelectBookingPrice(idx) {
         this.currentSelectedRowIdx=idx;
@@ -150,6 +180,7 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
             });
     }
     private addCustomFunction(config) {
+        console.log("addCustomFunction",JSON.stringify(config));
         switch (config.name) {
             case "buttonCreateCustomer":
                 config.onSubmit=this.createTourCustomer.bind(this);
@@ -162,6 +193,9 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
                 break;
             case "buttonUpdatePrice":
                 config.onSubmit=this.updateTourPrice.bind(this);
+                break;
+            case "buttonAddImage":
+                config.onSubmit=this.updateTourImages.bind(this);
                 break;
         }
         
