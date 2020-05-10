@@ -32,6 +32,7 @@ import {
 import { UppercasePipe } from './pipes/uppercase.pipe';
 // Services
 import { CustomDateFormatter, CustomNgbDateNativeUTCAdapter } from './services';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   imports: [
@@ -79,7 +80,8 @@ import { CustomDateFormatter, CustomNgbDateNativeUTCAdapter } from './services';
     FormCheckboxListComponent,
     FormRadioListComponent,
     FormSelectComponent,
-    FormFieldErrorComponent
+    FormFieldErrorComponent,
+    RatingComponent
   ],
   exports: [
     // Modules
@@ -105,7 +107,8 @@ import { CustomDateFormatter, CustomNgbDateNativeUTCAdapter } from './services';
     FormCheckboxListComponent,
     FormRadioListComponent,
     FormSelectComponent,
-    FormFieldErrorComponent
+    FormFieldErrorComponent,
+    RatingComponent
   ],
   providers: [
     FormsService,
