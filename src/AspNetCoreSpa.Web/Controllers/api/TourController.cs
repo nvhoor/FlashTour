@@ -387,6 +387,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // PUT: api/tour/DeleteImage/{id}
         [HttpPut("DeleteImage/{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void DeleteImage(Guid id,[FromBody]TourImageVM imageVM)
         {
             var t = _uow.Tours.Get(id);
@@ -415,6 +416,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // PUT: api/tour/AddImage/{id}
         [HttpPut("AddImage/{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void AddImage(Guid id,[FromBody]TourImageVM imageVM)
         {
             var t = _uow.Tours.Get(id);
