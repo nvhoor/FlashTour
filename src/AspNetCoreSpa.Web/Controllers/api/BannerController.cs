@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -22,7 +23,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet]
         public IActionResult Get()
         {
-            var allBanner = _uow.Banners.GetAll();
+            var allBanner = _uow.Banners.GetAll().Where(x => x.Censorship);
             return Ok(_mapper.Map<IEnumerable<BannerVM>>(allBanner));
         }
 
@@ -62,6 +63,34 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             _uow.Banners.Remove(_uow.Banners.Get(id));
             _uow.SaveChanges();
+        }
+        // Danh sach banner chua kiem duyet
+        // GET: 
+        [HttpGet("censorship")]
+        public IActionResult GetStatusBanner()
+        {
+            var allBanner =
+                from banner in _uow.Banners
+                where banner.Censorship == false
+                select new
+                    BannerVM()
+                    {
+                        Id = banner.Id,
+                        Name = banner.Name,
+                        Description = banner.Description,
+                        Image = banner.Image,
+                        PostId = banner.PostId,
+                    };
+            return Ok(allBanner);
+        }
+        // PUT: api/banner/acceptbanner/{id}
+        [HttpPut("acceptbanner/{id}")]
+        public void PutAcceptBanner(Guid id)
+        {
+            var b = _uow.Banners.Get(id);
+            b.Censorship = true;
+            _uow.Banners.Update(b);
+            var result = _uow.SaveChanges();
         }
     }
 }

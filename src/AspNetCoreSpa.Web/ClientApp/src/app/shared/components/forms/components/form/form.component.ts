@@ -19,8 +19,10 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
     @Input() customerData?:Customer[];
     @Input() priceData?:BookingPrice[];
     @Input() pricesData?:Price[];
+    @Input() tourproData?:TourProgram[];
+
     form: FormGroup;
-    listCustomButtonName=["buttonCreateCustomer","buttonUpdateCustomer","buttonCreatePrice","buttonUpdatePrice"];
+    listCustomButtonName=["buttonCreateCustomer","buttonUpdateCustomer","buttonCreatePrice","buttonUpdatePrice","buttonCreateProgram","buttonUpdateProgram"];
     currentSelectedRowIdx=0;
     get controls() { return this.config.filter(({ type }) => type !== FieldTypes.Button); }
     get changes() { return this.form.valueChanges; }
@@ -109,6 +111,30 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
         });
     }
 
+    private addCustomFunction(config) {
+        switch (config.name) {
+            case "buttonCreateCustomer":
+                config.onSubmit=this.createTourCustomer.bind(this);
+                break;
+            case "buttonUpdateCustomer":
+                config.onSubmit=this.updateTourCustomer.bind(this);
+                break;
+            case "buttonCreatePrice":
+                config.onSubmit=this.createTourPrice.bind(this);
+                break;
+            case "buttonUpdatePrice":
+                config.onSubmit=this.updateTourPrice.bind(this);
+                break;
+            case "buttonCreateProgram":
+                config.onSubmit=this.createTourProgram.bind(this);
+                break;
+            case "buttonUpdateProgram":
+                config.onSubmit=this.updateTourProgram.bind(this);
+                break;
+        }
+
+    }
+    //Tourbooking
     onClickSelectCustomer(idx) {
         this.currentSelectedRowIdx=idx;
         this.model=this.customerData[idx];
@@ -149,25 +175,7 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
                     });
             });
     }
-    private addCustomFunction(config) {
-        switch (config.name) {
-            case "buttonCreateCustomer":
-                config.onSubmit=this.createTourCustomer.bind(this);
-                break;
-            case "buttonUpdateCustomer":
-                config.onSubmit=this.updateTourCustomer.bind(this);
-                break;
-            case "buttonCreatePrice":
-                config.onSubmit=this.createTourPrice.bind(this);
-                break;
-            case "buttonUpdatePrice":
-                config.onSubmit=this.updateTourPrice.bind(this);
-                break;
-        }
-        
-    }
     /* Tour Prices*/
-
     onClickSelectTourPrice(idx){
         this.currentSelectedRowIdx=idx;
         this.model=this.pricesData[idx];
@@ -192,7 +200,7 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
         console.log("createTourPrice",JSON.stringify( this.value));
         this.dataService.post(`api/price`, { ...this.value})
             .subscribe(res => {
-                this.dataService.get<any[]>(`api/price`,{tourId:this.value.tourId,
+                this.dataService.get<any[]>(`api/price/ByTourId`,{tourId:this.value.tourId,
                     touristType:this.value.touristType})
                     .subscribe(data => {
                         console.log("data",JSON.stringify(data));
@@ -202,15 +210,38 @@ export class AppFormComponent implements OnChanges, OnInit, AfterViewInit {
                     });
             });
     }
-    viewContact(idx){
+    // Tour Program
+    onClickSelectTourPro(idx) {
         this.currentSelectedRowIdx=idx;
-        this.model=this.pricesData[idx];
-        this.setValue("FullName",this.pricesData[idx].name);
-        this.setValue("Email",this.pricesData[idx].originalPrice);
-        this.setValue("Address",this.pricesData[idx].promotionPrice);
-        this.setValue("Phone",this.pricesData[idx].startDatePro);
-        this.setValue("Titile",this.pricesData[idx].endDatePro);
-        this.setValue("Content",this.pricesData[idx].touristType);
-        this.setValue("Information",this.pricesData[idx].touristType);
+        this.model=this.tourproData[idx];
+        this.setValue("date",this.tourproData[idx].date);
+        this.setValue("orderNumber",this.tourproData[idx].orderNumber);
+        this.setValue("title",this.tourproData[idx].title);
+        this.setValue("description",this.tourproData[idx].description);
+        this.setValue("destination",this.tourproData[idx].destination);
+    }
+
+    updateTourProgram(){
+        console.log("updateTourProgram",JSON.stringify( this.value));
+        this.dataService.put(`api/tourprogram/${this.model.id}`, { ... this.value })
+            .subscribe(res => {
+                let id=this.tourproData[this.currentSelectedRowIdx].tourId;
+                this.tourproData[this.currentSelectedRowIdx]=this.value;
+                this.tourproData[this.currentSelectedRowIdx].tourId=id;
+                this.toastr.success('Updated successfully.', 'Success');
+            });
+    }
+    createTourProgram(){
+        console.log("createTourProgram",JSON.stringify( this.value));
+        this.dataService.post(`api/tourprogram`, { ...this.value})
+            .subscribe(res => {
+                this.dataService.get<any[]>(`api/tourprogram/ByTourId`,{tourId:this.value.tourId, orderNumber: this.value.orderNumber })
+                    .subscribe(data => {
+                        console.log("data",JSON.stringify(data));
+                        this.tourproData=this.tourproData.filter(x=>x.orderNumber!=this.value.orderNumber);
+                        this.tourproData=this.tourproData.concat(data);
+                        this.toastr.success('Created successfully.', 'Success');
+                    });
+            });
     }
 }

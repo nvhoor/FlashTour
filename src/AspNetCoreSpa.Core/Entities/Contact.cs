@@ -21,5 +21,10 @@ namespace AspNetCoreSpa.Core.Entities
         [Column(TypeName = "NVARCHAR(100)")]
         public string Content {get; set;}
         public string Information {get; set;}
+        
+        public bool Check {get; set;}
+
+        public string Note {get; set;}
+
     }
 }

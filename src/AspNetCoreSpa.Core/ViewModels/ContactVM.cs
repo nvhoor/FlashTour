@@ -18,6 +18,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public string Title {get; set;}
         public string Content {get; set;}
         public string Information {get; set;}
-
+        public bool Check {get; set;}
+        public string Note {get; set;}
     }
 }

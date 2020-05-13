@@ -1,4 +1,4 @@
-import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
+﻿import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {FieldTypes, IAppTableOptions, IOption} from "@app/models";
 import {Validators} from "@angular/forms";
 import {AppTableComponent} from "@app/shared";
@@ -49,7 +49,8 @@ export class ManagePostsStaffComponent implements OnInit {
       disablechangetour: true,
       disableviewContact: true,
       enablepostCensorship: false,
-      disableFilterr: true,
+      disableFilterDepartue: true,
+      disableFilterName: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'postContent', name: 'PostContent', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },

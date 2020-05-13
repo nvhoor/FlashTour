@@ -1,11 +1,11 @@
 import {ChangeDetectorRef, Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {FieldTypes, IAppTableOptions, IFieldConfig} from "@app/models";
-import {Validators} from "@angular/forms";
+import {EmailValidator, Validators} from "@angular/forms";
 import { IProduct} from "@app/+examples/examples/crud-shop/crud-shop.models";
 import {clone} from 'lodash';
 import {DataService, ModalService} from "@app/services";
 import {ToastrService} from "@app/toastr";
-import {AppFormComponent, AppTableComponent} from "@app/shared";
+import {AppFormComponent, AppTableComponent,FormsService} from "@app/shared";
 
 @Component({
   selector: 'appc-manage-tour-bookings',
@@ -27,7 +27,9 @@ export class ManageTourBookingsComponent implements OnInit {
       private modalService: ModalService,
       private _dataService:DataService,
       private toastr: ToastrService,
-      ) { }
+      private formsService: FormsService,
+
+  ) { }
   ngOnInit() {
    this.clickEditTour();
   }
@@ -111,13 +113,15 @@ export class ManageTourBookingsComponent implements OnInit {
       disablechangetour: true,
       disableviewContact: true,
       disableView: true,
-      disableFilterr: true,
+      disableFilterDepartue: true,
+      disableFilterName: true,
+      
       columns: [
         { prop: 'id', name: 'Id'},
         { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },
-        { prop: 'fullName', name: 'Full name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'fullName', name: 'Full name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator]},
         { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.email, Validators.required]   },
-        { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox },
+        { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox,fieldValidations: [this.formsService.telehponeValidator] },
         { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox },
         { prop: 'note', name: 'Note', fieldType: FieldTypes.Textarea },
         { prop: 'tourCustomers', name: 'Tour Customer',cellTemplate:this.customersTemplate,
@@ -129,9 +133,13 @@ export class ManageTourBookingsComponent implements OnInit {
                 {key:1,value:'Children'},
                 {key:2,value:'Kid'},
               ]},
-            { prop: 'fullName', name: 'Full Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
-            { prop: 'gender', name: 'Gender', fieldType: FieldTypes.Textbox },
-            { prop: 'birthDay', name: 'Birthday', fieldType: FieldTypes.Textbox}
+            { prop: 'fullName', name: 'Full Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, Validators.pattern('[a-zA-Z ]*')]  },
+            { prop: 'gender', name: 'Gender', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
+              fieldOptions:[
+                {key:1,value:'Male'},
+                {key:2,value:'Female'},
+              ]},
+            { prop: 'birthDay', name: 'Birthday', fieldType: FieldTypes.Date}
           ]
         },
         { prop: 'bookingPrices', name: 'Booking Prices',cellTemplate:this.bookingPricesTemplate,
@@ -143,7 +151,7 @@ export class ManageTourBookingsComponent implements OnInit {
                 {key:1,value:'Children'},
                 {key:2,value:'Kid'},
               ]},
-            { prop: 'price', name: 'Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  }
+            { prop: 'price', name: 'Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, Validators.min(100)]  }
           ]
         }
       ]
@@ -161,6 +169,9 @@ export class ManageTourBookingsComponent implements OnInit {
       enableCensorship:true,
       disablechangetour: true,
       disableviewContact: true,
+      disableFilterDepartue: true,
+      disableFilterName: true,
+
       columns: [
         { prop: 'id', name: 'Id'},
         { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -22,7 +23,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet]
         public IActionResult Get()
         {
-            var allContact = _uow.Contacts.GetAll();
+            var allContact = _uow.Contacts.GetAll().Where(x => x.Check == false);
             return Ok(_mapper.Map<IEnumerable<ContactVM>>(allContact));
         }
 
@@ -54,6 +55,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
             ct.Title = contact.Title;
             ct.Content = contact.Content;
             ct.Information = contact.Information;
+            ct.Check = true;
+            ct.Note = contact.Note;
             _uow.Contacts.Update(ct);
             var result = _uow.SaveChanges();
         }
@@ -64,6 +67,28 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             _uow.Contacts.Remove(_uow.Contacts.Get(id));
             _uow.SaveChanges();
+        }
+        // Danh sach Contact da check
+        // GET: 
+        [HttpGet("censorship")]
+        public IActionResult GetStatusContact()
+        {
+            var allContact =
+                from contact in _uow.Contacts
+                where contact.Check == true
+                select new
+                    ContactVM()
+                    {
+                        FullName = contact.FullName,
+                        Email = contact.Email,
+                        Phone = contact.Phone,
+                        Address = contact.Address,
+                        Title = contact.Title,
+                        Content = contact.Content,
+                        Information = contact.Information,
+                        Note =  contact.Note,
+                    };
+            return Ok(allContact);
         }
     }
 }

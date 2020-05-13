@@ -64,6 +64,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
             pos.MetaDescription = post.MetaDescription;
             pos.MetaKeyWord = post.MetaKeyWord;
             pos.Alias = post.Alias;
+            pos.UpdatedAt = post.UpdatedAt;
             pos.PostCategoryId = post.PostCategoryId;
             _uow.Posts.Update(pos);
             var result = _uow.SaveChanges();

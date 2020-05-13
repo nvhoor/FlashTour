@@ -92,4 +92,32 @@
 
     </tbody>
 </table>
-<!-- Viewcontact -->
+
+<!-- tourprograms-->
+<table class="table table-hover w-auto" *ngIf="tourproData">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order Number</th>
+        <th scope="col">Date</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Destination</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let tourpro of tourproData;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{tourpro.orderNumber}}</td>
+        <td>{{tourpro.date}}</td>
+        <td>{{tourpro.title}}</td>
+        <td>{{tourpro.description}}</td>
+        <td>{{tourpro.destination}}</td>
+        <td><div class="btn-group">
+            <button class="btn btn-sm btn-primary" (click)="onClickSelectTourPro(i)">
+                <i class="fa fa-search"></i>Select
+            </button>
+        </div></td>
+    </tr>
+    </tbody>
+</table>

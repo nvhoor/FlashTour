@@ -24,8 +24,6 @@ import {ManageTourBookingsStaffComponent} from "@app/staff/manage-tour-bookings-
 import {ManagePostsStaffComponent} from "@app/staff/manage-posts-staff/manage-posts-staff.component";
 import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/manage-contacts-staff.component";
 import {ManageBannersStaffComponent} from "@app/staff/manage-banners-staff/manage-banners-staff.component";
-import { ManageTourProgramsComponent } from '@app/admin/manage-tour-programs/manage-tour-programs.component';
-import { ManageTourProgramsStaffComponent } from '@app/staff/manage-tour-programs-staff/manage-tour-programs-staff.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: { state: 'home' } },
@@ -49,8 +47,6 @@ export const routes: Routes = [
           { path: 'manage-posts', component: ManagePostsComponent },
           { path: 'manage-banners', component: ManageBannersComponent },
           { path: 'manage-contacts', component: ManageContactsComponent },
-          { path: 'manage-tour-programs', component: ManageTourProgramsComponent },
-
       ]},
     { path: 'staff', component: StaffComponent,children : [
             { path: '', redirectTo:"manage-tour-bookings-staff",pathMatch:"full" },
@@ -60,7 +56,6 @@ export const routes: Routes = [
             { path: 'manage-posts-staff', component: ManagePostsStaffComponent },
             { path: 'manage-banners-staff', component: ManageBannersStaffComponent },
             { path: 'manage-contacts-staff', component: ManageContactsStaffComponent },
-            { path: 'manage-tour-programs-staff', component: ManageTourProgramsStaffComponent },
 
         ]},
   { path: 'privacy', component: PrivacyComponent }
