@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
+using AngleSharp.Common;
 using AspNetCoreSpa.Core;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
@@ -404,9 +405,55 @@ namespace AspNetCoreSpa.Web.Controllers.api
                 
             return Ok(allToursVm);
         }
+        // PUT: api/tour/DeleteImage/{id}
+        [HttpPut("DeleteImage/{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
+        public void DeleteImage(Guid id,[FromBody]TourImageVM imageVM)
+        {
+            var t = _uow.Tours.Get(id);
+            var images = !string.IsNullOrEmpty(t.Images)?t.Images.Split("|").ToList():new List<string>();
+            if (images.Count > 0)
+            {
+               images.Remove(imageVM.image);
+            }
+
+            string imagesStr = "";
+            for (int i = 0; i < images.Count; i++)
+            {
+                if (i <images.Count-1)
+                {
+                    imagesStr += images.GetItemByIndex(i) + "|";
+                }
+                else
+                {
+                    imagesStr += images.GetItemByIndex(i); 
+                }
+            }
+
+            t.Images = imagesStr;
+            _uow.Tours.Update(t);
+            var result = _uow.SaveChanges();
+        }
+        // PUT: api/tour/AddImage/{id}
+        [HttpPut("AddImage/{id}")]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
+        public void AddImage(Guid id,[FromBody]TourImageVM imageVM)
+        {
+            var t = _uow.Tours.Get(id);
+            if (!string.IsNullOrEmpty(t.Images)&&t.Images.Split("|").Length > 0)
+            {
+                t.Images = t.Images+"|"+imageVM.image; 
+            }
+            else
+            {
+                t.Images = imageVM.image; 
+            }
+            _uow.Tours.Update(t);
+            var result = _uow.SaveChanges();
+        }
         // PUT: api/tour/accepttour/{id}
         [HttpPut("accepttour/{id}")]
-        public void Putt(Guid id)
+        public void AcceptTour(Guid id)
         {
             var t = _uow.Tours.Get(id);
             t.Censorship = true;
@@ -415,7 +462,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         }
         // PUT: api/tour/statustour/{id}
         [HttpPut("statustour/{id}")]
-        public void Puttt(Guid id)
+        public void UpdateStatus(Guid id)
         {
             var t = _uow.Tours.Get(id);
             t.Status = false;

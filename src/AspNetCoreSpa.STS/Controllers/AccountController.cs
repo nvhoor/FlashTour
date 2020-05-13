@@ -161,8 +161,9 @@ namespace AspNetCoreSpa.STS.Controllers
             }
 
             // something went wrong, show form with error
-            var vm = await BuildLoginViewModelAsync(model);
-            return View(vm);
+            //var vm = await BuildLoginViewModelAsync(model);
+            //return View(vm);
+            return Redirect("Login");
         }
 
         /*****************************************/

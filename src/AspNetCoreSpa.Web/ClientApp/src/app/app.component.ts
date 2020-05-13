@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 // import { routerTransition } from './router.animations';
 import { AppService, AuthService, ModalService } from '@app/services';
+import {DOCUMENT} from "@angular/common";
 @Component({
   selector: 'appc-root',
   // animations: [routerTransition],
@@ -57,4 +58,6 @@ export class AppComponent implements OnInit {
       { property: 'og:description', content: this.appService.appData.content['app_description'] }
     ]);
   }
+
+
 }

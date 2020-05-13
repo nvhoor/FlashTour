@@ -35,6 +35,7 @@ export interface ITableColumn extends TableColumn {
     fieldOptions?: IOption[];
     fieldValidations?: ValidatorFn[];
     onSubmit?:Function;
+    imgSrcUrl?:string;
     subTableColumn?:ITableColumn[];
 }
 
@@ -98,7 +99,7 @@ export interface IFieldConfig {
     validation?: ValidatorFn[];
     value?: any;
     onSubmit?: Function;
-    file?:File;
+    imgSrcUrl?:string;
     errorMessages?: Object;
 }
 

@@ -177,6 +177,7 @@ export class AppTableComponent implements OnInit {
                     type: x.fieldType,
                     label: x.name,
                     validation: x.fieldValidations,
+                    imgSrcUrl:x.imgSrcUrl,
                     options: x.fieldOptions,
                     onSubmit:onSubmit
                 };

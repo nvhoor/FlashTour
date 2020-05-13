@@ -9,7 +9,7 @@
                     <div class="col-lg-3 mt-2 mb-2" *ngFor="let searchTour of searchingTours">
                         <div class="card card-tour">
                             <div id="parent_search_{{searchTour.id}}">
-                                <div id="search_{{searchTour.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                                <div id="search_{{searchTour.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
                                 <img class="card-img-top mb-3" src="./assets/images/tours/{{searchTour.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                                 <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt text-secondary "></i> {{searchTour.departureDate|date:'dd/MM/yyyy'}}</div>
                                 <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus text-secondary "></i> {{searchTour.slot}} slot</div>
@@ -57,7 +57,7 @@
                     <div class="col-lg-3 mt-2 mb-2" *ngFor="let hotest of hotestTours">
                         <div class="card card-tour">
                             <div id="parent_hotest_{{hotest.id}}">
-                                <div id="hotest_{{hotest.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                                <div id="hotest_{{hotest.id}}" class="badge badge-pill badge-info coundown-date notranslate" ></div>
                                 <img class="card-img-top mb-3" src="./assets/images/tours/{{hotest.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                                 <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt text-secondary "></i> {{hotest.departureDate|date:'dd/MM/yyyy'}}</div>
                                 <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus text-secondary "></i> {{hotest.slot}} slot</div>
@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="row" *ngIf="newestTours">
-        <div class="col-lg-10 content m-auto">
+        <div class="col-lg-10 content m-auto" translate="no">
             <div class="container-fluid">
                 <div class="h3 mt-3 text-dark  text-center font-weight-bold">NEWEST TOUR</div>
                 <div class="mt-1 pb-1 text-dark border-bottom text-center">The newest tours</div>
@@ -86,7 +86,7 @@
                     <div class="col-lg-3 mt-2 mb-2" *ngFor="let newest of newestTours">
                         <div class="card card-tour">
                             <div id="parent_newest_{{newest.id}}">
-                                <div id="newest_{{newest.id}}" class="badge badge-pill badge-info coundown-date"></div>
+                                <div id="newest_{{newest.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
                                 <img class="card-img-top mb-3" src="./assets/images/tours/{{newest.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                                 <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt"></i> {{newest.departureDate|date:'dd/MM/yyyy'}}</div>
                                 <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus"></i> {{newest.slot}} slot</div>

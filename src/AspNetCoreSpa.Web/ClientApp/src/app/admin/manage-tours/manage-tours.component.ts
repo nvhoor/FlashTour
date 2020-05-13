@@ -24,6 +24,7 @@ export class ManageToursComponent implements OnInit {
   @ViewChild('tourCategoriesTemplate', { static: true }) tourCategoriesTemplate: TemplateRef<any>;
   @ViewChild('departureTemplate', { static: true }) departureTemplate: TemplateRef<any>;
   @ViewChild('table', { static: true }) table:AppTableComponent;
+  @ViewChild('imagesTemplate', { static: true }) imagesTemplate: TemplateRef<any>;
   tourcategoryFieldOption: IOption[];
   constructor(
       @Inject("BASE_URL") private baseUrl: string,
@@ -104,7 +105,55 @@ export class ManageToursComponent implements OnInit {
       template,
     });
   }
+  private onClickImages(columns,row) {
+    var model = row.prices[0];
+    const fields = columns
+        .filter(f => f.fieldType)
+        .map(x => {
+          var onSubmit;
+          if(x.fieldType==FieldTypes.Button){
+            onSubmit=x.onSubmit;
+          }else{
+            onSubmit=null;
+          }
+          const field: IFieldConfig = {
+            name: x.prop.toString(),
+            type: x.fieldType,
+            label: x.name,
+            validation: x.fieldValidations,
+            options: x.fieldOptions,
+            onSubmit:onSubmit
+          };
+          return field;
+        });
 
+    fields.push({
+      name: 'buttonAddImage',
+      type: FieldTypes.Button,
+      label: 'Add',
+    });
+    console.log("images",row.images);
+    const template = clone(<any>this.formTemplate);
+    template.data = { formConfig: fields, formModel: (model || {}),imagesData:this.getListImagesFromString(row),tourIdChosen:row.id ,parenTable:this.table};
+    return this.modalService.confirm({
+      title:'Tour Images',
+      template,
+    });
+  }
+  getListImagesFromString(tour){
+    var images= tour.images&&tour.images.split("|")||[];
+    if(images.length>0){
+      return images.map((value)=> {
+        return {
+          tourId:tour.id,
+          image:value
+        }
+      });
+    }else{
+      return [];
+    }
+ 
+  }
   private onClickTourPrograms(columns,row) {
     var model=row.tourPrograms[0];
     const fields = columns
@@ -160,9 +209,12 @@ export class ManageToursComponent implements OnInit {
       disableView:true,
       //changetour: true,
       columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, ] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload },
-        { prop: 'images', name: 'Images', fieldType: FieldTypes.FileUpload },
+        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload ,imgSrcUrl:'api/Tour/UploadImage'},
+        { prop: 'images', name: 'Images',cellTemplate:this.imagesTemplate,
+          subTableColumn:[
+            { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,imgSrcUrl:'api/Tour/UploadImage'}
+          ]},
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
         { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,

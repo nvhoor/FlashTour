@@ -81,6 +81,10 @@ interface Customer {
     touristType:number,
     value:number
 }
+interface ImageTour {
+    tourId:string,
+    image:string
+}
 interface BookingPrice {
     tourBookingId:string,
     touristType:number,
