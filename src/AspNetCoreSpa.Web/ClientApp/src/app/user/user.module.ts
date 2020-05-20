@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
     ],
     exports: [
     ],
-    declarations: []
 })
 export class UsersModule { }
 

@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, Renderer2} from '@angular/core';
+  import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import {DataService} from "@app/services";
 import {DOCUMENT} from "@angular/common";
 @Component({
@@ -10,12 +10,14 @@ export class HomeDetailComponent implements OnInit {
   public hotestTours: Hotest[];
   public newestTours: Newest[];
   public searchingTours: TourCard[];
+  public searchingPosts: PostCate[];
   public emitSearch:EmitSearch;
   public isCountDown=true;
   public isCountDownSearch=true;
   public currentPage=0;
   public pageNums:PageNum[];
   public tourPagings:TourPagings[];
+  public emitSearchPost:EmitSearchPost;
   public typePagingChosen={
     Pre:0,
     Num:1,
@@ -290,4 +292,25 @@ export class HomeDetailComponent implements OnInit {
             return tour.originalPrice;
         }
     }
+  public getPostsByOption(emitPost){
+    this.emitSearchPost=emitPost;
+    console.log("emit:",JSON.stringify(emitPost));
+    var data = this._dataService.get<Post[]>(`${this.baseUrl}api/post/Search`);
+    let that = this;
+    data.subscribe((result) => {
+      // console.log("Respone:"+result.body);
+      let searchingPosts = [];
+      let tourPagings=[];
+      let pageNums=[];
+      result.forEach((d) => {
+        searchingPosts.push({
+          id: d.id,
+          name: d.name,
+          image: d.image,
+          description: d.description,
+        });
+      });
+      console.log(that.searchingPosts);
+    }, error => console.error(error));
+  }
 }

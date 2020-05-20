@@ -64,7 +64,7 @@ export class ManageBannersComponent implements OnInit {
 
     clickCensorshipBanner() {
         this.options = {
-            title: 'Banner',
+            title: 'Banners',
             apiUrl: 'api/banner/censorship',
             disableFilter: true,
             disablechangetour: true,

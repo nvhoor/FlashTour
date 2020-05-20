@@ -104,9 +104,16 @@ interface OptionSearch {
     destinationId:string,
     departureDateTimeStamp:string,
     tourCategoryId:string,
-    priceId:number
+    priceId:number,
 }
-
+interface EmitSearchPost{
+    departureName:string,
+    destinationName:string,
+    option:OptionSearchPost
+}
+interface OptionSearchPost {
+    postCategoryId:string,
+}
 interface Province {
     id:string,
     name:string
@@ -122,7 +129,25 @@ interface SearchPrice {
 interface Post{
     id:string,
     name:string
+    image:string,
+    description:string,
+    postContent:string,
+    metaDescription:string,
+    metaKeyWord:string,
+    alias:string,
+    createdAt:Date,
     forEach(param: (d, i) => void): void;
+}
+interface PostId{
+    id:string,
+    name:string
+    image:string,
+    description:string,
+    postContent:string,
+    metaDescription:string,
+    metaKeyWord:string,
+    alias:string,
+    createdAt:Date,
 }
 interface PostCate{
     id:string,

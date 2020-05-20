@@ -24,6 +24,8 @@ import {ManageTourBookingsStaffComponent} from "@app/staff/manage-tour-bookings-
 import {ManagePostsStaffComponent} from "@app/staff/manage-posts-staff/manage-posts-staff.component";
 import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/manage-contacts-staff.component";
 import {ManageBannersStaffComponent} from "@app/staff/manage-banners-staff/manage-banners-staff.component";
+import {PostComponent} from "@app/user/post/post.component";
+import {PostDetailComponent} from "@app/user/post-detail/post-detail.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: { state: 'home' } },
@@ -34,7 +36,11 @@ export const routes: Routes = [
           { path: 'home-detail', component: HomeDetailComponent },
           { path: 'detail/:id', component: DetailComponent },
           { path: 'tour-booking/:id', component: TourBookingComponent },
-          { path: 'auto-login', component: AutoLoginComponent }
+          { path: 'auto-login', component: AutoLoginComponent },
+          { path: 'post', component: PostComponent },
+          { path: 'post-detail/:id', component: PostDetailComponent },
+
+
       ] },
   { path: 'admin', component: AdminComponent,children : [
       { path: '', redirectTo:"dashboard",pathMatch:"full" },

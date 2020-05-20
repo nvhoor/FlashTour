@@ -350,9 +350,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             t.DepartureDate = tour.DepartureDate;
             t.Slot = tour.Slot;
             t.ViewCount = tour.ViewCount;
-            t.Censorship = tour.Censorship;
-            t.Status = tour.Status;
-            t.Deleted = tour.Deleted;
             t.TourCategoryId = tour.TourCategoryId;
             _uow.Tours.Update(t);
             var result = _uow.SaveChanges();
@@ -408,7 +405,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         // PUT: api/tour/DeleteImage/{id}
         [HttpPut("DeleteImage/{id}")]
         [Authorize(Roles = ("admin,Admin,staff,Staff"))]
-        public void DeleteImage(Guid id,[FromBody]TourImageVM imageVM)
+        public void DeleteImage(Guid id,[FromBody] TourImageVM imageVM)
         {
             var t = _uow.Tours.Get(id);
             var images = !string.IsNullOrEmpty(t.Images)?t.Images.Split("|").ToList():new List<string>();
@@ -437,7 +434,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         // PUT: api/tour/AddImage/{id}
         [HttpPut("AddImage/{id}")]
         [Authorize(Roles = ("admin,Admin,staff,Staff"))]
-        public void AddImage(Guid id,[FromBody]TourImageVM imageVM)
+        public void AddImage(Guid id,[FromBody] TourImageVM imageVM)
         {
             var t = _uow.Tours.Get(id);
             if (!string.IsNullOrEmpty(t.Images)&&t.Images.Split("|").Length > 0)
@@ -457,6 +454,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             var t = _uow.Tours.Get(id);
             t.Censorship = true;
+            t.Status = true;
             _uow.Tours.Update(t);
             var result = _uow.SaveChanges();
         }

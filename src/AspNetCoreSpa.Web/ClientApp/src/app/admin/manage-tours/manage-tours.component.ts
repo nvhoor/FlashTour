@@ -216,8 +216,8 @@ export class ManageToursComponent implements OnInit {
             { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,imgSrcUrl:'api/Tour/UploadImage'}
           ]},
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
-        { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
+        { prop: 'departureDate', name: 'Departure Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
+        { prop: 'departureId', name: 'Departure Name', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
         cellTemplate: this.departureTemplate},
         { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
         { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,
@@ -228,7 +228,7 @@ export class ManageToursComponent implements OnInit {
             { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
             { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
             { prop: 'originalPrice', name: 'Original Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
-            { prop: 'promotionPrice', name: 'promotionPrice', fieldType: FieldTypes.Textbox,},
+            { prop: 'promotionPrice', name: 'PromotionPrice', fieldType: FieldTypes.Textbox,},
             { prop: 'startDatePro', name: 'Start Date Promotion', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
             { prop: 'endDatePro', name: 'End Date Promotion', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
             { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
@@ -242,7 +242,7 @@ export class ManageToursComponent implements OnInit {
         //tourPrograms
         { prop: 'tourPrograms', name: 'Tour Program',cellTemplate:this.tourProgramsTemplate,
           subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
+            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox },
             { prop: 'date', name: 'Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required]  },
             { prop: 'orderNumber', name: 'Order Number', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
             { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox,},

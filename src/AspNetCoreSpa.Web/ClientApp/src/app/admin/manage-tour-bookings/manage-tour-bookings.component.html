@@ -14,7 +14,7 @@
     {{value == 1 ? 'Enable' : 'Disable'}}
 </ng-template>
 <ng-template #customersTemplate let-row="row" let-value="value">
-    <button type="button" class="btn btn-sm btn-outline-info" data-toggle="modal" data-target="#myModal" (click)="onClickTourCustomers(this.options.columns[7].subTableColumn,row)">Customers</button>
+    <button type="button" class="btn btn-sm btn-outline-info" data-toggle="modal" data-target="#myModal" (click)="onClickTourCustomers(this.options.columns[8].subTableColumn,row)">Customers</button>
 </ng-template>
 <ng-template #bookingPricesTemplate let-row="row" let-value="value">
     <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickBookingPrices(this.options.columns[8].subTableColumn,row)">Prices</button>

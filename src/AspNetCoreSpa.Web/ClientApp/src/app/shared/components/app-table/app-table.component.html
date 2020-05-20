@@ -15,7 +15,7 @@
     <input type='text' #filter class="form-control" *ngIf="!options?.disableFilter" placeholder='Filter...' (keyup)='updateFilter(filter.value)' />
   </div>
   <div class="col-md-pull-4">
-    <input type='text' #filter class="form-control" *ngIf="!options?.disableFilterName" placeholder='Filter with Tour Name...' (keyup)='FilterName(filter.value)' />
+    <input type='text' #filter class="form-control" *ngIf="!options?.disableFilterName" placeholder='Filter with Name...' (keyup)='FilterName(filter.value)' />
   </div>
   
   <div class="col-md-pull-4">
@@ -124,6 +124,20 @@
       <div class="btn-group">
         <button class="btn btn-sm btn-success" (click)="acceptPost(row, rowIndex)">
           <i class="fa fa-check"></i> &nbsp; Accept
+        </button>
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
+  <!-- Enable Banner Censorship -->
+  <ngx-datatable-column *ngIf="options?.enablebannerCensorship" [minWidth]="100" sortable="false" prop="id">
+    <ng-template ngx-datatable-header-template>
+      <div>Accept
+      </div>
+    </ng-template>
+    <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+      <div class="btn-group">
+        <button class="btn btn-sm btn-success" (click)="acceptBanner(row, rowIndex)">
+          <i class="fa fa-check"></i>Accept
         </button>
       </div>
     </ng-template>
