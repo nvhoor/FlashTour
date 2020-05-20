@@ -1,0 +1,43 @@
+<div class="container n3-news mg-bot40" >
+    <div class="row" *ngIf="post">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 l">
+            <div class="frame-dt-top">
+                <h1 class="news-detail-title">
+                    {{post.name}}
+                </h1>
+                <div class="frame-date">
+                    <div class="f-left"><img src="./assets/images/posts/i-date.png" alt="date"></div>
+                    <div class="f-left date">{{post.createdAt|date:'dd/MM/yyyy'}}</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="frame-dt-bot">
+                {{post.description}}
+            </div>
+            <div class="mg-botss">
+                <div class="clear"></div>
+            </div>
+            <div class="frame-content-img">
+                <a href="#"><img src="./assets/images/posts/{{post.image}}" class="img-responsive pic-news-l"></a>
+            </div>
+            <div class="frame-dt-content">
+                {{post.postContent}}
+            </div>
+            <h1 class="h4 text-danger mt-3">Similar Posts</h1>
+            <div class="row">
+                <div class="col-lg-3 mt-2 mb-2" *ngFor="let postCard of postsByCate">
+                    <div class="card card-tour">
+                        <div id="parent_similar_{{postCard.id}}">
+                            <div id="similar_{{postCard.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
+                            <img class="card-img-top mb-3" src="./assets/images/posts/{{postCard.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
+                            <div class="card-body">
+                                <a (click)="redirectMySelf(postCard.id)" class="stretched-link"><div class="card-text font-weight-normal" >{{postCard.name}}</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
