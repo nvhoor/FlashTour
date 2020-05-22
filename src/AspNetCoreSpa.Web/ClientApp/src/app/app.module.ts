@@ -50,6 +50,7 @@ import {ManageBannersStaffComponent} from "@app/staff/manage-banners-staff/manag
 import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/manage-contacts-staff.component";
 import {ManageTourProgramsComponent} from "@app/admin/manage-tour-programs/manage-tour-programs.component";
 import {ManageTourProgramsStaffComponent} from "@app/staff/manage-tour-programs-staff/manage-tour-programs-staff.component";
+import {ChartsModule} from "ng2-charts";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -83,7 +84,8 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
         FormsModule,
         UsersModule,
-        SharedModule
+        SharedModule,
+        ChartsModule
     ],
   providers: [
     AppService,

@@ -33,6 +33,12 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var evaluation = _uow.Evaluations.Get(id);
             return Ok(_mapper.Map<EvaluationVM>(evaluation));
         }
+        [HttpGet("GetEvaluationByTourId/{tourId}")]
+        public IActionResult GetEvaluationByTourId(Guid tourId)
+        {
+            var evaluation = _uow.Evaluations.GetSingleOrDefault(x=>x.TourId==tourId);
+            return Ok(_mapper.Map<EvaluationVM>(evaluation));
+        }
 
         // POST: api/Evaluations
         [HttpPost]
@@ -47,12 +53,20 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public void Put(Guid id, [FromBody] EvaluationVM ev)
         {
             var e = _uow.Evaluations.Get(id);
-            e.OneStar = ev.OneStar;
-            e.TwoStar = ev.TwoStar;
-            e.ThreeStar = ev.ThreeStar;
-            e.FourStar = ev.FourStar;
-            e.FiveStar = ev.FiveStar;
-            _uow.Evaluations.Update(e);
+            if(e==null)
+            {
+                ev.Id = Guid.NewGuid();
+                _uow.Evaluations.Add(_mapper.Map<Evaluation>(ev));  
+            }
+            else
+            {
+                e.OneStar = ev.OneStar;
+                e.TwoStar = ev.TwoStar;
+                e.ThreeStar = ev.ThreeStar;
+                e.FourStar = ev.FourStar;
+                e.FiveStar = ev.FiveStar;
+                _uow.Evaluations.Update(e);  
+            }
             var result = _uow.SaveChanges();
         }
 

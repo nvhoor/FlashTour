@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, Renderer2} from '@angular/core';
+import {Component, Inject, OnInit, Renderer2, TemplateRef, ViewChild} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 import { DataService } from "@app/services";
 import { ActivatedRoute, Router} from '@angular/router';
@@ -11,6 +11,7 @@ import { ActivatedRoute, Router} from '@angular/router';
 export class DetailComponent implements OnInit{
     public tour:Tour;
     public toursByCategory:TourCard[];
+    public evaluation:Evaluation;
     public tourImages:CarouselImage[];
     public isCountDown=true;
     constructor(
@@ -118,6 +119,7 @@ export class DetailComponent implements OnInit{
             images.forEach((image,index)=>{
                 carouselImages.push({index:index,name:image,active:""});
             });
+            this.getEvaluation(that.tour.id);
             that.tourImages=carouselImages;
             this.tourImages[0].active="active";
         }, error => console.error(error));
@@ -143,5 +145,23 @@ export class DetailComponent implements OnInit{
             let nowSimilar = new Date().getTime();
             let distanceSimilar = countDownDateSimilar - nowSimilar;
             return distanceSimilar>0&&this.tour.slot>0;
+    }
+
+    private getEvaluation(tourId: string) {
+        console.log("getEvaluation",tourId);
+        var data = this._dataService.get<Evaluation>(`${this.baseUrl}api/Evaluation/GetEvaluationByTourId/${tourId}`);
+        data.subscribe((result) => {
+            
+            this.evaluation = result;
+            console.log("Evaluation:"+JSON.stringify(this.evaluation));
+        }, error => console.error(error));
+    }
+    public getTotalEvaluation(){
+            return this.evaluation.oneStar+ this.evaluation.twoStar
+                +this.evaluation.threeStar+this.evaluation.fourStar+this.evaluation.fiveStar;
+    }
+    public getAverageEvaluation(){
+        return ((this.evaluation.oneStar+ this.evaluation.twoStar*2
+            +this.evaluation.threeStar*3+this.evaluation.fourStar*4+this.evaluation.fiveStar*5)/(this.getTotalEvaluation())).toFixed(2);
     }
 }

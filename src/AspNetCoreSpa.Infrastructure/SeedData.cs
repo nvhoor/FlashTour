@@ -383,18 +383,18 @@ namespace AspNetCoreSpa.Infrastructure
             }
             if (!_context.Evaluations.Any())
             {
-                for (int i = 0; i < 50; i++)
+                foreach (var tourId in tourIds)
                 {
-                    _context.Evaluations.Add(new Evaluation
-                    {
-                        Id = Guid.NewGuid(),
-                        OneStar = new Random().Next(1,2000),
-                        TwoStar = new Random().Next(1,2000),
-                        ThreeStar = new Random().Next(1,2000),
-                        FourStar = new Random().Next(1,2000),
-                        FiveStar = new Random().Next(1,2000),
-                        TourId = tourIds[i],
-                    });
+                   _context.Evaluations.Add(new Evaluation
+                                      {
+                                          Id = Guid.NewGuid(),
+                                          OneStar = new Random().Next(1,2000),
+                                          TwoStar = new Random().Next(1,2000),
+                                          ThreeStar = new Random().Next(1,2000),
+                                          FourStar = new Random().Next(1,2000),
+                                          FiveStar = new Random().Next(1,2000),
+                                          TourId = tourId,
+                                      });  
                 }
                 _context.SaveChanges();
             }

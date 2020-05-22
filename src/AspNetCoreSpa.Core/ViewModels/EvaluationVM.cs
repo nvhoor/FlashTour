@@ -11,7 +11,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public int ThreeStar { get; set; }
         public int FourStar { get; set; }
         public int FiveStar { get; set; }
-        public int TourId { get; set; }
+        public Guid TourId { get; set; }
         public Tour Tour { get; set; } 
     }
 }

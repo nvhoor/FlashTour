@@ -35,6 +35,14 @@ interface TourCard {
     endDatePro: Date,
     touristType:number
 }
+interface Evaluation{
+    id:string,
+    oneStar:number,
+    twoStar:number,
+    threeStar:number,
+    fourStar:number,
+    fiveStar:number
+}
 interface TourProgram {
     id:string,
     orderNumber:number,

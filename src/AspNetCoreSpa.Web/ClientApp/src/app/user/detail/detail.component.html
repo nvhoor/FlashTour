@@ -21,8 +21,8 @@
             </a>
         </div>
         <div class="col-lg-5">
-            <appc-rating></appc-rating>
-            <div><span>4.5/5</span><span> in</span><span> 179</span><span> evaluations</span></div>
+            <appc-rating #rating *ngIf="evaluation&&tour" [evaluation]="evaluation"></appc-rating>
+            <div *ngIf="evaluation"><span>{{getAverageEvaluation()}}/5</span><span> in</span><span> {{getTotalEvaluation()}}</span><span> evaluations</span></div>
             <div><i class="fas fa-eye mt-1"></i><span> {{tour.viewCount}}</span> views</div>
             <hr class="dashed mt-1">
             <div class="ml-2 mt-2 row">

@@ -26,6 +26,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public DateTime EndDatePro {get; set;}
         public Guid TourCategoryId { get; set; }
         public string CategoryName { get; set; }
+        public Guid EvaluationId { get; set; }
         public ICollection<TourProgramVM> TourPrograms { get; set; }
         public ICollection<PriceVM> Prices { get; set; }
     }
