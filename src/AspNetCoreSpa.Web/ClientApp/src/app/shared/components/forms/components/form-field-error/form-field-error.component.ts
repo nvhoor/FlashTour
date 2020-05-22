@@ -30,14 +30,15 @@ export class FormFieldErrorComponent implements OnInit {
     private getErrorText(code: string) {
         const config: any = {
             required: 'Field is required',
-            maxlength: '',
-            name: 'Names cannot contain numeric or special characters',
+            maxlength: 'Invail',
+            min: 'Limit 20 slot',
+            name: 'Name cannot contain numeric or special characters',
             email: 'Invalid email address',
             telephone: 'Invalid telephone number',
             date: 'Invalid date entered',
             invalidDomain: 'Invalid domain name',
-            numberValidator: 'Invalid number',
-            numberNotZeroValidator: 'Number greater than 0 required',
+            numberValidator: 'Invalid price',
+            numberNotZeroValidator: 'Slot greater than 0 required and <= 50',
             multipleCheckboxRequireAtLeastOne: 'At least one option required',
             multipleCheckboxRequireMoreThanOne: 'More than one options required'
         };

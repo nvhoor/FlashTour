@@ -2,7 +2,7 @@ import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@a
 import {FieldTypes, IAppTableOptions, IFieldConfig, IOption} from "@app/models";
 import {clone} from 'lodash';
 import {Validators} from "@angular/forms";
-import {AppFormComponent, AppTableComponent} from "@app/shared";
+import {AppFormComponent, AppTableComponent, FormsService} from "@app/shared";
 import {DataService, ModalService} from "@app/services";
 import {ToastrService} from "@app/toastr";
 
@@ -30,6 +30,8 @@ export class ManageToursStaffComponent implements OnInit {
       private modalService: ModalService,
       private _dataService:DataService,
       private toastr: ToastrService,
+      private formsService: FormsService,
+
   ) { }
   ngOnInit() {
     this.options={apiUrl:'api/tour/'};
@@ -115,15 +117,16 @@ export class ManageToursStaffComponent implements OnInit {
       disableviewContact: true,
       //changetour: true,
       columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
         { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload },
         { prop: 'images', name: 'Images', fieldType: FieldTypes.FileUpload },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
-        { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
-          cellTemplate: this.departureTemplate},        { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
+        { prop: 'departureDate', name: 'Departure Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
+        { prop: 'departureId', name: 'Departure Name', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
+          cellTemplate: this.departureTemplate, fieldValidations: [Validators.required]},
+        { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required, this.formsService.numberNotZeroValidator] },
         { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,
-          fieldOptions: this.tourcategoryFieldOption,cellTemplate: this.tourCategoriesTemplate},
+          fieldOptions: this.tourcategoryFieldOption,cellTemplate: this.tourCategoriesTemplate,fieldValidations: [Validators.required]},
         // prices
         { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
           subTableColumn:[

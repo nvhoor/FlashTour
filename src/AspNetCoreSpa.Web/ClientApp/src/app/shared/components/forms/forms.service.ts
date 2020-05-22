@@ -64,16 +64,15 @@ export class FormsService {
     }
     numberValidator(fc: AbstractControl) {
         const value = +fc.value;
-        const valid = typeof value === 'number' && !(isNaN(value));
+        const valid = typeof value === 'number' && !(isNaN(value)) && value > 0;
 
         return valid ? null : {
             numberValidator: true
         };
     }
-
     numberNotZeroValidator(fc: AbstractControl) {
         const value = +fc.value;
-        const valid = typeof value === 'number' && !(isNaN(value)) && value > 0;
+        const valid = typeof value === 'number' && !(isNaN(value)) && value > 0 && value <= 50;
 
         return valid ? null : {
             numberNotZeroValidator: true
@@ -89,7 +88,7 @@ export class FormsService {
         };
     }
     nameValidator(fc: AbstractControl) {
-        const regex = /[*[a-zA-Z-]+.[a-zA-Z-.]+()]*/;
+        const regex = /[*[a-zA-Z-]+.[a-zA-Z-.]+()+[A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+]*/;
 
         const valid = fc.value && regex.test(fc.value);
 

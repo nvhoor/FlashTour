@@ -348,6 +348,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
             t.Images = tour.Images;
             t.Description = tour.Description;
             t.DepartureDate = tour.DepartureDate;
+            t.DepartureId = tour.DepartureId;
+            t.DestinationId = tour.DestinationId;
             t.Slot = tour.Slot;
             t.ViewCount = tour.ViewCount;
             t.TourCategoryId = tour.TourCategoryId;
