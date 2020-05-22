@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Http.Headers;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreSpa.Web.Controllers.api
@@ -61,6 +64,41 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             _uow.TourCategories.Remove(_uow.TourCategories.Get(id));
             _uow.SaveChanges();
+        }
+        // PUT: api/tour/uploadImage
+        [HttpPost("UploadImage")]
+        [DisableRequestSizeLimit]
+        [Authorize(Roles = ("admin,Admin,staff,Staff"))]
+        public IActionResult UploadImage()
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+                var folderName = Path.Combine("ClientApp", "src","assets","images","tour-categories");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+ 
+                if (file.Length > 0)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName);
+ 
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+ 
+                    return Ok(new { dbPath });
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex}");
+            }
         }
     }
 }

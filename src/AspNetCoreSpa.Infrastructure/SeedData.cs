@@ -42,10 +42,10 @@ namespace AspNetCoreSpa.Infrastructure
 
         public void Initialise()
         {
-            // _context.Database.Migrate();
-            // InitListGuId();
-            // AddLocalisedData();
-            // AddTourData();
+            _context.Database.Migrate();
+            InitListGuId();
+            AddLocalisedData();
+            AddTourData();
            // AddShopData();
         }
 
@@ -408,7 +408,8 @@ namespace AspNetCoreSpa.Infrastructure
                        Name = "Bander_" +i,
                        Image = "banner_"+i+".jpg",
                        Description = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn",
-                       PostId = postIds[i]
+                       PostId = postIds[i],
+                       Censorship = true
                     });
                 }
                 _context.SaveChanges();

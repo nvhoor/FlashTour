@@ -57,7 +57,7 @@ export class ManageBannersComponent implements OnInit {
                 { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
                 { prop: 'postId', name: 'Post Name', fieldType: FieldTypes.Select,
                     fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},
-                { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required] },
+                { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required] ,imgSrcUrl:'api/Banner/UploadImage'},
             ]};
         this.table.updateData('api/banner');
     }
@@ -78,7 +78,7 @@ export class ManageBannersComponent implements OnInit {
                 { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
                 { prop: 'postId', name: 'Post Name', fieldType: FieldTypes.Select,
                     fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},
-                { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required] },
+                { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required],imgSrcUrl:'api/Banner/UploadImage' },
             ]};
         this.table.updateData('api/banner/censorship');
     }
