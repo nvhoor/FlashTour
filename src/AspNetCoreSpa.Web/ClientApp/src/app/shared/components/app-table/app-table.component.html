@@ -11,11 +11,16 @@
 
 <!-- Filter -->
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-pull-4">
     <input type='text' #filter class="form-control" *ngIf="!options?.disableFilter" placeholder='Filter...' (keyup)='updateFilter(filter.value)' />
   </div>
   <div class="col-md-pull-4">
-    <input type='text' #filter class="form-control" *ngIf="!options?.disableFilterr" placeholder='Filter with TourId...' (keyup)='updateFilterr(filter.value)' />
+    <input type='text' #filter class="form-control" *ngIf="!options?.disableFilterName" placeholder='Filter with Name...' (keyup)='FilterName(filter.value)' />
+  </div>
+  
+  <div class="col-md-pull-4">
+    <input type='date' #filter class="form-control" *ngIf="!options?.disableFilterDepartue" placeholder='Filter with Departure...' (keyup)='FilterDepartrue(filter.value)' />
+<!--    <input type="text" #filter class="form-control" ngbDatepicker (keyup)='FilterDepartrue(filter.value)' />-->
   </div>
 </div>
 
@@ -123,6 +128,20 @@
       </div>
     </ng-template>
   </ngx-datatable-column>
+  <!-- Enable Banner Censorship -->
+  <ngx-datatable-column *ngIf="options?.enablebannerCensorship" [minWidth]="100" sortable="false" prop="id">
+    <ng-template ngx-datatable-header-template>
+      <div>Accept
+      </div>
+    </ng-template>
+    <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+      <div class="btn-group">
+        <button class="btn btn-sm btn-success" (click)="acceptBanner(row, rowIndex)">
+          <i class="fa fa-check"></i>Accept
+        </button>
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
   <!-- Footer template -->
   <ngx-datatable-footer>
     <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize" let-selectedCount="selectedCount"
@@ -138,8 +157,8 @@
     </ng-template>
   </ngx-datatable-footer>
 
-  <ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel"  let-customerData="customerData" let-priceData="priceData" let-pricesData="pricesData" let-imagesData="imagesData" let-tourIdChosen="tourIdChosen">
-    <app-form [config]="formConfig" [model]="formModel" [customerData]="customerData" [priceData]="priceData" [pricesData]="pricesData" [imagesData]="imagesData" [tourIdChosen]="tourIdChosen" #form="appForm"></app-form>
+  <ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel"  let-customerData="customerData" let-priceData="priceData" let-pricesData="pricesData" let-imagesData="imagesData" let-tourIdChosen="tourIdChosen"  let-tourproData="tourproData">
+    <app-form [config]="formConfig" [model]="formModel" [customerData]="customerData" [priceData]="priceData" [pricesData]="pricesData" [imagesData]="imagesData" [tourIdChosen]="tourIdChosen" [tourproData]="tourproData" #form="appForm"></app-form>
   </ng-template>
 
 </ngx-datatable>

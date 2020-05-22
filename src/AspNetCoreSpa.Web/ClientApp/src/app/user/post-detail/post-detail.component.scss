@@ -1,0 +1,26 @@
+.n3-news .frame-dt-top {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+.n3-news .news-detail-title {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #ff002d;
+  margin-bottom: 7px;
+  margin-top: 20px;
+}
+.frame-date {
+  display: flex;
+}
+.frame-content-img{
+  width: 100%;
+  height: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.card-name:hover{
+  color: red;
+}

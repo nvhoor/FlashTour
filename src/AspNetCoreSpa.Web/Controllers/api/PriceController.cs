@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -33,7 +34,14 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var price = _uow.Prices.Get(id);
             return Ok(_mapper.Map<PriceVM>(price));
         }
-
+        // GET Price by TourID
+        [HttpGet("ByTourId")]
+        public IActionResult Get(Guid tourId,int touristType)
+        {
+            var customer = _uow.Prices.GetAll().Where(x=>x.TourId==tourId
+                                                                &&x.TouristType==touristType);
+            return Ok(_mapper.Map<IEnumerable<PriceVM>>(customer));
+        }
         // POST: api/Price
         [HttpPost]
         public void Post([FromBody] PriceVM price)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AspNetCoreSpa.Core.Entities;
 using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
@@ -34,7 +35,13 @@ namespace AspNetCoreSpa.Web.Controllers.api
             var tourprogram = _uow.TourPrograms.Get(id);
             return Ok(_mapper.Map<TourProgramVM>(tourprogram));
         }
-
+        //GET: api/TourProgram/ByTourId
+        [HttpGet("ByTourId")]
+        public IActionResult GetTourProgram(Guid tourId, int orderNumber)
+        {
+            var tourpro = _uow.TourPrograms.GetAll().Where(x=>x.TourId==tourId && x.OrderNumber == orderNumber);
+            return Ok(_mapper.Map<IEnumerable<TourProgramVM>>(tourpro));
+        }
         // POST: api/TourProgram
         [HttpPost]
         public void Post([FromBody] TourProgramVM tp)

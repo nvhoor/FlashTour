@@ -3,7 +3,7 @@
         <a [ngClass]="chosenEdit?'nav-link active':'nav-link'" (click)="newTour()" >Edit tours</a>
     </li>
     <li class="nav-item">
-        <a [ngClass]="!chosenEdit?'nav-link active':'nav-link'" (click)="clickCensorship()">Sensorship</a>
+        <a [ngClass]="!chosenEdit?'nav-link active':'nav-link'" (click)="clickCensorship()">Censorship</a>
     </li>
 </ul>
 <appc-table #table [options]="options"></appc-table>
@@ -15,6 +15,9 @@
 <ng-template #tourPricesTemplate let-row="row" let-value="value">
     <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[8].subTableColumn,row)">Prices</button>
 </ng-template>
+<ng-template #tourProgramsTemplate let-row="row" let-value="value">
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickTourPrograms(this.options.columns[9].subTableColumn,row)">Tour's Program</button>
+</ng-template>
 <ng-template #tourCategoriesTemplate let-row="row" let-value="value">
     {{row.categoryName}}
 </ng-template>
@@ -24,6 +27,6 @@
 <ng-template #imagesTemplate let-row="row" let-value="value">
     <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickImages(this.options.columns[2].subTableColumn,row)">Images</button>
 </ng-template>
-<ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel" let-formTableData="formTableData" let-pricesData="pricesData"  let-imagesData="imagesData" let-tourIdChosen="tourIdChosen">
-    <app-form [config]="formConfig" [model]="formModel" #form="appForm" [pricesData]="pricesData" [imagesData]="imagesData" [tourIdChosen]="tourIdChosen"></app-form>
+<ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel" let-formTableData="formTableData" let-pricesData="pricesData"  let-imagesData="imagesData" let-tourIdChosen="tourIdChosen" let-tourproData="tourproData" >
+    <app-form [config]="formConfig" [model]="formModel" #form="appForm" [pricesData]="pricesData" [imagesData]="imagesData" [tourIdChosen]="tourIdChosen" [tourproData]="tourproData"></app-form>
 </ng-template>

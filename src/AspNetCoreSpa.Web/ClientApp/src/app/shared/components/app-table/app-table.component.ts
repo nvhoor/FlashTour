@@ -83,7 +83,7 @@ export class AppTableComponent implements OnInit {
         var agree=confirm("Are you sure to accept this tour?");
         if(agree){
             this.dataService.put<Tour>(`api/tour/accepttour/${row.id}`).subscribe(x=>{
-                console.log("Accept tour booking success!");
+                console.log("Accept tour success!");
                 this.updateData('api/tour/cencershiptour');
             },error => {  console.error(error);});
         }
@@ -93,7 +93,7 @@ export class AppTableComponent implements OnInit {
         var agree=confirm("Are you sure to accept this post?");
         if(agree){
             this.dataService.put<Tour>(`api/post/acceptpost/${row.id}`).subscribe(x=>{
-                console.log("Accept tour booking success!");
+                console.log("Accept Post success!");
                 this.updateData('api/post/cencershippost');
             },error => {  console.error(error);});
         }
@@ -121,6 +121,7 @@ export class AppTableComponent implements OnInit {
                 });
         }, () => { });
     }
+    // Tìm kiếm theo ID
     updateFilter(event) {
         const val = event.toLowerCase();
         // filter our data
@@ -132,15 +133,22 @@ export class AppTableComponent implements OnInit {
         // Whenever the filter changes, always go back to the first page
         this.table.offset = 0;
     }
-    updateFilterr(event) {
+    // Tìm kiếm theo Tên
+    FilterName(event) {
         const val = event.toLowerCase();
-        // filter our data
         const temp = this.tempRows.filter(d => {
-            return d.tourId.toLowerCase().indexOf(val) !== -1 || !val;
+            return d.name.toLowerCase().indexOf(val) !== -1 || !val;
         });
-        // update the rows
         this.options.rows = temp;
-        // Whenever the filter changes, always go back to the first page
+        this.table.offset = 0;
+    }
+    // Tìm kiếm ngày khởi hành
+    FilterDepartrue(event) {
+        const val = event.toLowerCase();
+        const temp = this.tempRows.filter(d => {
+            return d.departureDate.toLowerCase().indexOf(val) !== -1 || !val;
+        });
+        this.options.rows = temp;
         this.table.offset = 0;
     }
     toggleExpandRow(row) {
@@ -260,5 +268,14 @@ export class AppTableComponent implements OnInit {
             .then(() => {
 
             }, () => { });
+    }
+    acceptBanner(row, rowIndex) {
+        var agree=confirm("Are you sure to accept this banner?");
+        if(agree){
+            this.dataService.put<Tour>(`api/banner/acceptbanner/${row.id}`).subscribe(x=>{
+                console.log("Accept Banner success!");
+                this.updateData('api/banner/censorship');
+            },error => {  console.error(error);});
+        }
     }
 }

@@ -47,7 +47,6 @@ export class FormsService {
     }
     multipleCheckboxRequireMoreThanOne(fa: FormArray) {
         let checkedCount = 0;
-
         for (let x = 0; x < fa.length; ++x) {
             if (fa.at(x).value) {
                 checkedCount++;
@@ -87,6 +86,15 @@ export class FormsService {
 
         return valid ? null : {
             email: true
+        };
+    }
+    nameValidator(fc: AbstractControl) {
+        const regex = /[*[a-zA-Z-]+.[a-zA-Z-.]+()]*/;
+
+        const valid = fc.value && regex.test(fc.value);
+
+        return valid ? null : {
+            name: true
         };
     }
     // https://www.regexpal.com/?fam=104738

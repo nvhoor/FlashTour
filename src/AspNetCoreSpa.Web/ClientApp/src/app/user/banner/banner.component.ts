@@ -13,11 +13,14 @@ export class BannerComponent implements OnInit {
   public banners: Banner[];
   public provinces:Province[];
   public tourCategories:TourCategory[];
+  public postCategories: PostCate[];
   public prices:SearchPrice[];
   public departureDate:Date;
   public selectedDeparture:string;
   @Input() optionSearch:OptionSearch;
+  @Input() optionSearchPost:OptionSearchPost;
   public emitSearch:EmitSearch;
+  public emitSearchPost:EmitSearchPost;
   constructor(       @Inject("BASE_URL") private baseUrl: string,
                      private route: ActivatedRoute,
                      private _renderer2: Renderer2,
@@ -39,7 +42,11 @@ export class BannerComponent implements OnInit {
       destinationId:"0",
       departureDateTimeStamp:this.departureDate.getTime()+'',
       tourCategoryId:"0",
-      priceId:0
+      priceId:0,
+    }
+    this.optionSearchPost = {
+      postCategoryId:"0"
+
     }
   }
 
@@ -47,6 +54,7 @@ export class BannerComponent implements OnInit {
     this.getBanners();
     this.getProvinces();
     this.getTourCategories();
+    this.getPostCategories();
   }
   @Output() myEvent = new EventEmitter<EmitSearch>();
   onClickSearchTour(){
@@ -62,6 +70,11 @@ export class BannerComponent implements OnInit {
       this.selectedDeparture=this.provinces.find(x=>x.id==this.optionSearch.departureId).name;
       this.emitSearch={departureName:this.selectedDeparture,destinationName:"",option:this.optionSearch};
     this.myEvent.emit(this.emitSearch);
+  }
+
+  @Output() myEventPost = new EventEmitter<EmitSearchPost>();
+  onClickSearchPost(){
+    this.myEventPost.emit(this.emitSearchPost);
   }
   private getBanners() {
     var data = this._dataService.getFull<Banner[]>(`${this.baseUrl}api/Banner`);
@@ -112,7 +125,7 @@ export class BannerComponent implements OnInit {
         });
       });
       that.tourCategories = tourCategories;
-      console.log(that.provinces);
+      console.log(that.tourCategories);
     }, error => console.error(error));
   }
     public convertDate(dateInput) {
@@ -121,4 +134,20 @@ export class BannerComponent implements OnInit {
         var date = new Date(dateInput)||new Date();
         return [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/')
     }
+  private getPostCategories() {
+    var data = this._dataService.getFull<PostCate[]>(`${this.baseUrl}api/postcategory`);
+    let that = this;
+    data.subscribe((result) => {
+      // console.log("Respone:"+result.body);
+      let postCategories = [];
+      result.body.forEach((d, i) => {
+        postCategories.push({
+          id: d.id,
+          name: d.name
+        });
+      });
+      that.postCategories = postCategories;
+      console.log(that.postCategories);
+    }, error => console.error(error));
+  }
 }

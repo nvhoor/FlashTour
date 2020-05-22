@@ -31,6 +31,7 @@ export class FormFieldErrorComponent implements OnInit {
         const config: any = {
             required: 'Field is required',
             maxlength: '',
+            name: 'Names cannot contain numeric or special characters',
             email: 'Invalid email address',
             telephone: 'Invalid telephone number',
             date: 'Invalid date entered',

@@ -17,6 +17,8 @@ export class ManageBannersComponent implements OnInit {
     options: IAppTableOptions<Comunication>;
     postFieldOption:IOption[];
     @ViewChild('postTemplate', { static: true }) postTemplate: TemplateRef<any>;
+    @ViewChild('table', { static: true }) table:AppTableComponent;
+    chosenEdit = true;
     constructor(
         @Inject("BASE_URL") private baseUrl: string,
         private modalService: ModalService,
@@ -42,12 +44,14 @@ export class ManageBannersComponent implements OnInit {
     }
     newBanner(){
         this.options = {
-            title: 'Banner',
+            title: 'Banners',
             apiUrl: 'api/banner',
             disableFilter: true,
             disablechangetour: true,
             disableviewContact: true,
-            disableFilterr: true,
+            disableFilterDepartue: true,
+            enablebannerCensorship: false,
+            disableFilterName: true,
             columns: [
                 { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
                 { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
@@ -55,5 +59,27 @@ export class ManageBannersComponent implements OnInit {
                     fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},
                 { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required] },
             ]};
+        this.table.updateData('api/banner');
+    }
+
+    clickCensorshipBanner() {
+        this.options = {
+            title: 'Banners',
+            apiUrl: 'api/banner/censorship',
+            disableFilter: true,
+            disablechangetour: true,
+            disableviewContact: false,
+            disableEditing: true,
+            disableFilterDepartue: true,
+            enablebannerCensorship: true,
+            disableFilterName: true,
+            columns: [
+                { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+                { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+                { prop: 'postId', name: 'Post Name', fieldType: FieldTypes.Select,
+                    fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},
+                { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required] },
+            ]};
+        this.table.updateData('api/banner/censorship');
     }
 }

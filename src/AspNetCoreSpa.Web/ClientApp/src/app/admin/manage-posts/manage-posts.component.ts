@@ -43,12 +43,13 @@ export class ManagePostsComponent implements OnInit {
   }
   newPost(){
     this.options = {
-      title: 'Post',
+      title: 'Posts',
       apiUrl: 'api/post',
       disableFilter: true,
       disablechangetour: true,
       disableviewContact: true,
       enablepostCensorship: false,
+      disableFilterDepartue: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'postContent', name: 'PostContent', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
@@ -57,6 +58,7 @@ export class ManagePostsComponent implements OnInit {
         { prop: 'metaDescription', name: 'MetaDescription', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'metaKeyWord', name: 'MetaKeyWord', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'alias', name: 'Alias', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'updatedAt', name: 'Updated At', fieldType: FieldTypes.Date },
         { prop: 'postCategoryId', name: 'PostCategory', fieldType: FieldTypes.Select,
            fieldOptions: this.postCateFieldOption,cellTemplate: this.postCateTemplate},
       ]};
@@ -65,13 +67,14 @@ export class ManagePostsComponent implements OnInit {
 
   clickCensorshipPost(){
     this.options = {
-      title: 'Post',
+      title: 'Posts',
       apiUrl: 'api/post/cencershippost',
       disableFilter: true,
       disablechangetour: true,
-      disableviewContact: true,
+      disableviewContact: false,
       enablepostCensorship: true,
       disableEditing: true,
+      disableFilterDepartue: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'postContent', name: 'PostContent', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
@@ -80,9 +83,9 @@ export class ManagePostsComponent implements OnInit {
         { prop: 'metaDescription', name: 'MetaDescription', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'metaKeyWord', name: 'MetaKeyWord', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'alias', name: 'Alias', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'updatedAt', name: 'Updated At', fieldType: FieldTypes.Date },
         { prop: 'postCategoryId', name: 'PostCategory', fieldType: FieldTypes.Select,
           fieldOptions: this.postCateFieldOption,cellTemplate: this.postCateTemplate},
-        //{ prop: 'postCategoryId', name: 'postCategoryId', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
       ]};
     this.table.updateData('api/post/cencershippost');
   }

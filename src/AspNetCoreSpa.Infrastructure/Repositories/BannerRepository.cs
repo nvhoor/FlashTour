@@ -1,4 +1,6 @@
-﻿using AspNetCoreSpa.Core.Entities;
+﻿using System.Collections;
+using System.Collections.Generic;
+using AspNetCoreSpa.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreSpa.Infrastructure
@@ -9,5 +11,17 @@ namespace AspNetCoreSpa.Infrastructure
         {
         }
         private ApplicationDbContext _appContext => (ApplicationDbContext)_context;
+        public IEnumerator<Banner> GetEnumerator()
+        {
+            foreach (var banner in _appContext.Banners)
+            {
+                yield return banner;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

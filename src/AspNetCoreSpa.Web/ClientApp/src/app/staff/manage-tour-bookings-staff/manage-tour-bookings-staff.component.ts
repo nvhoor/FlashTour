@@ -108,7 +108,8 @@ export class ManageTourBookingsStaffComponent implements OnInit {
       disableDelete:true,
       disablechangetour: true,
       disableviewContact: true,
-      disableFilterr: true,
+      disableFilterDepartue: true,
+      disableFilterName: true,
       columns: [
         { prop: 'id', name: 'Id'},
         { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },

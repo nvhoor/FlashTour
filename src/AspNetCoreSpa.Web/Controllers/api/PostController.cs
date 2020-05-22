@@ -64,6 +64,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
             pos.MetaDescription = post.MetaDescription;
             pos.MetaKeyWord = post.MetaKeyWord;
             pos.Alias = post.Alias;
+            pos.UpdatedAt = post.UpdatedAt;
+            pos.CreatedAt = post.CreatedAt;
             pos.PostCategoryId = post.PostCategoryId;
             _uow.Posts.Update(pos);
             var result = _uow.SaveChanges();
@@ -137,5 +139,52 @@ namespace AspNetCoreSpa.Web.Controllers.api
                      _uow.Posts.Update(p);
                      var result = _uow.SaveChanges();
                  }
+        [HttpGet("postsSameCate/{id}")]
+        public IActionResult GetPostsSameCategory(Guid Id)
+        {
+            var postE = _uow.Posts.Get(Id);
+            var postCategoryE = _uow.PostCategories.Get(postE.PostCategoryId);
+            var allPost = (from post in _uow.Posts
+                join postCate in _uow.PostCategories
+                    on post.PostCategoryId equals postCate.Id
+                where post.Deleted==false&&post.Status&&postCate.Id==postCategoryE.Id&&post.Id!=Id&&post.Censorship
+                select new
+                    PostVM()
+                    {
+                        Id = post.Id,
+                        Name = post.Name,
+                        PostContent = post.PostContent,
+                        Description = post.Description,
+                        Image = post.Image,
+                        MetaDescription = post.MetaDescription,
+                        MetaKeyWord = post.MetaKeyWord,
+                        Alias = post.Alias,
+                        Status = post.Status,
+                        Censorship = post.Censorship,
+                        PostCategoryId = post.PostCategoryId,
+                            
+                    }).OrderByDescending(x=>x.CreatedAt).Take(4);
+            return Ok(allPost);
+        }
+        
+        [HttpGet("Search")]
+        public IActionResult Get(string postCategoryId)
+        {
+            var conditionCate = postCategoryId != "0";
+            var allTour = (from tour in _uow.Posts
+                join tourCate in _uow.PostCategories
+                    on tour.PostCategoryId equals tourCate.Id
+                where (tour.Deleted == false && tour.Censorship && tour.Status
+                       && (!conditionCate || tourCate.Id == Guid.Parse(postCategoryId)))
+                select new
+                    PostVM()
+                    {
+                        Id = tour.Id,
+                        Description = tour.Description,
+                        Image = tour.Image,
+                        Name = tour.Name,
+                    });
+            return Ok(allTour);
+        }
     }
 }

@@ -1,8 +1,9 @@
-﻿using AspNetCoreSpa.Core.Entities;
+﻿using System.Collections.Generic;
+using AspNetCoreSpa.Core.Entities;
 
 namespace AspNetCoreSpa.Infrastructure
 {
-    public interface IBannerRepository : IRepository<Banner>
+    public interface IBannerRepository : IRepository<Banner>, IEnumerable<Banner>
     {
         
     }

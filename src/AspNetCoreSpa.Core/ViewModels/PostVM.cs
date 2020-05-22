@@ -17,6 +17,9 @@ namespace AspNetCoreSpa.Core.ViewModels
         public bool Status { get; set; }
         public bool Censorship { get; set; }
         public bool Deleted { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+
         public Guid PostCategoryId { get; set; }
         public string CategoryName { get; set; }
         public ICollection<BannerVM> Banners { get; set; }  

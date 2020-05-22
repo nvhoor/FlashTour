@@ -76,7 +76,7 @@
                                                     </div>
                                                     <div class="col-2">
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn btn-info btn-md btn-search-tour btn-mg-t mt-4" id="btnSearchTour" (click)="onClickSearchTour()"><i class="fas fa-search"></i> Search</button>
+                                                            <button type="submit" class="btn btn-info btn-md btn-search-tour btn-mg-t" id="btnSearchTour" (click)="onClickSearchTour()"><i class="fas fa-search"></i> Search</button>
                                                         </div>
                                                     </div>
                                     </div>
@@ -84,6 +84,7 @@
                     <hr>
                 </div>
             </div>
+            <!-- Search Post -->
             <div class="dropdown find-dropdown-r">
                 <div class="col-lg-5 dropdown-toggle" id="proposal-tour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="card">
@@ -94,41 +95,33 @@
                 <div class="dropdown-menu form-proposal" aria-labelledby="search-tour">
                         <div class="form-info-search bg-dltn pos-relative" style="display: block;">
                             <form action="/Tour/SearchFirst" method="post"><input name="" type="hidden" value="">
-                                <div class="container">
-                                    <div class="row">
+                                <div class="container post">
                                         <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                                            <div class="form-group">
-                                                <label class="mg-b">KeyWord:</label>
-                                                <input type="text" class="form-control" id="usr">
-                                            </div>
+<!--                                            <div class="form-group">-->
+<!--                                                <label class="mg-b">KeyWord:</label>-->
+<!--                                                <input type="text" class="form-control" id="name-post">-->
+<!--                                            </div>-->
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
                                             <div class="form-group">
                                                 <label class="mg-b">Post Category:</label>
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn btn-primary active">
-                                                        <input type="radio" name="options" id="option1" autocomplete="off" checked>Tour Guid
-                                                    </label>
-                                                    <label class="btn btn-success ">
-                                                        <input type="radio" name="options" id="option2" autocomplete="off">Tour Experiences
-                                                    </label>
-                                                    <label class="btn btn-info">
-                                                        <input type="radio" name="options" id="option3" autocomplete="off">All
-                                                    </label>
-                                                </div>
+                                                <select class="form-control input-md" id="postCategory" name="TourCate" [(ngModel)]="optionSearchPost.postCategoryId">
+                                                    <option value="0">All</option>
+                                                    <option value="{{postCate.id}}" *ngFor="let postCate of postCategories">{{postCate.name}}</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-md btn-search-post btn-mg-t" onclick="return checkSearch('departureID'); ga('event','Search', 'SearchClick', 'keywords');"><i class="fas fa-search"></i>Search</button>
+                                                <button type="submit" class="btn btn-info btn-md btn-search-post" id="btnSearchPost" (click)="onClickSearchPost()"><i class="fas fa-search"></i> Search</button>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                             </form>
                             <hr>
                         </div>
                 </div>
+                <!-- -->
             </div>
         </div>
     </div>

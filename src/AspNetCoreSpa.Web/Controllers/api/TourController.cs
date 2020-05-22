@@ -37,6 +37,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
                 {
                     var prices = _uow.Prices.Find(x => x.TourId == allTour.Id).OrderBy(o => o.TouristType).ToList();
                     allTour.Prices = prices;
+                    var tourproData = _uow.TourPrograms.Find(x => x.TourId == allTour.Id).ToList();
+                    allTour.TourPrograms = tourproData;
                 }
 
                 var allToursVm = _mapper.Map<IEnumerable<TourVM>>(allTours);
@@ -348,9 +350,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             t.DepartureDate = tour.DepartureDate;
             t.Slot = tour.Slot;
             t.ViewCount = tour.ViewCount;
-            t.Censorship = tour.Censorship;
-            t.Status = tour.Status;
-            t.Deleted = tour.Deleted;
             t.TourCategoryId = tour.TourCategoryId;
             _uow.Tours.Update(t);
             var result = _uow.SaveChanges();
@@ -377,18 +376,36 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpGet("cencershiptour")]
         public IActionResult GetCencershiptour()
         {
-            var allTours = _uow.Tours.GetAll().Where(x=>!x.Censorship);
+            var allTours = _uow.Tours.GetAll().Where(x => !x.Censorship);
             foreach (var allTour in allTours )
             {
                 var prices = _uow.Prices.Find(x => x.TourId == allTour.Id).OrderBy(o => o.TouristType).ToList();
                 allTour.Prices = prices;
+                var tourproData = _uow.TourPrograms.Find(x => x.TourId == allTour.Id).ToList();
+                allTour.TourPrograms = tourproData;
             }
-            return Ok(_mapper.Map<IEnumerable<TourVM>>(allTours));
+
+            var allToursVm = _mapper.Map<IEnumerable<TourVM>>(allTours);
+            foreach (var tourVm in allToursVm)
+            {
+                var tourCategory = _uow.TourCategories.GetSingleOrDefault(x=>x.Id==tourVm.TourCategoryId);
+                if (tourCategory!=null)
+                {
+                    tourVm.CategoryName = tourCategory.Name;
+                }
+                var departureName = _uow.Provinces.GetSingleOrDefault(x=>x.Id==tourVm.DepartureId);
+                if (departureName!=null)
+                {
+                    tourVm.DepartureName = departureName.Name;
+                }
+            }
+                
+            return Ok(allToursVm);
         }
         // PUT: api/tour/DeleteImage/{id}
         [HttpPut("DeleteImage/{id}")]
         [Authorize(Roles = ("admin,Admin,staff,Staff"))]
-        public void DeleteImage(Guid id,[FromBody]TourImageVM imageVM)
+        public void DeleteImage(Guid id,[FromBody] TourImageVM imageVM)
         {
             var t = _uow.Tours.Get(id);
             var images = !string.IsNullOrEmpty(t.Images)?t.Images.Split("|").ToList():new List<string>();
@@ -417,7 +434,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         // PUT: api/tour/AddImage/{id}
         [HttpPut("AddImage/{id}")]
         [Authorize(Roles = ("admin,Admin,staff,Staff"))]
-        public void AddImage(Guid id,[FromBody]TourImageVM imageVM)
+        public void AddImage(Guid id,[FromBody] TourImageVM imageVM)
         {
             var t = _uow.Tours.Get(id);
             if (!string.IsNullOrEmpty(t.Images)&&t.Images.Split("|").Length > 0)
@@ -437,6 +454,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             var t = _uow.Tours.Get(id);
             t.Censorship = true;
+            t.Status = true;
             _uow.Tours.Update(t);
             var result = _uow.SaveChanges();
         }

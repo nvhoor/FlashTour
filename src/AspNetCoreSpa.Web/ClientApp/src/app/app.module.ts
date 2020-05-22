@@ -48,8 +48,8 @@ import {ManageTourBookingsStaffComponent} from "@app/staff/manage-tour-bookings-
 import {ManagePostsStaffComponent} from "@app/staff/manage-posts-staff/manage-posts-staff.component";
 import {ManageBannersStaffComponent} from "@app/staff/manage-banners-staff/manage-banners-staff.component";
 import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/manage-contacts-staff.component";
-import {ManageTourProgramsComponent} from "@app/admin/manage-tour-programs/manage-tour-programs.component";
-import {ManageTourProgramsStaffComponent} from "@app/staff/manage-tour-programs-staff/manage-tour-programs-staff.component";
+import {PostComponent} from "@app/user/post/post.component";
+import {PostDetailComponent} from "@app/user/post-detail/post-detail.component";
 import {ChartsModule} from "ng2-charts";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
@@ -68,7 +68,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
       DashboardComponent,
       DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,
        ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent,ManageBannersComponent,
-      AutoLoginAdminComponent,StaffComponent,AutoLoginStaffComponent,ManageToursStaffComponent, ManageTourBookingsStaffComponent, ManagePostsStaffComponent, ManageBannersStaffComponent,ManageContactsStaffComponent,ManageTourProgramsComponent,ManageTourProgramsStaffComponent
+      AutoLoginAdminComponent,StaffComponent,AutoLoginStaffComponent,ManageToursStaffComponent, ManageTourBookingsStaffComponent, ManagePostsStaffComponent, ManageBannersStaffComponent,ManageContactsStaffComponent,PostComponent,PostDetailComponent
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
