@@ -9,9 +9,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse text-secondary ml-5" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-5">
-            <li class="nav-item">
-            </li>
+        <ul class="navbar-nav ml-5" *ngIf="!isAdmin">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="user/post" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     News

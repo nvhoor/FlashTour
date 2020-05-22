@@ -1,1 +1,43 @@
-<p>You are in dashboard!</p>
+<div class="row">
+    <div class="col-6 m-auto">
+        <label class="mg-bot5">Start Day</label>
+        <div>
+            <label>
+                <input class="form-control" required="required" type="date" (change)="changeDateRange()" [(ngModel)]="startDay" name="startDate">
+            </label>
+        </div>
+    </div>
+    <div class="col-6 m-auto">
+        <label class="mg-bot5">End Day</label>
+        <div>
+            <label>
+                <input class="form-control" required="required" type="date" (change)="changeDateRange()" [(ngModel)]="endDay" name="endDate">
+            </label>
+        </div>
+    </div>   
+</div>
+<div class="row">
+    <div class="col-6">
+            <canvas baseChart width="300" height="300"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    [plugins]="lineChartPlugins">
+            </canvas>
+    </div>
+    <div class="col-6">
+            <canvas baseChart width="300" height="300"
+                    [datasets]="lineChartTouristData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartTouristColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    [plugins]="lineChartPlugins">
+            </canvas>
+    </div>
+    <div></div>
+</div>

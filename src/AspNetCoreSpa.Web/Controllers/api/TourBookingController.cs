@@ -129,5 +129,62 @@ namespace AspNetCoreSpa.Web.Controllers.api
             _uow.TourBookings.Remove(_uow.TourBookings.Get(id));
             _uow.SaveChanges();
         }
+        [HttpGet("GetDashBoardData")]
+        // [Authorize(Roles = ("admin,Admin"))]
+        public IActionResult GetDashBoardData(string startDateTimeStamp,string endDateTimeStamp)
+        {
+           var startDate=(new DateTime(1970, 1, 1)).AddMilliseconds(double.Parse(startDateTimeStamp));
+           var endDate=(new DateTime(1970, 1, 1)).AddMilliseconds(double.Parse(endDateTimeStamp));
+           var dashBoardData=new DashBoardVM();
+           List<ChartDataVM> revenues=new List<ChartDataVM>();
+           List<ChartDataVM> tourists=new List<ChartDataVM>();
+           do
+           {
+               var revenue=new ChartDataVM();
+               var tourist=new ChartDataVM();
+               var tourBookings=  _uow.TourBookings.Where(x => x.CreatedAt.Year==startDate.Year&&
+                                                               x.CreatedAt.Month==startDate.Month&&
+                                                               x.CreatedAt.Day==startDate.Day&&x.Status);
+               DateTime dt1970 = new DateTime(1970, 1, 1);
+               TimeSpan span = startDate - dt1970;
+               tourist.X=revenue.X = (decimal) span.TotalMilliseconds;
+               
+               if (!tourBookings.Any())
+               {
+                   revenue.Y = 0;
+                   tourist.Y = 0;
+               }
+               else
+               {
+                   decimal totalValueBooking=0;
+                   decimal totalTourists = 0;
+                   foreach (var tourBooking in tourBookings)
+                   {
+                       var TourCustomers = _uow.TourCustomers.Where(x => x.TourBookingId == tourBooking.Id);
+                       foreach (var tourCustomer in TourCustomers)
+                       {
+                           var bookingPrice = _uow.BookingPrices.GetSingleOrDefault(x=>x.TourBookingId==tourBooking.Id&&
+                                                                                       x.TouristType==tourCustomer.TouristType);
+                           if (bookingPrice != null)
+                           {
+                               totalValueBooking += bookingPrice.Price;
+                           }
+                       }
+
+                       totalTourists += TourCustomers.Any() ? TourCustomers.Count() : 0;
+                   }
+                   revenue.Y = totalValueBooking;
+                   tourist.Y = totalTourists;
+               }
+               revenues.Add(revenue);
+               tourists.Add(tourist);
+               startDate = startDate.AddDays(1);
+           } while (startDate.Date<=endDate.Date);
+
+           dashBoardData.Revenues = revenues;
+           dashBoardData.Tourists = tourists;
+           return Ok(dashBoardData);
+        }
+        
     }
 }

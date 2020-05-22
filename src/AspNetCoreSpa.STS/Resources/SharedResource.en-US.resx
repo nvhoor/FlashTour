@@ -205,7 +205,7 @@
     <value>Enter your email.</value>
   </data>
   <data name="INVALID_LOGIN_ATTEMPT" xml:space="preserve">
-    <value>Invalid login attempt.</value>
+    <value>Invalid email or password.</value>
   </data>
   <data name="LOCKED_OUT" xml:space="preserve">
     <value>Locked out</value>

@@ -28,7 +28,7 @@ export class ManageTourCategoriesComponent implements OnInit {
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload, fieldValidations: [Validators.required] },
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload, fieldValidations: [Validators.required] ,imgSrcUrl:'api/TourCategory/UploadImage' },
       ]
     };
     this.table.updateData('api/tourcategory');

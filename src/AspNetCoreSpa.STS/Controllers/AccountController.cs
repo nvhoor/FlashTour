@@ -159,11 +159,12 @@ namespace AspNetCoreSpa.STS.Controllers
                 //     return View(await BuildLoginViewModelAsync(model));
                 // }
             }
-
+            ModelState.AddModelError(string.Empty, _sharedLocalizer["INVALID_LOGIN_ATTEMPT"]);
+            return View(await BuildLoginViewModelAsync(model));
             // something went wrong, show form with error
             //var vm = await BuildLoginViewModelAsync(model);
             //return View(vm);
-            return Redirect("Login");
+            //return Redirect("Account/Login");
         }
 
         /*****************************************/
