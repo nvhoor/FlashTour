@@ -48,7 +48,6 @@ export class ManageToursComponent implements OnInit {
         });
       });
       this.departuresFieldOption=fieldOptions;
-      this.newTour();
     });
     var datatourcate = this._dataService.getFull<Tourcate[]>(`${this.baseUrl}api/tourcategory`);
     let thattourcate = this;
@@ -227,7 +226,7 @@ export class ManageToursComponent implements OnInit {
         // prices
         { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
           subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
+            { prop: 'tourId', name: 'Tour ID'  },
             { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator]  },
             { prop: 'originalPrice', name: 'Original Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.numberValidator]},
             { prop: 'promotionPrice', name: 'PromotionPrice', fieldType: FieldTypes.Textbox,},
@@ -244,7 +243,7 @@ export class ManageToursComponent implements OnInit {
         //tourPrograms
         { prop: 'tourPrograms', name: 'Tour Program',cellTemplate:this.tourProgramsTemplate,
           subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox },
+            { prop: 'tourId', name: 'Tour ID'},
             { prop: 'date', name: 'Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required]  },
             { prop: 'orderNumber', name: 'Order Number', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
             { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox,},
@@ -267,6 +266,7 @@ export class ManageToursComponent implements OnInit {
       enabletourCensorship:true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'id', name: 'ID Tour', fieldType: FieldTypes.Textbox },
         { prop: 'image', name: 'Image', fieldType: FieldTypes.Textbox },
         { prop: 'images', name: 'Images', fieldType: FieldTypes.Textbox },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
@@ -276,17 +276,6 @@ export class ManageToursComponent implements OnInit {
         { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
           { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,
               fieldOptions: this.tourcategoryFieldOption,cellTemplate: this.tourCategoriesTemplate},
-          //tourPrograms
-          { prop: 'tourPrograms', name: 'Tours Program',cellTemplate:this.tourProgramsTemplate,
-              subTableColumn:[
-                  { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
-                  { prop: 'orderNumber', name: 'Order Number', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
-                  { prop: 'date', name: 'Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required]  },
-                  { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox,},
-                  { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-                  { prop: 'destination', name: 'Destination', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-              ]
-          },
         { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
           subTableColumn:[
             { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
@@ -302,7 +291,18 @@ export class ManageToursComponent implements OnInit {
                 {key:2,value:'Kid'},
               ]},
           ]
-        }
+        },
+        //tourPrograms
+        { prop: 'tourPrograms', name: 'Tours Program',cellTemplate:this.tourProgramsTemplate,
+          subTableColumn:[
+            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
+            { prop: 'orderNumber', name: 'Order Number', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
+            { prop: 'date', name: 'Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required]  },
+            { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox,},
+            { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+            { prop: 'destination', name: 'Destination', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+          ]
+        },
       ]
     };
     this.chosenEdit=false;

@@ -38,6 +38,7 @@ export class AppTableComponent implements OnInit {
     getData() {
         this.dataService.get<Array<any>>(this.options.apiUrl)
             .subscribe(data => {
+                console.log(JSON.stringify(data));
                 this.options.rows = data;
                 this.rowKeys = Object.keys(data[0]);
                 this.tempRows = [...data];

@@ -77,7 +77,7 @@ export class ManageBannersComponent implements OnInit {
             columns: [
                 { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
                 { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, Validators.maxLength(500), Validators.minLength(10)]},
-                { prop: 'postId', name: 'Post Name', fieldType: FieldTypes.Select,
+                { prop: 'postId', name: 'Post', fieldType: FieldTypes.Select,
                     fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},
                 { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required],imgSrcUrl:'api/Banner/UploadImage' },
             ]};

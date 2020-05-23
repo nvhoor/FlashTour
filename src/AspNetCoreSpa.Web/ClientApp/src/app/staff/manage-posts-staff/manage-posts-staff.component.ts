@@ -57,7 +57,7 @@ export class ManagePostsStaffComponent implements OnInit {
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required,this.formsService.nameValidator] },
         { prop: 'postContent', name: 'PostContent', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required] },
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required],imgSrcUrl:'api/post/UploadImage'},
         { prop: 'metaDescription', name: 'MetaDescription', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'metaKeyWord', name: 'MetaKeyWord', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'alias', name: 'Alias', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },

@@ -15,6 +15,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         public Guid DepartureId { get; set; }
         public Guid DestinationId { get; set; }
         public string DepartureName { get; set; }
+        public string DestinationName { get; set; }
         public int Slot { get; set; }
         public long ViewCount { get; set; }
         public bool Censorship { get; set; }

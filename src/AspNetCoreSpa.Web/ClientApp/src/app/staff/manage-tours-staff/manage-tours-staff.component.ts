@@ -22,9 +22,10 @@ export class ManageToursStaffComponent implements OnInit {
   @ViewChild('formTemplate', { static: true }) formTemplate: AppFormComponent;
   @ViewChild('table', { static: true }) table:AppTableComponent;
   @ViewChild('departureTemplate', { static: true }) departureTemplate: TemplateRef<any>;
+  @ViewChild('imagesTemplate', { static: true }) imagesTemplate: TemplateRef<any>;
+
   departuresFieldOption:IOption[];
   private tourcategoryFieldOption: IOption[];
-  tourproData: any;
   constructor(
       @Inject("BASE_URL") private baseUrl: string,
       private modalService: ModalService,
@@ -105,60 +106,54 @@ export class ManageToursStaffComponent implements OnInit {
       template,
     });
   }
+  private onClickImages(columns,row) {
+    var model = row.prices[0];
+    const fields = columns
+        .filter(f => f.fieldType)
+        .map(x => {
+          var onSubmit;
+          if(x.fieldType==FieldTypes.Button){
+            onSubmit=x.onSubmit;
+          }else{
+            onSubmit=null;
+          }
+          const field: IFieldConfig = {
+            name: x.prop.toString(),
+            type: x.fieldType,
+            label: x.name,
+            validation: x.fieldValidations,
+            options: x.fieldOptions,
+            onSubmit:onSubmit
+          };
+          return field;
+        });
 
-  newTour(){
-    this.options = {
-      title: 'Tours',
-      id:'tour',
-      apiUrl: 'api/tour/',
-      disableDelete:true,
-      enabletourCensorship: false,
-      disableFilter: true,
-      disableviewContact: true,
-      //changetour: true,
-      columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload },
-        { prop: 'images', name: 'Images', fieldType: FieldTypes.FileUpload },
-        { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
-        { prop: 'departureDate', name: 'Departure Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        { prop: 'departureId', name: 'Departure Name', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
-          cellTemplate: this.departureTemplate, fieldValidations: [Validators.required]},
-        { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required, this.formsService.numberNotZeroValidator] },
-        { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,
-          fieldOptions: this.tourcategoryFieldOption,cellTemplate: this.tourCategoriesTemplate,fieldValidations: [Validators.required]},
-        // prices
-        { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
-          subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
-            { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
-            { prop: 'originalPrice', name: 'Original Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
-            { prop: 'promotionPrice', name: 'promotionPrice', fieldType: FieldTypes.Textbox,},
-            { prop: 'startDatePro', name: 'Start Date Promotion', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-            { prop: 'endDatePro', name: 'End Date Promotion', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-            { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
-              fieldOptions:[
-                {key:0,value:'Adult'},
-                {key:1,value:'Children'},
-                {key:2,value:'Kid'},
-              ]},
-          ]
-        },
-        //tourPrograms
-        { prop: 'tourPrograms', name: 'Tour Program',cellTemplate:this.tourProgramsTemplate,
-          subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID', fieldType: FieldTypes.Textbox,  },
-            { prop: 'date', name: 'Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required]  },
-            { prop: 'orderNumber', name: 'Order Number', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
-            { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox,},
-            { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-            { prop: 'destination', name: 'Destination', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-          ]
+    fields.push({
+      name: 'buttonAddImage',
+      type: FieldTypes.Button,
+      label: 'Add',
+    });
+    console.log("images",row.images);
+    const template = clone(<any>this.formTemplate);
+    template.data = { formConfig: fields, formModel: (model || {}),imagesData:this.getListImagesFromString(row),tourIdChosen:row.id ,parenTable:this.table};
+    return this.modalService.confirm({
+      title:'Tour Images',
+      template,
+    });
+  }
+  getListImagesFromString(tour){
+    var images= tour.images&&tour.images.split("|")||[];
+    if(images.length>0){
+      return images.map((value)=> {
+        return {
+          tourId:tour.id,
+          image:value
         }
-      ]
-    };
-    this.chosenEdit=true;
-    this.table.updateData('api/tour');
+      });
+    }else{
+      return [];
+    }
+
   }
   private onClickTourPrograms(columns,row) {
     var model=row.tourPrograms[0];
@@ -201,4 +196,66 @@ export class ManageToursStaffComponent implements OnInit {
       template,
     });
   }
+  newTour(){
+    this.options = {
+      title: 'Tours',
+      id:'tour',
+      apiUrl: 'api/Tour',
+      disableDelete:true,
+      enabletourCensorship: false,
+      disableFilter: true,
+      FilterName: true,
+      disableviewContact: true,
+      disableView:true,
+      //changetour: true,
+      columns: [
+        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required,this.formsService.nameValidator] },
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload ,imgSrcUrl:'api/Tour/UploadImage'},
+        { prop: 'images', name: 'Images',cellTemplate:this.imagesTemplate,
+          subTableColumn:[
+            { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,imgSrcUrl:'api/Tour/UploadImage'}
+          ]},
+        { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
+        { prop: 'departureDate', name: 'Departure Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
+        { prop: 'departureId', name: 'Departure Name', fieldType: FieldTypes.Select,fieldValidations: [Validators.required],  fieldOptions: this.departuresFieldOption,
+          cellTemplate: this.departureTemplate},
+        { prop: 'destinationId', name: 'Destinaion Name', fieldType: FieldTypes.Select,fieldValidations: [Validators.required],  fieldOptions: this.departuresFieldOption,
+          cellTemplate: this.departureTemplate},
+        { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required, this.formsService.numberNotZeroValidator] },
+        { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select, fieldValidations: [Validators.required],
+          fieldOptions: this.tourcategoryFieldOption,cellTemplate: this.tourCategoriesTemplate},
+        // prices
+        { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
+          subTableColumn:[
+            { prop: 'tourId', name: 'Tour ID'  },
+            { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator]  },
+            { prop: 'originalPrice', name: 'Original Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.numberValidator]},
+            { prop: 'promotionPrice', name: 'PromotionPrice', fieldType: FieldTypes.Textbox,},
+            { prop: 'startDatePro', name: 'Start Date Promotion', fieldType: FieldTypes.Date,},
+            { prop: 'endDatePro', name: 'End Date Promotion', fieldType: FieldTypes.Date, },
+            { prop: 'touristType', name: 'Tourist Type', fieldValidations: [Validators.required], fieldType: FieldTypes.Select,
+              fieldOptions:[
+                {key:0,value:'Adult'},
+                {key:1,value:'Children'},
+                {key:2,value:'Kid'},
+              ]},
+          ]
+        },
+        //tourPrograms
+        { prop: 'tourPrograms', name: 'Tour Program',cellTemplate:this.tourProgramsTemplate,
+          subTableColumn:[
+            { prop: 'tourId', name: 'Tour ID'},
+            { prop: 'date', name: 'Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required]  },
+            { prop: 'orderNumber', name: 'Order Number', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
+            { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox,},
+            { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+            { prop: 'destination', name: 'Destination', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+          ]
+        }
+      ]
+    };
+    this.chosenEdit=true;
+    this.table.updateData('api/Tour');
+  }
+
 }

@@ -32,7 +32,16 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             if (User.IsInRole("Admin")||User.IsInRole("admin")||User.IsInRole("Staff")||User.IsInRole("staff"))
             {
-                var allTours = _uow.Tours.GetAll().Where(x => x.Censorship && !x.Deleted && x.Status);
+                IEnumerable<Tour> allTours=null; 
+                if (User.IsInRole("Admin")||User.IsInRole("admin"))
+                {
+                     
+                     allTours = _uow.Tours.GetAll().Where(x => x.Censorship && !x.Deleted && x.Status);
+                }
+                else
+                {
+                    allTours = _uow.Tours.GetAll().Where(x => !x.Deleted && x.Status);  
+                }
                 foreach (var allTour in allTours )
                 {
                     var prices = _uow.Prices.Find(x => x.TourId == allTour.Id).OrderBy(o => o.TouristType).ToList();
@@ -160,6 +169,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
             }
             var tourCate = _uow.TourCategories.Get(tour.TourCategoryId);
             var province = _uow.Provinces.Get(tour.DepartureId);
+            var province2 = _uow.Provinces.Get(tour.DestinationId);
+
             var price = _uow.Prices
                 .Find(x => x.TourId == tour.Id && x.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt())
                 .SingleOrDefault();
@@ -333,6 +344,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpPost]
         public void Post([FromBody] TourVM tour)
         {
+            tour.Status = true;
             _uow.Tours.Add(_mapper.Map<Tour>(tour));
             _uow.SaveChanges();
         }
