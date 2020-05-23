@@ -32,7 +32,9 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             if (User.IsInRole("Admin")||User.IsInRole("admin")||User.IsInRole("Staff")||User.IsInRole("staff"))
             {
-                var allTours = _uow.Tours.GetAll().Where(x => x.Censorship && !x.Deleted && x.Status);
+                var allTours =(User.IsInRole("Admin")||User.IsInRole("admin")) ?
+                    _uow.Tours.GetAll().Where(x => x.Censorship && !x.Deleted && x.Status):
+                    _uow.Tours.GetAll().Where(x => !x.Deleted && x.Status);
                 foreach (var allTour in allTours )
                 {
                     var prices = _uow.Prices.Find(x => x.TourId == allTour.Id).OrderBy(o => o.TouristType).ToList();
@@ -210,7 +212,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                         TourId = group.Key,
                         Tours = group.ToList(),
                         Count = group.Count()
-                    }).OrderByDescending(x=>x.Count).ThenBy(x=>x.Tours[0].Name);
+                    }).OrderByDescending(x=>x.Count).ThenByDescending(x=>x.Tours[0].ViewCount);
             return Ok(toursGrouped);
         }
         [HttpGet("newest")]
@@ -239,7 +241,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                             StartDatePro = price.StartDatePro,
                     EndDatePro = price.EndDatePro,
                     TourCategoryId = tour.TourCategoryId
-                    }).OrderByDescending(x=>x.CreatedAt).Take(8);
+                    }).OrderByDescending(x=>x.CreatedAt).ThenByDescending(x=>x.ViewCount).Take(8);
             return Ok(allTour);
         }
         [HttpGet("toursSameCate/{id}")]

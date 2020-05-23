@@ -48,7 +48,6 @@ export class ManageToursComponent implements OnInit {
         });
       });
       this.departuresFieldOption=fieldOptions;
-      this.newTour();
     });
     var datatourcate = this._dataService.getFull<Tourcate[]>(`${this.baseUrl}api/tourcategory`);
     let thattourcate = this;

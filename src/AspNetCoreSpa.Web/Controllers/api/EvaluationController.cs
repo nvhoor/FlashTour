@@ -50,24 +50,33 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Evaluations/5
         [HttpPut("{id}")]
-        public void Put(Guid id, [FromBody] EvaluationVM ev)
+        public void Put(Guid id, [FromBody] int rate)
         {
             var e = _uow.Evaluations.Get(id);
-            if(e==null)
+            if (e != null)
             {
-                ev.Id = Guid.NewGuid();
-                _uow.Evaluations.Add(_mapper.Map<Evaluation>(ev));  
+                switch (rate)
+                {
+                    case 1:
+                        e.OneStar += 1;
+                        break;
+                    case 2:
+                        e.TwoStar += 1;
+                        break;
+                    case 3:
+                        e.ThreeStar += 1;
+                        break;
+                    case 4:
+                        e.FourStar += 1;
+                        break;
+                    case 5:
+                        e.FiveStar += 1;
+                        break;
+                }
+                _uow.Evaluations.Update(e);
+                var result = _uow.SaveChanges();
             }
-            else
-            {
-                e.OneStar = ev.OneStar;
-                e.TwoStar = ev.TwoStar;
-                e.ThreeStar = ev.ThreeStar;
-                e.FourStar = ev.FourStar;
-                e.FiveStar = ev.FiveStar;
-                _uow.Evaluations.Update(e);  
-            }
-            var result = _uow.SaveChanges();
+           
         }
 
         // DELETE: api/Evaluations/5

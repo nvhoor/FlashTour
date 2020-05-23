@@ -19,20 +19,44 @@ export class RatingComponent implements OnInit {
   }
 
   rateTourChange() {
-    if(!this.authService.isLoggedIn()){
-      let accept=confirm("You have to login to evaluate this tour?");
+    // if(!this.authService.isLoggedIn()){
+    //   let accept=confirm("You have to login to evaluate this tour?");
+    //   if(accept){
+    //     this.login();
+    //   }
+    // }else{
+    //   if(this.IsNotUser){
+    //     // this._dataService.put<Evaluation>(`api/Evaluation/${this.evaluation.id}`,{...this.evaluation}).subscribe(x=>{
+    //     //   console.log("Update evaluation success!");
+    //     // },error => {  console.error(error);});
+    //     console.log("rateTourChange",this.currentRate,JSON.stringify(this.evaluation));
+    //   }
+    // }
+    let accept=confirm("Are you warn to evaluate this tour "+this.currentRate+" star?");
       if(accept){
-        this.login();
-      }
-    }else{
-      if(this.IsNotUser){
-        // this._dataService.put<Evaluation>(`api/Evaluation/${this.evaluation.id}`,{...this.evaluation}).subscribe(x=>{
-        //   console.log("Update evaluation success!");
-        // },error => {  console.error(error);});
+        this._dataService.put<Evaluation>(`api/Evaluation/${this.evaluation.id}`,this.currentRate).subscribe(x=>{
+          console.log("Rate tour success!");
+          switch (this.currentRate)
+          {
+            case 1:
+              this.evaluation.oneStar += 1;
+              break;
+            case 2:
+              this.evaluation.twoStar += 1;
+              break;
+            case 3:
+              this.evaluation.threeStar += 1;
+              break;
+            case 4:
+              this.evaluation.fourStar += 1;
+              break;
+            case 5:
+              this.evaluation.fiveStar += 1;
+              break;
+          }
+        },error => {  console.error(error);});
         console.log("rateTourChange",this.currentRate,JSON.stringify(this.evaluation));
       }
-    }
-    
   }
   login() {
     this.authService.loginSilent();

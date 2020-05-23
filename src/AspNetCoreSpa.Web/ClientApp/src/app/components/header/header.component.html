@@ -9,7 +9,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse text-secondary ml-5" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-5" *ngIf="!isAdmin">
+        <ul class="navbar-nav ml-5" *ngIf="!isAdminPage">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="user/post" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     News
@@ -25,6 +25,7 @@
             </li>
         </ul>
     </div>
+    <p id="username" class="text-light"  *ngIf="isLoggedIn" style="margin: 0 10px;">{{userName}}</p>
     <button id="dangnhap" type="button" class="btn btn-outline-primary" (click)="login()" *ngIf="!isLoggedIn" style="margin: 0 10px;">Sign in</button>
     <button id="dangky" type="button" class="btn btn-outline-success" (click)="register()" *ngIf="!isLoggedIn" style="margin: 0 10px;">Register</button>
     <button id="danhxuat" type="button" class="btn btn-outline-warning" (click)="logout()" *ngIf="isLoggedIn" style="margin: 0 10px;">Logout</button>

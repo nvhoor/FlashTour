@@ -2,9 +2,8 @@ namespace AspNetCoreSpa.Core
 {
     public enum Gender
     {
-        None,
-        Female,
-        Male
+        Male,
+        Female
     }
     public enum RoleEnum
     {
