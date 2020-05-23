@@ -1,4 +1,4 @@
-<div class="container" *ngIf="tour">
+<div class="container" id="tour-detail"  *ngIf="tour">
 
     <div class="col-xs-12 mg-bot30 mt-3">
         <div class="title1">TOUR INFOMATION</div>
@@ -72,7 +72,7 @@
             </tbody>
         </table>
     </div>
-    <form method="post">
+    <form method="post" id="myForm" class="was-validated" novalidate="">
         <input name="__RequestVerificationToken" type="hidden" value=""><input data-val="true" data-val-required="The tour_id field is required." id="tour_id" name="tour_id" type="hidden" value="">        
         <div class="col-xs-12 mg-bot30">
         <div class="title1 mb-3">COMUNICATIONS</div>
@@ -83,19 +83,41 @@
                     <div class="form-group">
                         <label>Full Name (<span class="star">*</span>)</label>
                         <div>
-                            <input class="form-control" id="contact_name" name="contact_name" required="required" type="text" [(ngModel)]="comunication.fullName">
+                            <input class="form-control" (keyup)="keyupValidate(comunication.fullName,100)" id="full_name" name="full_name" type="text" [(ngModel)]="comunication.fullName" required>
+                            <div class="invalid-feedback" *ngIf="comunication.fullName==''">
+                                Please enter full name.
+                            </div>
+                            <div class="text-danger" *ngIf="checkSpecialCharacterRegrex(comunication.fullName)">
+                                Not accept special characters.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(comunication.fullName,100)">
+                                Over 100 characters.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Phone (<span class="star">*</span>)</label>
                         <div>
-                            <input class="form-control" id="mobilephone" name="mobilephone"  required="required" type="phone" [(ngModel)]="comunication.mobile">
+                            <input class="form-control" id="mobilephone" name="mobilephone" (keyup)="keyupValidate(comunication.mobile)" required="required" type="phone" [(ngModel)]="comunication.mobile">
+                            <div class="invalid-feedback" *ngIf="comunication.mobile==''">
+                                Please enter mobile.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkPhoneRegrex(comunication.mobile)">
+                                Invalid phone number format.
+                            </div>
                         </div>
+                        
                     </div>
                     <div class="form-group">
                         <label>Address</label>
                         <div>
-                            <input class="form-control" id="address" name="address" type="text" [(ngModel)]="comunication.address">
+                            <input class="form-control" id="address" name="address" (keyup)="keyupValidate(comunication.address,255)"  type="text" [(ngModel)]="comunication.address" required>
+                            <div class="invalid-feedback" *ngIf="comunication.address==''">
+                                Please enter address.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(comunication.address,255)">
+                                Over 255 characters.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,7 +125,16 @@
                     <div class="form-group">
                         <label>Email (<span class="star">*</span>)</label>
                         <div>
-                            <input class="form-control" id="email" name="email" required="required" type="email" [(ngModel)]="comunication.email">
+                            <input class="form-control" id="email" name="email" (keyup)="keyupValidate(comunication.email,255)"  required="required" type="email" [(ngModel)]="comunication.email">
+                            <div class="invalid-feedback" *ngIf="comunication.email==''">
+                                Please enter email.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkEmailRegrex(comunication.email)">
+                                Invalid email format.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(comunication.email,255)">
+                                Over 255 characters.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -139,7 +170,10 @@
                     <div class="form-group">
                         <label>Note</label>
                         <div>
-                            <textarea class="form-control" cols="20" id="note" name="note" rows="4" [(ngModel)]="comunication.note"></textarea>
+                            <textarea class="form-control" cols="20" id="note" name="note" rows="4" (keyup)="keyupValidate(comunication.note)" [(ngModel)]="comunication.note"></textarea>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(comunication.note,500)">
+                                Over 500 characters.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +192,16 @@
                                 <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12 mg-bot10">
                                     <label class="mg-bot5">Full name (<span class="star">*</span>)</label>
                                     <div>
-                                        <input class="form-control" name="fullname{{customer.touristType}}" required="required" type="text" [(ngModel)]="customer.fullName">
+                                        <input class="form-control" id="customer-full-name-{{i+1}}" name="fullname{{customer.touristType}}" (keyup)="keyupValidate(customer.fullName,100,'customer-full-name-'+(i+1))" required="required" type="text" [(ngModel)]="customer.fullName">
+                                        <div class="invalid-feedback" *ngIf="customer.fullName==''">
+                                            Please enter full name.
+                                        </div>
+                                        <div class="text-danger" *ngIf="checkSpecialCharacterRegrex(customer.fullName)">
+                                            Not accept special characters.
+                                        </div>
+                                        <div class="text-danger" *ngIf="!checkMaxLengthRegrex(customer.fullName,100)">
+                                            Over 100 characters.
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mg-bot10">
@@ -256,6 +299,6 @@
             </div>
         </div>
         <div class="col-xs-12 text-center mg-bot30">
-            <button type="submit" class="btn btn-lg btn-danger mt-3" (click)="postTourBooking()">Book tour&nbsp;&nbsp;<i class="fas fa-arrow-right text-light"></i></button>
+            <button  id="btnSubmit" type="submit" class="btn btn-lg btn-danger mt-3" (click)="postTourBooking()">Book tour&nbsp;&nbsp;<i class="fas fa-arrow-right text-light"></i></button>
         </div>
     </form>    </div>

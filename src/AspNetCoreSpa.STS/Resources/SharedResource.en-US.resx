@@ -136,7 +136,7 @@
     <value>E-Mail</value>
   </data>
   <data name="EMAIL_INVALID" xml:space="preserve">
-    <value>invalid Email</value>
+    <value>Email format is incorrect</value>
   </data>
   <data name="EMAIL_REQUIRED" xml:space="preserve">
     <value>Email required</value>

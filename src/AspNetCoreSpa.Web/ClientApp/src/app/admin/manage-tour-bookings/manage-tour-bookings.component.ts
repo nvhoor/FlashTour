@@ -123,7 +123,7 @@ export class ManageTourBookingsComponent implements OnInit {
         { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.email, Validators.required]   },
         { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox,fieldValidations: [this.formsService.telehponeValidator] },
         { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox },
-        { prop: 'createdAt', name: 'CreatedAt', fieldType: FieldTypes.Date },
+        { prop: 'createdAt', name: 'CreatedAt' },
         { prop: 'note', name: 'Note', fieldType: FieldTypes.Textarea },
         { prop: 'tourCustomers', name: 'Tour Customer',cellTemplate:this.customersTemplate,
           subTableColumn:[
@@ -180,6 +180,7 @@ export class ManageTourBookingsComponent implements OnInit {
         { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox },
         { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox },
         { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox },
+        { prop: 'createdAt', name: 'CreatedAt' },
         { prop: 'note', name: 'Note', fieldType: FieldTypes.Textarea },
         { prop: 'tourCustomers', name: 'Tour Customer',cellTemplate:this.customersTemplate,
           subTableColumn:[

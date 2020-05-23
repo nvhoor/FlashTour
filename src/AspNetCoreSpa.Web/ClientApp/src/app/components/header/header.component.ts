@@ -29,6 +29,12 @@ export class HeaderComponent implements OnInit {
         return this.authService.user;
 
     }
+    get userName():string{
+        return this.authService.user.profile.email;
+    }
+    get isAdminPage():boolean{
+        return this.router.url.indexOf("admin")!=-1;
+    }
     get isAdmin(): boolean {
         return this.authService.getIsAdmin();
 

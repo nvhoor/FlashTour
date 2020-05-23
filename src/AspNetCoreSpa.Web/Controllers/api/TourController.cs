@@ -169,8 +169,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             }
             var tourCate = _uow.TourCategories.Get(tour.TourCategoryId);
             var province = _uow.Provinces.Get(tour.DepartureId);
-            var province2 = _uow.Provinces.Get(tour.DestinationId);
-
             var price = _uow.Prices
                 .Find(x => x.TourId == tour.Id && x.TouristType == TouristTypeEnum.Adult.ToTouristTypeInt())
                 .SingleOrDefault();
@@ -221,7 +219,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                         TourId = group.Key,
                         Tours = group.ToList(),
                         Count = group.Count()
-                    }).OrderByDescending(x=>x.Count).ThenBy(x=>x.Tours[0].Name);
+                    }).OrderByDescending(x=>x.Count).ThenByDescending(x=>x.Tours[0].ViewCount);
             return Ok(toursGrouped);
         }
         [HttpGet("newest")]
@@ -250,7 +248,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
                             StartDatePro = price.StartDatePro,
                     EndDatePro = price.EndDatePro,
                     TourCategoryId = tour.TourCategoryId
-                    }).OrderByDescending(x=>x.CreatedAt).Take(8);
+                    }).OrderByDescending(x=>x.CreatedAt).ThenByDescending(x=>x.ViewCount).Take(8);
             return Ok(allTour);
         }
         [HttpGet("toursSameCate/{id}")]

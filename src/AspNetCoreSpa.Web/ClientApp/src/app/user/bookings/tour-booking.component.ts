@@ -4,7 +4,7 @@ import {DataService} from "@app/services";
 import {ActivatedRoute} from '@angular/router';
 import {AppFormComponent, FormsService} from "@app/shared";
 import {IFieldConfig} from "@app/models";
-
+declare var $: any;
 @Component({
     selector: 'appc-user-tour-booking-component',
     templateUrl: './tour-booking.component.html',
@@ -28,6 +28,7 @@ export class TourBookingComponent implements OnInit{
             private formsService: FormsService,
         @Inject(DOCUMENT) private _document: Document
     ) {
+           // this.validate();
         }
     public ngOnInit() {
             var id=this.route.snapshot.params['id'];
@@ -46,9 +47,25 @@ export class TourBookingComponent implements OnInit{
         };
         this.totalCustomer=this.comunication.adult+this.comunication.child+this.comunication.kid;
         this.getTourById(id);
-        this.initListCustomer()
+        this.initListCustomer();
     }
-    
+    validate(){
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);     
+    }
     private getTourById(id: any) {
         var data = this._dataService.get<Tour>(`${this.baseUrl}api/Tour/${id}`);
         let that = this;
@@ -131,19 +148,21 @@ export class TourBookingComponent implements OnInit{
         }  
     }
     postTourBooking(){
-        let ok=confirm("Are you sure to booking this tour?");
-        if(ok) {
-            var prices=[];
-            this.comunication.bookingPrices=prices;
-            this.comunication.tourCustomers=this.listCustomer;
-            console.log("Post tour booking:", JSON.stringify(this.comunication));
-            this._dataService.post<Comunication>(`${this.baseUrl}api/TourBooking`, JSON.stringify(this.comunication)).subscribe(x => {
-                alert("Book tour success!");
-            }, error => {
-                alert("Book tour fail!");
-                console.error(error);
-            });
-        }
+            if(this.checkFormValid()){
+                let ok=confirm("Are you sure to booking this tour?");
+                if(ok) {
+                    var prices=[];
+                    this.comunication.bookingPrices=prices;
+                    this.comunication.tourCustomers=this.listCustomer;
+                    console.log("Post tour booking:", JSON.stringify(this.comunication));
+                    this._dataService.post<Comunication>(`${this.baseUrl}api/TourBooking`, JSON.stringify(this.comunication)).subscribe(x => {
+                        alert("Book tour success!");
+                    }, error => {
+                        alert("Book tour fail!");
+                        console.error(error);
+                    });
+                }  
+            }
     }
     newGuid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -164,5 +183,105 @@ export class TourBookingComponent implements OnInit{
         } else {
             return price.originalPrice;
         }
+    }
+    formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+    checkSpecialCharacterRegrex(value){
+        if(value=="") return false;
+            var regrex=new RegExp(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/);
+            return regrex.test(value);
+    }
+
+    keyupValidate(value: string,maxLength=undefined,target=undefined) {
+            var that=this;
+        $('#'+target).keyup(function () {
+            'use strict';
+            if(that.checkSpecialCharacterRegrex(value)){
+                this.setCustomValidity('Not accept special characters.');
+            }else{
+                if(!that.checkMaxLengthRegrex(value,maxLength)){
+                    this.setCustomValidity('Over length input');
+                }else{
+                    this.setCustomValidity('');
+                }
+            }
+        });
+        $('#full_name').keyup(function () {
+            'use strict';
+                if(that.checkSpecialCharacterRegrex(value)){
+                    this.setCustomValidity('Not accept special characters.');
+                }else{
+                    if(!that.checkMaxLengthRegrex(value,maxLength)){
+                        this.setCustomValidity('Over length input');
+                    }else{
+                        this.setCustomValidity('');
+                    }
+                }
+        });
+        $('#mobilephone').keyup(function () {
+            'use strict';
+            if(!that.checkPhoneRegrex(value)){
+                this.setCustomValidity('Invalid phone number format.');
+            }else{
+                this.setCustomValidity('');
+            }
+        });
+        $('#email').keyup(function () {
+            'use strict';
+            if(!that.checkEmailRegrex(value)){
+                this.setCustomValidity('Invalid phone number format.');
+            }else{
+                if(!that.checkMaxLengthRegrex(value,maxLength)){
+                    this.setCustomValidity('Over length input.');
+                }else{
+                    this.setCustomValidity('');
+                } 
+            }
+        });
+        $('#address').keyup(function () {
+            'use strict';
+            if(!that.checkMaxLengthRegrex(value,maxLength)){
+                this.setCustomValidity('Over length input.');
+            }else{
+                this.setCustomValidity('');
+            }
+        });
+        $('#note').keyup(function () {
+            'use strict';
+            if(!that.checkMaxLengthRegrex(value,maxLength)){
+                this.setCustomValidity('Over length input.');
+            }else{
+                this.setCustomValidity('');
+            }
+        });
+    }
+    
+    checkPhoneRegrex(value){
+        if(value=="") return true;
+        var regrex=new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{5})$/);
+        return regrex.test(value);
+    }
+    checkEmailRegrex(value){
+        if(value=="") return true;
+        var regrex=new RegExp(/(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+]*/);
+        return regrex.test(value);
+    }
+    checkMaxLengthRegrex(value,maxLength){
+        return value.length <= maxLength;
+    }
+    checkFormValid(){
+            return !!$('#myForm').valid;
+            
     }
 }
