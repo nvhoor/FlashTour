@@ -23,7 +23,7 @@ export class HomeDetailComponent implements OnInit {
     Num:1,
     Next:2
   };
-  constructor(  @Inject("BASE_URL") private baseUrl: string,
+  constructor(  @Inject("BASE_URL") public baseUrl: string,
                 private _renderer2: Renderer2,
                 private _dataService: DataService,
                 @Inject(DOCUMENT) private _document: Document) { }

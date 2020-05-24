@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-2" *ngFor="let cate of tourCatePaging.tourCate">
                         <div class="card mb-2 card-cate">
-                            <img class="card-img-top" src="./assets/images/tour-categories/{{cate.image}}"
+                            <img class="card-img-top" src="{{baseUrl}}assets/images/tour-categories/{{cate.image}}"
                                  alt="Card image cap">
                             <div class="card-body">
                                 <a class="card-title stretched-link text-dark btn-cate" (click)="getTours(cate.id,cate.name,cate.description)" >{{cate.name}}</a>
@@ -36,7 +36,7 @@
                     <div class="card card-tour">
                         <div id="parent_cate_{{tour.id}}">
                             <div id="cate_{{tour.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
-                            <img class="card-img-top mb-3" src="./assets/images/tours/{{tour.image}}" onerror="this.src='./assets/images/tours/tour_2.jpg';" alt="Card image">
+                            <img class="card-img-top mb-3" src="{{baseUrl}}assets/images/tours/{{tour.image}}" onerror="this.src=baseUrl+'assets/images/tours/tour_2.jpg';" alt="Card image">
                             <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt text-secondary "></i> {{tour.departureDate|date:'dd/MM/yyyy'}}</div>
                             <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus text-secondary "></i> {{tour.slot}} slot</div>
                         </div>

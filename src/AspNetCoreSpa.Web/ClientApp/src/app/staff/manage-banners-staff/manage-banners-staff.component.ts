@@ -16,7 +16,7 @@ export class ManageBannersStaffComponent implements OnInit {
   options: IAppTableOptions<Comunication>;
   postFieldOption:IOption[];
   @ViewChild('postTemplate', { static: true }) postTemplate: TemplateRef<any>;
-  constructor(@Inject("BASE_URL") private baseUrl: string,
+  constructor(@Inject("BASE_URL") public baseUrl: string,
               private modalService: ModalService,
               private _dataService:DataService,
               private toastr: ToastrService,

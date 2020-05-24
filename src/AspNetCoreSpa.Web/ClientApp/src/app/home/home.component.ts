@@ -11,7 +11,7 @@ declare var $: any;
 export class HomeComponent implements OnInit{
     
     constructor(
-        @Inject("BASE_URL") private baseUrl: string,
+        @Inject("BASE_URL") public baseUrl: string,
         private _renderer2: Renderer2,
         private _dataService: DataService,
         @Inject(DOCUMENT) private _document: Document,

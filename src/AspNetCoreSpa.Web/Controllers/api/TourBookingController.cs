@@ -7,6 +7,8 @@ using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+
 namespace AspNetCoreSpa.Web.Controllers.api
 {
     public class TourBookingController : BaseController
@@ -66,6 +68,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             tourBooking.BookingPrices.Clear();
             tourBooking.Id = Guid.NewGuid();
+            string emailDatas = tourBooking.FullName+"|"+tourBooking.Email+"|THANK YOU TO BOOKs TOUR AT FLASHTOUR";
+            decimal totalPrice = 0;
             for (var i=0;i<3;i++ )
             {
                 var tourBookingPrice = new BookingPriceVM();
@@ -89,11 +93,18 @@ namespace AspNetCoreSpa.Web.Controllers.api
             foreach (var tourBookingTourCustomer in tourBooking.TourCustomers)
             {
                 tourBookingTourCustomer.Id = Guid.NewGuid();
-                tourBookingTourCustomer.TourBookingId = tourBooking.Id;
+               var  pricesCustomer = tourBooking.BookingPrices.SingleOrDefault(x => x.TouristType == tourBookingTourCustomer.TouristType && x.TourBookingId == tourBooking.Id);
+               if (pricesCustomer != null)
+               {
+                   totalPrice += pricesCustomer.Price;
+               }
+               tourBookingTourCustomer.TourBookingId = tourBooking.Id;
             }
             _uow.TourBookings.Add(_mapper.Map<TourBooking>(tourBooking));
             var tour = _uow.Tours.GetSingleOrDefault(x=>x.Id ==tourBooking.TourId);
+            emailDatas += "|" + tour.Id+"|"+totalPrice+"|"+tour.DepartureDate.AddDays(-3);
             tour.Slot -= tourBooking.TourCustomers.Count;
+            SendEmail(emailDatas,tourBooking,2);
             _uow.SaveChanges();
         }
 
@@ -118,9 +129,24 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [Authorize(Roles = ("admin,Admin,staff,Staff"))]
         public void Put(Guid id)
         {
-            var t = _uow.TourBookings.Get(id);
-            t.Status = true;
-            _uow.TourBookings.Update(t);
+            var tourBooking = _uow.TourBookings.Get(id);
+            tourBooking.Status = true;
+            string emailDatas = tourBooking.FullName+"|"+tourBooking.Email+"|YOU BOOKs TOUR AT FLASHTOUR FINISHED";
+            decimal totalPrice = 0;
+            var tourCustomers = _uow.TourCustomers.Where(x => x.TourBookingId == tourBooking.Id);
+            var bookingPrices=_uow.BookingPrices.GetAll().Where(x=>x.TourBookingId==tourBooking.Id);
+            foreach (var tourBookingTourCustomer in tourCustomers)
+            {
+                var  pricesCustomer = bookingPrices.SingleOrDefault(x => x.TouristType == tourBookingTourCustomer.TouristType && x.TourBookingId == tourBooking.Id);
+                if (pricesCustomer != null)
+                {
+                    totalPrice += pricesCustomer.Price;
+                }
+            }
+            var tour = _uow.Tours.GetSingleOrDefault(x=>x.Id ==tourBooking.TourId);
+            emailDatas += "|" + tour.Id+"|"+totalPrice+"|"+tour.DepartureDate.AddDays(-3);
+            SendEmail(emailDatas,_mapper.Map<TourBookingVM>(tourBooking),1);
+            _uow.TourBookings.Update(tourBooking);
             var result = _uow.SaveChanges();
         }
         // DELETE: api/TourBookings/5
@@ -187,6 +213,97 @@ namespace AspNetCoreSpa.Web.Controllers.api
            dashBoardData.Tourists = tourists;
            return Ok(dashBoardData);
         }
-        
+        public bool SendEmail( string emailData,TourBookingVM tourBooking,int typeMail)
+        {
+            try
+            {
+                string[] emailDatas= emailData.Split("|");
+                var name = emailDatas[0];
+                var address =emailDatas[1];
+                var subject=emailDatas[2];
+                var tourId=emailDatas[3];
+                var totalPrices = emailDatas[4];
+                var departureDay = emailDatas[5];
+                var message = new MimeMessage();
+                message.From.Add(new MailboxAddress("FLASH TOUR", "nvhoorshadow@gmail.com"));
+                message.To.Add(new MailboxAddress(name, address));
+                message.Subject = subject;
+                var text = "";
+                if (typeMail == 2)
+                {
+                    text =
+                        "Welcome " + name +
+                        "\nThank you for choosing to book a tour at our Flash Tour Website!" +
+                        "\nYou have booked the tour and successfully paid with the following information:" +
+                        "\nTour code: " + tourId +
+                        "\nCustomer information:" +
+                        "\n-	Full name:" + name +
+                        "\n-	Email: " + address +
+                        "\n-  PhoneNumber:" + tourBooking.Mobile +
+                        "\n-  Total Price:" + totalPrices +
+                        "\nList tour customer:";
+                    foreach (var tourBookingTourCustomer in tourBooking.TourCustomers)
+                    {
+                        text += "\nFull name: " + tourBookingTourCustomer.FullName;
+                    }
+
+                    text+= "\nPlease pay the above amount via your account number 007.137.008.9095 3 days before the tour departure. Too many days on the tour will automatically be canceled."+
+                           "\n\nIf you have any questions, please contact our consultants or 24/7 customer service center at any FlashTour offices nationwide and foreign branches" +
+                           "\nTour booking is valid to " + departureDay +
+                           "\nThank you for your interest in the Flash Tour Website service." +
+                           "\nThis is an automated email system, please do not reply to this email.";  
+                }
+                else
+                {
+                    text =
+                        "Welcome " + name +
+                        "\nThank you for choosing to book a tour at our Flash Tour Website!" +
+                        "\nYou have booked the tour and successfully paid with the following information:" +
+                        "\nTour code: " + tourId +
+                        "\nTour booking code: " + tourBooking.Id +
+                        "\nCustomer information:" +
+                        "\n-	Full name:" + name +
+                        "\n-	Email: " + address +
+                        "\n-  PhoneNumber:" + tourBooking.Mobile +
+                        "\n-  Total Price:" + totalPrices +
+                        "\nList tour customer:";
+                    foreach (var tourBookingTourCustomer in tourBooking.TourCustomers)
+                    {
+                        text += "\nFull name: " + tourBookingTourCustomer.FullName;
+                    }
+
+                    text+= "\n\nIf you have any questions, please contact our consultants or 24/7 customer service center at any FlashTour offices nationwide and foreign branches" +
+                           "\nTour booking is valid to " + departureDay +
+                           "\nThank you for your interest in the Flash Tour Website service." +
+                           "\nThis is an automated email system, please do not reply to this email."; 
+                }
+                message.Body = new TextPart("plain")
+                {
+                    Text = text
+                    
+                };
+                
+                using (var client = new MailKit.Net.Smtp.SmtpClient())
+                {
+
+                    client.Connect("smtp.gmail.com", 587, false);
+
+                    //SMTP server authentication if needed
+                    client.Authenticate("flashtourdtu@gmail.com", "flashtour123");
+
+                    client.Send(message);
+
+                    client.Disconnect(true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -12,7 +12,7 @@ export class ChatComponent implements OnInit {
   message = '';
   messages: string[] = [];
 
-  constructor(@Inject('BASE_URL') private baseUrl: string) {}
+  constructor(@Inject('BASE_URL') public baseUrl: string) {}
 
   public sendMessage(): void {
     const data = `Sent: ${this.message}`;

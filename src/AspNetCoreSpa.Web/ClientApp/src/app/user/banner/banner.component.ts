@@ -22,7 +22,7 @@ export class BannerComponent implements OnInit {
   @Input() optionSearchPost:OptionSearchPost;
   public emitSearch:EmitSearch;
   public emitSearchPost:EmitSearchPost;
-  constructor(       @Inject("BASE_URL") private baseUrl: string,
+  constructor(       @Inject("BASE_URL") public baseUrl: string,
                      private route: ActivatedRoute,
                      private _renderer2: Renderer2,
                      private _dataService:DataService,

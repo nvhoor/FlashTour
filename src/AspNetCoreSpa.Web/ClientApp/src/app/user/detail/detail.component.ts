@@ -15,7 +15,7 @@ export class DetailComponent implements OnInit{
     public tourImages:CarouselImage[];
     public isCountDown=true;
     constructor(
-        @Inject("BASE_URL") private baseUrl: string,
+        @Inject("BASE_URL") public baseUrl: string,
         private route: ActivatedRoute,
         private _router: Router,
         private _renderer2: Renderer2,

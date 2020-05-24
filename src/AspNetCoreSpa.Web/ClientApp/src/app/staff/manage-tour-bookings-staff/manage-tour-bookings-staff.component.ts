@@ -21,7 +21,7 @@ export class ManageTourBookingsStaffComponent implements OnInit {
   @ViewChild('formTemplate', { static: true }) formTemplate: AppFormComponent;
   @ViewChild('table', { static: true }) table:AppTableComponent;
   constructor(
-      @Inject("BASE_URL") private baseUrl: string,
+      @Inject("BASE_URL") public baseUrl: string,
       private modalService: ModalService,
       private _dataService:DataService,
       private toastr: ToastrService,

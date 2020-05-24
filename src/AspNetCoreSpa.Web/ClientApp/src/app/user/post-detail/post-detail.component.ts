@@ -12,7 +12,7 @@ import {DOCUMENT} from "@angular/common";
 export class PostDetailComponent implements OnInit {
   public post:Post;
   postsByCate: Post[];
-  constructor(@Inject("BASE_URL") private baseUrl: string,
+  constructor(@Inject("BASE_URL") public baseUrl: string,
               private route: ActivatedRoute,
               private _renderer2: Renderer2,
               private _dataService:DataService,

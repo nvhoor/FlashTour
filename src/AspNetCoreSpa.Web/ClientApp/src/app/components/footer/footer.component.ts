@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class FooterComponent implements OnInit{
     constructor(
+        @Inject("BASE_URL") public baseUrl: string,
         private authService: AuthService,
         private _renderer2: Renderer2,
         @Inject(DOCUMENT) private _document: Document

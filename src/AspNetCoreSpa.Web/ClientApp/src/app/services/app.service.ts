@@ -8,7 +8,7 @@ const APP_DATA_KEY = makeStateKey<string>("appData");
 @Injectable()
 export class AppService {
   constructor(
-    @Inject("BASE_URL") private baseUrl: string,
+    @Inject("BASE_URL") public baseUrl: string,
     private transferState: TransferState,
     private dataService: DataService
   ) {}

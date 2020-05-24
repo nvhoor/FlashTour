@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
     console.log(`Resolved captcha with response: ${captchaResponse}`);
   }
   @Input() contact:Contact;
-  constructor(@Inject("BASE_URL") private baseUrl: string,
+  constructor(@Inject("BASE_URL") public baseUrl: string,
               private router:Router,
               private _dataService:DataService,
               @Inject(DOCUMENT) private _document: Document,) { }

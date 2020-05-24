@@ -20,7 +20,7 @@ export class ManagePostsStaffComponent implements OnInit {
   @ViewChild('table', { static: true }) table:AppTableComponent;
   chosenEdit= true;
   constructor(
-      @Inject("BASE_URL") private baseUrl: string,
+      @Inject("BASE_URL") public baseUrl: string,
       private modalService: ModalService,
       private _dataService:DataService,
       private toastr: ToastrService,

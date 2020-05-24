@@ -27,7 +27,7 @@ export class ManageToursComponent implements OnInit {
   @ViewChild('imagesTemplate', { static: true }) imagesTemplate: TemplateRef<any>;
   tourcategoryFieldOption: IOption[];
   constructor(
-      @Inject("BASE_URL") private baseUrl: string,
+      @Inject("BASE_URL") public baseUrl: string,
       private modalService: ModalService,
       private _dataService:DataService,
       private toastr: ToastrService,

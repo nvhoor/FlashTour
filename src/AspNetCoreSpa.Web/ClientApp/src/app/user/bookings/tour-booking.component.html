@@ -4,7 +4,7 @@
         <div class="title1">TOUR INFOMATION</div>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 w-25">
-        <img src="../../../assets/images/tours/{{tour.image}}" onerror="this.src='../../../assets/images/proposal-flight.png';" class="pic-title">
+        <img src="{{baseUrl}}assets/images/tours/{{tour.image}}" onerror="this.src=baseUrl+'assets/images/proposal-flight.png';" class="pic-title">
         <a href="#" target="_blank" class="title-pic"></a>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 w-75">
@@ -208,8 +208,8 @@
                                     <label class="mg-bot5">Gender</label>
                                     <div>
                                         <select class="form-control" name="gender{{customer.touristType}}" [(ngModel)]="customer.gender">
-                                            <option value="true">Female</option>
-                                            <option value="false">Male</option>
+                                            <option value="1">Female</option>
+                                            <option value="0">Male</option>
                                         </select>
                                     </div>
                                 </div>

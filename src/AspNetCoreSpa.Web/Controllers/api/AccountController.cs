@@ -6,6 +6,8 @@ using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+
 namespace AspNetCoreSpa.Web.Controllers.api
 {
     public class AccountController : BaseController
@@ -60,5 +62,6 @@ namespace AspNetCoreSpa.Web.Controllers.api
             _uow.Accounts.Remove(_uow.Accounts.Get(id));
             _uow.SaveChanges();
         }
+       
     }
 }

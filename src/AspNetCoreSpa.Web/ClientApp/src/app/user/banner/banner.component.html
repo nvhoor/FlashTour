@@ -2,7 +2,7 @@
     <div id="carouselExampleControls" class="carousel slide slide-banner" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item {{banner.active}}" *ngFor="let banner of banners;let i=index;">
-                <img class="d-block w-100" src="./assets/images/banners/{{banner.image}}" >
+                <img class="d-block w-100" src="{{baseUrl}}assets/images/banners/{{banner.image}}" >
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -21,7 +21,7 @@
             <div class="dropdown find-dropdown">
                 <div class="col-lg-5 dropdown-toggle" id="search-tour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="card">
-                        <img class="card-img-top" src="./assets/images/find-beach-icon.png" alt="Card image">
+                        <img class="card-img-top" src="{{baseUrl}}assets/images/find-beach-icon.png" alt="Card image">
                         <p class="card-title text-find-tour font-weight-bold">FIND TOUR</p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
             <div class="dropdown find-dropdown-r">
                 <div class="col-lg-5 dropdown-toggle" id="proposal-tour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="card">
-                        <img class="card-img-top" src="./assets/images/proposal-flight.png" alt="Card image">
+                        <img class="card-img-top" src="{{baseUrl}}assets/images/proposal-flight.png" alt="Card image">
                         <p class="card-title text-proposal-tour font-weight-bold">FIND POST</p>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import { IFieldConfig, Field } from '@app/models';
 import { AppFormComponent } from '../form';
 import { FormsService } from '../../forms.service';
 import {HttpClient} from "@angular/common/http";
+import {DataService} from "@app/services";
 
 @Injectable()
 export abstract class FieldBaseComponent implements Field {
@@ -14,7 +15,8 @@ export abstract class FieldBaseComponent implements Field {
         @Inject("BASE_URL") public baseUrl: string,
         public fc: AppFormComponent,
         private formService: FormsService,
-        public http: HttpClient) { }
+        public http: HttpClient,
+        public dataService:DataService) { }
     get formGroup(): FormGroup {
         return this.fc.form;
     }

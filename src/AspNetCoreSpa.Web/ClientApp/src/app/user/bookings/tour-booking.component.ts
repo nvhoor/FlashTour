@@ -21,7 +21,7 @@ export class TourBookingComponent implements OnInit{
     config: IFieldConfig[];
     @Input() comunication:Comunication;
         constructor(
-            @Inject("BASE_URL") private baseUrl: string,
+            @Inject("BASE_URL") public baseUrl: string,
             private route: ActivatedRoute,
             private _renderer2: Renderer2,
             private _dataService:DataService,
@@ -109,7 +109,7 @@ export class TourBookingComponent implements OnInit{
                           id:"",
                           tourBookingId:"",
                           fullName: "",
-                          gender: false,
+                          gender: 0,
                           birthDay: new Date().getTime(),
                           touristType: 0,
                           value: this.getPrice(this.tour.prices[0])
@@ -122,7 +122,7 @@ export class TourBookingComponent implements OnInit{
                           id:"",
                           tourBookingId:"",
                           fullName: "",
-                          gender: false,
+                          gender: 0,
                           birthDay: new Date().getTime(),
                           touristType: 1,
                           value: this.getPrice(this.tour.prices[1])
@@ -134,7 +134,7 @@ export class TourBookingComponent implements OnInit{
                           id:"",
                           tourBookingId:"",
                           fullName: "",
-                          gender: false,
+                          gender: 0,
                           birthDay: new Date().getTime(),
                           touristType: 2,
                           value: this.getPrice(this.tour.prices[2])
