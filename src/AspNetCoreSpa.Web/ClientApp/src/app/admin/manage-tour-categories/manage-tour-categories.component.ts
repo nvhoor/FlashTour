@@ -25,6 +25,7 @@ export class ManageTourCategoriesComponent implements OnInit {
       disableviewContact: true,
       disableFilterDepartue: true,
       disableFilterName: true,
+      disableDelete: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },

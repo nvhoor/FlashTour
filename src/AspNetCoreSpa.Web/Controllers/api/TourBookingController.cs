@@ -131,7 +131,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         {
             var tourBooking = _uow.TourBookings.Get(id);
             tourBooking.Status = true;
-            string emailDatas = tourBooking.FullName+"|"+tourBooking.Email+"|YOU BOOKs TOUR AT FLASHTOUR FINISHED";
+            string emailDatas = tourBooking.FullName+"|"+tourBooking.Email+"|YOUR TOUR BOOKING WAS ACCEPTED";
             decimal totalPrice = 0;
             var tourCustomers = _uow.TourCustomers.Where(x => x.TourBookingId == tourBooking.Id);
             var bookingPrices=_uow.BookingPrices.GetAll().Where(x=>x.TourBookingId==tourBooking.Id);

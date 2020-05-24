@@ -59,7 +59,7 @@
                         <div class="card card-tour">
                             <div id="parent_similar_{{postCard.id}}">
                                 <div id="similar_{{postCard.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
-                                <img class="card-img-top mb-3" src="{{baseUrl}}assets/images/posts/{{postCard.image}}" onerror="this.src=this.baseUrl+'assets/images/proposal-flight.png';" alt="Card image">
+                                <img class="card-img-top mb-3" src="./assets/images/posts/{{postCard.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
                                 <div class="card-body">
                                     <a  class="stretched-link" routerLinkActive="active" routerLink="user/post-detail/{{postCard.id}}"><div class="card-text font-weight-normal" >{{postCard.name}}</div></a>
                                 </div>
@@ -82,7 +82,7 @@
                         <div class="card card-tour">
                             <div id="parent_hotest_{{hotest.id}}">
                                 <div id="hotest_{{hotest.id}}" class="badge badge-pill badge-info coundown-date notranslate" ></div>
-                                <img class="card-img-top mb-3" src="{{baseUrl}}assets/images/tours/{{hotest.image}}" onerror="this.src=baseUrl+'assets/images/tours/tour_2.jpg';" alt="Card image">
+                                <img class="card-img-top mb-3" src="./assets/images/tours/{{hotest.image}}" onerror="this.src='./assets/images/tours/tour_2.jpg';" alt="Card image">
                                 <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt text-secondary "></i> {{hotest.departureDate|date:'dd/MM/yyyy'}}</div>
                                 <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus text-secondary "></i> {{hotest.slot}} slot</div>
                             </div>
@@ -111,7 +111,7 @@
                         <div class="card card-tour">
                             <div id="parent_newest_{{newest.id}}">
                                 <div id="newest_{{newest.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
-                                <img class="card-img-top mb-3" src="{{baseUrl}}assets/images/tours/{{newest.image}}" onerror="this.src=baseUrl+'assets/images/tours/tour_2.jpg';" alt="Card image">
+                                <img class="card-img-top mb-3" src="./assets/images/tours/{{newest.image}}" onerror="this.src='./assets/images/tours/tour_2.jpg';" alt="Card image">
                                 <div class="date-departure2 badge badge-warning mb-3"><i class="far fa-calendar-alt"></i> {{newest.departureDate|date:'dd/MM/yyyy'}}</div>
                                 <div class="slot2 badge badge-warning mb-3"><i class="fas fa-bus"></i> {{newest.slot}} slot</div>
                             </div>
