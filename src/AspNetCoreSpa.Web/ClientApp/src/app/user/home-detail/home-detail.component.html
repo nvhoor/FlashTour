@@ -61,7 +61,7 @@
                                 <div id="similar_{{postCard.id}}" class="badge badge-pill badge-info coundown-date notranslate"></div>
                                 <img class="card-img-top mb-3" src="{{baseUrl}}assets/images/posts/{{postCard.image}}" onerror="this.src=this.baseUrl+'assets/images/proposal-flight.png';" alt="Card image">
                                 <div class="card-body">
-                                    <a  class="stretched-link"><div class="card-text font-weight-normal" >{{postCard.name}}</div></a>
+                                    <a  class="stretched-link" routerLinkActive="active" routerLink="user/post-detail/{{postCard.id}}"><div class="card-text font-weight-normal" >{{postCard.name}}</div></a>
                                 </div>
                             </div>
                         </div>

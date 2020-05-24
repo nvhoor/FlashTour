@@ -208,8 +208,9 @@ export class ManageToursComponent implements OnInit {
       disableView:true,
       //changetour: true,
       columns: [
+        { prop: 'id', name: 'ID Tour', fieldType: FieldTypes.Textbox },
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required,this.formsService.nameValidator] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload ,imgSrcUrl:'api/Tour/UploadImage'},
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload ,imgSrcUrl:'api/Tour/UploadImage',fieldValidations: [Validators.required]},
         { prop: 'images', name: 'Images',cellTemplate:this.imagesTemplate,
           subTableColumn:[
             { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,imgSrcUrl:'api/Tour/UploadImage'}
@@ -265,13 +266,18 @@ export class ManageToursComponent implements OnInit {
       disableFilter: true,
       enabletourCensorship:true,
       columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'id', name: 'ID Tour', fieldType: FieldTypes.Textbox },
+        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'image', name: 'Image', fieldType: FieldTypes.Textbox },
-        { prop: 'images', name: 'Images', fieldType: FieldTypes.Textbox },
+        { prop: 'images', name: 'Images',cellTemplate:this.imagesTemplate,
+          subTableColumn:[
+            { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,imgSrcUrl:'api/Tour/UploadImage'}
+          ]},
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'departureDate', name: 'DepartureDate', fieldType: FieldTypes.Date, fieldValidations: [Validators.required] },
-        { prop: 'departureId', name: 'departureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
+        { prop: 'departureId', name: 'DepartureName', fieldType: FieldTypes.Select,fieldOptions: this.departuresFieldOption,
+          cellTemplate: this.departureTemplate},
+        { prop: 'destinationId', name: 'Destinaion Name', fieldType: FieldTypes.Select,fieldValidations: [Validators.required],  fieldOptions: this.departuresFieldOption,
           cellTemplate: this.departureTemplate},
         { prop: 'slot', name: 'Slot', fieldType: FieldTypes.Number, fieldValidations: [Validators.required] },
           { prop: 'tourCategoryId', name: 'Tour category', fieldType: FieldTypes.Select,

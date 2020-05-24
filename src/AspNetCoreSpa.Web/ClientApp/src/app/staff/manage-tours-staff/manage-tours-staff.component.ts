@@ -208,8 +208,9 @@ export class ManageToursStaffComponent implements OnInit {
       disableView:true,
       //changetour: true,
       columns: [
+        { prop: 'id', name: 'ID Tour', fieldType: FieldTypes.Textbox },
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required,this.formsService.nameValidator] },
-        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload ,imgSrcUrl:'api/Tour/UploadImage'},
+        { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload ,imgSrcUrl:'api/Tour/UploadImage',fieldValidations: [Validators.required]},
         { prop: 'images', name: 'Images',cellTemplate:this.imagesTemplate,
           subTableColumn:[
             { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,imgSrcUrl:'api/Tour/UploadImage'}
@@ -226,7 +227,7 @@ export class ManageToursStaffComponent implements OnInit {
         // prices
         { prop: 'prices', name: 'Tour Prices',cellTemplate:this.tourPricesTemplate,
           subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID'  },
+            { prop: 'tourId', name: 'Tour ID',fieldType: FieldTypes.Textbox,  },
             { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator]  },
             { prop: 'originalPrice', name: 'Original Price', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.numberValidator]},
             { prop: 'promotionPrice', name: 'PromotionPrice', fieldType: FieldTypes.Textbox,},
@@ -243,7 +244,7 @@ export class ManageToursStaffComponent implements OnInit {
         //tourPrograms
         { prop: 'tourPrograms', name: 'Tour Program',cellTemplate:this.tourProgramsTemplate,
           subTableColumn:[
-            { prop: 'tourId', name: 'Tour ID'},
+            { prop: 'tourId', name: 'Tour ID',fieldType: FieldTypes.Textbox,},
             { prop: 'date', name: 'Date', fieldType: FieldTypes.Date, fieldValidations: [Validators.required]  },
             { prop: 'orderNumber', name: 'Order Number', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]},
             { prop: 'title', name: 'Title', fieldType: FieldTypes.Textbox,},

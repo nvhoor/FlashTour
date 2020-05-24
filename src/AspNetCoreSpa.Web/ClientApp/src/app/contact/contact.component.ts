@@ -52,7 +52,7 @@ export class ContactComponent implements OnInit {
     }, false);
   }
   postContact(){
-  // if (this.checkFormValid())
+  if (this.checkFormValid())
     {
     let ok=confirm("Are you sure send contact?");
     if(ok){
@@ -132,14 +132,14 @@ export class ContactComponent implements OnInit {
         this.setCustomValidity('');
       }
     });
-    // $('#note').keyup(function () {
-    //   'use strict';
-    //   if(!that.checkMaxLengthRegrex(value,maxLength)){
-    //     this.setCustomValidity('Over length input.');
-    //   }else{
-    //     this.setCustomValidity('');
-    //   }
-    // });
+    $('#note').keyup(function () {
+      'use strict';
+      if(!that.checkMaxLengthRegrex(value,maxLength)){
+        this.setCustomValidity('Over length input.');
+      }else{
+        this.setCustomValidity('');
+      }
+    });
   }
 
   checkPhoneRegrex(value){
@@ -156,6 +156,21 @@ export class ContactComponent implements OnInit {
     return value.length <= maxLength;
   }
   checkFormValid(){
-    return !!$('#myForm').valid;
+    if(this._document.getElementById('full_name').className.indexOf("ng-invalid")!=-1){
+      return false;
+    }
+    if(this._document.getElementById('mobilephone').className.indexOf("ng-invalid")!=-1){
+      return false;
+    }
+    if(this._document.getElementById('email').className.indexOf("ng-invalid")!=-1){
+      return false;
+    }
+    if(this._document.getElementById('address').className.indexOf("ng-invalid")!=-1){
+      return false;
+    }
+    if(this._document.getElementById('note').className.indexOf("ng-invalid")!=-1){
+      return false;
+    }
+    return true;
   }
 }
