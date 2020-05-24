@@ -209,6 +209,7 @@ export class ManageToursStaffComponent implements OnInit {
       //changetour: true,
       columns: [
         { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required,this.formsService.nameValidator] },
+        { prop: 'id', name: 'ID Tour', fieldType: FieldTypes.Textbox },
         { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload ,imgSrcUrl:'api/Tour/UploadImage'},
         { prop: 'images', name: 'Images',cellTemplate:this.imagesTemplate,
           subTableColumn:[
