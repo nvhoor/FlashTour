@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Admin\.nuget\packages\microsoft.net.test.sdk\16.4.0\build\netcoreapp2.1" t="Include">
-      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
-    </e>
-    <e p="C:\Users\Admin\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
-    <e p="C:\Users\Admin\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
-    <e p="C:\Users\Admin\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
-    <e p="C:\Users\Admin\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
-    <e p="C:\Users\Admin\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
-    <e p="C:\Users\Admin\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Admin\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_AspNetCoreSpa.1528858771.00" t="ExcludeRecursive" />
-    <e p="G:\TourFlash" t="IncludeRecursive">
+    <e p="C:\FlashTour" t="IncludeRecursive">
       <e p=".dockerignore" t="Include" />
       <e p=".gitignore" t="Include" />
       <e p="app_offline.htm" t="Include" />
@@ -51,10 +41,8 @@
             <e p="Role.cs" t="Include" />
             <e p="Tour.cs" t="Include" />
             <e p="TourBooking.cs" t="Include" />
-            <e p="TourBookingDetail.cs" t="Include" />
             <e p="TourCategory.cs" t="Include" />
             <e p="TourCustomer.cs" t="Include" />
-            <e p="TouristType.cs" t="Include" />
             <e p="TourProgram.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
@@ -88,9 +76,11 @@
             <e p="AutoMapperProfile.cs" t="Include" />
             <e p="BannerVM.cs" t="Include" />
             <e p="BookingPriceVM.cs" t="Include" />
+            <e p="ChartDataVM.cs" t="Include" />
             <e p="ContactUsVm.cs" t="Include" />
             <e p="ContactVM.cs" t="Include" />
             <e p="ContentVm.cs" t="Include" />
+            <e p="DashBoardVM.cs" t="Include" />
             <e p="EvaluationVM.cs" t="Include" />
             <e p="ManageViewModels" t="Include">
               <e p="ChangePasswordViewModel.cs" t="Include" />
@@ -108,10 +98,13 @@
             <e p="ProvinceVM.cs" t="Include" />
             <e p="ResourceVM.cs" t="Include" />
             <e p="RoleVM.cs" t="Include" />
+            <e p="SearchTourVM.cs" t="Include" />
             <e p="TourBookingDetailVM.cs" t="Include" />
             <e p="TourBookingVM.cs" t="Include" />
+            <e p="TourCardVM.cs" t="Include" />
             <e p="TourCategoryVM.cs" t="Include" />
             <e p="TourCustomerVM.cs" t="Include" />
+            <e p="TourImageVM.cs" t="Include" />
             <e p="TouristTypeVM.cs" t="Include" />
             <e p="TourProgramVM.cs" t="Include" />
             <e p="TourVM.cs" t="Include" />
@@ -161,11 +154,9 @@
               <e p="IProvinceRepository.cs" t="Include" />
               <e p="IRepository.cs" t="Include" />
               <e p="IRoleRepository.cs" t="Include" />
-              <e p="ITourBookingDetailRepository.cs" t="Include" />
               <e p="ITourBookingRepository.cs" t="Include" />
               <e p="ITourCategoryRepository.cs" t="Include" />
               <e p="ITourCustomerRepository.cs" t="Include" />
-              <e p="ITouristTypeRepository.cs" t="Include" />
               <e p="ITourProgramRepository.cs" t="Include" />
               <e p="ITourRepository.cs" t="Include" />
             </e>
@@ -178,11 +169,9 @@
             <e p="ProvinceRepository.cs" t="Include" />
             <e p="Repository.cs" t="Include" />
             <e p="RoleRepository.cs" t="Include" />
-            <e p="TourBookingDetailRepository.cs" t="Include" />
             <e p="TourBookingRepository.cs" t="Include" />
             <e p="TourCategoryRepository.cs" t="Include" />
             <e p="TourCustomerRepository.cs" t="Include" />
-            <e p="TouristTypeRepository.cs" t="Include" />
             <e p="TourProgramRepository.cs" t="Include" />
             <e p="TourRepository.cs" t="Include" />
           </e>
@@ -204,6 +193,7 @@
           <e p="appsettings.Development.json" t="Include" />
           <e p="appsettings.json" t="Include" />
           <e p="AspNetCoreSpa.STS.csproj" t="IncludeRecursive" />
+          <e p="AspNetCoreSpa.STS.db" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
           <e p="bundleconfig.json" t="Include" />
           <e p="Config.cs" t="Include" />
@@ -221,24 +211,25 @@
           <e p="data" t="Include">
             <e p="Migrations" t="Include">
               <e p="IdentityDb" t="Include">
-                <e p="20191204195107_InitialAspNetIdentityDbMigration.cs" t="Include" />
-                <e p="20191204195107_InitialAspNetIdentityDbMigration.Designer.cs" t="Include" />
+                <e p="20200502135104_InitialAspNetIdentityDbMigration.cs" t="Include" />
+                <e p="20200502135104_InitialAspNetIdentityDbMigration.Designer.cs" t="Include" />
                 <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
               </e>
               <e p="IdentityServer" t="Include">
                 <e p="ConfigurationDb" t="Include">
-                  <e p="20191204195045_InitialIdentityServerConfigurationDbMigration.cs" t="Include" />
-                  <e p="20191204195045_InitialIdentityServerConfigurationDbMigration.Designer.cs" t="Include" />
+                  <e p="20200502135021_InitialIdentityServerConfigurationDbMigration.cs" t="Include" />
+                  <e p="20200502135021_InitialIdentityServerConfigurationDbMigration.Designer.cs" t="Include" />
                   <e p="ConfigurationDbContextModelSnapshot.cs" t="Include" />
                 </e>
                 <e p="PersistedGrantDb" t="Include">
-                  <e p="20191204195027_InitialIdentityServerPersistedGrantDbMigration.cs" t="Include" />
-                  <e p="20191204195027_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" t="Include" />
+                  <e p="20200502134931_InitialIdentityServerPersistedGrantDbMigration.cs" t="Include" />
+                  <e p="20200502134931_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" t="Include" />
                   <e p="PersistedGrantDbContextModelSnapshot.cs" t="Include" />
                 </e>
               </e>
             </e>
           </e>
+          <e p="desktop.ini" t="Include" />
           <e p="Dockerfile" t="Include" />
           <e p="Filters" t="Include">
             <e p="SecurityHeadersAttribute.cs" t="Include" />
@@ -375,6 +366,8 @@
               <e p="ExternalLogins.cshtml" t="Include" />
               <e p="GenerateRecoveryCodes.cshtml" t="Include" />
               <e p="Index.cshtml" t="Include" />
+              <e p="ListAccount.cshtml" t="Include" />
+              <e p="ListUser.cshtml" t="Include" />
               <e p="ManageNavPages.cs" t="Include" />
               <e p="PersonalData.cshtml" t="Include" />
               <e p="ResetAuthenticator.cshtml" t="Include" />
@@ -395,26 +388,25 @@
           <e p="wwwroot" t="Include">
             <e p="_references.js" t="Include" />
             <e p="css" t="Include">
+              <e p="reset.min.css" t="Include" />
               <e p="site.css" t="Include" />
-              <e p="site.min.css" t="Include" />
-              <e p="vendor.min.css" t="Include" />
+              <e p="style.css" t="Include" />
             </e>
             <e p="favicon.ico" t="Include" />
             <e p="icon.jpg" t="Include" />
             <e p="icon.png" t="Include" />
             <e p="images" t="Include">
+              <e p="background.jpg" t="Include" />
               <e p="banner1.svg" t="Include" />
               <e p="banner2.svg" t="Include" />
               <e p="banner3.svg" t="Include" />
               <e p="banner4.svg" t="Include" />
             </e>
             <e p="js" t="Include">
+              <e p="prefixfree.min.js" t="Include" />
               <e p="qrcode.min.js" t="Include" />
               <e p="signout-redirect.js" t="Include" />
               <e p="site.js" t="Include" />
-              <e p="site.min.js" t="Include" />
-              <e p="vendor-validation.min.js" t="Include" />
-              <e p="vendor.min.js" t="Include" />
             </e>
           </e>
         </e>
@@ -477,6 +469,7 @@
               <e p="minimatch" t="IncludeRecursive" />
               <e p="node" t="IncludeRecursive" />
               <e p="source-list-map" t="IncludeRecursive" />
+              <e p="underscore" t="IncludeRecursive" />
               <e p="yargs-parser" t="IncludeRecursive" />
             </e>
             <e p="node_modules\ajv" t="IncludeRecursive" />
@@ -488,6 +481,7 @@
             <e p="node_modules\bs-logger" t="IncludeRecursive" />
             <e p="node_modules\canonical-path" t="IncludeRecursive" />
             <e p="node_modules\chalk" t="IncludeRecursive" />
+            <e p="node_modules\chart.js" t="IncludeRecursive" />
             <e p="node_modules\chokidar" t="IncludeRecursive" />
             <e p="node_modules\codelyzer" t="IncludeRecursive" />
             <e p="node_modules\commander" t="IncludeRecursive" />
@@ -509,6 +503,9 @@
             <e p="node_modules\license-webpack-plugin" t="IncludeRecursive" />
             <e p="node_modules\lodash" t="IncludeRecursive" />
             <e p="node_modules\magic-string" t="IncludeRecursive" />
+            <e p="node_modules\moment" t="IncludeRecursive" />
+            <e p="node_modules\ng-recaptcha" t="IncludeRecursive" />
+            <e p="node_modules\ng2-charts" t="IncludeRecursive" />
             <e p="node_modules\oidc-client" t="IncludeRecursive" />
             <e p="node_modules\portfinder" t="IncludeRecursive" />
             <e p="node_modules\postcss" t="IncludeRecursive" />
@@ -662,6 +659,67 @@
                 <e p="__snapshots__" t="Include">
                   <e p="app.component.spec.ts.snap" t="Include" />
                 </e>
+                <e p="Admin" t="Include">
+                  <e p="admin.component.html" t="Include" />
+                  <e p="admin.component.ts" t="Include" />
+                  <e p="admin.models.ts" t="Include" />
+                  <e p="admin.module.ts" t="Include" />
+                  <e p="admin.routes.ts" t="Include" />
+                  <e p="auto-login-admin" t="Include">
+                    <e p="auto-login-admin.component.html" t="Include" />
+                    <e p="auto-login-admin.component.scss" t="Include" />
+                    <e p="auto-login-admin.component.spec.ts" t="Include" />
+                    <e p="auto-login-admin.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard" t="Include">
+                    <e p="dashboard.component.html" t="Include" />
+                    <e p="dashboard.component.scss" t="Include" />
+                    <e p="dashboard.component.spec.ts" t="Include" />
+                    <e p="dashboard.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-accounts" t="Include">
+                    <e p="manage-accounts.component.html" t="Include" />
+                    <e p="manage-accounts.component.scss" t="Include" />
+                    <e p="manage-accounts.component.spec.ts" t="Include" />
+                    <e p="manage-accounts.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-banners" t="Include">
+                    <e p="manage-banners.component.html" t="Include" />
+                    <e p="manage-banners.component.scss" t="Include" />
+                    <e p="manage-banners.component.spec.ts" t="Include" />
+                    <e p="manage-banners.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-contacts" t="Include">
+                    <e p="manage-contacts.component.html" t="Include" />
+                    <e p="manage-contacts.component.scss" t="Include" />
+                    <e p="manage-contacts.component.spec.ts" t="Include" />
+                    <e p="manage-contacts.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-posts" t="Include">
+                    <e p="manage-posts.component.html" t="Include" />
+                    <e p="manage-posts.component.scss" t="Include" />
+                    <e p="manage-posts.component.spec.ts" t="Include" />
+                    <e p="manage-posts.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-tour-bookings" t="Include">
+                    <e p="manage-tour-bookings.component.html" t="Include" />
+                    <e p="manage-tour-bookings.component.scss" t="Include" />
+                    <e p="manage-tour-bookings.component.spec.ts" t="Include" />
+                    <e p="manage-tour-bookings.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-tour-categories" t="Include">
+                    <e p="manage-tour-categories.component.html" t="Include" />
+                    <e p="manage-tour-categories.component.scss" t="Include" />
+                    <e p="manage-tour-categories.component.spec.ts" t="Include" />
+                    <e p="manage-tour-categories.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-tours" t="Include">
+                    <e p="manage-tours.component.html" t="Include" />
+                    <e p="manage-tours.component.scss" t="Include" />
+                    <e p="manage-tours.component.spec.ts" t="Include" />
+                    <e p="manage-tours.component.ts" t="Include" />
+                  </e>
+                </e>
                 <e p="app.component.html" t="Include" />
                 <e p="app.component.scss" t="Include" />
                 <e p="app.component.spec.ts" t="Include" />
@@ -703,9 +761,18 @@
                     <e p="privacy.component.ts" t="Include" />
                   </e>
                 </e>
+                <e p="contact" t="Include">
+                  <e p="contact.component.html" t="Include" />
+                  <e p="contact.component.scss" t="Include" />
+                  <e p="contact.component.ts" t="Include" />
+                  <e p="contact.module.ts" t="Include" />
+                </e>
+                <e p="globals.ts" t="Include" />
                 <e p="home" t="Include">
                   <e p="home.component.html" t="Include" />
+                  <e p="home.component.scss" t="Include" />
                   <e p="home.component.ts" t="Include" />
+                  <e p="home.models.ts" t="Include" />
                 </e>
                 <e p="models.ts" t="Include" />
                 <e p="router.animations.ts" t="Include" />
@@ -810,6 +877,12 @@
                       <e p="index.ts" t="Include" />
                     </e>
                     <e p="index.ts" t="Include" />
+                    <e p="rating" t="Include">
+                      <e p="rating.component.html" t="Include" />
+                      <e p="rating.component.scss" t="Include" />
+                      <e p="rating.component.spec.ts" t="Include" />
+                      <e p="rating.component.ts" t="Include" />
+                    </e>
                     <e p="sub-menu" t="Include">
                       <e p="sub-menu.component.html" t="Include" />
                       <e p="sub-menu.component.scss" t="Include" />
@@ -829,6 +902,49 @@
                     <e p="index.ts" t="Include" />
                   </e>
                   <e p="shared.module.ts" t="Include" />
+                </e>
+                <e p="staff" t="Include">
+                  <e p="auto-login-staff" t="Include">
+                    <e p="auto-login-staff.component.html" t="Include" />
+                    <e p="auto-login-staff.component.scss" t="Include" />
+                    <e p="auto-login-staff.component.spec.ts" t="Include" />
+                    <e p="auto-login-staff.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-banners-staff" t="Include">
+                    <e p="manage-banners-staff.component.html" t="Include" />
+                    <e p="manage-banners-staff.component.scss" t="Include" />
+                    <e p="manage-banners-staff.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-contacts-staff" t="Include">
+                    <e p="manage-contacts-staff.component.html" t="Include" />
+                    <e p="manage-contacts-staff.component.scss" t="Include" />
+                    <e p="manage-contacts-staff.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-posts-staff" t="Include">
+                    <e p="manage-posts-staff.component.html" t="Include" />
+                    <e p="manage-posts-staff.component.scss" t="Include" />
+                    <e p="manage-posts-staff.component.spec.ts" t="Include" />
+                    <e p="manage-posts-staff.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-tour-bookings-staff" t="Include">
+                    <e p="manage-tour-bookings-staff.component.html" t="Include" />
+                    <e p="manage-tour-bookings-staff.component.scss" t="Include" />
+                    <e p="manage-tour-bookings-staff.component.spec.ts" t="Include" />
+                    <e p="manage-tour-bookings-staff.component.ts" t="Include" />
+                  </e>
+                  <e p="manage-tours-staff" t="Include">
+                    <e p="manage-tours-staff.component.html" t="Include" />
+                    <e p="manage-tours-staff.component.scss" t="Include" />
+                    <e p="manage-tours-staff.component.spec.ts" t="Include" />
+                    <e p="manage-tours-staff.component.ts" t="Include" />
+                  </e>
+                  <e p="staff.component.html" t="Include" />
+                  <e p="staff.component.scss" t="Include" />
+                  <e p="staff.component.spec.ts" t="Include" />
+                  <e p="staff.component.ts" t="Include" />
+                  <e p="staff.models.ts" t="Include" />
+                  <e p="staff.module.ts" t="Include" />
+                  <e p="staff.routes.ts" t="Include" />
                 </e>
                 <e p="toastr" t="Include">
                   <e p="index.ts" t="Include" />
@@ -851,6 +967,65 @@
                   <e p="toastr.module.ts" t="Include" />
                   <e p="toastr.service.ts" t="Include" />
                 </e>
+                <e p="user" t="Include">
+                  <e p="auto-login" t="Include">
+                    <e p="auto-login.component.html" t="Include" />
+                    <e p="auto-login.component.scss" t="Include" />
+                    <e p="auto-login.component.spec.ts" t="Include" />
+                    <e p="auto-login.component.ts" t="Include" />
+                  </e>
+                  <e p="banner" t="Include">
+                    <e p="banner.component.html" t="Include" />
+                    <e p="banner.component.scss" t="Include" />
+                    <e p="banner.component.spec.ts" t="Include" />
+                    <e p="banner.component.ts" t="Include" />
+                  </e>
+                  <e p="booking-success" t="Include">
+                    <e p="booking-success.component.html" t="Include" />
+                    <e p="booking-success.component.scss" t="Include" />
+                    <e p="booking-success.component.spec.ts" t="Include" />
+                    <e p="booking-success.component.ts" t="Include" />
+                  </e>
+                  <e p="bookings" t="Include">
+                    <e p="tour-booking.component.html" t="Include" />
+                    <e p="tour-booking.component.scss" t="Include" />
+                    <e p="tour-booking.component.ts" t="Include" />
+                  </e>
+                  <e p="detail" t="Include">
+                    <e p="detail.component.html" t="Include" />
+                    <e p="detail.component.scss" t="Include" />
+                    <e p="detail.component.ts" t="Include" />
+                  </e>
+                  <e p="home-detail" t="Include">
+                    <e p="home-detail.component.html" t="Include" />
+                    <e p="home-detail.component.scss" t="Include" />
+                    <e p="home-detail.component.spec.ts" t="Include" />
+                    <e p="home-detail.component.ts" t="Include" />
+                  </e>
+                  <e p="post" t="Include">
+                    <e p="post.component.html" t="Include" />
+                    <e p="post.component.scss" t="Include" />
+                    <e p="post.component.spec.ts" t="Include" />
+                    <e p="post.component.ts" t="Include" />
+                  </e>
+                  <e p="post-detail" t="Include">
+                    <e p="post-detail.component.html" t="Include" />
+                    <e p="post-detail.component.scss" t="Include" />
+                    <e p="post-detail.component.spec.ts" t="Include" />
+                    <e p="post-detail.component.ts" t="Include" />
+                  </e>
+                  <e p="tour-category" t="Include">
+                    <e p="tour-category.component.html" t="Include" />
+                    <e p="tour-category.component.scss" t="Include" />
+                    <e p="tour-category.component.spec.ts" t="Include" />
+                    <e p="tour-category.component.ts" t="Include" />
+                  </e>
+                  <e p="user.component.html" t="Include" />
+                  <e p="user.component.ts" t="Include" />
+                  <e p="user.models.ts" t="Include" />
+                  <e p="user.module.ts" t="Include" />
+                  <e p="user.routes.ts" t="Include" />
+                </e>
               </e>
               <e p="assets" t="Include">
                 <e p="data" t="Include">
@@ -870,7 +1045,150 @@
                 </e>
                 <e p="images" t="Include">
                   <e p="angular.png" t="Include" />
+                  <e p="arrow.png" t="Include" />
                   <e p="aspnetcore.png" t="Include" />
+                  <e p="background.jpg" t="Include" />
+                  <e p="banner-flashtour.jpg" t="Include" />
+                  <e p="banners" t="Include">
+                    <e p="1.jpg" t="Include" />
+                    <e p="banner-flashtour.jpg" t="Include" />
+                    <e p="banner.jpg" t="Include" />
+                    <e p="banner_0.jpg" t="Include" />
+                    <e p="banner_1.jpg" t="Include" />
+                    <e p="banner_2.jpg" t="Include" />
+                    <e p="banner_3.jpg" t="Include" />
+                    <e p="banner_4.jpg" t="Include" />
+                    <e p="banner_5.jpg" t="Include" />
+                    <e p="banner_6.jpg" t="Include" />
+                    <e p="banner_7.jpg" t="Include" />
+                    <e p="banner_8.jpg" t="Include" />
+                    <e p="chum-tour-noi-dia-.jpg" t="Include" />
+                    <e p="logotour.png" t="Include" />
+                    <e p="post_5.jpg" t="Include" />
+                    <e p="sl_200504_vntoi_1920-570px.jpg" t="Include" />
+                    <e p="tour_2.jpg" t="Include" />
+                    <e p="tour_3.jpg" t="Include" />
+                    <e p="tour_7.jpg" t="Include" />
+                    <e p="tour_8.jpg" t="Include" />
+                    <e p="tour_9.jpg" t="Include" />
+                  </e>
+                  <e p="beach-icon.png" t="Include" />
+                  <e p="BookShop.webarchive" t="Include" />
+                  <e p="carousel-slider.slider.standard" t="Include">
+                    <e p="img" t="Include">
+                      <e p="001.jpg" t="Include" />
+                      <e p="005.jpg" t="Include" />
+                      <e p="006.jpg" t="Include" />
+                      <e p="007.jpg" t="Include" />
+                      <e p="008.jpg" t="Include" />
+                      <e p="009.jpg" t="Include" />
+                      <e p="010.jpg" t="Include" />
+                      <e p="011.jpg" t="Include" />
+                      <e p="024.jpg" t="Include" />
+                      <e p="025.jpg" t="Include" />
+                      <e p="026.jpg" t="Include" />
+                      <e p="027.jpg" t="Include" />
+                      <e p="spin.svg" t="Include" />
+                    </e>
+                    <e p="js" t="Include">
+                      <e p="jssor.slider-28.0.0.min.js" t="Include" />
+                    </e>
+                    <e p="standard.html" t="Include" />
+                  </e>
+                  <e p="carousel-slider.slider.standard.zip" t="Include" />
+                  <e p="doremon.jpg" t="Include" />
+                  <e p="doremon.png" t="Include" />
+                  <e p="facebook-logo.png" t="Include" />
+                  <e p="find-beach-icon.png" t="Include" />
+                  <e p="flight.jpg" t="Include" />
+                  <e p="flight2.png" t="Include" />
+                  <e p="instagram-logo.png" t="Include" />
+                  <e p="island.png" t="Include" />
+                  <e p="logo_flash_tour.png" t="Include" />
+                  <e p="posts" t="Include">
+                    <e p="i-date.png" t="Include" />
+                    <e p="post_1.jpg" t="Include" />
+                    <e p="post_10.jpg" t="Include" />
+                    <e p="post_2.jpg" t="Include" />
+                    <e p="post_3.jpg" t="Include" />
+                    <e p="post_4.jpg" t="Include" />
+                    <e p="post_5.jpg" t="Include" />
+                    <e p="post_6.jpg" t="Include" />
+                    <e p="post_7.jpg" t="Include" />
+                    <e p="post_8.jpg" t="Include" />
+                    <e p="post_9.jpg" t="Include" />
+                    <e p="tour_5.jpg" t="Include" />
+                    <e p="tour_p.jpg" t="Include" />
+                  </e>
+                  <e p="proposal-flight.png" t="Include" />
+                  <e p="search.png" t="Include" />
+                  <e p="star.png" t="Include" />
+                  <e p="tour-bookings" t="Include">
+                    <e p="4.png" t="Include" />
+                    <e p="i-chair.png" t="Include" />
+                    <e p="i-clock.png" t="Include" />
+                    <e p="i-code.png" t="Include" />
+                    <e p="i-date.png" t="Include" />
+                    <e p="i-price.png" t="Include" />
+                  </e>
+                  <e p="tour-categories" t="Include">
+                    <e p="post_7.jpg" t="Include" />
+                    <e p="post_8.jpg" t="Include" />
+                    <e p="tour_1_3.jpg" t="Include" />
+                    <e p="tourCate_0.jpg" t="Include" />
+                    <e p="tourCate_1.jpg" t="Include" />
+                    <e p="tourCate_2.jpg" t="Include" />
+                    <e p="tourCate_3.jpg" t="Include" />
+                    <e p="tourCate_4.jpg" t="Include" />
+                    <e p="tourCate_5.jpg" t="Include" />
+                    <e p="tourCate_6.jpg" t="Include" />
+                    <e p="tourCate_7.jpg" t="Include" />
+                    <e p="tourCate_8.jpg" t="Include" />
+                    <e p="tourCate_9.jpg" t="Include" />
+                  </e>
+                  <e p="tours" t="Include">
+                    <e p="1.jpg" t="Include" />
+                    <e p="89960023_876733399435443_5479141224625471488_o.jpg" t="Include" />
+                    <e p="flashtour-banner.jpg" t="Include" />
+                    <e p="post_1.jpg" t="Include" />
+                    <e p="post_2.jpg" t="Include" />
+                    <e p="post_3.jpg" t="Include" />
+                    <e p="post_4.jpg" t="Include" />
+                    <e p="post_5.jpg" t="Include" />
+                    <e p="post_8.jpg" t="Include" />
+                    <e p="post_9.jpg" t="Include" />
+                    <e p="t.jpg" t="Include" />
+                    <e p="toumoi.jpg" t="Include" />
+                    <e p="tour_1.jpg" t="Include" />
+                    <e p="tour_10.jpg" t="Include" />
+                    <e p="tour_11.jpg" t="Include" />
+                    <e p="tour_12.jpg" t="Include" />
+                    <e p="tour_13.jpg" t="Include" />
+                    <e p="tour_14.jpg" t="Include" />
+                    <e p="tour_15.jpg" t="Include" />
+                    <e p="tour_16.jpg" t="Include" />
+                    <e p="tour_17.jpg" t="Include" />
+                    <e p="tour_18.jpg" t="Include" />
+                    <e p="tour_1_1.jpg" t="Include" />
+                    <e p="tour_1_3.jpg" t="Include" />
+                    <e p="tour_2.jpg" t="Include" />
+                    <e p="tour_2_2.jpg" t="Include" />
+                    <e p="tour_3.jpg" t="Include" />
+                    <e p="tour_4.jpg" t="Include" />
+                    <e p="tour_4_1.jpg" t="Include" />
+                    <e p="tour_5.jpg" t="Include" />
+                    <e p="tour_6.jpg" t="Include" />
+                    <e p="tour_7.jpg" t="Include" />
+                    <e p="tour_8.jpg" t="Include" />
+                    <e p="tour_9.jpg" t="Include" />
+                    <e p="tour_p.jpg" t="Include" />
+                    <e p="tourm.jpg" t="Include" />
+                  </e>
+                  <e p="twitter-logo.png" t="Include" />
+                  <e p="youtube-logo.png" t="Include" />
+                </e>
+                <e p="js" t="Include">
+                  <e p="prefixfree.min.js" t="Include" />
                 </e>
                 <e p="styles" t="Include">
                   <e p="fonts" t="Include">
@@ -880,6 +1198,8 @@
                     <e p="data-table.woff" t="Include" />
                   </e>
                   <e p="icons.css" t="Include" />
+                  <e p="reset.min.css" t="Include" />
+                  <e p="style.css" t="Include" />
                 </e>
               </e>
               <e p="environments" t="Include">
@@ -904,14 +1224,26 @@
           </e>
           <e p="Controllers" t="Include">
             <e p="api" t="Include">
+              <e p="AccountController.cs" t="Include" />
               <e p="AppUtils.cs" t="Include" />
+              <e p="BannerController.cs" t="Include" />
               <e p="BaseController.cs" t="Include" />
+              <e p="BookingPriceController.cs" t="Include" />
+              <e p="ContactController.cs" t="Include" />
               <e p="CustomerController.cs" t="Include" />
+              <e p="EvaluationController.cs" t="Include" />
               <e p="OrderController.cs" t="Include" />
+              <e p="PostCategoryController.cs" t="Include" />
+              <e p="PostController.cs" t="Include" />
+              <e p="PriceController.cs" t="Include" />
               <e p="ProductCategoryController.cs" t="Include" />
               <e p="ProductController.cs" t="Include" />
+              <e p="ProvinceController.cs" t="Include" />
+              <e p="TourBookingController.cs" t="Include" />
               <e p="TourCategoryController.cs" t="Include" />
               <e p="TourController.cs" t="Include" />
+              <e p="TourCustomerController.cs" t="Include" />
+              <e p="TourProgramController.cs" t="Include" />
             </e>
             <e p="HomeController.cs" t="Include" />
           </e>
@@ -930,8 +1262,8 @@
             <e p="ValidationError.cs" t="Include" />
           </e>
           <e p="Migrations" t="Include">
-            <e p="20200321072407_DBInitial.cs" t="Include" />
-            <e p="20200321072407_DBInitial.Designer.cs" t="Include" />
+            <e p="20200522120348_InitialDb.cs" t="Include" />
+            <e p="20200522120348_InitialDb.Designer.cs" t="Include" />
             <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
           </e>
           <e p="obj" t="ExcludeRecursive">
@@ -1004,5 +1336,15 @@
         </e>
       </e>
     </e>
+    <e p="C:\Users\Admin\.nuget\packages\microsoft.net.test.sdk\16.4.0\build\netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\Admin\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Admin\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Admin\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Admin\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Admin\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\Admin\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Admin\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_AspNetCoreSpa.696808391.00" t="ExcludeRecursive" />
   </component>
 </project>

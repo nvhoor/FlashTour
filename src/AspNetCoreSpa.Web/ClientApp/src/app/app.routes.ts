@@ -26,6 +26,7 @@ import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/man
 import {ManageBannersStaffComponent} from "@app/staff/manage-banners-staff/manage-banners-staff.component";
 import {PostComponent} from "@app/user/post/post.component";
 import {PostDetailComponent} from "@app/user/post-detail/post-detail.component";
+import { BookingSuccessComponent } from '@app/user/booking-success/booking-success.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: { state: 'home' } },
@@ -39,8 +40,7 @@ export const routes: Routes = [
           { path: 'auto-login', component: AutoLoginComponent },
           { path: 'post', component: PostComponent },
           { path: 'post-detail/:id', component: PostDetailComponent },
-
-
+          { path: 'booking-success', component: BookingSuccessComponent },
       ] },
   { path: 'admin', component: AdminComponent,children : [
       { path: '', redirectTo:"dashboard",pathMatch:"full" },

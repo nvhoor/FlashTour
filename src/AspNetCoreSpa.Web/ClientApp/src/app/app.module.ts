@@ -51,6 +51,7 @@ import {ManageContactsStaffComponent} from "@app/staff/manage-contacts-staff/man
 import {PostComponent} from "@app/user/post/post.component";
 import {PostDetailComponent} from "@app/user/post-detail/post-detail.component";
 import {ChartsModule} from "ng2-charts";
+import {BookingSuccessComponent} from "@app/user/booking-success/booking-success.component";
 export function appServiceFactory(appService: AppService, authService: AuthService): Function {
   return () => appService.getAppData(authService);
 }
@@ -68,7 +69,7 @@ export function appServiceFactory(appService: AppService, authService: AuthServi
       DashboardComponent,
       DetailComponent, TourBookingComponent, UserComponent, BannerComponent, HomeDetailComponent, TourCategoryComponent,AutoLoginComponent,
        ManageToursComponent, ManageTourBookingsComponent, ManageTourCategoriesComponent, ManageAccountsComponent, ManagePostsComponent,ManageContactsComponent,ManageBannersComponent,
-      AutoLoginAdminComponent,StaffComponent,AutoLoginStaffComponent,ManageToursStaffComponent, ManageTourBookingsStaffComponent, ManagePostsStaffComponent, ManageBannersStaffComponent,ManageContactsStaffComponent,PostComponent,PostDetailComponent
+      AutoLoginAdminComponent,StaffComponent,AutoLoginStaffComponent,ManageToursStaffComponent, ManageTourBookingsStaffComponent, ManagePostsStaffComponent, ManageBannersStaffComponent,ManageContactsStaffComponent,PostComponent,PostDetailComponent,BookingSuccessComponent
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
