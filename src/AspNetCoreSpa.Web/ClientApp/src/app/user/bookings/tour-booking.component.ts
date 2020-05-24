@@ -1,7 +1,7 @@
 import {Component, Inject, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 import {DataService} from "@app/services";
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AppFormComponent, FormsService} from "@app/shared";
 import {IFieldConfig} from "@app/models";
 declare var $: any;
@@ -23,6 +23,7 @@ export class TourBookingComponent implements OnInit{
         constructor(
             @Inject("BASE_URL") public baseUrl: string,
             private route: ActivatedRoute,
+            private router: Router,
             private _renderer2: Renderer2,
             private _dataService:DataService,
             private formsService: FormsService,
@@ -158,7 +159,7 @@ export class TourBookingComponent implements OnInit{
                     console.log("Post tour booking:", JSON.stringify(this.comunication));
                     this._dataService.post<Comunication>(`${this.baseUrl}api/TourBooking`, JSON.stringify(this.comunication)).subscribe(x => {
                        this.tour.slot-=this.listCustomer.length;
-                        alert("Book tour success!");
+                        this.router.navigate(["user/booking-success"]);
                     }, error => {
                         alert("Book tour fail!");
                         console.error(error);
