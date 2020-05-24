@@ -51,6 +51,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         [HttpPost]
         public void Post([FromBody] PostVM post)
         {
+            post.Status = true;
             _uow.Posts.Add(_mapper.Map<Post>(post));
             _uow.SaveChanges();
         }

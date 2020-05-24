@@ -3,6 +3,7 @@ import {FieldTypes, IAppTableOptions, IOption} from "@app/models";
 import {Validators} from "@angular/forms";
 import {DataService, ModalService} from "@app/services";
 import {ToastrService} from "@app/toastr";
+import {AppTableComponent, FormsService} from "@app/shared";
 
 @Component({
   selector: 'appc-manage-banners-staff',
@@ -18,7 +19,9 @@ export class ManageBannersStaffComponent implements OnInit {
   constructor(@Inject("BASE_URL") private baseUrl: string,
               private modalService: ModalService,
               private _dataService:DataService,
-              private toastr: ToastrService,) { }
+              private toastr: ToastrService,
+              private formsService: FormsService,
+  ) { }
   
   ngOnInit() {
     this.options={apiUrl:'api/banner'};
@@ -47,7 +50,7 @@ export class ManageBannersStaffComponent implements OnInit {
       disableFilterDepartue: true,
       disableFilterName: true,
       columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'postId', name: 'Post Name', fieldType: FieldTypes.Select,
           fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},

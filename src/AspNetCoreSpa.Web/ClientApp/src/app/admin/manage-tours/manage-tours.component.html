@@ -13,10 +13,10 @@
     {{value == 1 ? 'Enable' : 'Disable'}}
 </ng-template>
 <ng-template #tourPricesTemplate let-row="row" let-value="value">
-    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[8].subTableColumn,row)">Prices</button>
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[9].subTableColumn,row)">Prices</button>
 </ng-template>
 <ng-template #tourProgramsTemplate let-row="row" let-value="value">
-    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickTourPrograms(this.options.columns[9].subTableColumn,row)">Tour's Program</button>
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickTourPrograms(this.options.columns[10].subTableColumn,row)">Tour's Program</button>
 </ng-template>
 <ng-template #tourCategoriesTemplate let-row="row" let-value="value">
     {{row.categoryName}}

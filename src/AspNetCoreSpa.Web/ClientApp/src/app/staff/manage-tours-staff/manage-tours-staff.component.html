@@ -13,10 +13,10 @@
     {{value == 1 ? 'Enable' : 'Disable'}}
 </ng-template>
 <ng-template #tourPricesTemplate let-row="row" let-value="value">
-    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[8].subTableColumn,row)">Prices</button>
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal"  (click)="onClickTourPrices(this.options.columns[9].subTableColumn,row)">Prices</button>
 </ng-template>
 <ng-template #tourProgramsTemplate let-row="row" let-value="value">
-    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickTourPrograms(this.options.columns[9].subTableColumn,row)">Tour's Program</button>
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickTourPrograms(this.options.columns[10].subTableColumn,row)">Tour's Program</button>
 </ng-template>
 <ng-template #tourCategoriesTemplate let-row="row" let-value="value">
     {{row.categoryName}}
@@ -24,6 +24,9 @@
 <ng-template #departureTemplate let-row="row" let-value="value">
     {{row.departureName}}
 </ng-template>
-<ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel" let-formTableData="formTableData" let-pricesData="pricesData" let-tourproData="tourproData" >
-    <app-form [config]="formConfig" [model]="formModel" #form="appForm" [pricesData]="pricesData" [tourproData]="tourproData"></app-form>
+<ng-template #imagesTemplate let-row="row" let-value="value">
+    <button type="button" class="btn btn-sm btn-outline-info mb-2" data-toggle="modal" data-target="#myModal" (click)="onClickImages(this.options.columns[2].subTableColumn,row)">Images</button>
+</ng-template>
+<ng-template #formTemplate let-formConfig="formConfig" let-formModel="formModel" let-formTableData="formTableData" let-pricesData="pricesData" let-tourproData="tourproData" let-imagesData="imagesData">
+    <app-form [config]="formConfig" [model]="formModel" #form="appForm" [pricesData]="pricesData" [tourproData]="tourproData" [imagesData]="imagesData"></app-form>
 </ng-template>

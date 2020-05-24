@@ -115,8 +115,7 @@ interface OptionSearch {
     priceId:number,
 }
 interface EmitSearchPost{
-    departureName:string,
-    destinationName:string,
+    categoryName:string,
     option:OptionSearchPost
 }
 interface OptionSearchPost {
@@ -158,6 +157,7 @@ interface PostId{
     createdAt:Date,
 }
 interface PostCate{
+    image: string;
     id:string,
     name:string
     forEach(param: (d, i) => void): void;

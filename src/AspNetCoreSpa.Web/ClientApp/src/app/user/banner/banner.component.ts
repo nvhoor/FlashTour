@@ -17,6 +17,7 @@ export class BannerComponent implements OnInit {
   public prices:SearchPrice[];
   public departureDate:Date;
   public selectedDeparture:string;
+  public selectedCatePost:string;
   @Input() optionSearch:OptionSearch;
   @Input() optionSearchPost:OptionSearchPost;
   public emitSearch:EmitSearch;
@@ -74,6 +75,8 @@ export class BannerComponent implements OnInit {
 
   @Output() myEventPost = new EventEmitter<EmitSearchPost>();
   onClickSearchPost(){
+    this.selectedCatePost=this.postCategories.find(x=>x.id==this.optionSearchPost.postCategoryId).name;
+    this.emitSearchPost={categoryName:this.selectedCatePost,option:this.optionSearchPost};
     this.myEventPost.emit(this.emitSearchPost);
   }
   private getBanners() {

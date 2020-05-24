@@ -2,7 +2,7 @@ import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@a
 import {FieldTypes, IAppTableOptions, IFieldConfig, IOption} from "@app/models";
 import {Validators} from "@angular/forms";
 import {clone} from 'lodash';
-import {AppFormComponent, AppTableComponent} from "@app/shared";
+import {AppFormComponent, AppTableComponent,FormsService} from "@app/shared";
 import {DataService, ModalService} from "@app/services";
 import {ToastrService} from "@app/toastr";
 @Component({
@@ -25,6 +25,7 @@ export class ManageTourBookingsStaffComponent implements OnInit {
       private modalService: ModalService,
       private _dataService:DataService,
       private toastr: ToastrService,
+      private formsService: FormsService,
   ) { }
   ngOnInit() {
     this.clickEditTour();
@@ -113,10 +114,10 @@ export class ManageTourBookingsStaffComponent implements OnInit {
       columns: [
         { prop: 'id', name: 'Id'},
         { prop: 'tourId', name: 'Tour Id', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required]  },
-        { prop: 'fullName', name: 'Full name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-        { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox },
-        { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox },
-        { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox },
+        { prop: 'fullName', name: 'Full name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator]},
+        { prop: 'email', name: 'Email', fieldType: FieldTypes.Textbox,fieldValidations:[Validators.email, Validators.required] },
+        { prop: 'mobile', name: 'Mobile', fieldType: FieldTypes.Textbox,fieldValidations:[this.formsService.telehponeValidator]},
+        { prop: 'address', name: 'Address', fieldType: FieldTypes.Textbox,fieldValidations: [Validators.required] },
         { prop: 'note', name: 'Note', fieldType: FieldTypes.Textarea },
         { prop: 'tourCustomers', name: 'Tour Customer',cellTemplate:this.customersTemplate,
           subTableColumn:[
@@ -127,7 +128,7 @@ export class ManageTourBookingsStaffComponent implements OnInit {
                 {key:1,value:'Children'},
                 {key:2,value:'Kid'},
               ]},
-            { prop: 'fullName', name: 'Full Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required]  },
+            { prop: 'fullName', name: 'Full Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required,this.formsService.nameValidator ]  },
             { prop: 'gender', name: 'Gender', fieldType: FieldTypes.Textbox },
             { prop: 'birthDay', name: 'Birthday', fieldType: FieldTypes.Textbox}
           ]

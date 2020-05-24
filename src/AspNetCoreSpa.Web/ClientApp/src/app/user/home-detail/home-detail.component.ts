@@ -295,7 +295,7 @@ export class HomeDetailComponent implements OnInit {
   public getPostsByOption(emitPost){
     this.emitSearchPost=emitPost;
     console.log("emit:",JSON.stringify(emitPost));
-    var data = this._dataService.get<Post[]>(`${this.baseUrl}api/post/Search`);
+    var data = this._dataService.get<Post[]>(`${this.baseUrl}api/post/Search`,emitPost.option);
     let that = this;
     data.subscribe((result) => {
       // console.log("Respone:"+result.body);
@@ -310,6 +310,7 @@ export class HomeDetailComponent implements OnInit {
           description: d.description,
         });
       });
+      that.searchingPosts=searchingPosts;
       console.log(that.searchingPosts);
     }, error => console.error(error));
   }

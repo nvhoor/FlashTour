@@ -3,7 +3,7 @@ import {FieldTypes, IAppTableOptions, IOption} from "@app/models";
 import {DataService, ModalService} from "@app/services";
 import {ToastrService} from "@app/toastr";
 import {Validators} from "@angular/forms";
-import {AppTableComponent} from "@app/shared";
+import {AppTableComponent, FormsService} from "@app/shared";
 
 @Component({
   selector: 'appc-manage-posts',
@@ -23,7 +23,9 @@ export class ManagePostsComponent implements OnInit {
       @Inject("BASE_URL") private baseUrl: string,
       private modalService: ModalService,
       private _dataService:DataService,
-      private toastr: ToastrService,) { }
+      private toastr: ToastrService,
+      private formsService: FormsService,
+  ) { }
   ngOnInit() {
     this.options={apiUrl:'api/post'};
     var data = this._dataService.getFull<PostCate>(`${this.baseUrl}api/postcategory`);
@@ -51,7 +53,7 @@ export class ManagePostsComponent implements OnInit {
       enablepostCensorship: false,
       disableFilterDepartue: true,
       columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
         { prop: 'postContent', name: 'PostContent', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required] ,imgSrcUrl:'api/post/UploadImage' },
@@ -59,7 +61,7 @@ export class ManagePostsComponent implements OnInit {
         { prop: 'metaKeyWord', name: 'MetaKeyWord', fieldType: FieldTypes.Textarea, fieldValidations: [Validators.required] },
         { prop: 'alias', name: 'Alias', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'updatedAt', name: 'Updated At', fieldType: FieldTypes.Date },
-        { prop: 'postCategoryId', name: 'PostCategory', fieldType: FieldTypes.Select,
+        { prop: 'postCategoryId', name: 'PostCategory', fieldValidations: [Validators.required],fieldType: FieldTypes.Select,
            fieldOptions: this.postCateFieldOption,cellTemplate: this.postCateTemplate},
       ]};
     this.table.updateData('api/post');

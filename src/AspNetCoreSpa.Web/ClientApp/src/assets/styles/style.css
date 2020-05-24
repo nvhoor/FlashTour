@@ -526,3 +526,62 @@ a h4.card-tour-title{
 .card-cate:hover{
 	border: 3px solid rgba(229, 96, 56, 1);
 }
+
+#social {
+	position: fixed;
+	right: 0;
+	top: 165px!important;
+}
+
+#social .social-top .icon {
+	background: #fff;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 12px;
+	background-position: left top;
+	-webkit-transition: width .2s;
+	position: absolute;
+	right: 0;
+	font-size: 16px!important;
+	border-left: 1px dashed #a5a5a5;
+}
+#social .social-top .facebook {
+	top: 40px!important;
+	color: #3b5897;
+	border-top: 1px dashed #a5a5a5;
+}
+#social .social-top .facebook:hover {
+	top: 40px!important;
+	color: #fff;
+	background: #0084ff!important;
+}
+#social .social-top .messenger {
+	top: 123px!important;
+}
+#social .social-top .messenger:hover {
+	top: 123px!important;
+	color: #fff;
+	background: #0084ff!important;
+}
+#social .social-top .google:hover{
+	top: 81px!important;
+	color: #fff;
+	background: #f0433a;
+}
+#social .social-top .google{
+	top: 81px!important;
+}
+#social .social-top .youtube {
+	top: 161px!important;
+	color: #cb2027;
+}
+#social .social-top .youtube:hover{
+	top: 161px!important;
+	color: #fff;
+	background: red;
+}
+#social .social-top .icon:last-child {
+	border-bottom: 1px dashed #a5a5a5;
+}

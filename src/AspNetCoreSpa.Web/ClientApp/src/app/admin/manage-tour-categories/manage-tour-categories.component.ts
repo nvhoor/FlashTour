@@ -1,7 +1,7 @@
 import {Component, HostBinding, OnInit, ViewChild} from '@angular/core';
 import {FieldTypes, IAppTableOptions} from "@app/models";
 import {Validators} from "@angular/forms";
-import {AppTableComponent} from "@app/shared";
+import {AppTableComponent,FormsService,} from "@app/shared";
 @Component({
   selector: 'appc-manage-tour-categories',
   templateUrl: './manage-tour-categories.component.html',
@@ -12,7 +12,9 @@ export class ManageTourCategoriesComponent implements OnInit {
   elementClass = 'col-lg-10 col-md-9 bg-light content';
   options: IAppTableOptions<Comunication>;
   @ViewChild('table', { static: true }) table:AppTableComponent;
-  constructor() { }
+  constructor(
+      private formsService: FormsService,
+  ) { }
 
   ngOnInit() {
     this.options = {
@@ -24,7 +26,7 @@ export class ManageTourCategoriesComponent implements OnInit {
       disableFilterDepartue: true,
       disableFilterName: true,
       columns: [
-        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+        { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
         { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
         { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload, fieldValidations: [Validators.required] ,imgSrcUrl:'api/TourCategory/UploadImage' },
       ]

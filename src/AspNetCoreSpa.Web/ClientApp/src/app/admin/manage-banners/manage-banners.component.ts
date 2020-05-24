@@ -2,7 +2,7 @@ import {Component, HostBinding, Inject, OnInit, TemplateRef, ViewChild} from '@a
 import {FieldTypes, IAppTableOptions, IFieldConfig, IOption} from "@app/models";
 import {Validators} from "@angular/forms";
 import {clone} from 'lodash';
-import {AppFormComponent, AppTableComponent} from "@app/shared";
+import {AppFormComponent, AppTableComponent,FormsService} from "@app/shared";
 import {DataService, ModalService} from "@app/services";
 import {ToastrService} from "@app/toastr";
 
@@ -23,7 +23,8 @@ export class ManageBannersComponent implements OnInit {
         @Inject("BASE_URL") private baseUrl: string,
         private modalService: ModalService,
         private _dataService:DataService,
-        private toastr: ToastrService,) { }
+        private toastr: ToastrService,
+        private formsService: FormsService,) { }
 
     ngOnInit() {
         this.options={apiUrl:'api/banner'};
@@ -53,7 +54,7 @@ export class ManageBannersComponent implements OnInit {
             enablebannerCensorship: false,
             disableFilterName: true,
             columns: [
-                { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
+                { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, this.formsService.nameValidator] },
                 { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
                 { prop: 'postId', name: 'Post Name', fieldType: FieldTypes.Select,
                     fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},
@@ -75,8 +76,8 @@ export class ManageBannersComponent implements OnInit {
             disableFilterName: true,
             columns: [
                 { prop: 'name', name: 'Name', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-                { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required] },
-                { prop: 'postId', name: 'Post Name', fieldType: FieldTypes.Select,
+                { prop: 'description', name: 'Description', fieldType: FieldTypes.Textbox, fieldValidations: [Validators.required, Validators.maxLength(500), Validators.minLength(10)]},
+                { prop: 'postId', name: 'Post', fieldType: FieldTypes.Select,
                     fieldOptions: this.postFieldOption,cellTemplate: this.postTemplate},
                 { prop: 'image', name: 'Image', fieldType: FieldTypes.FileUpload,fieldValidations: [Validators.required],imgSrcUrl:'api/Banner/UploadImage' },
             ]};
