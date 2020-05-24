@@ -5,8 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using AngleSharp.Common;
 using Microsoft.Extensions.DependencyModel;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AspNetCoreSpa.Infrastructure
 {
@@ -39,25 +43,37 @@ namespace AspNetCoreSpa.Infrastructure
             _logger = logger;
             _hostingEnvironment = hostingEnvironment;
         }
-
+        
         public void Initialise()
         {
             _context.Database.Migrate();
             InitListGuId();
             AddLocalisedData();
             AddTourData();
-           // AddShopData();
         }
 
+        private void readJSONData()
+        {
+            var json = File.ReadAllText(@"./DataSample/post.json");
+            var objects = JArray.Parse(json); // parse as array  
+            foreach(var jToken in objects)
+            {
+                var root = (JObject) jToken;
+                foreach(KeyValuePair<string, JToken> app in root)
+                {
+                    Console.WriteLine(app.Value);
+                }
+            }
+        }
         private void InitListGuId()
         {
            postCategoriesIds=new List<Guid>();
-           for (var i = 0; i < 15; i++)
+           for (var i = 0; i < 7; i++)
            {
                postCategoriesIds.Add(Guid.NewGuid());
            }
            postIds=new List<Guid>();
-           for (var i = 0; i < 15; i++)
+           for (var i = 0; i < 7; i++)
            {
                postIds.Add(Guid.NewGuid());
            }
@@ -74,7 +90,7 @@ namespace AspNetCoreSpa.Infrastructure
                touristTypeIds.Add(TouristTypeEnum.Kid.ToTouristTypeInt());
            }
            tourIds=new List<Guid>();
-           for (var i = 0; i < 50; i++)
+           for (var i = 0; i < 38; i++)
            {
                tourIds.Add(Guid.NewGuid());
            }
@@ -84,7 +100,7 @@ namespace AspNetCoreSpa.Infrastructure
                tourBookingIds.Add(Guid.NewGuid());
            }
            tourCategoryIds=new List<Guid>();
-           for (var i = 0; i < 10; i++)
+           for (var i = 0; i < 7; i++)
            {
                tourCategoryIds.Add(Guid.NewGuid());
            }
@@ -94,7 +110,7 @@ namespace AspNetCoreSpa.Infrastructure
                priceIds.Add(Guid.NewGuid());
            }
            provinceIds=new List<Guid>();
-           for (var i = 0; i < 10; i++)
+           for (var i = 0; i < 62; i++)
            {
                provinceIds.Add(Guid.NewGuid());
            }
@@ -144,7 +160,7 @@ namespace AspNetCoreSpa.Infrastructure
             
             if (!_context.PostCategories.Any())
             {
-                for (int i = 0; i < 15; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     _context.PostCategories.Add(new PostCategory
                     {
@@ -158,23 +174,42 @@ namespace AspNetCoreSpa.Infrastructure
 
             if (!_context.Posts.Any())
             {
-                for (int i = 0; i < 15; i++)
+                var json = File.ReadAllText(@"./DataSample/post.json");
+                var objects = JArray.Parse(json); // parse as array
+                var i = 0;
+                foreach(var jToken in objects)
                 {
-                    _context.Posts.Add(new Post
+                    var root = (JObject) jToken;
+                    var post = new Post
                     {
                         Id = postIds[i],
                         Alias = "Post description " + i,
                         Censorship = true,
-                        Name = "Post_" + i,
-                        PostContent = "Post content " + i,
-                        Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
                         MetaDescription = "Post Meta description " + i,
                         MetaKeyWord = "Post Meta description " + i,
-                        Image = "post_"+i+".jpg",
+                        Image = "post_" + i + ".jpg",
                         Status = true,
                         Deleted = false,
-                        PostCategoryId =  postCategoriesIds[i],
-                    });
+                        PostCategoryId = postCategoriesIds[i],
+                    };
+                   
+                    foreach(KeyValuePair<string, JToken> app in root)
+                    {
+                        switch (app.Key)
+                        {
+                            case "Name":
+                                post.Name = app.Value.ToString();
+                                break;
+                            case "PostContent":
+                                post.Description = app.Value.ToString();
+                                break;
+                            case "Description":
+                                post.PostContent = app.Value.ToString();
+                                break;
+                        }
+                    }
+                    _context.Posts.Add(post);
+                    i++;
                 }
                 _context.SaveChanges();
             }
@@ -237,55 +272,103 @@ namespace AspNetCoreSpa.Infrastructure
            
             if (!_context.Provinces.Any())
             {
-                for (int i = 0; i < 10; i++)
+                var json = File.ReadAllText(@"./DataSample/province.json");
+                var objects = JArray.Parse(json); // parse as array
+                var i = 0;
+                foreach(var jToken in objects)
                 {
-                    _context.Provinces.Add(new Province
+                    var root = (JObject) jToken;
+                    var province = new Province
                     {
                         Id = provinceIds[i],
-                        Name = "Provine_" + i,
-                        Longitude = new Random().Next(100,150),
+                        Longitude = new Random().Next(100, 150),
                         Latitude = new Random().Next(100, 200)
-                    });
+                    };
+                   
+                    foreach(KeyValuePair<string, JToken> app in root)
+                    {
+                        switch (app.Key)
+                        {
+                            case "Name":
+                                province.Name = app.Value.ToString();
+                                break;
+                        }
+                    }
+                    _context.Provinces.Add(province);
+                    i++;
                 }
                 _context.SaveChanges();
             }
             if (!_context.TourCategories.Any())
             {
-                for (int i = 0; i < 10; i++)
+                var json = File.ReadAllText(@"./DataSample/tourcate.json");
+                var objects = JArray.Parse(json); // parse as array
+                var i = 0;
+                foreach(var jToken in objects)
                 {
-                    _context.TourCategories.Add(new TourCategory()
+                    var root = (JObject) jToken;
+                    var tourCate = new TourCategory()
                     {
                         Id = tourCategoryIds[i],
-                        Name = "TourCategory_" + i,
-                        Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
-                        Image = "tourCate_"+i+".jpg"
-                    });
+                        Image = "tourCate_" + i + ".jpg"
+                    };
+                   
+                    foreach(KeyValuePair<string, JToken> app in root)
+                    {
+                        switch (app.Key)
+                        {
+                            case "Name":
+                                tourCate.Name = app.Value.ToString();
+                                break;
+                            case "Description":
+                                tourCate.Description = app.Value.ToString();
+                                break;
+                        }
+                    }
+                    _context.TourCategories.Add(tourCate);
+                    i++;
                 }
                 _context.SaveChanges();
             }
             if (!_context.Tours.Any())
             {
-                for (int i = 0; i < 50; i++)
+                var json = File.ReadAllText(@"./DataSample/tour.json");
+                var objects = JArray.Parse(json); // parse as array
+                var i = 0;
+                foreach(var jToken in objects)
                 {
-                    _context.Tours.Add(new Tour
+                    var root = (JObject) jToken;
+                    var tour = new Tour
                     {
                         Id = tourIds[i],
-                        Name = "Tour_" + i,
-                        Description = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
-                        DepartureDate = DateTime.UtcNow.AddDays(new Random().Next(0,30)),
-                        Image = "tour_"+(i+1)+".jpg",
-                        Images = "tour_"+(i+1)+"_"+1+".jpg|tour_"+(i+1)+"_"+2+".jpg|tour_"+(i+1)+"_"+3+".jpg",
+                        DepartureDate = DateTime.UtcNow.AddDays(new Random().Next(0, 10)),
+                        Image = "tour_" + (i + 1) + ".jpg",
+                        Images = "tour_" + (i + 1) + "_" + 1 + ".jpg|tour_" + (i + 1) + "_" + 2 + ".jpg|tour_" +
+                                 (i + 1) + "_" + 3 + ".jpg",
                         Status = true,
                         Censorship = true,
                         Deleted = false,
-                        Slot = new Random().Next(1,20),
-                        ViewCount = new Random().Next(100,1000),
-                        DepartureId = provinceIds[new Random().Next(0,9)],
-                        DestinationId = provinceIds[new Random().Next(0,9)],
-                        TourCategoryId = tourCategoryIds[new Random().Next(0,9)],
-                    });
+                        Slot = new Random().Next(1, 20),
+                        ViewCount = new Random().Next(100, 1000),
+                        DepartureId = provinceIds[new Random().Next(0, 9)],
+                        DestinationId = provinceIds[new Random().Next(0, 9)],
+                        TourCategoryId = tourCategoryIds[new Random().Next(0, 6)],
+                    };
+                   
+                    foreach(KeyValuePair<string, JToken> app in root)
+                    {
+                        switch (app.Key)
+                        {
+                            case "Name":
+                                tour.Name = app.Value.ToString();
+                                break;
+                            case "Description":
+                                tour.Description = app.Value.ToString();
+                                break;
+                        }
+                    }
+                    _context.Tours.Add(tour);
+                    i++;
                 }
                 _context.SaveChanges();
             }
@@ -294,19 +377,41 @@ namespace AspNetCoreSpa.Infrastructure
                 var id = 0;
                 tourIds.ForEach((x) =>
                 {
+                    var priceAdult = new Random().Next(300, 1000) ;
+                    var i = 0;
                     touristTypeIds.ForEach(y =>
                     {
-                        _context.Prices.Add(new Price
+                        if (i == 0)
                         {
-                            Id = Guid.NewGuid(),
-                            Name = "price_" + (id++),
-                            PromotionPrice = new Random().Next(100000,200000),
-                            OriginalPrice = new Random().Next(1000000,5000000),
-                            StartDatePro = DateTime.UtcNow,
-                            EndDatePro = DateTime.UtcNow.AddDays(new Random().Next(2,7)),
-                            TourId = x,
-                            TouristType =y,
-                        }); 
+                            _context.Prices.Add(new Price
+                            {
+                                Id = Guid.NewGuid(),
+                                Name = "price_" + (id++),
+                                PromotionPrice = priceAdult-new Random().Next(0,50),
+                                OriginalPrice = priceAdult,
+                                StartDatePro = DateTime.UtcNow,
+                                EndDatePro = DateTime.UtcNow.AddDays(new Random().Next(2,7)),
+                                TourId = x,
+                                TouristType =y,
+                            }); 
+                        }
+                        else
+                        {
+                            var orginPrice = priceAdult - new Random().Next(0, 50);
+                            _context.Prices.Add(new Price
+                            {
+                                Id = Guid.NewGuid(),
+                                Name = "price_" + (id++),
+                                PromotionPrice = orginPrice-new Random().Next(0,50),
+                                OriginalPrice = orginPrice,
+                                StartDatePro = DateTime.UtcNow,
+                                EndDatePro = DateTime.UtcNow.AddDays(new Random().Next(2,7)),
+                                TourId = x,
+                                TouristType =y,
+                            });  
+                        }
+
+                        i++;
                     }); 
                 });
                 _context.SaveChanges();
@@ -326,7 +431,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Status = i%2==0,
                         Deleted = false,
                         UserId = "user_"+(new Random().Next(0,10)),
-                        TourId=tourIds[i]
+                        TourId=tourIds[new Random().Next(0,37)]
                     });
                 }
                 _context.SaveChanges();
@@ -353,7 +458,7 @@ namespace AspNetCoreSpa.Infrastructure
                                          Id = Guid.NewGuid(),
                                          TourBookingId = x,
                                          TouristType = y,
-                                         Price = new Random().Next(1000,1000000)
+                                         Price = new Random().Next(100,1000)
                                      });
                                      id++;
                                  }); 
@@ -365,20 +470,50 @@ namespace AspNetCoreSpa.Infrastructure
             {
                 tourIds.ForEach((x) =>
                 {
+                    var tour = _context.Tours.Find(x);
                     for (var j = 0; j < 3; j++)
                     {
                         _context.TourPrograms.Add(new TourProgram
                         {
                             Id = Guid.NewGuid(),
-                            Date = DateTime.Now.AddDays(j),
+                            Date =tour.DepartureDate.AddDays(j),
                             OrderNumber = 1 + j,
-                            Title = @"Lorem ipsum dolor seit amet Nulla quis sem at nibh elemn",
-                            Description = @"Lorem ipsum dolor sit amet Nulla quis sem at nibh elemen",
-                            Destination = "Hai Chau, Da Nang",
                             TourId = x,
                         }); 
                     }
                 });
+                _context.SaveChanges();
+                var tourprograms = _context.TourPrograms.ToList();
+                var json = File.ReadAllText(@"./DataSample/tourprogram.json");
+                var objects = JArray.Parse(json); // parse as array
+                var lengthObject = objects.Count;
+                var i = 0;
+                foreach(var jToken in objects)
+                {
+                    if (i < lengthObject)
+                    {
+                        var root = (JObject) jToken;
+                        var tourProgram = tourprograms[i];
+
+                        foreach (KeyValuePair<string, JToken> app in root)
+                        {
+                            switch (app.Key)
+                            {
+                                case "Title":
+                                    tourProgram.Title = app.Value.ToString();
+                                    break;
+                                case "Description":
+                                    tourProgram.Description = app.Value.ToString();
+                                    break;
+                                case "Destination":
+                                    tourProgram.Destination = app.Value.ToString();
+                                    break;
+                            }
+                        }
+                        i++;  
+                    }
+                    
+                }
                 _context.SaveChanges();
             }
             if (!_context.Evaluations.Any())

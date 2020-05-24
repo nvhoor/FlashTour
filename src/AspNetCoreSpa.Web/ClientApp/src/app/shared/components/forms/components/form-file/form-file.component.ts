@@ -47,4 +47,13 @@ export class FormFileComponent extends FieldBaseComponent{
             reader.readAsDataURL(input.files[0]); // convert to base64 string
         }
     }
+    getFolderImage(){
+        console.log("getFolderImage",this.config.imgSrcUrl);
+        if(this.config.imgSrcUrl){
+            return this.config.imgSrcUrl.split('/')[1].toLowerCase()+"s"; 
+        }else{
+            return "tours";
+        }
+      
+    }
 }

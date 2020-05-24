@@ -148,6 +148,7 @@ export class TourBookingComponent implements OnInit{
         }  
     }
     postTourBooking(){
+            console.log("postTourBooking",this.checkFormValid())
             if(this.checkFormValid()){
                 let ok=confirm("Are you sure to booking this tour?");
                 if(ok) {
@@ -156,6 +157,7 @@ export class TourBookingComponent implements OnInit{
                     this.comunication.tourCustomers=this.listCustomer;
                     console.log("Post tour booking:", JSON.stringify(this.comunication));
                     this._dataService.post<Comunication>(`${this.baseUrl}api/TourBooking`, JSON.stringify(this.comunication)).subscribe(x => {
+                       this.tour.slot-=this.listCustomer.length;
                         alert("Book tour success!");
                     }, error => {
                         alert("Book tour fail!");
@@ -202,7 +204,30 @@ export class TourBookingComponent implements OnInit{
             var regrex=new RegExp(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/);
             return regrex.test(value);
     }
-
+    checkFormValid(){
+            let length=this.listCustomer.length;
+            for(let i=0;i<length;i++){
+               if(this._document.getElementById('customer-full-name-'+(i+1)).className.indexOf("ng-invalid")!=-1){
+                   return false;
+               } 
+            }
+        if(this._document.getElementById('full_name').className.indexOf("ng-invalid")!=-1){
+            return false;
+        }
+        if(this._document.getElementById('mobilephone').className.indexOf("ng-invalid")!=-1){
+            return false;
+        }
+        if(this._document.getElementById('email').className.indexOf("ng-invalid")!=-1){
+            return false;
+        }
+        if(this._document.getElementById('address').className.indexOf("ng-invalid")!=-1){
+            return false;
+        }
+        if(this._document.getElementById('note').className.indexOf("ng-invalid")!=-1){
+            return false;
+        }
+        return true;
+    }
     keyupValidate(value: string,maxLength=undefined,target=undefined) {
             var that=this;
         $('#'+target).keyup(function () {
@@ -269,7 +294,7 @@ export class TourBookingComponent implements OnInit{
     
     checkPhoneRegrex(value){
         if(value=="") return true;
-        var regrex=new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{5})$/);
+        var regrex=new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
         return regrex.test(value);
     }
     checkEmailRegrex(value){
@@ -279,9 +304,5 @@ export class TourBookingComponent implements OnInit{
     }
     checkMaxLengthRegrex(value,maxLength){
         return value.length <= maxLength;
-    }
-    checkFormValid(){
-            return !!$('#myForm').valid;
-            
     }
 }

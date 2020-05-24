@@ -1,0 +1,788 @@
+[
+        {
+            "Date": "5/6/20",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Vietravel (190 Pasteur, Phường 6, Quận 3, Tp.HCM), khởi hành đi Châu Đốc theo tuyến cao tốc Trung Lương ngắm nhìn những cánh đồng lúa và màu xanh vườn tược hai bên đường. Chinh phục Cầu Vàm Cống: cầu dây văng lớn thứ hai nối liền đôi bờ Sông Hậu vừa được khánh thành tháng 05.2019 trong sự háo hức của hàng vạn người dân sau bao năm chờ mong.\r\nĐến Châu Đốc, Quý khách xuống thuyền khám phá nét đẹp sông nước miền Tây thăm Làng cá bè - làng nghề nuôi cá trên sông đặc trưng vùng sông nước nổi tiếng đất An Giang. \r\nBuổi chiều, xe đưa Quý khách tham quan Miếu Bà Chúa Xứ, Tây An Cổ Tự, Lăng Thoại Ngọc Hầu.\r\nNghỉ đêm tại Châu Đốc.\r\n",
+            "Destination": "TP.HCM - CHÂU ĐỐC - MIẾU BÀ CHÚA XỨ"
+        },
+        {
+            "Date": "6/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Đoàn dùng điểm tâm, trả phòng và khởi hành tham quan:\r\n- Rừng Tràm Trà Sư: có tổng diện tích gần 1.500 héc-ta cùng hệ sinh thái động-thực vật đa dạng. Du khách di chuyển bằng xuồng máy hay những chiếc ghe để len lỏi giữa các lối đi nhỏ xuyên qua khu rừng tràm ngắm nhìn những mảng bèo xanh ngát trải dài (vào mùa nước nổi). Ngoài ra, du khách có thể check-in bến tàu được thiết kế theo mô hình tổ chim trên cao ngộ nghĩnh độc đáo; “Cây Cầu Tre Vạn Bước” dài nhất Việt Nam - được cách điệu tựa “Rồng trúc bạch”  mang lại một cảm giác thích thú cho mọi người khi được khám phá trọn vẹn cảnh quan thiên nhiên nguyên sinh trù phú ở “Bảo tàng Tràm nhiệt đới”.\r\nKhởi hành đến Hà Tiên nhận phòng khách sạn nghỉ ngơi. Buổi chiều đoàn tham quan:\r\n- Lăng Mạc Cửu: nơi thờ dòng họ Mạc mà khởi đầu là ông Mạc Cửu - người đã có công khai phá mảnh đất Hà Tiên.\r\n- Chùa Phù Dung: tọa lạc dưới chân núi Bình San. \r\n- Biển Mũi Nai, tự do thưởng thức hải sản địa phương (chi phí tự túc) \r\nNghỉ đêm tại Hà Tiên.\r\n\r\n",
+            "Destination": "CHÂU ĐỐC - RỪNG TRÀM TRÀ SƯ - HÀ TIÊN - MŨI NAI"
+        },
+        {
+            "Date": "7/6/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Đoàn ăn sáng, trả phòng và khởi hành viếng thăm:\r\n- Chùa Tam Bảo: được dựng vào khoảng đầu thế kỷ XVIII, chùa được triều đình nhà Nguyễn ban biển sắc phong nên còn được gọi là Sắc Tứ Tam Bảo Tự. Tại Điện Phật vẫn còn được bài trí Pho tượng đức Phật A Di Đà bằng đồng cao 1,40m do chính ông Mạc Cửu thờ ở chùa.\r\nKhởi hành đi Rạch Giá, đoàn tham quan:\r\n- Đền Thờ Nguyễn Trung Trực: đây là ngôi đình thờ ông sớm nhất và lớn nhất trong chín đền thờ ở Kiên Giang. \r\nKhởi hành đi Cần Thơ đoàn về khách sạn nhận phòng, nghỉ ngơi.  Sau khi ăn tối, Quý khách có thể tự do dạo phố đêm khám phá “Tây Đô” lung linh sắc màu: ngắm cảnh Cầu Cần Thơ về đêm; Check-in Cầu Tình Yêu - thiết kế uốn lượn hình chữ S cùng hai đài sen và hệ thống đèn led rực rỡ sắc màu; Chụp ảnh tại Chùa Ông cổ kính; Khám phá Chợ Đêm Ninh Kiều và Con Đường Bích Họa Cần Thơ Xưa Và Nay - tái hiện nét đẹp văn hóa của người dân Cần Thơ nói riêng, vùng Đồng bằng sông Cửu Long nói chung.\r\nNghỉ đêm tại Cần Thơ.\r\n",
+            "Destination": "HÀ TIÊN - RẠCH GIÁ - CẦN THƠ"
+        },
+        {
+            "Date": "8/6/20",
+            "OrderNumber": "4",
+            "Title": "(ăn 2 bữa: sáng, trưa)\r\n\r\n",
+            "Description": "Xe đưa Quý khách tham quan Bến Ninh Kiều, xuống thuyền du ngoạn trên sông Cần Thơ, ngắm cầu Quang Trung, đến chợ nổi Cái Răng - một hình thức họp chợ đặc trưng cùa vùng Đồng Bằng Sông Cửu Long, Quý khách tự do thưởng thức và chọn mua đặc sản Miền Tây (chi phí tự túc).\r\nTiếp đó, Quý khách tham qua\r\n- Khu du lịch Mỹ Khánh: điểm du lịch sinh thái hấp dẫn với các trò chơi dân gian vui nhộn câu cá, chèo thuyền trên sông, đua heo….(chi phí tự túc)\r\n- Thiền Viện Phương Nam: ngôi chùa rộng nhất khu vực Đồng bằng sông Cửu Long, thăm lầu trống, lầu chuông, lễ Phật tại chánh điện. Thiền Viện được xây dựng với kiến trúc truyền thống, thanh tao, Quý khách sẽ ấn tượng với nội thất bằng gỗ lim và các loại gỗ quý được mang về từ Nam Phi, đặc biệt là bộ tượng phật được làm từ gỗ hai cây tùng quý hiếm với đường kính hơn 2m chiều ngang.\r\nKhởi hành về TP. HCM, đoàn kết thúc chương trình du lịch tại điểm đón ban đầu.\r\n\r\n",
+            "Destination": "CẦN THƠ - CHỢ NỔI CÁI RĂNG - TP.HCM"
+        },
+        {
+            "Date": "29/05/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel (190 Pasteur, Phường 6, Quận 3, TP.Hồ Chí Minh) khởi hành đi Phan Thiết. Quý khách ăn sáng trên đường đi, sau đó đoàn dừng chân tham quan:\r\n- Khu Du Lịch Núi Tà Cú: Trải nghiệm đi cáp treo lên đỉnh núi độ cao 505m (chi phí tự túc), ngắm cảnh đồng bằng Hàm Thuận Nam với những vườn Thanh long trái chín đỏ được trồng thành từng hàng thẳng tắp xanh bạt ngàn.\r\n- Viếng chùa Linh Sơn Trường Thọ: Với bộ tượng tam thế Phật được tạc bằng gỗ trầm hương trên 100 năm tuổi và được xếp hạng Di tích lịch sử - Văn hoá Quốc gia.\r\n- Chiêm viếng tượng Phật Thích Ca nhập niết bàn lớn nhất Đông Nam Á, dài 49m, cao 11m\r\nQuý khách dùng bữa trưa và về khách sạn nhận phòng nghỉ ngơi. Buổi chiều, đoàn đi tham quan:\r\n- Làng Chài Xưa: Du khách sẽ được đi xuyên vào không gian tương tác tái hiện Làng Chài Xưa Mũi Né với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, vào xóm lò tĩn, thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị\r\n- Organik Farm - Hello Muine: Quý khách tự do mua sắm đặc sản làm quà cho người thân và bạn bè. \r\nĐoàn ăn tối và tự do tham quan thành phố về đêm. Nghỉ đêm tại Phan Thiết/Mũi Né.\r\n",
+            "Destination": "TP.HỒ CHÍ MINH - NÚI TÀ CÚ - PHAN THIẾT"
+        },
+        {
+            "Date": "30/5/2020",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa)\r\n\r\n",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa đoàn đi tham quan:\r\n- Đồi Cát Vàng: Một trong những khu vực đẹp nhất nằm ở Mũi Né thu hút khá nhiều du khách do hình dáng đẹp của cát và màu sắc của cát, nơi đây được xem là đồi cát có một không hai tại Việt nam bắt nguồn từ mỏ sắt cổ tồn tại hàng trăm năm tạo nên. \r\n- KDL Hòn Rơm: Toạ lạc ngay dưới rặng dừa thơ mộng, hàng dương duyên dáng in bóng bên đồi cát trắng còn nguyên sơ và có bãi biển nước xanh ngát êm đềm tạo nên một phong cảnh sơn thủy hữu tình, Qúy khách tự do tắm biển\r\nChiều đoàn về đến TP.Hồ Chí Minh, xe đưa về điểm đón ban đầu, chia tay Quý khách và kết thúc chương trình du lịch.\r\n",
+            "Destination": "PHAN THIẾT - TP HỒ CHÍ MINH\r\n"
+        },
+        {
+            "Date": "08/07/2020",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 2 (Ăn trưa, chiều)",
+            "Description": "Quý khách tập trung tại cột 5, ga đi Trong Nước, sân bay Tân Sơn Nhất. Hướng dẫn viên Vietravel hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Quy Nhơn. Tại sân bay Phù Cát - Quy Nhơn, xe và Hướng dẫn viên sẽ đón Quý khách đi tham quan: \r\n- Bảo Tàng Quang Trung: Viếng Điện thờ Tây Sơn Tam Kiệt, chiêm ngưỡng cây me 300 tuổi, Giếng nước xưa… \r\nTặng vé thưởng thức buổi biểu diễn nhạc võ và cồng chiên Tây Nguyên \r\n- Khu du lịch Hầm Hô: Lâm viên hoang dã với dòng suối mát yên bình và nên thơ, đoàn khám phá cảnh non nước hữu tình… Bên cạnh đó, Quý khách có thể tự do lựa chọn thêm dịch vụ khác như đi xe điện hoặc xe ngựa, chèo thuyền tham quan trên sông Kút, nghỉ võng dưới tán cây rừng đại ngàn, tự do thưởng thức đặc sản địa phương…(chi phí tự túc) \r\nBuổi tối Quý khách tự do khám phá Quy Nhơn về đêm với các quán cà phê nổi tiếng check in: Surf Bar 1 – 2, S- Blue Café, Mộc Trà Café…hoặc thưởng thức hải sản tại phố ẩm thực Xuân Diệu, khu hồ sinh thái nổi tiếng với món: bọ biển, cua Huỳnh Đế và các loại ốc đặc trưng của vùng, xe điện dạo một vòng thành phố Quy Nhơn về đêm, dạo phố đi bộ về đêm … (chi phí tự túc).  Nghỉ đêm tại Quy Nhơn.",
+            "Destination": "TP.HỒ CHÍ MINH - QUY NHƠN\r\n\r\n"
+        },
+        {
+            "Date": "9/7/20",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 (Ăn sáng, trưa, ăn chiều tự túc)",
+            "Description": "Dùng bữa sáng tại khách sạn. Xe đưa đoàn đi tham quan: \r\n- Kỳ Co: Với màu nước trong xanh, bãi cát trắng dài và mịn, những cơn sóng biển êm ái chính là điểm đến mới, ấn tượng thu hút nhiều du khách trong thời gian gần đây. Ngoài tắm biển và thư giản, quý khách có thể chụp hình check in nhiều góc cực đẹp.  \r\n- Eo Gió: Nơi vẫn còn giữ được cho mình vẻ đẹp tự nhiên đầy hoang sơ. Đứng từ trên cao nhìn xuống, Eo Gió như một bức tranh sơn thủy hữu tình với trời, mây, nước… biển núi ôm nhau vừa gợi cảm, vừa hoang sơ đầy quyến rũ\r\n- Khu du lịch Ghềnh Ráng Tiên Sa, viếng Mộ Hàn Mặc Tử: Mộ nằm dựa lưng vào núi, nhìn bao quát cả dải bờ biển Quy Nhơn chạy dài trước mặt, hút trọn tầm mắt một phần thành phố Quy Nhơn.\r\nMua sắm các đặc sản Quy Nhơn tại shop Phương Nghi như Rượu Bàu Đá, Nem Chợ Huyện, Bánh Hồng, Tré Bình Định, Bánh Ít Lá Gai…\r\nBuổi tối Quý khách tự do nghỉ ngơi tham quan thưởng thức đặc sản Quy Nhơn: hải sản, bánh xèo tôm nhảy, .. Nghỉ đêm tại Quy Nhơn.\r\n \r\nGhi chú: Trong trường hợp Quý khách không đi tham quan Kỳ Co, ở lại khách sạn/resort tự do tắm biển hoặc nghỉ ngơi… vui lòng báo ngay khi đăng ký hoặc thanh toán, Vietravel sẽ hoàn chi phí: ăn trưa và phí tham quan là 300.000VND/ khách. Trong trường hợp báo sau sẽ không hoàn giảm.\r\n",
+            "Destination": "QUY NHƠN - EO GIÓ - KỲ CO"
+        },
+        {
+            "Date": "10/7/20",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 2 (Ăn sáng, trưa)",
+            "Description": "Dùng bữa sáng tại khách sạn. Trả phòng, xe đưa đoàn đi tham quan: \r\n- Chùa Thiên Hưng: nơi hiện đang lưu giữ Ngọc Xá Lợi của Phật Tổ Thích Ca Mâu Ni, một trong những điểm tham quan không thể thiếu khi đến Quy Nhơn - Bình Định.  \r\nSau đó, xe đưa đoàn ra sân bay Phù Cát (Quy Nhơn) đáp chuyến bay về TP.Hồ Chí Minh. Chia tay Quý khách và kết thúc chương trình tại sân bay Tân Sơn Nhất.\r\n\r\n",
+            "Destination": "QUY NHƠN - TP.HỒ CHÍ MINH\r\n\r\n"
+        },
+        {
+            "Date": "11/7/20"
+        },
+        {
+            "Date": "2/6/20",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 1 bữa",
+            "Description": "Quý khách tập trung tại Sân bay Tân Sơn Nhất, ga đi Trong Nước. Hướng dẫn viên làm thủ tục cho Quý khách đáp chuyến bay đi Phú Quốc. Xe đón đoàn tại sân bay đưa Quý khách ghé thăm Dinh Cậu - biểu tượng văn hoá và tín ngưỡng của đảo Phú Quốc, là nơi cầu may mắn, cầu an lành và là nơi ngư dân địa phương gởi gắm niềm tin cho một chuyến ra khơi đánh bắt đầy ắp cá khi trở về. Sau đó, đoàn viếng Dinh Bà Thủy Long Thánh Mẫu là nơi thờ Thần Nữ Kim Giao, người phụ nữ được người dân Phú Quốc rất mực tôn kính vì có công khai phá huyện đảo này. Sau đó nhận phòng khách sạn nghỉ ngơi.\r\nChiều Quý khách tham quan Chùa Sư Muôn (Hùng Long Tự) - để cầu nguyện sự an lành và hạnh phúc đến với gia đình. Tiếp tục, đoàn tham quan Làng Chài Hàm Ninh nằm phía Đông Đảo tại đây Quý khách được hướng dẫn viên giới thiệu về cuộc sống của người dân xứ đảo với nghề đánh bắt hải sản. Tiếp tục hành trình Quý khách tham quan Sunset Sanato Beach Club sở hữu vị thế đắc địa nhất, khu vui chơi nằm ngay trung tâm của Bãi Trường. Nơi đây, sóng biển dịu êm như một dòng sông, bạn sẽ thấy mình được hưởng trọn vẹn hương vị mặn mòi của biển và mát lành của những hoang sơ còn vương vấn, đến đây du khách sẽ được thưởng ngoạn phong cảnh biển tuyệt đẹp, những góc ảnh check-in cực chất, tự do tắm biển, hòa nhịp trong những bản nhạc sôi động. Nghỉ đêm tại Phú Quốc.\r\n",
+            "Destination": "TP.HCM - PHÚ QUỐC - SUNSET SANATO BEACH CLUB\r\n\r\n"
+        },
+        {
+            "Date": "3/6/20",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 bữa (sáng,trưa, chiều tự túc)",
+            "Description": "Xe đưa Quý khách đến tham quan tắm biển Bãi Sao nằm ở phía Nam Đảo - một bãi biển dịu êm, bãi cát dài tĩnh lặng và nguyên sơ nơi đảo xanh. Tại đây Quý khách sẽ thật sự cảm thấy yên bình, thư thái và dường như cuộc sống chậm lại khi hòa mình cùng thiên nhiên. Ăn trưa, về lại khách sạn tự do nghỉ ngơi. Trên đường về, Quý khách Tham quan Vườn Tiêu, Nhà Thùng làm nước mắm, Cơ Sở nuôi cấy Ngọc Trai.\r\nBuổi chiều, Quý khách tự do tham quan Khu vui chơi giải trí Vinpearl Land (chi phí tự túc) rộng lớn với đầy đủ những trò chơi dành cho mọi lứa tuổi và sở thích. Nơi đây hội đủ tất cả các trò chơi trong nhà, ngoài trời như: đĩa bay, đu quay con ong, cốc xoay, đĩa quay siêu tốc, cối xay gió,… Khu công viên nước với các trò chơi hấp dẫn như: boomerang khổng lồ, đường trượt siêu lòng chảo, dòng sông lười, lâu đài, bể tạo sóng… Tiếp tục Quý khách có thể khám phá Khu Thủy Cung với hàng trăm loài cá và sinh vật biển kỳ thú như: cá Hải tượng, cá Sấu hỏa tiễn với chiếc mõm dài và hung dữ hay những loài quý hiếm như cá Nemo, cá Napoleon, cá Mập trắng, cua King Crab…. Hơn nữa, ở đây  còn có Rạp chiếu phim 5D, Sân khấu nhạc nước. \r\nHay trải nghiệm tại Vườn Thú Hoang Dã đầu tiên tại Việt Nam (chi phí tự túc) với quy mô 180ha, hơn 130 loài động vật quý hiếm và các chương trình Biểu diễn động vật, Chụp ảnh với động vật, Khám phá và trải nghiệm Vườn thú mở trong rừng tự nhiên, gần gũi và thân thiện với con người. Quý khách tự túc ăn tối. Nghỉ đêm tại khách sạn.\r\n\r\n",
+            "Destination": " DƯƠNG ĐÔNG - BÃI SAO"
+        },
+        {
+            "Date": "4/6/20",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 1 bữa (sáng) ",
+            "Description": "Sau khi ăn sáng. Tự do tắm biển nghỉ ngơi. Đến giờ trả phòng khách sạn. Sau đó, xe đưa Quý khách ra sân bay Phú Quốc đáp chuyến bay trở về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n",
+            "Destination": "PHÚ QUỐC - TP.HCM\r\n"
+        },
+        {
+            "Date": "20/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn chiều)",
+            "Description": "Quý khách tự túc tập trung tại sân bay Cần Thơ, HDV làm thủ tục cho quý khách đáp chuyến bay Cần Thơ– Phú Quốc. Xe đón đoàn tại sân bay đưa Quý khách khởi hành tham quan:\r\n\r\n- Chùa Sư Muôn (Hùng Long Tự) - để cầu nguyện sự an lành và hạnh phúc đến với gia đình. Làng Chài Hàm Ninh, Cơ Sở Nuôi Cấy Ngọc Trai, Vườn Tiêu, Nhà Thùng làm nước mắm. \r\n\r\n- Dinh Cậu: biểu tượng văn hoá và tín ngưỡng của đảo Phú Quốc, là nơi cầu may mắn, cầu an lành và là nơi ngư dân địa phương gởi gắm niềm tin cho một chuyến ra khơi đánh bắt đầy ắp cá khi trở về. \r\n\r\nNghỉ đêm tại Phú Quốc. \r\n\r\n",
+            "Destination": "TP. CẦN THƠ - PHÚ QUỐC - DINH CẬU\r\n\r\n"
+        },
+        {
+            "Date": "21/06/2020",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa), (Tối tự túc)",
+            "Description": "Sau khi ăn sáng, xe đưa đoàn trải nghiệm Cáp treo xác lập kỷ lục thế giới mới “Cáp treo 3 dây vượt biển dài nhất thế giới – 7.899.9m” với góc nhìn 3600 ngang qua Hòn Rơi, Hòn Dừa và dừng chân tại Hòn Thơm. Hành trình trải nghiệm trên cao cho du khách trải nghiệm thú vị bức tranh biển trời phía Nam Phú Quốc bằng những mảng màu thiên nhiên sống động (thời gian cáp treo 15’). Sau đó dung buffet trưa tại Nhà Hàng 3 Miền.\r\n\r\nSau khi ăn sáng, xe đưa đoàn trải nghiệm Cáp treo xác lập kỷ lục thế giới mới “Cáp treo 3 dây vượt biển dài nhất thế giới - 7.899.9m” với góc nhìn 3600 ngang qua Hòn Rơi, Hòn Dừa và dừng chân tại Hòn Thơm. Hành trình trải nghiệm trên cao cho du khách trải nghiệm thú vị bức tranh biển trời phía Nam Phú Quốc bằng những mảng màu thiên nhiên sống động (thời gian cáp treo 15’). Sau đó dùng buffet trưa tại Nhà Hàng 3 Miền.\r\nBuổi chiều, Quý khách tự do tham quan, một số điểm gợi ý:\r\n- Bùn Khoáng Galina (chi phí tự túc): Xe đưa Quý khách đến Khu nghỉ dưỡng tắm bùn khoáng và spa đầu tiên có mặt tại “Đảo Ngọc”. Toàn bộ không gian kiến trúc cho thấy sự hòa hợp giữa con người và thiên nhiên. Đến đây có thể vừa trải nghiệm cảm giác thư giãn, dễ chịu, vừa tận hưởng làn gió biển trong lành và ngắm nhìn màu xanh trong vắt trải dài đến tận chân trời. Quý khách tự túc phương tiện về khách sạn.\r\n- Khu vui chơi giải trí Vinpearl Land (chi phí tự túc) rộng lớn với đầy đủ những trò chơi dành cho mọi lứa tuổi và sở thích. Nơi đây hội đủ tất cả các trò chơi trong nhà, ngoài trời như: đĩa bay, đu quay con ong, cốc xoay, đĩa quay siêu tốc, cối xay gió,… Khu công viên nước với các trò chơi hấp dẫn như: boomerang khổng lồ, đường trượt siêu lòng chảo, dòng sông lười, lâu đài, bể tạo sóng… Tiếp tục Quý khách có thể khám phá Khu Thủy Cung với hàng trăm loài cá và sinh vật biển kỳ thú như: cá Hải tượng, cá Sấu hỏa tiễn với chiếc mõm dài và hung dữ hay những loài quý hiếm như cá Nemo, cá Napoleon, cá Mập trắng, cua King Crab…. Hơn nữa, ở đây  còn có Rạp chiếu phim 5D, Sân khấu nhạc nước. \r\n- Hay trải nghiệm tại Vinpearl Safari - Vườn Thú Hoang Dã đầu tiên tại Việt Nam (chi phí tự túc) với quy mô 180ha, hơn 130 loài động vật quý hiếm và các chương trình Biểu diễn động vật, Chụp ảnh với động vật, Khám phá và trải nghiệm Vườn thú mở trong rừng tự nhiên, gần gũi và thân thiện với con người.\r\nBuổi tối, tự do dạo chợ Đêm Phú Quốc thưởng thức hải sản (chi phí tự túc).\r\n\r\n",
+            "Destination": "PHÚ QUỐC - TP. CẦN THƠ"
+        },
+        {
+            "Date": "22/06/2020",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, ăn nhẹ)",
+            "Description": "Quý khách dùng bữa sáng. Tự do tắm biển nghỉ ngơi. Đến giờ trả phòng khách sạn. Xe đưa Quý khách ra sân bay Phú Quốc đáp chuyến bay về Cần Thơ. Hướng dẫn viên chia tay Quý khách và kết thúc chương trình du lịch.\r\n\r\n",
+            "Destination": "PHÚ QUỐC - TP. CẦN THƠ"
+        },
+        {
+            "Date": "15/06/2020",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 2 bữa (trưa, chiều)",
+            "Description": "Quý khách tập trung tại Ga đi Trong Nước, sân bay Tân Sơn Nhất, Hướng dẫn viên làm thủ tục cho Quý khách\r\nđáp chuyến bay đi Đà Nẵng tham quan:\r\n- Bán đảo Sơn Trà và Chùa Linh Ứng 3: Nơi đây có tượng Phật Quan Thế Âm cao nhất Việt Nam.\r\n- Phố Cổ Hội An: Chùa Cầu, Nhà Cổ Phùng Hưng, Hội Quán Phước Kiến, Cơ sở Thủ Công Mỹ Nghệ,…\r\nTự do thưởng thức trà & bánh cookie Reaching Out Tea House quán trà đặc biệt của hội những người khuyết tật, hoặc thả đèn hoa đăng cầu phúc lộc bình an trên dòng sông Hoài…. (chi phí tự túc). Đoàn quay về Đà Nẵng. Nghỉ đêm tại Đà Nẵng.\r\n",
+            "Destination": "TP.HCM - ĐÀ NẴNG - SƠN TRÀ - HỘI AN"
+        },
+        {
+            "Date": "16/06/2020",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 bữa (sáng, chiều)",
+            "Description": "Quý khách đi tham quan:\r\n- Khu du lịch Bà Nà Suối Mơ (chi phí cáp treo & ăn trưa tự túc) - Trải nghiệm tuyến cáp treo một dây dài nhất thế giới. Trên đỉnh núi Quý khách tận hưởng không khí se lạnh của “Đà Lạt tại miền Trung”, tham quan Chùa Linh Ứng, vườn hoa Le Jardin D’Amour, khu tâm linh mới của Bà Nà viếng Đền Lĩnh Chúa Linh Từ, khu vui chơi Fantasy Park với nhiều trò chơi hấp dẫn, đi dạo và chụp hình tại Cầu Vàng điểm tham mới siêu hot tại Bà Nà,… Ăn trưa tại Bà Nà tự túc. Tự do tham quan vui chơi đền giờ xuống cáp.   \r\n- Đầm Lập An - Ngắm cảnh mây bồng bềnh trên những chóp núi bao bọc quanh đầm\r\n- Dạo Phố Đêm - Trải nghiệm một Huế về đêm không hề trầm mặc với các công trình trải theo chiều dài lịch sử mà như một thiếu nữ trẻ trung khoác lên mình bộ cánh sắc màu căng tràn nhựa sống mới tại Phố đi bộ ven sông Hương hài hòa với vẻ lung linh cầu Trường Tiền, tranh thêu XQ, tự do thưởng thức các món đường phố xứ Huế như bánh mì lọc, chè Huế, ngắm nhìn thuyền rồng ngược xuôi bên bến Tòa Khâm văng vẳng âm vang điệu hò Huế, khám phá khu phố Tây sôi động về đêm với nhiều quán xá đông vui, nhạc sống, những hàng quà lưu niệm. \r\nBuổi tối, Quý khách tự do ngồi thuyền rồng xuôi dòng sông Hương thưởng thức ca hò Huế, thả hoa đăng cầu phúc lộc bình an…. (chi phí tự túc) hoặc dạo phố đi bộ Huế khám phá vẻ đẹp Cố Đô về đêm. Nghỉ đêm tại Huế.\r\n",
+            "Destination": "ĐÀ NẴNG - BÀ NÀ - HU"
+        },
+        {
+            "Date": "17/06/2020",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 3 bữa (sáng, trưa, chiều)",
+            "Description": "Quý khách khởi hành đi Quảng Bình, \r\n- Thánh địa La Vang - Một trong bốn tiểu vương cung thánh đường La Mã tại Việt Nam\r\n- Động Phong Nha: Nằm trong quần thể Di sản thiên nhiên thế giới Phong Nha - Kẻ Bàng, được xem như chốn thần tiên bởi hệ thống núi đá vôi và sông ngầm dài nhất thế giới \r\n- Đoàn khởi hành về đến Huế hơi trễ khoảng 20:00. Sau đó, xe đưa đoàn tham quan “Kỳ đài Huế” -  Thắp sáng Kỳ Đài Huế là sự kiện thuộc chuỗi dự án “Huế - Sáng và Sống” do Công ty Vietravel đầu tư và phối hợp thực hiện cùng UBND tỉnh Thừa Thiên - Huế. Về lại khách sạn. Nghỉ đêm tại Huế.\r\n \r\nGhi chú: Trong trường hợp Quý khách chọn không đi Quảng Bình, ở lại Huế tự do tham quan và nghỉ ngơi, vui lòng thông báo trước khi thanh toán hết, giảm trừ chi phí 350.000 đồng/1 khách người lớn. Quý khách sẽ tự túc ăn trưa ăn chiều và tham quan Kỳ Đài.  \r\n\r\n",
+            "Destination": "HUẾ - LA VANG - ĐỘNG PHONG NHA"
+        },
+        {
+            "Date": "18/06/2020",
+            "OrderNumber": "4",
+            "Title": "Số bữa ăn: 2 bữa (sáng, trưa)",
+            "Description": "Quý khách đi tham quan: \r\n- Đại Nội - Hoàng cung xưa của 13 vị vua triều Nguyễn, tham quan Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành, Thế Miếu, Hiển Lâm Các, Cửu Đỉnh.\r\n- Chùa Thiên Mụ - Ngôi chùa được xem là biểu tượng xứ Huế và là nơi lưu giữ nhiều cổ vật quý giá không chỉ về mặt lịch sử mà còn cả về nghệ thuật.\r\n- Lăng Minh Mạng: Nơi có phong cảnh sơn thủy hữu tình và được cho là một trong những lăng tẩm có kiến trúc đẹp nhất của các vua chúa nhà Nguyễn.\r\nXe đưa đoàn ra sân bay Phú Bài - Huế đón chuyến bay trở về Tp.Hồ Chí Minh. Chia tay Quý khách và kết thúc chương trình tại sân bay Tân Sơn Nhất. \r\n",
+            "Destination": "HUẾ - THÀNH PHỐ HỒ CHÍ MINH"
+        },
+        {
+            "Date": "24/05/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn trưa, tối)",
+            "Description": "Quý khách tập trung tại sân bay Tân Sơn Nhất - Ga đi trong nước. Hướng dẫn viên làm thủ tục cho đoàn đáp chuyến bay đi Hà Nội.\r\nXe Vietravel đón đoàn tại sân bay Nội Bài, khởi hành đi Sa Pa theo cung đường cao tốc hiện đại và dài nhất Việt Nam.\r\nĐến Sapa, nhận phòng nghỉ ngơi. Buổi chiều quý khách thăm \r\n- Bản Cát Cát đẹp như một bức tranh giữa vùng phố cổ Sapa, nơi đây thu hút du khách bởi cầu treo, thác nước, guồng nước và những mảng màu hoa mê hoặc du khách khi lạc bước đến đây.\r\n- Thăm những nếp nhà của người Mông trong bản, du khách sẽ không khỏi ngỡ ngàng trước vẻ đẹp bình dị, mộc mạc. \r\nBuổi tối Quý khách dạo phố, ngắm nhà thờ Đá Sapa, tự do thưởng thức đặc sản vùng cao như: thịt lợn cắp nách nướng, trứng nướng, rượu táo mèo, giao lưu với người dân tộc vùng cao. \r\nNghỉ đêm tại Sapa.\r\n\r\n",
+            "Destination": "TP. HỒ CHÍ MINH – SB NỘI BÀI (HÀ NỘI) - LÀO CAI – SAPA"
+        },
+        {
+            "Date": "25/05/2020",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Xe đưa đoàn ra ga Sapa, Quý khách trải nghiệm đến khu du lịch Fansipan Legend bằng Tàu hỏa leo núi Mường Hoa hiện đại nhất Việt Nam với tổng chiều dài gần 2000m, thưởng ngoạn bức tranh phong cảnh đầy màu sắc của cánh rừng nguyên sinh, thung lũng Mường Hoa.\r\n- Chinh phục đỉnh núi Fansipan với độ cao 3.143m hùng vĩ bằng cáp treo (chi phí tự túc). \r\n- Lễ Phật tại chùa Trình hay cầu phúc lộc, bình an cho gia đình tại Bích Vân Thiền Tự trong hệ thống cảnh quan tâm linh trên đỉnh Fansipan. \r\nSau đó, xe đưa Quý khách tham quan đỉnh đèo Ô Quy Hồ một trong “Tứ đại đỉnh đèo” phía Bắc\r\n(không bao gồm vé tham quan Thác Bạc, Cầu Kính Rồng Mây, Cổng Trời...)\r\nNghỉ đêm tại Sapa.\r\n\r\n",
+            "Destination": "SA PA - FANSIPAN – CẦU KÍNH RỒNG MÂY"
+        },
+        {
+            "Date": "26/05/2020",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Quý khách ăn sáng và trả phòng khách sạn.\r\nXe đưa đoàn đi tham quan:\r\n- Núi Hàm Rồng thăm vườn Lan khoe sắc, vườn hoa Trung Tâm, ngắm Núi Phanxipăng hùng vĩ, Cổng Trời, Đầu Rồng Thạch Lâm, Sân Mây.\r\nTheo cung đường cao tốc trở về Hà Nội. Xe đưa Quý khách ra sân bay Nội Bài đáp chuyến bay về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n",
+            "Destination": " SAPA - HÀM RỒNG – SB NỘI BÀI (HÀ NỘI)–TPHCM\r\n"
+        },
+        {
+            "Date": "25/05/2020",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 1 bữa (trường hợp chuyến bay trước 11h, Vietravel sẽ hỗ trợ Quý khách bữa ăn trưa)",
+            "Description": "Quý khách tập trung tại Sân bay Tân Sơn Nhất, ga đi Trong Nước. Hướng dẫn viên làm thủ tục cho Quý khách đáp chuyến bay đi Phú Quốc. Xe đón đoàn tại sân bay đưa Quý khách ghé thăm Dinh Cậu - biểu tượng văn hoá và tín ngưỡng của đảo Phú Quốc, là nơi cầu may mắn, cầu an lành và là nơi ngư dân địa phương gởi gắm niềm tin cho một chuyến ra khơi đánh bắt đầy ắp cá khi trở về. Sau đó, đoàn viếng Dinh Bà Thủy Long Thánh Mẫu là nơi thờ Thần Nữ Kim Giao, người phụ nữ được người dân Phú Quốc rất mực tôn kính vì có công khai phá huyện đảo này. Sau đó nhận phòng khách sạn nghỉ ngơi.\r\nChiều Quý khách tham quan Chùa Sư Muôn (Hùng Long Tự) - để cầu nguyện sự an lành và hạnh phúc đến với gia đình. Tiếp tục, đoàn tham quan Làng Chài Hàm Ninh nằm phía Đông Đảo tại đây Quý khách được hướng dẫn viên giới thiệu về cuộc sống của người dân xứ đảo với nghề đánh bắt hải sản. Tiếp tục hành trình Quý khách tham quan Sunset Sanato Beach Club sở hữu vị thế đắc địa nhất, khu vui chơi nằm ngay trung tâm của Bãi Trường. Nơi đây, sóng biển dịu êm như một dòng sông, bạn sẽ thấy mình được hưởng trọn vẹn hương vị mặn mòi của biển và mát lành của những hoang sơ còn vương vấn, đến đây du khách sẽ được thưởng ngoạn phong cảnh biển tuyệt đẹp, những góc ảnh check-in cực chất, tự do tắm biển, hòa nhịp trong những bản nhạc sôi động. Nghỉ đêm tại Phú Quốc.\r\n",
+            "Destination": "TP.HCM - PHÚ QUỐC - SUNSET SANATO BEACH CLUB\r\n\r\n"
+        },
+        {
+            "Date": "26/05/2020",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 bữa (sáng,trưa, chiều tự túc)",
+            "Description": "Xe đưa Quý khách đến tham quan tắm biển Bãi Sao nằm ở phía Nam Đảo - một bãi biển dịu êm, bãi cát dài tĩnh lặng và nguyên sơ nơi đảo xanh. Tại đây Quý khách sẽ thật sự cảm thấy yên bình, thư thái và dường như cuộc sống chậm lại khi hòa mình cùng thiên nhiên. Ăn trưa, về lại khách sạn tự do nghỉ ngơi. Trên đường về, Quý khách Tham quan Vườn Tiêu, Nhà Thùng làm nước mắm, Cơ Sở nuôi cấy Ngọc Trai.\r\nBuổi chiều, Quý khách tự do tham quan Khu vui chơi giải trí Vinpearl Land (chi phí tự túc) rộng lớn với đầy đủ những trò chơi dành cho mọi lứa tuổi và sở thích. Nơi đây hội đủ tất cả các trò chơi trong nhà, ngoài trời như: đĩa bay, đu quay con ong, cốc xoay, đĩa quay siêu tốc, cối xay gió,… Khu công viên nước với các trò chơi hấp dẫn như: boomerang khổng lồ, đường trượt siêu lòng chảo, dòng sông lười, lâu đài, bể tạo sóng… Tiếp tục Quý khách có thể khám phá Khu Thủy Cung với hàng trăm loài cá và sinh vật biển kỳ thú như: cá Hải tượng, cá Sấu hỏa tiễn với chiếc mõm dài và hung dữ hay những loài quý hiếm như cá Nemo, cá Napoleon, cá Mập trắng, cua King Crab…. Hơn nữa, ở đây  còn có Rạp chiếu phim 5D, Sân khấu nhạc nước. \r\nHay trải nghiệm tại Vườn Thú Hoang Dã đầu tiên tại Việt Nam (chi phí tự túc) với quy mô 180ha, hơn 130 loài động vật quý hiếm và các chương trình Biểu diễn động vật, Chụp ảnh với động vật, Khám phá và trải nghiệm Vườn thú mở trong rừng tự nhiên, gần gũi và thân thiện với con người. Quý khách tự túc ăn tối. Nghỉ đêm tại khách sạn.\r\n\r\n",
+            "Destination": " DƯƠNG ĐÔNG - BÃI SAO"
+        },
+        {
+            "Date": "27/05/2020",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 1 bữa (sáng) ",
+            "Description": "Sau khi ăn sáng. Tự do tắm biển nghỉ ngơi. Đến giờ trả phòng khách sạn. Sau đó, xe đưa Quý khách ra sân bay Phú Quốc đáp chuyến bay trở về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n",
+            "Destination": "PHÚ QUỐC - TP.HCM\r\n"
+        },
+        {
+            "Date": "06/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại điểm hẹn, xe đưa đoàn khởi hành đi Nha Trang. Đoàn dùng cơm trưa tại Phan Thiết, tiếp tục hành trình đến với thành phố biển ngập tràn nắng ấm đang chờ đón. Đoàn dừng chân chụp ảnh kỷ niệm tại Cà Ná với cảnh non nước hữu tình, lay động lòng người.\r\nĐến Nha Trang, đoàn tham quan:\r\n· Bảo tàng Gạc Ma: được biết đến như một “địa chỉ đỏ” giáo dục chủ quyền biển đảo cho thế hệ trẻ, nổi bật với tương đài chiến sĩ mang chủ đề “Những người nằm lại phía chân trời” cùng các công trình điêu khắc nghệ thuật sinh động, ấn tượng sẽ cho du khách những thông tin lịch sử quý báu cùng lòng yêu nước nồng nàn.\r\nSau khi ăn tối, đoàn về nhận phòng nghỉ ngơi. \r\nBuổi tối, Quý khách tự do dạo chợ đêm Nha Trang, sắm cho mình những món đồ thủ công mỹ nghệ hay tản bộ dọc công viên phố biển về đêm.\r\nNghỉ đêm tại Nha Trang.\r\n",
+            "Destination": "TP.HCM – NHA TRANG – BẢO TÀNG GẠC MA"
+        },
+        {
+            "Date": "7/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Sau khi dùng bữa sáng tại khách sạn, Quý khách khởi hành tham quan:\r\n· Khu du lịch Galina Lake View: với một hành trình 2 điểm đến, đến đây vừa tham quan Khu Di tích Lịch sử: \"Căn cứ Cách Mạng Đồng Bò\" vừa tham quan khung cảnh thơ mộng với con đường đầy hoa, những giàn hoa giấy đỏ, những vườn cây thông hữu tình.\r\nĐoàn dùng bữa trưa tại khu du lịch. Buổi chiều, đoàn tham quan:\r\n· Tháp Bà Ponagar: công trình tiêu biểu cho nghệ thuật kiến trúc và điêu khắc tín ngưỡng tôn giáo bậc nhất của dân tộc Chăm tại Nha Trang.\r\nBuổi tối, Quý khách có thể tự do trải nghiệm phố biển về đêm hay thưởng thức 1 ly cocktail bên cạnh hồ bơi của khách sạn. \r\n\r\n",
+            "Destination": "NHA TRANG – KHU DU LỊCH GALINA LAKE VIEW – THÁP BÀ PONAGAR"
+        },
+        {
+            "Date": "8/7/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, tự túc ăn trưa và tối)",
+            "Description": "Sau khi dùng bữa sáng tại khách sạn, Quý khách có thể lưa chọn tham quan: \r\n· Lựa chọn 1: tự do khám phá những công trình nổi tiếng của Nha Trang như Chùa Long Sơn, Nhà Thờ Đá, đi chợ. \r\n· Lựa chọn 2: quý khách có thể lựa chọn mua vé tham quan Thế Giới Vui Chơi Giải Trí Vinpearl Land (chi phí tự túc, dự kiến mở cửa từ 12/5/2020) - Ngắm toàn cảnh Vịnh Nha Trang từ đỉnh vòng xoay mặt trời lớn nhất Việt Nam, tham quan bộ sưu tập “kỳ hoa, dị thảo” tại đồi Vạn Hoa, khu vườn thú mở - vườn Quý Vương, tham gia các trò chơi tương tác và liên hoàn tại Quảng trường Thần Thoại hay Vùng đất yêu thương, xem phim 4D tại lâu đài Đại Dương, khám phá khu trò chơi cảm giác mạnh, khu trò chơi trong nhà hay tắm biển, tắm hồ bơi lớn nhất Đông Nam Á… và thưởng thức chương trình biểu diễn Nhạc Nước hiện đại. Đoàn dùng bữa trưa tự do hoặc dùng buffet tại Vinpearl và tiếp tục tham gia các hoạt động buổi chiều tại Vinpearl.\r\nBuổi tối, Quý khách có thể tự do thưởng thức hải sản tại Phố Tháp Bà hay những nhà hàng dọc đường Trần Phú và thư giãn với massage chân xua tan mệt mỏi.\r\n",
+            "Destination": " NHA TRANG – MỘT NGÀY TỰ DO CÙNG THÀNH PHỐ BIỂN"
+        },
+        {
+            "Date": "9/7/20",
+            "OrderNumber": "4",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Sau khi dùng bữa sáng, đoàn trả phòng và khởi hành về lại TP.HCM. Trên đường đi, đoàn dừng chân mua Nho và các đặc sản Ninh Thuận. Dừng chân tại Phan Thiết, dùng cơm trưa và khởi hành về lại TP. HCM. \r\n",
+            "Destination": "NHA TRANG – TP.HCM"
+        },
+        {
+            "Date": "03/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Vietravel (190 Pasteur, Phường 6, Quận 3, Tp.HCM), khởi hành đi Châu Đốc theo tuyến cao tốc Trung Lương ngắm nhìn những cánh đồng lúa và màu xanh vườn tược hai bên đường. Chinh phục Cầu Vàm Cống: cầu dây văng lớn thứ hai nối liền đôi bờ Sông Hậu vừa được khánh thành tháng 05.2019 trong sự háo hức của hàng vạn người dân sau bao năm chờ mong.\r\nĐến Châu Đốc, Quý khách xuống thuyền khám phá nét đẹp sông nước miền Tây thăm Làng cá bè - làng nghề nuôi cá trên sông đặc trưng vùng sông nước nổi tiếng đất An Giang. \r\nBuổi chiều, xe đưa Quý khách tham quan Miếu Bà Chúa Xứ, Tây An Cổ Tự, Lăng Thoại Ngọc Hầu.\r\nNghỉ đêm tại Châu Đốc.\r\n",
+            "Destination": "TP.HCM - CHÂU ĐỐC - MIẾU BÀ CHÚA XỨ"
+        },
+        {
+            "Date": "4/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Đoàn dùng điểm tâm, trả phòng và khởi hành tham quan:\r\n- Rừng Tràm Trà Sư: có tổng diện tích gần 1.500 héc-ta cùng hệ sinh thái động-thực vật đa dạng. Du khách di chuyển bằng xuồng máy hay những chiếc ghe để len lỏi giữa các lối đi nhỏ xuyên qua khu rừng tràm ngắm nhìn những mảng bèo xanh ngát trải dài (vào mùa nước nổi). Ngoài ra, du khách có thể check-in bến tàu được thiết kế theo mô hình tổ chim trên cao ngộ nghĩnh độc đáo; “Cây Cầu Tre Vạn Bước” dài nhất Việt Nam - được cách điệu tựa “Rồng trúc bạch”  mang lại một cảm giác thích thú cho mọi người khi được khám phá trọn vẹn cảnh quan thiên nhiên nguyên sinh trù phú ở “Bảo tàng Tràm nhiệt đới”.\r\nKhởi hành đến Hà Tiên nhận phòng khách sạn nghỉ ngơi. Buổi chiều đoàn tham quan:\r\n- Lăng Mạc Cửu: nơi thờ dòng họ Mạc mà khởi đầu là ông Mạc Cửu - người đã có công khai phá mảnh đất Hà Tiên.\r\n- Chùa Phù Dung: tọa lạc dưới chân núi Bình San. \r\n- Biển Mũi Nai, tự do thưởng thức hải sản địa phương (chi phí tự túc) \r\nNghỉ đêm tại Hà Tiên.\r\n",
+            "Destination": "CHÂU ĐỐC - RỪNG TRÀM TRÀ SƯ - HÀ TIÊN - MŨI NAI"
+        },
+        {
+            "Date": "5/6/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Đoàn ăn sáng, trả phòng và khởi hành viếng thăm:\r\n- Chùa Tam Bảo: được dựng vào khoảng đầu thế kỷ XVIII, chùa được triều đình nhà Nguyễn ban biển sắc phong nên còn được gọi là Sắc Tứ Tam Bảo Tự. Tại Điện Phật vẫn còn được bài trí Pho tượng đức Phật A Di Đà bằng đồng cao 1,40m do chính ông Mạc Cửu thờ ở chùa.\r\nKhởi hành đi Rạch Giá, đoàn tham quan:\r\n- Đền Thờ Nguyễn Trung Trực: đây là ngôi đình thờ ông sớm nhất và lớn nhất trong chín đền thờ ở Kiên Giang. \r\nKhởi hành đi Cần Thơ đoàn về khách sạn nhận phòng, nghỉ ngơi.  Sau khi ăn tối, Quý khách có thể tự do dạo phố đêm khám phá “Tây Đô” lung linh sắc màu: ngắm cảnh Cầu Cần Thơ về đêm; Check-in Cầu Tình Yêu - thiết kế uốn lượn hình chữ S cùng hai đài sen và hệ thống đèn led rực rỡ sắc màu; Chụp ảnh tại Chùa Ông cổ kính; Khám phá Chợ Đêm Ninh Kiều và Con Đường Bích Họa Cần Thơ Xưa Và Nay - tái hiện nét đẹp văn hóa của người dân Cần Thơ nói riêng, vùng Đồng bằng sông Cửu Long nói chung.\r\nNghỉ đêm tại Cần Thơ.\r\n",
+            "Destination": "HÀ TIÊN - RẠCH GIÁ - CẦN THƠ"
+        },
+        {
+            "Date": "6/6/20",
+            "OrderNumber": "4",
+            "Title": "(ăn 2 bữa: sáng, trưa)",
+            "Description": "Xe đưa Quý khách tham quan Bến Ninh Kiều, xuống thuyền du ngoạn trên sông Cần Thơ, ngắm cầu Quang Trung, đến chợ nổi Cái Răng - một hình thức họp chợ đặc trưng cùa vùng Đồng Bằng Sông Cửu Long, Quý khách tự do thưởng thức và chọn mua đặc sản Miền Tây (chi phí tự túc).\r\nTiếp đó, Quý khách tham qua\r\n- Khu du lịch Mỹ Khánh: điểm du lịch sinh thái hấp dẫn với các trò chơi dân gian vui nhộn câu cá, chèo thuyền trên sông, đua heo….(chi phí tự túc)\r\n- Thiền Viện Phương Nam: ngôi chùa rộng nhất khu vực Đồng bằng sông Cửu Long, thăm lầu trống, lầu chuông, lễ Phật tại chánh điện. Thiền Viện được xây dựng với kiến trúc truyền thống, thanh tao, Quý khách sẽ ấn tượng với nội thất bằng gỗ lim và các loại gỗ quý được mang về từ Nam Phi, đặc biệt là bộ tượng phật được làm từ gỗ hai cây tùng quý hiếm với đường kính hơn 2m chiều ngang.\r\nKhởi hành về TP. HCM, đoàn kết thúc chương trình du lịch tại điểm đón ban đầu.\r\n\r\n",
+            "Destination": "CẦN THƠ - CHỢ NỔI CÁI RĂNG - TP.HCM"
+        },
+        {
+            "Date": "01/06/2020",
+            "OrderNumber": "1",
+            "Title": "2 bữa (trưa, chiều)",
+            "Description": "Quý khách tập trung tại sân bay Tân Sơn Nhất, quầy Vietravel, ga đi Trong Nước. Hướng dẫn viên làm thủ tục cho Quý khách đáp chuyến bay đi Phú Quốc. Xe đón đoàn tại sân bay di chuyển về nhận phòng ăn trưa, nghỉ ngơi tại Khu nghỉ dưỡng cao cấp VinOasis Phú Quốc. \r\n",
+            "Destination": "TP.HCM - PHÚ QUỐC"
+        },
+        {
+            "Date": "2/6/20",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 3 bữa (sáng, trưa, chiều)",
+            "Description": "Quý khách tự do tắm biển tại Bãi Dài - một trong 17 bãi biển đẹp hoang sơ trên thế giới hoặc thư giãn trong hồ bơi hiện đại nhất tại Phú Quốc với thiết kế độc đáo. Quý khách tự do khám phá Khu vui chơi giải trí Vinpearl Land rộng lớn với đầy đủ những trò chơi dành cho mọi lứa tuổi và sở thích. Nơi đây hội đủ tất cả các trò chơi trong nhà, ngoài trời như: đĩa bay, đu quay con ong, cốc xoay, đĩa quay siêu tốc, cối xay gió,… Ngoài ra, còn có Khu công viên nước với các trò chơi hấp dẫn như: boomerang khổng lồ, đường trượt siêu lòng chảo, dòng sông lười, lâu đài, bể tạo sóng… Tiếp tục Quý khách có thể khám phá Khu Thủy Cung với hàng trăm loài cá và sinh vật biển kỳ thú như những chú Chim Cánh Cụt, những loài cá nước ngọt to lớn có nguồn gốc từ lưu vực sông Amazon (Nam Mỹ) như: cá Hải tượng, cá Sấu hỏa tiễn với chiếc mõm dài và hung dữ hay những loài quý hiếm như cá Nemo, cá Napoleon, cá Mập trắng, cua King Crab…. Hơn nữa, ở đây còn có Rạp chiếu phim 5D, Sân khấu nhạc nước. Với những khách đam mê môn thể thao Golf thì Vinpearl là nơi lý tưởng để đáp ứng như cầu với Sân golf 27 lỗ được thiết kế độc đáo theo mô hình các sân golf biển - đảo nổi tiếng trên thế giới. \r\n\r\nNgoài ra, Quý khách có thể tham quan khám phá Vinpearl Safari Phú Quốc - Vườn Thú Bán Hoang Dã đầu tiên tại Việt Nam – với quy mô 180ha, với hơn 130 loài động vật quý hiếm và các chương trình Biểu diễn động vật, Chụp ảnh với động vật, Khám phá và trải nghiệm Vườn thú mở trong rừng tự nhiên, gần gũi và thân thiện với con người.\r\n\r\nBuổi tối, Quý khách tự do tại VinOasis Phú Quốc resort.\r\n",
+            "Destination": "THIÊN ĐƯỜNG NGHỈ DƯỠNG 5 SAO CAO CẤP - KHU VUI CHƠI GIẢI TRÍ VINPEARL LAND - VƯỜN THÚ BÁN HOANG DÃ VINPEARL SAFARI PHÚ QUỐC"
+        },
+        {
+            "Date": "3/6/20",
+            "OrderNumber": "3",
+            "Title": "1 bữa sáng (Trong trường hợp chuyến bay sau 13h Vietravel sẽ tặng quý khách 1 bữa trưa )",
+            "Description": "Quý khách tự do tắm biển nghỉ ngơi tại resort cho đến giờ làm thủ tục trả phòng. Sau đó, xe đưa Quý khách viếng Chùa Sư Muôn (Hùng Long Tự) - để cầu nguyện sự an lành và hạnh phúc đến với gia đình, Dinh Cậu - biểu tượng văn hoá và tín ngưỡng của đảo Phú Quốc, là nơi ngư dân địa phương gởi gắm niềm tin cho một chuyến ra khơi đánh bắt đầy ắp cá khi trở về. Chiều Quý khách tham quan Vườn Tiêu, Nhà thùng nước mắm, ghé Cơ sở sản xuất ngọc trai Phú Quốc - chiêm ngưỡng và mua sắm các trang sức bằng ngọc trai chính hiệu được nuôi cấy tại Phú Quốc. Xe đưa Quý khách ra sân bay đáp chuyến bay trở về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n\r\n",
+            "Destination": "PHÚ QUỐC - TP.HCM"
+        },
+        {
+            "Date": "09/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel, Xe đưa Qúy khách khởi hành đi Ninh Chữ, trên đường đi đoàn dừng Phan Thiết tham quan:\r\n- Làng Chài Xưa Mũi Né: Với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, , thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị,…\r\n- Làng Gốm Bàu Trúc: Một làng nghề truyền thống lâu đời của người Chăm, chiêm ngưỡng những đôi bàn tay khéo léo làm nên tuyệt tác. \r\nĐoàn đến Ninh Chữ nhận phòng. Buổi tối Quý khách tự do dạo phố biển về đêm. Nghỉ đêm tại Ninh Chữ. \r\n\r\n",
+            "Destination": "TP. Hồ Chí Minh – Phan Thiết – Ninh Chữ"
+        },
+        {
+            "Date": "10/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Sau khi ăn sáng, đoàn cùng nhau tham quan:\r\n- Vịnh Vĩnh Hy: Du khách xuống tàu đáy kính thưởng ngoạn toàn cảnh vịnh và những rặng san hô rực rỡ,..\r\n- Bãi Cóc: Quý khách tự do tắm biển và thưởng thức hải sản biển tươi sống (chi phí tự túc).\r\n- Vườn Nho: Tham quan và tìm hiểu quy trình trồng nho đặc sản vùng đất nắng gió Ninh Thuận.   \r\n- Tháp Chàm Poklong Giarai: một công trình độc đáo, được công nhận là di tích kiến trúc nghệ thuật và điêu khắc Chăm.\r\nBuổi tối Quý khách tự do. Nghỉ đêm tại Ninh Chữ.\r\n",
+            "Destination": "  Ninh Chữ - Vịnh Vĩnh Hy"
+        },
+        {
+            "Date": "11/6/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Sau khi ăn sáng, đoàn làm thủ tục trả phòng. Khởi hành về TP. Hồ Chí Minh, trên đường đi dừng tham quan:\r\n- KDL Cổ Thạch: Viếng Cổ Thạch Tự hay còn gọi là Chùa Hang có lịch sử hơn 100 năm, một quần thể kiến trúc, liên hoàn với nhau. Chính điện chùa nằm trong quần thể núi đá tự nhiên, chùa ẩn mình trong hang động tự nhiên với cảnh non nước hữu tình. \r\n- Bãi Đá Bảy Màu: Có tên khác là bãi Cà Dược, chiêm ngưỡng những viên đá cuội nhẵn thính, nhiều màu sắc và trải dài hơn một km, lấp lánh sinh động.\r\n- Organik Farm - Hello Muine: Tham quan mua sắm đặc sản địa phương\r\nChiều về đến TP.Hồ Chí Minh, đưa Quý khách về điểm đón ban đầu. Chia tay Quý khách và kết thúc chương trình du lịch.\r\n\r\n",
+            "Destination": "Ninh Chữ - TP.Hồ Chí Minh\r\n"
+        },
+        {
+            "Date": "07/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn trưa, tối, tự túc ăn sáng)",
+            "Description": "Quý khách tập trung tại Vietravel (190 Pasteur, Q3, Tp.HCM), Xe khởi hành đi Bảo Lộc. Trên đường đi Quý khách dừng chân ăn sáng. Vượt Đèo Chuối, đoàn tham quan:\r\n- Khu du lịch Rừng Madagui: khu sinh thái rừng có bộ sưu tập tre với gần năm mươi chủng loại, sự đa dạng của gần một trăm giống cây ăn trái đang tuổi ra hoa kết trái bên cạnh những trò chơi đầy thử thách và ấn tượng: Công Viên Thần Núi, được ngắm Cầu Treo bắc qua dòng sông Đạ Huoai, Đường Đi Bộ Trên Không khám phá rừng sinh thái - Hồ cá sấu - Hang Tử Thần - Thiên Phúc Sơn Động - Trượt cỏ, Zipline… (tự túc vé trò chơi).\r\nĂn trưa tại Madagui, đoàn tiếp tục hành trình tham quan: \r\n- Thác DamBri: được coi là ngọn thác lớn nhất vùng đất Lâm Đồng với chiều cao 60m tạo thành 2 dòng chảy cao thấp rất hùng vĩ.  Khu du lịch thác Đamb'ri là một quần thể du lịch bao gồm khu vui chơi, hồ, thác và rừng nguyên sinh rộng hàng nghìn hecta. Nơi đây có “ống trượt dài nhất Đông Nam Á” với độ dài 1.650 m (chi phí vé vào cổng và vui chơi tự túc)\r\nBuổi chiều, đoàn trở về trung tâm Bảo Lộc dùng cơm tối sau đó nghỉ ngơi tại khách sạn hoặc tự do dạo mát quanh vòng hồ Đồng Nai trong tiết trời se se lạnh của thành phố trẻ Bảo Lộc.\r\nNghỉ đêm tại thành phố Bảo Lộc.\r\n",
+            "Destination": "TP.HCM – MADAGUI – THÁC ĐAMBRI – BẢO LỘC"
+        },
+        {
+            "Date": "8/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Ăn sáng, trả phòng khách sạn khởi hành đi Đắk Nông. Trên đường đi đoàn sẽ ghé tham quan: \r\n- Thưởng ngoạn hồ Tà Đùng, một cảnh quan thiên nhiên hùng vĩ – tuyệt tác hồ Tà Đùng hiện ra như một bức tranh, đẹp đến ngỡ ngàng. Giữa mênh mông biển nước, những quả đồi sừng sững như những hòn đảo nhỏ được kiến tạo từ đất đỏ bazan, nhìn xa xa giống như những chiếc thuyền khiến du khách cứ ngỡ lạc giữa chốn mê cung trên cao nguyên với khung cảnh nên thơ.\r\n- Từ Tà Đùng Topview, thưởng thức bữa trưa cạnh hồ bơi vô cực, phóng tầm nhìn ôm trọn cảnh sắc tuyệt đẹp của cao nguyên hùng vĩ. Một nét đẹp nguyên sơ hòa với sự hùng vĩ của thiên nhiên làm thoả mãn cả những khách lữ hành khó tính. Nơi đây không có gì tuyệt mỹ hơn với cảnh trời mây, sông nước, núi non, thiên nhiên hòa quyện, làm nền cho nhau tạo thành một bức tranh như thực như mơ, bãng lãng sương phủ và xanh biếc nước trời.\r\n- Ngoài ra, Quý khách được dịp tìm hiểu về khu bảo tồn thiên nhiên Tà Đùng, vùng đất được kiến tạo bởi đất đỏ bazan với sức hút lạ kì từ những con đường đèo dài nối tiếp những khúc cua ôm trọn khung cảnh núi rừng hoang vu cùng những đồi cà phê, tiêu bạt ngàn phủ xanh núi đồi dọc hai bên cung đường.\r\nRời Đắk Nông, đoàn khởi hành về TP. Hồ Chí Minh. Xe đưa Quý khách về điểm đón ban đầu. Chia tay Quý khách và kết thúc chương trình du lịch.\r\n\r\n",
+            "Destination": "BẢO LỘC - ĐẮK NÔNG - TÀ ĐÙNG - TP.HCM"
+        },
+        {
+            "Date": "30/06/2020",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 3 bữa (sáng, trưa, chiều)",
+            "Description": "Quý khách tập trung tại Vietravel (190 Pasteur, Q3, Tp.HCM), đoàn khởi hành đi Đà Lạt. Trên đường đi Quý khách dừng chân ăn sáng tại Nhà hàng. Tiếp tục hành trình đến Đà Lạt. Quý khách tham quan: \r\n- Thác Đam B’ri: một trong những thác nước đẹp và cao nhất tại cao nguyên Bảo Lộc. Ăn trưa tại Khu du lịch. Tiếp tục hành trình đến Đà Lạt, Quý Khách ăn tối và nhận phòng khách sạn. \r\nTiếp tục hành trình đến Đà Lạt, Quý Khách ăn tối và nhận phòng khách sạn. Buổi tối, Quý khách tự do thưởng thức cà phê trong không khí se lạnh của Đà Lạt, ngắm cảnh Hồ Xuân Hương về đêm. Nghỉ đêm tại Đà Lạt.",
+            "Destination": " TP. HỒ CHÍ MINH – ĐÀ LẠT"
+        },
+        {
+            "Date": "30/06/2020",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 3 bữa (sáng, trưa, chiều)",
+            "Description": "Sau khi dùng bữa sáng tại khách sạn, Quý khách khởi hành đi tham quan:\r\n- Cà phê Mê Linh: quán cà phê đẹp ngất ngây được thiết kế theo kiến trúc không gian mở đảm bảo cho quý khách một tầm nhìn trọn vẹn Đà Lạt 360 độ (chi phí tư túc). Ngoài ra, Quý khách còn được tham quan khu trưng bày quà lưu niệm, được tận mắt nhìn thấy những chú chồn dễ thương, khu vực ăn cơm lam và thịt nướng những đặc sản núi rừng là một trải nghiệm không thể bỏ qua tại đây.\r\n- Fairytale Land & hầm rượu vang Vĩnh Tiến: đến đây du khách như lạc vào khu vườn cổ tích của những chú lùn Hobbiton, điểm xuyến trong khu vườn là những ngôi nhà độc đáo và đầy sắc màu, những bức vẽ trên tường đầy lôi cuốn và những thảm hoa nhỏ không kém phần quyến rũ. Dạo một vòng quanh khu vườn đừng quên rảo bước vào hầm rượu vang với hơn 10.000 chai đang được lưu trữ dưới hầm. \r\nBuổi chiều, đoàn tiếp tục khám phá những điểm đến mang đậm dấu ấn lịch sử một thời của Đà Lạt:\r\n- Chùa Linh Phước hay còn được gọi là Chùa Rồng, Chùa Ve Chai, là ngôi chùa nổi tiếng bậc nhất xứ sở ngàn hoa và đang giữ riêng cho mình tới 11 kỷ lục gia.\r\nBuổi tối, Quý khách tự do tản bộ thưởng thức các món ăn đường phố của Đà Lạt như bánh tráng nướng, sữa đậu nành Tăng Bạt Hổ. Nghỉ đêm tại Đà Lạt.\r\n",
+            "Destination": "ĐÀ LẠT - TÂY NGUYÊN HUYỀN DIỆU"
+        },
+        {
+            "Date": "1/7/20",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 2 bữa (sáng, trưa, tự túc ăn chiều)",
+            "Description": "Sau khi dùng bữa sáng tại khách sạn, Quý khách khởi hành tham quan các tuyệt tác điêu khắc:\r\n- Núi Langbiang: nóc nhà Tây Nguyên, ngắm toàn cảnh núi đồi, hồ Dankia, suối Vàng với những dòng sông uốn lượn từ trên cao (Quý khách có thể đi lên núi bằng xe Jeep - Chi phí tự túc). Trên đỉnh núi LangBiang cũng là nơi diễn ra nhiều hoạt động vui chơi giải trí khá thú vị: dù lượn, sử dụng ống nhòm đài quan sát để ngắm thành phố Đà Lạt xinh đẹp, cưỡi ngựa hóa thân thành một cao bồi, chụp hình săn mây (chi phí tự túc) …\r\n- Làng Hoa Vạn Thành: là làng hoa nổi tiếng và lớn nhất tại Đà Lạt. Tại đây, du khách sẽ bị choáng ngợp bởi vẻ yêu kiều quyến rũ của bạt ngàn những đóa Hồng, Cẩm Chướng, Lily, Đồng Tiền, Cẩm Tú Cầu … Ngoài ra, Quý khách còn được khám phá và thỏa sức chụp hình tại vườn Bí Ngô khổng lồ, Ớt Đà Lạt, Dưa Pepino, Dâu và các loại rau trồng thủy canh.\r\n\r\n",
+            "Destination": "ĐÀ LẠT – THÀNH PHỐ NGÀN HOA"
+        },
+        {
+            "Date": "2/7/20",
+            "OrderNumber": "4",
+            "Title": "Số bữa ăn: 2 bữa (sáng, trưa)",
+            "Description": "Sau khi dùng bữa sáng, đoàn khởi hành tham quan khu vườn bonsai tuyệt đẹp:\r\n- QUE Garden: nằm dưới chân đèo Mimosa, khu vườn mê mẩn người xem với cánh đồng hoa rộng lớn cùng nhiều loài hoa nổi tiếng tại Đà Lạt khoe sắc. Đặc biệt Quê Garden tự hào là một trong những khu vườn bonsai lá kim lớn nhất Việt Nam, những chậu cây bonsai vừa to vừa đẹp, được chăm sóc và uốn nắn kỹ lưỡng vô cùng đẹp mắt. Ngoài ra, hồ cá koi có hướng nhìn ra đồi thông là điểm đến cực chất mà du khách không thể bỏ qua.\r\nĂn trưa, xe đưa đoàn về lại điểm đón ban đầu và kết thúc hành trình nhiều trải nghiệm.\r\n\r\n",
+            "Destination": " ĐÀ LẠT – TP. HỒ CHÍ MINH"
+        },
+        {
+            "Date": "14/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại điểm hẹn, xe đưa đoàn khởi hành đi Đà Lạt. Đoàn dừng cơm trưa tại Bảo Lộc, tiếp tục hành trình đến với thành phố ngàn hoa. Đến Đà Lạt, Quý khách sẽ dừng chân tham quan:\r\nQuê Garden: nằm dưới chân đèo Mimosa, khu vườn mê mẩn người xem với cánh đồng hoa rộng lớn cùng nhiều loài hoa nổi tiếng tại Đà Lạt khoe sắc. Đặc biệt Quê Garden tự hào là khu vườn bonsai lá kim lớn nhất Việt Nam, những chậu cây bonsai vừa to vừa đẹp, được chăm sóc và uốn nắn kỹ lưỡng vô cùng đẹp mắt. Ngoài ra, hồ cá koi với view nhìn ra đồi thông là điểm check in cực chất mà du khách không thể bỏ qua.\r\nVề khách sạn, nhận phòng nghỉ ngơi và ăn tối. Buổi tối, Quý khách tự do dạo chợ đêm Đà Lạt, sắm cho mình chiếc khăn hoặc áo len để ghi lại những bức ảnh rực rỡ tại phố núi xinh đẹp. Nghỉ đêm tại Đà Lạt.\r\n\r\n",
+            "Destination": "TP.HCM - ĐÀ LẠT – QUÊ GARDEN"
+        },
+        {
+            "Date": "15/06/2020",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Sau khi dùng bữa sáng tại khách sạn, Quý khách khởi hành tham quan vùng đất của những đổi thay với những điểm đến mới:\r\nPhân Viện Sinh Học Đà Lạt: được biết đến như 1 tọa độ sống ảo mới tại Đà Lạt với góc ảnh bên những bức tường cổ kính. Không chỉ vậy, đến đây, du khách còn được tìm hiểu về môi trường sống, những nguồn gen quý qua hiện vật vô cùng phong phú, khu trưng bày xương, sừng, mô hình của các loài động vật quý hiếm như khủng long, voi, hổ, gấu, vượn,… hay tìm hiểu về sự vận hành của vũ trụ.\r\nGallery Chocolate: với các không gian được tạo nên bởi màu sắc, tạo hình và hương vị đặc biệt của nhiều sản phẩm của Chocotea - Đà Lạt. Ấn tượng nhất là không gian nghệ thuật với 9 tác phẩm được tạo tác công phu, tỉ mỉ từ chocolate như: “Bàn tiệc hoàng gia” với tất cả các vật dụng (chén, bát, dĩa, muỗng, nĩa...) cùng đồ ăn, trái cây, mặt bàn, Cây mai anh đào hay tác phẩm “Suối hoa” tuyệt mỹ,… Nơi đây là không gian thưởng lãm chocolate để cảm nhận hương vị nguyên chất hòa cùng sự đa dạng, phong phú và khác biệt từ tạo hình chocolate đến hương và sắc.\r\nNông Trại Cún Puppy Farm: đến đây, du khách thỏa thích tạo dáng cùng những chú cún siêu dễ thương hay chọn cho mình những góc chụp đẹp bên các loài hoa với đủ màu sắc rực rỡ, vườn bí ngô, dâu tây, cà chua bi,… tựa như là một Đà Lạt thu nhỏ, vô cùng thơ mộng và lãng mạn. \r\nBuổi chiều, đoàn tiếp tục khám phá những điểm đến mang đậm dấu ấn lịch sử một thời của vùng đất Đà Lạt:\r\nĐồi chè Cầu Đất: đến đây du khách sẽ cảm nhận sự nhẹ nhàng, bình yên bởi không gian xanh mướt được bao phủ dọc theo các luống chè dường như trải dài bất tận. Check in giữa màu vàng nắng của cánh đồng hoa cải đang vào mùa, sắc tím mơ mộng của loài lavender,… (hoa theo mùa)\r\nCánh đồng hoa Cẩm Tú Cầu: du khách sẽ như choáng ngợp bởi cánh đồng hoa Cẩm Tú Cầu rộng lớn một màu xanh biếc, nhìn từ xa thảm hoa như trải dài bất tận. Nơi đây thu hút du khách bởi những góc hình ảo diệu và đặc biệt là góc chụp “nấc thang lên thiên đường”.\r\nBuổi tối, Quý khách tự do tản bộ, nhâm nhi các món ăn đường phố của Đà Lạt như bánh tráng nướng, sữa đậu nành Tăng Bạt Hổ hoặc thưởng thức những nét nhạc xưa cũ tại phòng trà Diễm Xưa. Nghỉ đêm tại Đà Lạt.\r\n\r\n",
+            "Destination": "ĐÀ LẠT – PHÂN VIỆN SINH HỌC – GALLERY CHOCOLATE - PUPPY FARM – ĐỒI CHÈ CẦU ĐẤT - CÁNH ĐỒNG HOA CẨM TÚ CẦU"
+        },
+        {
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Sau khi dùng bữa sáng, đoàn trả phòng và tham quan:\r\nMê Linh Coffee (chi phí nước uống tự túc): Được thiết kế mở, đảm bảo cho du khách một tầm nhìn trọn vẹn Đà Lạt 360 độ hướng ra trang trại cà phê bạt ngàn, đồi thông, mây trời và mặt hồ đập Cam Ly yên bình. Tại đây, du khách tìm hiểu cách thức sản xuất cà phê chồn trực tiếp hay thưởng thức ly cà phê chồn đậm đà, mang vị đắng đặc trưng.\r\nĐoàn khởi hành về lại TP.Hồ Chí Minh, trả khách tại điểm đón ban đầu. Kết thúc hành trình nhiều trải nghiệm.\r\n\r\n",
+            "Destination": "ĐÀ LẠT – MÊ LINH COFFEE - TP.HỒ CHÍ MINH"
+        },
+        {
+            "Date": "10/07/2020",
+            "OrderNumber": "1",
+            "Title": "Ăn sáng, trưa, chiều",
+            "Description": "02h30 sáng : Xe đón khách tại Vietravel Cần Thơ (5-7 Trần Văn Khéo, Cái Khế, Ninh Kiều, Cần Thơ). Khởi hành đến điểm tập trung tại Hồ Chí Minh, đoàn khởi hành đi Vũng Tàu theo tuyến đường cao tốc TP. Hồ Chí Minh - Long Thành. Đến TP. Vũng Tàu, đoàn tiếp tục tham quan:\r\n\r\n- Bến du thuyền Marina: nổi tiếng với cảnh đẹp như trời Tây, quý khách được chiêm ngưỡng cảnh biển trời tươi đẹp bên dòng sông Dinh.\r\n\r\nSau khi ăn trưa, đoàn về nhận phòng tại khách sạn Malibu tiêu chuẩn 4 sao Quốc tế - được xem là thiên đường nghỉ dưỡng đẳng cấp tại thành phố biển xinh đẹp.\r\n\r\nBuổi chiều, đoàn tiếp tục chinh phục những điểm đến không thể bỏ qua khi đến Vũng Tàu:\r\n\r\n- Nhà Úp Ngược: nằm ở Bãi Sau với các góc chụp hình bị đảo ngược như phòng ngủ, bếp, nhà tắm vui nhộn.\r\n\r\nBuổi tối, Quý khách tự do thưởng thức những món hải sản phong phú, tươi ngon.\r\n\r\nNghỉ đêm tại khách sạn Malibu 4 sao.\r\n",
+            "Destination": "CẦN THƠ – TP.HCM - VŨNG TÀU"
+        },
+        {
+            "Date": "17/06/2020",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 2 (Sáng, trưa)",
+            "Description": "Quý khách có thể hòa mình vào làn nước biển mát lạnh, nằm thư giãn trên bãi cát dài để tắm mình dưới ánh nắng mặt trời buổi ban mai, vui đùa cùng những con sóng vỗ rì rào bên bờ biển thoai thoải. (Bãi Sau cách khách sạn Malibu bán kính 350 mét)\r\n\r\nTrải nghiệm tiện ích sang chảnh tại khách sạn: bơi lội giữa hồ bơi tràn bờ trên cao với view toàn cảnh thành phố Vũng Tàu; phòng tập thể dục; khu vui chơi trẻ em; phòng đọc sách...\r\n\r\nSau khi trả phòng và dùng bữa trưa, đoàn khởi hành về TP. HCM trên đường dừng chân tham quan:\r\n\r\n- Chợ Bà Rịa: mua sắm các loại đặc sản vùng biển về làm quà cho người thân và gia đình.\r\n\r\nXe đưa đoàn về điểm đến ban đầu, kết thúc chuyến du lịch.\r\n",
+            "Destination": "VŨNG TÀU “BIỂN HÁT” - TP. HCM – CẦN THƠ"
+        },
+        {
+            "Date": "06/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn trưa, tối)",
+            "Description": "Quý khách tập trung tại sân bay Tân Sơn Nhất - Ga đi trong nước. Hướng dẫn viên làm thủ tục cho đoàn đáp chuyến bay đi Hà Nội.\r\nXe Vietravel đón đoàn tại sân bay Nội Bài, khởi hành đi Sa Pa theo cung đường cao tốc hiện đại và dài nhất Việt Nam.\r\nĐến Sapa, nhận phòng nghỉ ngơi. Buổi chiều quý khách thăm \r\n- Bản Cát Cát đẹp như một bức tranh giữa vùng phố cổ Sapa, nơi đây thu hút du khách bởi cầu treo, thác nước, guồng nước và những mảng màu hoa mê hoặc du khách khi lạc bước đến đây.\r\n- Thăm những nếp nhà của người Mông trong bản, du khách sẽ không khỏi ngỡ ngàng trước vẻ đẹp bình dị, mộc mạc. \r\nBuổi tối Quý khách dạo phố, ngắm nhà thờ Đá Sapa, tự do thưởng thức đặc sản vùng cao như: thịt lợn cắp nách nướng, trứng nướng, rượu táo mèo, giao lưu với người dân tộc vùng cao. \r\nNghỉ đêm tại Sapa.\r\n\r\n",
+            "Destination": "TP. HỒ CHÍ MINH – SB NỘI BÀI (HÀ NỘI) - LÀO CAI – SAPA"
+        },
+        {
+            "Date": "7/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Xe đưa đoàn ra ga Sapa, Quý khách trải nghiệm đến khu du lịch Fansipan Legend bằng Tàu hỏa leo núi Mường Hoa hiện đại nhất Việt Nam với tổng chiều dài gần 2000m, thưởng ngoạn bức tranh phong cảnh đầy màu sắc của cánh rừng nguyên sinh, thung lũng Mường Hoa.\r\n- Chinh phục đỉnh núi Fansipan với độ cao 3.143m hùng vĩ bằng cáp treo (chi phí tự túc). \r\n- Lễ Phật tại chùa Trình hay cầu phúc lộc, bình an cho gia đình tại Bích Vân Thiền Tự trong hệ thống cảnh quan tâm linh trên đỉnh Fansipan. \r\nSau đó, xe đưa Quý khách tham quan đỉnh đèo Ô Quy Hồ một trong “Tứ đại đỉnh đèo” phía Bắc\r\n(không bao gồm vé tham quan Thác Bạc, Cầu Kính Rồng Mây, Cổng Trời...)\r\nNghỉ đêm tại Sapa.\r\n\r\n",
+            "Destination": "SA PA - FANSIPAN – CẦU KÍNH RỒNG MÂY"
+        },
+        {
+            "Date": "8/7/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Quý khách ăn sáng và trả phòng khách sạn.\r\nXe đưa đoàn đi tham quan:\r\n- Núi Hàm Rồng thăm vườn Lan khoe sắc, vườn hoa Trung Tâm, ngắm Núi Phanxipăng hùng vĩ, Cổng Trời, Đầu Rồng Thạch Lâm, Sân Mây.\r\nTheo cung đường cao tốc trở về Hà Nội. Xe đưa Quý khách ra sân bay Nội Bài đáp chuyến bay về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n",
+            "Destination": " SAPA - HÀM RỒNG – SB NỘI BÀI (HÀ NỘI)–TPHCM\r\n"
+        },
+        {
+            "Date": "11/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel (190 Pasteur, Phường 6, Quận 3, TP. Hồ Chí Minh) khởi hành đi Phan Thiết. Quý khách ăn sáng trên cung đường đi. Đến Hàm Thuận Nam đoàn tham quan:\r\n- Khu du lịch Núi Tà Cú: Trải nghiệm đi cáp treo lên đỉnh núi độ cao 505m (chi phí tự túc), ngắm cảnh đồng bằng Hàm Thuận Nam với những vườn Thanh long trái chín đỏ được trồng thành từng hàng thẳng tắp xanh bạt ngàn. Viếng chùa Linh Sơn Trường Thọ: Với bộ tượng tam thế Phật được tạc bằng gỗ trầm hương trên 100 năm tuổi và được xếp hạng Di tích lịch sử - Văn hoá Quốc gia.Chiêm viếng tượng Phật Thích Ca nhập niết bàn lớn nhất Đông Nam Á, dài 49m, cao 11m.\r\nĐến Mũi Né nhận phòng, buổi chiều Quý khách tự do tắm biển nghỉ ngơi.\r\nĂn tối và nghỉ đêm tại Mũi Né.\r\n",
+            "Destination": "TP. HỒ CHÍ MINH - MŨI NÉ"
+        },
+        {
+            "Date": "12/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại resort. Xe đưa đoàn đi tham quan:\r\n- Bàu Trắng: hay còn được gọi với cái tên khác Bàu Sen bởi trong hồ khi vào mùa hè sen nở sẽ rất đẹp, phủ kín cả một vùng hồ…. \r\nQuý khách ăn trưa và về Resort tự do nghỉ dưỡng, tắm biển, hồ bơi,… Buổi chiều đoàn tiếp tục tham quan:\r\n- Làng Chài Xưa Mũi Né: Với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị,…\r\nSau khi dùng bữa tối, Quý khách tự do dạo phố về đêm. Nghỉ đêm tại Mũi Né.\r\n",
+            "Destination": " MŨI NÉ - BÀU TRẮNG"
+        },
+        {
+            "Date": "13/07/2020",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Dùng buffet sáng tại resort. Quý khách tự do tắm biển, hồ bơi, tận hưởng dịch vụ đến giờ trả phòng đoàn khởi hành đi:  \r\n- Organik Farm - Hello Muine: Tự do mua sắm đặc sản Phan Thiết sạch về làm quà cho người thân và bạn bè.\r\nChiều đoàn về đến TP. Hồ Chí Minh, xe đưa về điểm đón ban đầu. Chia tay Quý khách và kết thúc chương trình du lịch.\r\n",
+            "Destination": "MŨI NÉ - TP. HỒ CHÍ MINH"
+        },
+        {
+            "Date": "04/07/2020",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 1 bữa (trường hợp chuyến bay trước 11h, Vietravel sẽ hỗ trợ Quý khách bữa ăn trưa)",
+            "Description": "Quý khách tập trung tại Sân bay Tân Sơn Nhất, ga đi Trong Nước. Hướng dẫn viên làm thủ tục cho Quý khách đáp chuyến bay đi Phú Quốc. Xe đón đoàn tại sân bay đưa Quý khách ghé thăm Dinh Cậu - biểu tượng văn hoá và tín ngưỡng của đảo Phú Quốc, là nơi cầu may mắn, cầu an lành và là nơi ngư dân địa phương gởi gắm niềm tin cho một chuyến ra khơi đánh bắt đầy ắp cá khi trở về. Sau đó, đoàn viếng Dinh Bà Thủy Long Thánh Mẫu là nơi thờ Thần Nữ Kim Giao, người phụ nữ được người dân Phú Quốc rất mực tôn kính vì có công khai phá huyện đảo này. Sau đó nhận phòng khách sạn nghỉ ngơi.\r\nChiều Quý khách tham quan Chùa Sư Muôn (Hùng Long Tự) - để cầu nguyện sự an lành và hạnh phúc đến với gia đình. Tiếp tục, đoàn tham quan Làng Chài Hàm Ninh nằm phía Đông Đảo tại đây Quý khách được hướng dẫn viên giới thiệu về cuộc sống của người dân xứ đảo với nghề đánh bắt hải sản. Tiếp tục hành trình Quý khách tham quan Sunset Sanato Beach Club sở hữu vị thế đắc địa nhất, khu vui chơi nằm ngay trung tâm của Bãi Trường. Nơi đây, sóng biển dịu êm như một dòng sông, bạn sẽ thấy mình được hưởng trọn vẹn hương vị mặn mòi của biển và mát lành của những hoang sơ còn vương vấn, đến đây du khách sẽ được thưởng ngoạn phong cảnh biển tuyệt đẹp, những góc ảnh check-in cực chất, tự do tắm biển, hòa nhịp trong những bản nhạc sôi động. Nghỉ đêm tại Phú Quốc.\r\n",
+            "Destination": "TP.HCM - PHÚ QUỐC - SUNSET SANATO BEACH CLUB\r\n\r\n"
+        },
+        {
+            "Date": "5/7/20",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 bữa (sáng,trưa, chiều tự túc)",
+            "Description": "Xe đưa Quý khách đến tham quan tắm biển Bãi Sao nằm ở phía Nam Đảo - một bãi biển dịu êm, bãi cát dài tĩnh lặng và nguyên sơ nơi đảo xanh. Tại đây Quý khách sẽ thật sự cảm thấy yên bình, thư thái và dường như cuộc sống chậm lại khi hòa mình cùng thiên nhiên. Ăn trưa, về lại khách sạn tự do nghỉ ngơi. Trên đường về, Quý khách Tham quan Vườn Tiêu, Nhà Thùng làm nước mắm, Cơ Sở nuôi cấy Ngọc Trai.\r\nBuổi chiều, Quý khách tự do tham quan Khu vui chơi giải trí Vinpearl Land (chi phí tự túc) rộng lớn với đầy đủ những trò chơi dành cho mọi lứa tuổi và sở thích. Nơi đây hội đủ tất cả các trò chơi trong nhà, ngoài trời như: đĩa bay, đu quay con ong, cốc xoay, đĩa quay siêu tốc, cối xay gió,… Khu công viên nước với các trò chơi hấp dẫn như: boomerang khổng lồ, đường trượt siêu lòng chảo, dòng sông lười, lâu đài, bể tạo sóng… Tiếp tục Quý khách có thể khám phá Khu Thủy Cung với hàng trăm loài cá và sinh vật biển kỳ thú như: cá Hải tượng, cá Sấu hỏa tiễn với chiếc mõm dài và hung dữ hay những loài quý hiếm như cá Nemo, cá Napoleon, cá Mập trắng, cua King Crab…. Hơn nữa, ở đây  còn có Rạp chiếu phim 5D, Sân khấu nhạc nước. \r\nHay trải nghiệm tại Vườn Thú Hoang Dã đầu tiên tại Việt Nam (chi phí tự túc) với quy mô 180ha, hơn 130 loài động vật quý hiếm và các chương trình Biểu diễn động vật, Chụp ảnh với động vật, Khám phá và trải nghiệm Vườn thú mở trong rừng tự nhiên, gần gũi và thân thiện với con người. Quý khách tự túc ăn tối. Nghỉ đêm tại khách sạn.\r\n\r\n",
+            "Destination": " DƯƠNG ĐÔNG - BÃI SAO"
+        },
+        {
+            "Date": "6/7/20",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 1 bữa (sáng) ",
+            "Description": "Sau khi ăn sáng. Tự do tắm biển nghỉ ngơi. Đến giờ trả phòng khách sạn. Sau đó, xe đưa Quý khách ra sân bay Phú Quốc đáp chuyến bay trở về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n",
+            "Destination": "PHÚ QUỐC - TP.HCM\r\n"
+        },
+        {
+            "Date": "30/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn trưa, chiều)",
+            "Description": "Quý khách tập trung tại Ga đi trong nước, sân bay Tân Sơn Nhất. Hướng dẫn viên hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Đà Nẵng. Tại sân bay Đà Nẵng xe và HDV Vietravel đón đoàn đi tham quan: \r\n- Bán đảo Sơn Trà, viếng Chùa Linh Ứng: nơi đây có tượng Phật Quan Thế Âm cao nhất Việt Nam, đứng nơi đây, Quý khách sẽ được chiêm ngưỡng toàn cảnh thành phố, núi rừng và biển đảo Sơn Trà một cách hoàn hảo nhất. \r\n\r\n",
+            "Destination": " HO CHI MINH CITY - HA NOI - NINH BINH - BAI DINH - TRANG AN"
+        },
+        {
+            "Date": "1/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa Quý khách đi tham quan:",
+            "Destination": "NINH BINH - HA LONG"
+        },
+        {
+            "Date": "2/7/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Du lịch Suối Mơ (chi phí cáp treo & ăn trưa tự túc): Tận hưởng không khí se lạnh của Đà Lạt tại miền Trung, đoàn tự do tham quan Chùa Linh Ứng, Hầm Rượu Debay, vườn hoa Le Jardin D’Amour, Khu Tâm linh mới của Bà Nà viếng Đền Lĩnh Chúa Linh Từ, khu vui chơi Fantasy Park, tự do chụp hình tại Cầu Vàng điểm tham quan mới siêu hot tại Bà Nà…Ăn trưa tại Bà Nà tự túc. Sau đó đoàn tiếp tục tham quan vui chơi đến giờ xuống cáp. ",
+            "Destination": "  HA LONG - YEN TU - HA NOI"
+        },
+        {
+            "Date": "3/7/20",
+            "OrderNumber": "4",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa Quý khách đi tham quan:\r\n- Ngũ Hành Sơn: Động Tàng Chơn, Động Hoa Nghiêm, Chùa Non Nước, Làng Đá Mỹ Nghệ,..\r\n- Bãi biển Mỹ Khê: Một trong những bãi biển quyến rũ nhất hành tinh. Quý khách tự do dạo biển, chụp hình....\r\n- Ky niem local specialites and souvernia shop: Mua sắm đặc sản của Đà Nẵng và các vùng miền  \r\n\r\n",
+            "Destination": " HANOI - NOI BAI AIRPORT - HO CHI MINH CITY"
+        },
+        {
+            "Date": "02/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Lunch - Dinner)",
+            "Description": "Quý khách tập trung tại sân bay Tân Sơn Nhất - Ga đi trong nước. Hướng dẫn viên làm thủ tục cho đoàn đáp chuyến bay đi Hà Nội.\r\nXe Vietravel đón đoàn tại sân bay Nội Bài, khởi hành đi Sa Pa theo cung đường cao tốc hiện đại và dài nhất Việt Nam.\r\nĐến Sapa, nhận phòng nghỉ ngơi. Buổi chiều quý khách thăm \r\n- Bản Cát Cát đẹp như một bức tranh giữa vùng phố cổ Sapa, nơi đây thu hút du khách bởi cầu treo, thác nước, guồng nước và những mảng màu hoa mê hoặc du khách khi lạc bước đến đây.\r\n\r\n\r\n",
+            "Destination": "TP. HỒ CHÍ MINH – SB NỘI BÀI"
+        },
+        {
+            "Date": "3/7/20",
+            "OrderNumber": "2",
+            "Title": "(Breakfast - Lunch - Dinner)",
+            "Description": "Xe đưa đoàn ra ga Sapa, Quý khách trải nghiệm đến khu du lịch Fansipan Legend bằng Tàu hỏa leo núi Mường Hoa hiện đại nhất Việt Nam với tổng chiều dài gần 2000m, thưởng ngoạn bức tranh phong cảnh đầy màu sắc của cánh rừng nguyên sinh, thung lũng Mường Hoa.\r\n- Chinh phục đỉnh núi Fansipan với độ cao 3.143m hùng vĩ bằng cáp treo (chi phí tự túc). \r\n",
+            "Destination": "SA PA - FANSIPAN – CẦU KÍNH RỒNG MÂY"
+        },
+        {
+            "Date": "4/7/20",
+            "OrderNumber": "3",
+            "Title": "Breakfast - Lunch - Dinner)",
+            "Description": "Quý khách ăn sáng và trả phòng khách sạn.\r\nXe đưa đoàn đi tham quan:\r\n- Núi Hàm Rồng thăm vườn Lan khoe sắc, vườn hoa Trung Tâm, ngắm Núi Phanxipăng hùng vĩ, Cổng Trời, Đầu Rồng Thạch Lâm, Sân Mây.\r\nTheo cung đường cao tốc trở về Hà Nội. Xe đưa Quý khách ra sân bay Nội Bài đáp chuyến bay về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.",
+            "Destination": " SAPA - HÀM RỒNG – SB NỘI BÀI (HÀ NỘI)"
+        },
+        {
+            "Date": "04/06/2020",
+            "OrderNumber": "1",
+            "Title": "Ăn sáng, chiều",
+            "Description": "Quý khách tập trung tại sân bay Tân Sơn Nhất - ga đi trong nước. Hướng dẫn viên làm thủ tục cho đoàn đáp chuyến bay đi Hà Nội.\r\nXe Vietravel đón đoàn tại sân bay Nội Bài, khởi hành đi Sa Pa theo cung đường cao tốc hiện đại và dài nhất Việt Nam. Trên đường dừng tham quan Đền Quốc Tổ Lạc Long Quân được tọa lạc trên đồi Sim có hình thể giống một con rùa lớn, hai bên có Thanh Long, Bạch Hổ, phía trước là hồ Hóc Trai và sông Hồng chảy xuôi về biển, biểu hiện sự linh thiêng, huyền bí với thế \"sơn chầu thủy tụ\" vô cùng đắc địa.\r\n",
+            "Destination": "  TP. HỒ CHÍ MINH - NỘI BÀI (HÀ NỘI) - LÀO CAI – SAPA"
+        },
+        {
+            "Date": "5/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Trả phòng khách sạn, xe đưa đoàn ra ga Sapa, Quý khách trải nghiệm đến khu du lịch Fansipan Legend bằng Tàu hỏa leo núi Mường Hoa hiện đại nhất Việt Nam với tổng chiều dài gần 2000m, thưởng ngoạn bức tranh phong cảnh đầy màu sắc của cánh rừng nguyên sinh, thung lũng Mường Hoa.\r\n- Chinh phục đỉnh núi Fansipan với độ cao 3.143m hùng vĩ bằng cáp treo (chi phí tự túc). \r\n\r\n",
+            "Destination": "SA PA – FANSIPAN HÙNG VĨ - LÀO CAI"
+        },
+        {
+            "Date": "6/6/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Trả phòng khách sạn, quý khách tham quan \r\n- Cửa khẩu biên giới Việt - Trung “Lào Cai- Hà Khẩu”\r\n- Mua sắm tại chợ Cốc Lếu - Trung tâm thương mại lớn nhất, của thành phố nói riêng và Tỉnh Lào Cai nói chung. Nơi đây bày bán đa dạng đủ các loại mặt hàng từ thủ công mỹ nghệ, tranh nghệ thuật phong cảnh đến quần áo…sẽ là một điểm mua sắm tuyệt vời với du khách.\r\nTheo cung đường cao tốc trở về Hà Nội, nhận phòng nghỉ ngơi. Xe đưa Quý khách dạo quanh \r\n",
+            "Destination": "  LÀO CAI - HÀ NỘI"
+        },
+        {
+            "Date": "07/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, chiều)",
+            "Description": "Quý khách tập trung tại Ga đi trong nước, sân bay Tân Sơn Nhất, hướng dẫn viên Vietravel hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Huế. Tại sân bay Phú Bài - Huế, xe và hướng dẫn viên đón đoàn đi tham quan:  \r\n- Đại Nội: hoàng cung xưa của 13 vị vua triều Nguyễn, tham quan Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành, Thế Miếu, Hiển Lâm Các, Cửu Đình, Bảo tàng Cổ Vật cung đình Huế. \r\n- Chùa Thiên Mụ: ngôi chùa được xem là cổ nhất ở Huế và là nơi lưu giữ nhiều cổ vật quý giá không chỉ về mặt lịch sử mà còn cả về nghệ thuật\r\n- Lăng Tự Đức: nơi có phong cảnh sơn thủy hữu tình và được cho là một trong những lăng tẩm có kiến trúc đẹp nhất của các vua chúa nhà Nguyễn \r\n- Dạo Phố Đêm: chụp hình tại Cầu Đi Bộ Sàn Gỗ Lim trên Sông Hương điểm tham quan mới siêu hót tại Huế, ,cầu Trường Tiền, tranh thêu XQ, tự do thưởng thức các món đường phố xứ Huế, ngắm nhìn thuyền rồng ngược xuôi bên bến Tòa Khâm văng vẳng âm vang điệu hò Huế, khám phá khu phố Tây sôi động về đêm.",
+            "Destination": "Huế - La Vang - Động Phong Nha"
+        },
+        {
+            "Date": "8/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Ăn sáng buffet tại khách sạn. Trả phòng, Quý khách khởi hành đi Quảng Bình tham quan:\r\n- Động Phong Nha: một nhánh trong quần thề di sản thiên nhiên thế giới, được xem như chốn thần tiên bởi hệ thống núi đá vôi và sông ngầm dài nhất thế giới,…  \r\n- Động Thiên Đường: như là hoàng cung dưới lòng đất, hang động đá vôi đẹp và kỳ ảo, có độ dài kỷ lục,… \r\nBuổi tối Quý khách tự do nghỉ ngơi, dạo phố khám phá thành phố Đồng Hới về đêm. Nghỉ đêm tại Quảng Bình.\r\n",
+            "Destination": "  HUẾ - ĐỘNG PHONG NHA - ĐỘNG THIÊN ĐƯỜNG\r\n"
+        },
+        {
+            "Date": "12/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn trưa, chiều)\r\n\r\n",
+            "Description": "Quý khách tập trung tại Ga đi trong nước, sân bay Tân Sơn Nhất, hướng dẫn viên Vietravel hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Huế. Tại sân bay Phú Bài - Huế, xe và hướng dẫn viên đón đoàn đi tham quan:  \r\n- Đại Nội: hoàng cung xưa của 13 vị vua triều Nguyễn, tham quan Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành, Thế Miếu, Hiển Lâm Các, Cửu Đình, Bảo tàng Cổ Vật cung đình Huế. \r\n",
+            "Destination": "TP. HỒ CHÍ MINH - HUẾ"
+        },
+        {
+            "Date": "13/06/2020",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Ga đi trong nước, sân bay Tân Sơn Nhất, hướng dẫn viên Vietravel hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Huế. Tại sân bay Phú Bài - Huế, xe và hướng dẫn viên đón đoàn đi tham quan:  \r\n- Đại Nội: hoàng cung xưa của 13 vị vua triều Nguyễn, tham quan Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành, Thế Miếu, Hiển Lâm Các, Cửu Đình, Bảo tàng Cổ Vật cung đình Huế. \r\n\r\n\r\n",
+            "Destination": "HUẾ - ĐỘNG PHONG NHA - ĐỘNG THIÊN ĐƯỜNG"
+        },
+        {
+            "Date": "14/06/2020",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Ăn sáng buffet tại khách sạn. Quý khách khởi hành về Đà Nẵng, trên đường đi dừng tham quan:\r\n- Thành cổ Quảng Trị: nghe hướng dẫn viên thuyết minh Khu phi quân sự DMZ và Cầu Hiền Lương Sông Bến Hải (Vĩ tuyến 17)\r\n- Thánh địa La Vang: một trong bốn tiểu vương cung thánh đường La Mã tại Việt Nam\r\n- Đầm Lập An: ngắm cảnh mây bồng bềnh trên những chóp núi bao bọc quanh đầm, trước khi đi xuyên Hầm Hải Vân đến Đà Nẵng ",
+            "Destination": "QUẢNG BÌNH - LA VANG - ĐÀ NẴNG"
+        },
+        {
+            "Date": "11/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Quý khách tập trung tại Sân bay Tân Sơn Nhất, ga đi Trong Nước. Hướng dẫn viên làm thủ tục cho Quý khách đáp chuyến bay đi Phú Quốc. Xe đón đoàn tại sân bay đưa Quý khách ghé thăm Dinh Cậu - biểu tượng văn hoá và tín ngưỡng của đảo Phú Quốc, là nơi cầu may mắn, cầu an lành và là nơi ngư dân địa phương gởi gắm niềm tin cho một chuyến ra khơi đánh bắt đầy ắp cá khi trở về. Sau đó, đoàn viếng Dinh Bà Thủy Long Thánh Mẫu là nơi thờ Thần Nữ Kim Giao, người phụ nữ được người dân Phú Quốc rất mực tôn kính vì có công khai phá huyện đảo này. Sau đó nhận phòng khách sạn nghỉ ngơi.\r\nChiều Quý khách tham quan Chùa Sư Muôn (Hùng Long Tự) - để cầu nguyện sự an lành và hạnh phúc đến với gia đình. Tiếp tục, đoàn tham quan Làng Chài Hàm Ninh nằm phía Đông Đảo tại đây Quý khách được hướng dẫn viên giới thiệu về cuộc sống của người dân xứ đảo với nghề đánh bắt hải sản. Tiếp tục hành trình Quý khách tham quan Sunset Sanato Beach Club sở hữu vị thế đắc địa nhất, khu vui chơi nằm ngay trung tâm của Bãi Trường. Nơi đây, sóng biển dịu êm như một dòng sông, bạn sẽ thấy mình được hưởng trọn vẹn hương vị mặn mòi của biển và mát lành của những hoang sơ còn vương vấn, đến đây du khách sẽ được thưởng ngoạn phong cảnh biển tuyệt đẹp, những góc ảnh check-in cực chất, tự do tắm biển, hòa nhịp trong những bản nhạc sôi động. Nghỉ đêm tại Phú Quốc.\r\n"
+        },
+        {
+            "Date": "12/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Xe đưa Quý khách đến tham quan tắm biển Bãi Sao nằm ở phía Nam Đảo - một bãi biển dịu êm, bãi cát dài tĩnh lặng và nguyên sơ nơi đảo xanh. Tại đây Quý khách sẽ thật sự cảm thấy yên bình, thư thái và dường như cuộc sống chậm lại khi hòa mình cùng thiên nhiên. Ăn trưa, về lại khách sạn tự do nghỉ ngơi. Trên đường về, Quý khách Tham quan Vườn Tiêu, Nhà Thùng làm nước mắm, Cơ Sở nuôi cấy Ngọc Trai.\r\nBuổi chiều, Quý khách tự do tham quan Khu vui chơi giải trí Vinpearl Land (chi phí tự túc) rộng lớn với đầy đủ những trò chơi dành cho mọi lứa tuổi và sở thích. Nơi đây hội đủ tất cả các trò chơi trong nhà, ngoài trời như: đĩa bay, đu quay con ong, cốc xoay, đĩa quay siêu tốc, cối xay gió,… Khu công viên nước với các trò chơi hấp dẫn như: boomerang khổng lồ, đường trượt siêu lòng chảo, dòng sông lười, lâu đài, bể tạo sóng… Tiếp tục Quý khách có thể khám phá Khu Thủy Cung với hàng trăm loài cá và sinh vật biển kỳ thú như: cá Hải tượng, cá Sấu hỏa tiễn với chiếc mõm dài và hung dữ hay những loài quý hiếm như cá Nemo, cá Napoleon, cá Mập trắng, cua King Crab…. Hơn nữa, ở đây  còn có Rạp chiếu phim 5D, Sân khấu nhạc nước. \r\nHay trải nghiệm tại Vườn Thú Hoang Dã đầu tiên tại Việt Nam (chi phí tự túc) với quy mô 180ha, hơn 130 loài động vật quý hiếm và các chương trình Biểu diễn động vật, Chụp ảnh với động vật, Khám phá và trải nghiệm Vườn thú mở trong rừng tự nhiên, gần gũi và thân thiện với con người. Quý khách tự túc ăn tối. Nghỉ đêm tại khách sạn.\r\n\r\n"
+        },
+        {
+            "Date": "13/07/2020",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Sau khi ăn sáng. Tự do tắm biển nghỉ ngơi. Đến giờ trả phòng khách sạn. Sau đó, xe đưa Quý khách ra sân bay Phú Quốc đáp chuyến bay trở về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n"
+        },
+        {
+            "Date": "30/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, chiều)",
+            "Description": "Quý khách tập trung tại Ga đi trong nước, sân bay Tân Sơn Nhất. Hướng dẫn viên hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Đà Nẵng. Tại sân bay Đà Nẵng xe và HDV Vietravel đón đoàn đi tham quan: \r\n- Bán đảo Sơn Trà, viếng Chùa Linh Ứng: nơi đây có tượng Phật Quan Thế Âm cao nhất Việt Nam, đứng nơi đây, Quý khách sẽ được chiêm ngưỡng toàn cảnh thành phố, núi rừng và biển đảo Sơn Trà một cách hoàn hảo nhất. \r\n- Phố Cổ Hội An: Chùa Cầu, Nhà Cổ Phùng Hưng, Hội Quán Phước Kiến, Cơ sở Thủ Công Mỹ Nghệ,…\r\n\r\n"
+        },
+        {
+            "Date": "1/7/20",
+            "OrderNumber": "2",
+            "Title": "(Breakfast, dinner)",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa Quý khách đi tham quan:\r\n- Khu du lịch Bà Nà - Suối Mơ (chi phí cáp treo & ăn trưa tự túc): Tận hưởng không khí se lạnh của Đà Lạt tại miền Trung, đoàn tự do tham quan Chùa Linh Ứng, Hầm Rượu Debay, vườn hoa Le Jardin D’Amour, Khu Tâm linh mới của Bà Nà viếng Đền Lĩnh Chúa Linh Từ, khu vui chơi Fantasy Park, tự do chụp hình tại Cầu Vàng điểm tham quan mới siêu hot tại Bà Nà…Ăn trưa tại Bà Nà tự túc. Sau đó đoàn tiếp tục tham quan vui chơi đến giờ xuống cáp. \r\n\r\n",
+            "Destination": "ĐÀ NẴNG - BÀ NÀ\r\n\r\n"
+        },
+        {
+            "Date": "2/7/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa Quý khách đi tham quan:\r\n- Ngũ Hành Sơn: Động Tàng Chơn, Động Hoa Nghiêm, Chùa Non Nước, Làng Đá Mỹ Nghệ,..\r\n- Bãi biển Mỹ Khê: Một trong những bãi biển quyến rũ nhất hành tinh. Quý khách tự do dạo biển, chụp hình....\r\n- Ky niem local specialites and souvernia shop: Mua sắm đặc sản của Đà Nẵng và các vùng miền  \r\nXe tiễn Quý khách ra sân bay Đà Nẵng đón chuyến bay trở về Tp.Hồ Chí Minh. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất. \r\n",
+            "Destination": "ĐÀ NẴNG - TP. HỒ CHÍ MINH\r\n"
+        },
+        {
+            "Date": "06/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Ga đi trong nước, sân bay Tân Sơn Nhất, hướng dẫn viên Vietravel hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Huế. Tại sân bay Phú Bài - Huế, xe và hướng dẫn viên đón đoàn đi tham quan:  \r\n- Đại Nội: hoàng cung xưa của 13 vị vua triều Nguyễn, tham quan Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành, Thế Miếu, Hiển Lâm Các, Cửu Đình, Bảo tàng Cổ Vật cung đình Huế. \r\n- Chùa Thiên Mụ: ngôi chùa được xem là cổ nhất ở Huế và là nơi lưu giữ nhiều cổ vật quý giá không chỉ về mặt lịch sử mà còn cả về nghệ thuật\r\n- Lăng Tự Đức: nơi có phong cảnh sơn thủy hữu tình và được cho là một trong những lăng tẩm có kiến trúc đẹp nhất của các vua chúa nhà Nguyễn \r\n- Dạo Phố Đêm: chụp hình tại Cầu Đi Bộ Sàn Gỗ Lim trên Sông Hương điểm tham quan mới siêu hót tại Huế, ,cầu Trường Tiền, tranh thêu XQ, tự do thưởng thức các món đường phố xứ Huế, ngắm nhìn thuyền rồng ngược xuôi bên bến Tòa Khâm văng vẳng âm vang điệu hò Huế, khám phá khu phố Tây sôi động về đêm.",
+            "Destination": "HÀ NỘI - PHÚ YÊN - MŨI NÉ"
+        },
+        {
+            "Date": "7/7/20",
+            "OrderNumber": "2",
+            "Title": "(Breakfast, lunch)",
+            "Description": "Ăn sáng buffet tại khách sạn. Trả phòng, Quý khách khởi hành đi Quảng Bình tham quan:\r\n- Động Phong Nha: một nhánh trong quần thề di sản thiên nhiên thế giới, được xem như chốn thần tiên bởi hệ thống núi đá vôi và sông ngầm dài nhất thế giới,…  \r\n- Động Thiên Đường: như là hoàng cung dưới lòng đất, hang động đá vôi đẹp và kỳ ảo, có độ dài kỷ lục,… \r\nBuổi tối Quý khách tự do nghỉ ngơi, dạo phố khám phá thành phố Đồng Hới về đêm. Nghỉ đêm tại Quảng Bình.\r\n",
+            "Destination": "QUY NHƠN - HÀ NỘI"
+        },
+        {
+            "Date": "08/06/2020",
+            "OrderNumber": "1",
+            "Description": "Quý khách tập trung tại Vietravel (190 Pasteur, Phường 6, Quận 3, Tp.HCM), khởi hành đi Châu Đốc theo tuyến cao tốc Trung Lương ngắm nhìn những cánh đồng lúa và màu xanh vườn tược hai bên đường. Chinh phục Cầu Vàm Cống: cầu dây văng lớn thứ hai nối liền đôi bờ Sông Hậu vừa được khánh thành tháng 05.2019 trong sự háo hức của hàng vạn người dân sau bao năm chờ mong.\r\nĐến Châu Đốc, Quý khách xuống thuyền khám phá nét đẹp sông nước miền Tây thăm Làng cá bè - làng nghề nuôi cá trên sông đặc trưng vùng sông nước nổi tiếng đất An Giang. \r\nBuổi chiều, xe đưa Quý khách tham quan Miếu Bà Chúa Xứ, Tây An Cổ Tự, Lăng Thoại Ngọc Hầu.\r\nNghỉ đêm tại Châu Đốc.\r\n",
+            "Destination": "TP.HCM - BUÔN MA THUỘT"
+        },
+        {
+            "Date": "9/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Đoàn dùng điểm tâm, trả phòng và khởi hành tham quan:\r\n- Rừng Tràm Trà Sư: có tổng diện tích gần 1.500 héc-ta cùng hệ sinh thái động-thực vật đa dạng. Du khách di chuyển bằng xuồng máy hay những chiếc ghe để len lỏi giữa các lối đi nhỏ xuyên qua khu rừng tràm ngắm nhìn những mảng bèo xanh ngát trải dài (vào mùa nước nổi). Ngoài ra, du khách có thể check-in bến tàu được thiết kế theo mô hình tổ chim trên cao ngộ nghĩnh độc đáo; “Cây Cầu Tre Vạn Bước” dài nhất Việt Nam - được cách điệu tựa “Rồng trúc bạch”  mang lại một cảm giác thích thú cho mọi người khi được khám phá trọn vẹn cảnh quan thiên nhiên nguyên sinh trù phú ở “Bảo tàng Tràm nhiệt đới”.\r\nKhởi hành đến Hà Tiên nhận phòng khách sạn nghỉ ngơi. Buổi chiều đoàn tham quan:\r\n- Lăng Mạc Cửu: nơi thờ dòng họ Mạc mà khởi đầu là ông Mạc Cửu - người đã có công khai phá mảnh đất Hà Tiên.\r\n- Chùa Phù Dung: tọa lạc dưới chân núi Bình San. \r\n- Biển Mũi Nai, tự do thưởng thức hải sản địa phương (chi phí tự túc) \r\nNghỉ đêm tại Hà Tiên.\r\n",
+            "Destination": "Buôn Ma Thuột - PLEIKU"
+        },
+        {
+            "Date": "31/05/2020",
+            "OrderNumber": "1",
+            "Title": "(Lunch, Dinner)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel (190 Pasteur, Phường 6, Quận 3, TP.Hồ Chí Minh) khởi hành đi Phan Thiết. Quý khách ăn sáng trên đường đi, sau đó đoàn dừng chân tham quan:\r\n- Khu Du Lịch Núi Tà Cú: Trải nghiệm đi cáp treo lên đỉnh núi độ cao 505m (chi phí tự túc), ngắm cảnh đồng bằng Hàm Thuận Nam với những vườn Thanh long trái chín đỏ được trồng thành từng hàng thẳng tắp xanh bạt ngàn.\r\n- Viếng chùa Linh Sơn Trường Thọ: Với bộ tượng tam thế Phật được tạc bằng gỗ trầm hương trên 100 năm tuổi và được xếp hạng Di tích lịch sử - Văn hoá Quốc gia.\r\n- Chiêm viếng tượng Phật Thích Ca nhập niết bàn lớn nhất Đông Nam Á, dài 49m, cao 11m\r\nQuý khách dùng bữa trưa và về khách sạn nhận phòng nghỉ ngơi. Buổi chiều, đoàn đi tham quan:\r\n- Làng Chài Xưa: Du khách sẽ được đi xuyên vào không gian tương tác tái hiện Làng Chài Xưa Mũi Né với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, vào xóm lò tĩn, thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị\r\n- Organik Farm - Hello Muine: Quý khách tự do mua sắm đặc sản làm quà cho người thân và bạn bè. \r\nĐoàn ăn tối và tự do tham quan thành phố về đêm. Nghỉ đêm tại Phan Thiết/Mũi Né.\r\n",
+            "Destination": "CẦN THƠ - (NỘI BÀI) HANOI - LÀO CAI - SAPA"
+        },
+        {
+            "Date": "1/6/20",
+            "OrderNumber": "1",
+            "Title": "(Lunch, Dinner)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel (190 Pasteur, Phường 6, Quận 3, TP.Hồ Chí Minh) khởi hành đi Phan Thiết. Quý khách ăn sáng trên đường đi, sau đó đoàn dừng chân tham quan:\r\n- Khu Du Lịch Núi Tà Cú: Trải nghiệm đi cáp treo lên đỉnh núi độ cao 505m (chi phí tự túc), ngắm cảnh đồng bằng Hàm Thuận Nam với những vườn Thanh long trái chín đỏ được trồng thành từng hàng thẳng tắp xanh bạt ngàn.\r\n- Viếng chùa Linh Sơn Trường Thọ: Với bộ tượng tam thế Phật được tạc bằng gỗ trầm hương trên 100 năm tuổi và được xếp hạng Di tích lịch sử - Văn hoá Quốc gia.\r\n- Chiêm viếng tượng Phật Thích Ca nhập niết bàn lớn nhất Đông Nam Á, dài 49m, cao 11m\r\nQuý khách dùng bữa trưa và về khách sạn nhận phòng nghỉ ngơi. Buổi chiều, đoàn đi tham quan:\r\n- Làng Chài Xưa: Du khách sẽ được đi xuyên vào không gian tương tác tái hiện Làng Chài Xưa Mũi Né với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, vào xóm lò tĩn, thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị\r\n- Organik Farm - Hello Muine: Quý khách tự do mua sắm đặc sản làm quà cho người thân và bạn bè. \r\nĐoàn ăn tối và tự do tham quan thành phố về đêm. Nghỉ đêm tại Phan Thiết/Mũi Né.\r\n",
+            "Destination": "CẦN THƠ - (NỘI BÀI) HANOI - LÀO CAI - SAPA"
+        },
+        {
+            "Date": "04/07/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel (190 Pasteur, Phường 6, Quận 3, TP. Hồ Chí Minh) khởi hành đi Phan Thiết. Quý khách ăn sáng trên cung đường đi. Đến Hàm Thuận Nam đoàn tham quan:\r\n- Khu du lịch Núi Tà Cú: Trải nghiệm đi cáp treo lên đỉnh núi độ cao 505m (chi phí tự túc), ngắm cảnh đồng bằng Hàm Thuận Nam với những vườn Thanh long trái chín đỏ được trồng thành từng hàng thẳng tắp xanh bạt ngàn. Viếng chùa Linh Sơn Trường Thọ: Với bộ tượng tam thế Phật được tạc bằng gỗ trầm hương trên 100 năm tuổi và được xếp hạng Di tích lịch sử - Văn hoá Quốc gia.Chiêm viếng tượng Phật Thích Ca nhập niết bàn lớn nhất Đông Nam Á, dài 49m, cao 11m.\r\nĐến Mũi Né nhận phòng, buổi chiều Quý khách tự do tắm biển nghỉ ngơi.\r\nĂn tối và nghỉ đêm tại Mũi Né.\r\n",
+            "Destination": "TP. HỒ CHÍ MINH - MŨI NÉ"
+        },
+        {
+            "Date": "5/7/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại resort. Xe đưa đoàn đi tham quan:\r\n- Bàu Trắng: hay còn được gọi với cái tên khác Bàu Sen bởi trong hồ khi vào mùa hè sen nở sẽ rất đẹp, phủ kín cả một vùng hồ…. \r\nQuý khách ăn trưa và về Resort tự do nghỉ dưỡng, tắm biển, hồ bơi,… Buổi chiều đoàn tiếp tục tham quan:\r\n- Làng Chài Xưa Mũi Né: Với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị,…\r\nSau khi dùng bữa tối, Quý khách tự do dạo phố về đêm. Nghỉ đêm tại Mũi Né.\r\n",
+            "Destination": " MŨI NÉ - BÀU TRẮNG"
+        },
+        {
+            "Date": "6/7/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Dùng buffet sáng tại resort. Quý khách tự do tắm biển, hồ bơi, tận hưởng dịch vụ đến giờ trả phòng đoàn khởi hành đi:  \r\n- Organik Farm - Hello Muine: Tự do mua sắm đặc sản Phan Thiết sạch về làm quà cho người thân và bạn bè.\r\nChiều đoàn về đến TP. Hồ Chí Minh, xe đưa về điểm đón ban đầu. Chia tay Quý khách và kết thúc chương trình du lịch.\r\n",
+            "Destination": "MŨI NÉ - TP. HỒ CHÍ MINH"
+        },
+        {
+            "Date": "27/05/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Vietravel (190 Pasteur, Phường 6, Quận 3, Tp.HCM), khởi hành đi Châu Đốc theo tuyến cao tốc Trung Lương ngắm nhìn những cánh đồng lúa và màu xanh vườn tược hai bên đường. Chinh phục Cầu Vàm Cống: cầu dây văng lớn thứ hai nối liền đôi bờ Sông Hậu vừa được khánh thành tháng 05.2019 trong sự háo hức của hàng vạn người dân sau bao năm chờ mong.\r\nĐến Châu Đốc, Quý khách xuống thuyền khám phá nét đẹp sông nước miền Tây thăm Làng cá bè - làng nghề nuôi cá trên sông đặc trưng vùng sông nước nổi tiếng đất An Giang. \r\nBuổi chiều, xe đưa Quý khách tham quan Miếu Bà Chúa Xứ, Tây An Cổ Tự, Lăng Thoại Ngọc Hầu.\r\nNghỉ đêm tại Châu Đốc.\r\n",
+            "Destination": "TP.HCM - CHÂU ĐỐC - MIẾU BÀ CHÚA XỨ"
+        },
+        {
+            "Date": "28/05/2020",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Đoàn dùng điểm tâm, trả phòng và khởi hành tham quan:\r\n- Rừng Tràm Trà Sư: có tổng diện tích gần 1.500 héc-ta cùng hệ sinh thái động-thực vật đa dạng. Du khách di chuyển bằng xuồng máy hay những chiếc ghe để len lỏi giữa các lối đi nhỏ xuyên qua khu rừng tràm ngắm nhìn những mảng bèo xanh ngát trải dài (vào mùa nước nổi). Ngoài ra, du khách có thể check-in bến tàu được thiết kế theo mô hình tổ chim trên cao ngộ nghĩnh độc đáo; “Cây Cầu Tre Vạn Bước” dài nhất Việt Nam - được cách điệu tựa “Rồng trúc bạch”  mang lại một cảm giác thích thú cho mọi người khi được khám phá trọn vẹn cảnh quan thiên nhiên nguyên sinh trù phú ở “Bảo tàng Tràm nhiệt đới”.\r\nKhởi hành đến Hà Tiên nhận phòng khách sạn nghỉ ngơi. Buổi chiều đoàn tham quan:\r\n- Lăng Mạc Cửu: nơi thờ dòng họ Mạc mà khởi đầu là ông Mạc Cửu - người đã có công khai phá mảnh đất Hà Tiên.\r\n- Chùa Phù Dung: tọa lạc dưới chân núi Bình San. \r\n- Biển Mũi Nai, tự do thưởng thức hải sản địa phương (chi phí tự túc) \r\nNghỉ đêm tại Hà Tiên.\r\n\r\n",
+            "Destination": "CHÂU ĐỐC - RỪNG TRÀM TRÀ SƯ - HÀ TIÊN - MŨI NAI"
+        },
+        {
+            "Date": "29/05/2020",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Đoàn ăn sáng, trả phòng và khởi hành viếng thăm:\r\n- Chùa Tam Bảo: được dựng vào khoảng đầu thế kỷ XVIII, chùa được triều đình nhà Nguyễn ban biển sắc phong nên còn được gọi là Sắc Tứ Tam Bảo Tự. Tại Điện Phật vẫn còn được bài trí Pho tượng đức Phật A Di Đà bằng đồng cao 1,40m do chính ông Mạc Cửu thờ ở chùa.\r\nKhởi hành đi Rạch Giá, đoàn tham quan:\r\n- Đền Thờ Nguyễn Trung Trực: đây là ngôi đình thờ ông sớm nhất và lớn nhất trong chín đền thờ ở Kiên Giang. \r\nKhởi hành đi Cần Thơ đoàn về khách sạn nhận phòng, nghỉ ngơi.  Sau khi ăn tối, Quý khách có thể tự do dạo phố đêm khám phá “Tây Đô” lung linh sắc màu: ngắm cảnh Cầu Cần Thơ về đêm; Check-in Cầu Tình Yêu - thiết kế uốn lượn hình chữ S cùng hai đài sen và hệ thống đèn led rực rỡ sắc màu; Chụp ảnh tại Chùa Ông cổ kính; Khám phá Chợ Đêm Ninh Kiều và Con Đường Bích Họa Cần Thơ Xưa Và Nay - tái hiện nét đẹp văn hóa của người dân Cần Thơ nói riêng, vùng Đồng bằng sông Cửu Long nói chung.\r\nNghỉ đêm tại Cần Thơ.\r\n",
+            "Destination": "HÀ TIÊN - RẠCH GIÁ - CẦN THƠ"
+        },
+        {
+            "Date": "30/05/2020",
+            "OrderNumber": "4",
+            "Title": "(ăn 2 bữa: sáng, trưa)\r\n\r\n",
+            "Description": "Xe đưa Quý khách tham quan Bến Ninh Kiều, xuống thuyền du ngoạn trên sông Cần Thơ, ngắm cầu Quang Trung, đến chợ nổi Cái Răng - một hình thức họp chợ đặc trưng cùa vùng Đồng Bằng Sông Cửu Long, Quý khách tự do thưởng thức và chọn mua đặc sản Miền Tây (chi phí tự túc).\r\nTiếp đó, Quý khách tham qua\r\n- Khu du lịch Mỹ Khánh: điểm du lịch sinh thái hấp dẫn với các trò chơi dân gian vui nhộn câu cá, chèo thuyền trên sông, đua heo….(chi phí tự túc)\r\n- Thiền Viện Phương Nam: ngôi chùa rộng nhất khu vực Đồng bằng sông Cửu Long, thăm lầu trống, lầu chuông, lễ Phật tại chánh điện. Thiền Viện được xây dựng với kiến trúc truyền thống, thanh tao, Quý khách sẽ ấn tượng với nội thất bằng gỗ lim và các loại gỗ quý được mang về từ Nam Phi, đặc biệt là bộ tượng phật được làm từ gỗ hai cây tùng quý hiếm với đường kính hơn 2m chiều ngang.\r\nKhởi hành về TP. HCM, đoàn kết thúc chương trình du lịch tại điểm đón ban đầu.\r\n\r\n",
+            "Destination": "CẦN THƠ - CHỢ NỔI CÁI RĂNG - TP.HCM"
+        },
+        {
+            "Date": "04/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel (190 Pasteur, Phường 6, Quận 3, TP.Hồ Chí Minh) khởi hành đi Phan Thiết. Quý khách ăn sáng trên đường đi, sau đó đoàn dừng chân tham quan:\r\n- Khu Du Lịch Núi Tà Cú: Trải nghiệm đi cáp treo lên đỉnh núi độ cao 505m (chi phí tự túc), ngắm cảnh đồng bằng Hàm Thuận Nam với những vườn Thanh long trái chín đỏ được trồng thành từng hàng thẳng tắp xanh bạt ngàn.\r\n- Viếng chùa Linh Sơn Trường Thọ: Với bộ tượng tam thế Phật được tạc bằng gỗ trầm hương trên 100 năm tuổi và được xếp hạng Di tích lịch sử - Văn hoá Quốc gia.\r\n- Chiêm viếng tượng Phật Thích Ca nhập niết bàn lớn nhất Đông Nam Á, dài 49m, cao 11m\r\nQuý khách dùng bữa trưa và về khách sạn nhận phòng nghỉ ngơi. Buổi chiều, đoàn đi tham quan:\r\n- Làng Chài Xưa: Du khách sẽ được đi xuyên vào không gian tương tác tái hiện Làng Chài Xưa Mũi Né với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, vào xóm lò tĩn, thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị\r\n- Organik Farm - Hello Muine: Quý khách tự do mua sắm đặc sản làm quà cho người thân và bạn bè. \r\nĐoàn ăn tối và tự do tham quan thành phố về đêm. Nghỉ đêm tại Phan Thiết/Mũi Né.\r\n",
+            "Destination": "TP.HỒ CHÍ MINH - NÚI TÀ CÚ - PHAN THIẾT"
+        },
+        {
+            "Date": "5/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa)\r\n\r\n",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa đoàn đi tham quan:\r\n- Đồi Cát Vàng: Một trong những khu vực đẹp nhất nằm ở Mũi Né thu hút khá nhiều du khách do hình dáng đẹp của cát và màu sắc của cát, nơi đây được xem là đồi cát có một không hai tại Việt nam bắt nguồn từ mỏ sắt cổ tồn tại hàng trăm năm tạo nên. \r\n- KDL Hòn Rơm: Toạ lạc ngay dưới rặng dừa thơ mộng, hàng dương duyên dáng in bóng bên đồi cát trắng còn nguyên sơ và có bãi biển nước xanh ngát êm đềm tạo nên một phong cảnh sơn thủy hữu tình, Qúy khách tự do tắm biển\r\nChiều đoàn về đến TP.Hồ Chí Minh, xe đưa về điểm đón ban đầu, chia tay Quý khách và kết thúc chương trình du lịch.\r\n",
+            "Destination": "PHAN THIẾT - TP HỒ CHÍ MINH\r\n"
+        },
+        {
+            "Date": "16/06/2020",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 2 (Ăn trưa, chiều)",
+            "Description": "Quý khách tập trung tại cột 5, ga đi Trong Nước, sân bay Tân Sơn Nhất. Hướng dẫn viên Vietravel hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Quy Nhơn. Tại sân bay Phù Cát - Quy Nhơn, xe và Hướng dẫn viên sẽ đón Quý khách đi tham quan: \r\n- Bảo Tàng Quang Trung: Viếng Điện thờ Tây Sơn Tam Kiệt, chiêm ngưỡng cây me 300 tuổi, Giếng nước xưa… \r\nTặng vé thưởng thức buổi biểu diễn nhạc võ và cồng chiên Tây Nguyên \r\n- Khu du lịch Hầm Hô: Lâm viên hoang dã với dòng suối mát yên bình và nên thơ, đoàn khám phá cảnh non nước hữu tình… Bên cạnh đó, Quý khách có thể tự do lựa chọn thêm dịch vụ khác như đi xe điện hoặc xe ngựa, chèo thuyền tham quan trên sông Kút, nghỉ võng dưới tán cây rừng đại ngàn, tự do thưởng thức đặc sản địa phương…(chi phí tự túc) \r\nBuổi tối Quý khách tự do khám phá Quy Nhơn về đêm với các quán cà phê nổi tiếng check in: Surf Bar 1 – 2, S- Blue Café, Mộc Trà Café…hoặc thưởng thức hải sản tại phố ẩm thực Xuân Diệu, khu hồ sinh thái nổi tiếng với món: bọ biển, cua Huỳnh Đế và các loại ốc đặc trưng của vùng, xe điện dạo một vòng thành phố Quy Nhơn về đêm, dạo phố đi bộ về đêm … (chi phí tự túc).  Nghỉ đêm tại Quy Nhơn.",
+            "Destination": "TP.HỒ CHÍ MINH - QUY NHƠN\r\n\r\n"
+        },
+        {
+            "Date": "17/6/2020",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 (Ăn sáng, trưa, ăn chiều tự túc)",
+            "Description": "Dùng bữa sáng tại khách sạn. Xe đưa đoàn đi tham quan: \r\n- Kỳ Co: Với màu nước trong xanh, bãi cát trắng dài và mịn, những cơn sóng biển êm ái chính là điểm đến mới, ấn tượng thu hút nhiều du khách trong thời gian gần đây. Ngoài tắm biển và thư giản, quý khách có thể chụp hình check in nhiều góc cực đẹp.  \r\n- Eo Gió: Nơi vẫn còn giữ được cho mình vẻ đẹp tự nhiên đầy hoang sơ. Đứng từ trên cao nhìn xuống, Eo Gió như một bức tranh sơn thủy hữu tình với trời, mây, nước… biển núi ôm nhau vừa gợi cảm, vừa hoang sơ đầy quyến rũ\r\n- Khu du lịch Ghềnh Ráng Tiên Sa, viếng Mộ Hàn Mặc Tử: Mộ nằm dựa lưng vào núi, nhìn bao quát cả dải bờ biển Quy Nhơn chạy dài trước mặt, hút trọn tầm mắt một phần thành phố Quy Nhơn.\r\nMua sắm các đặc sản Quy Nhơn tại shop Phương Nghi như Rượu Bàu Đá, Nem Chợ Huyện, Bánh Hồng, Tré Bình Định, Bánh Ít Lá Gai…\r\nBuổi tối Quý khách tự do nghỉ ngơi tham quan thưởng thức đặc sản Quy Nhơn: hải sản, bánh xèo tôm nhảy, .. Nghỉ đêm tại Quy Nhơn.\r\n \r\nGhi chú: Trong trường hợp Quý khách không đi tham quan Kỳ Co, ở lại khách sạn/resort tự do tắm biển hoặc nghỉ ngơi… vui lòng báo ngay khi đăng ký hoặc thanh toán, Vietravel sẽ hoàn chi phí: ăn trưa và phí tham quan là 300.000VND/ khách. Trong trường hợp báo sau sẽ không hoàn giảm.\r\n",
+            "Destination": "QUY NHƠN - EO GIÓ - KỲ CO"
+        },
+        {
+            "Date": "18/6/2020",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 2 (Ăn sáng, trưa)",
+            "Description": "Dùng bữa sáng tại khách sạn. Trả phòng, xe đưa đoàn đi tham quan: \r\n- Chùa Thiên Hưng: nơi hiện đang lưu giữ Ngọc Xá Lợi của Phật Tổ Thích Ca Mâu Ni, một trong những điểm tham quan không thể thiếu khi đến Quy Nhơn - Bình Định.  \r\nSau đó, xe đưa đoàn ra sân bay Phù Cát (Quy Nhơn) đáp chuyến bay về TP.Hồ Chí Minh. Chia tay Quý khách và kết thúc chương trình tại sân bay Tân Sơn Nhất.\r\n\r\n",
+            "Destination": "QUY NHƠN - TP.HỒ CHÍ MINH\r\n\r\n"
+        },
+        {
+            "Date": "27/05/2020",
+            "OrderNumber": "1",
+            "Title": "Ăn sáng, trưa, chiều",
+            "Description": "02h30 sáng : Xe đón khách tại Vietravel Cần Thơ (5-7 Trần Văn Khéo, Cái Khế, Ninh Kiều, Cần Thơ). Khởi hành đến điểm tập trung tại Hồ Chí Minh, đoàn khởi hành đi Vũng Tàu theo tuyến đường cao tốc TP. Hồ Chí Minh - Long Thành. Đến TP. Vũng Tàu, đoàn tiếp tục tham quan:\r\n\r\n- Bến du thuyền Marina: nổi tiếng với cảnh đẹp như trời Tây, quý khách được chiêm ngưỡng cảnh biển trời tươi đẹp bên dòng sông Dinh.\r\n\r\nSau khi ăn trưa, đoàn về nhận phòng tại khách sạn Malibu tiêu chuẩn 4 sao Quốc tế - được xem là thiên đường nghỉ dưỡng đẳng cấp tại thành phố biển xinh đẹp.\r\n\r\nBuổi chiều, đoàn tiếp tục chinh phục những điểm đến không thể bỏ qua khi đến Vũng Tàu:\r\n\r\n- Nhà Úp Ngược: nằm ở Bãi Sau với các góc chụp hình bị đảo ngược như phòng ngủ, bếp, nhà tắm vui nhộn.\r\n\r\nBuổi tối, Quý khách tự do thưởng thức những món hải sản phong phú, tươi ngon.\r\n\r\nNghỉ đêm tại khách sạn Malibu 4 sao.\r\n",
+            "Destination": "HÀ NỘI - PHÚ YÊN - MŨI NÉ"
+        },
+        {
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 (Sáng, trưa)",
+            "Description": "Quý khách có thể hòa mình vào làn nước biển mát lạnh, nằm thư giãn trên bãi cát dài để tắm mình dưới ánh nắng mặt trời buổi ban mai, vui đùa cùng những con sóng vỗ rì rào bên bờ biển thoai thoải. (Bãi Sau cách khách sạn Malibu bán kính 350 mét)\r\n\r\nTrải nghiệm tiện ích sang chảnh tại khách sạn: bơi lội giữa hồ bơi tràn bờ trên cao với view toàn cảnh thành phố Vũng Tàu; phòng tập thể dục; khu vui chơi trẻ em; phòng đọc sách...\r\n\r\nSau khi trả phòng và dùng bữa trưa, đoàn khởi hành về TP. HCM trên đường dừng chân tham quan:\r\n\r\n- Chợ Bà Rịa: mua sắm các loại đặc sản vùng biển về làm quà cho người thân và gia đình.\r\n\r\nXe đưa đoàn về điểm đến ban đầu, kết thúc chuyến du lịch.\r\n",
+            "Destination": "QUY NHƠN - HÀ NỘI"
+        },
+        {
+            "Date": "2/6/20",
+            "OrderNumber": "1",
+            "Title": "(Ăn trưa, tối)",
+            "Description": "Quý khách tập trung tại sân bay Tân Sơn Nhất - Ga đi trong nước. Hướng dẫn viên làm thủ tục cho đoàn đáp chuyến bay đi Hà Nội.\r\nXe Vietravel đón đoàn tại sân bay Nội Bài, khởi hành đi Sa Pa theo cung đường cao tốc hiện đại và dài nhất Việt Nam.\r\nĐến Sapa, nhận phòng nghỉ ngơi. Buổi chiều quý khách thăm \r\n- Bản Cát Cát đẹp như một bức tranh giữa vùng phố cổ Sapa, nơi đây thu hút du khách bởi cầu treo, thác nước, guồng nước và những mảng màu hoa mê hoặc du khách khi lạc bước đến đây.\r\n- Thăm những nếp nhà của người Mông trong bản, du khách sẽ không khỏi ngỡ ngàng trước vẻ đẹp bình dị, mộc mạc. \r\nBuổi tối Quý khách dạo phố, ngắm nhà thờ Đá Sapa, tự do thưởng thức đặc sản vùng cao như: thịt lợn cắp nách nướng, trứng nướng, rượu táo mèo, giao lưu với người dân tộc vùng cao. \r\nNghỉ đêm tại Sapa.\r\n\r\n",
+            "Destination": "TP.HCM - BUÔN MA THUỘT"
+        },
+        {
+            "Date": "3/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Xe đưa đoàn ra ga Sapa, Quý khách trải nghiệm đến khu du lịch Fansipan Legend bằng Tàu hỏa leo núi Mường Hoa hiện đại nhất Việt Nam với tổng chiều dài gần 2000m, thưởng ngoạn bức tranh phong cảnh đầy màu sắc của cánh rừng nguyên sinh, thung lũng Mường Hoa.\r\n- Chinh phục đỉnh núi Fansipan với độ cao 3.143m hùng vĩ bằng cáp treo (chi phí tự túc). \r\n- Lễ Phật tại chùa Trình hay cầu phúc lộc, bình an cho gia đình tại Bích Vân Thiền Tự trong hệ thống cảnh quan tâm linh trên đỉnh Fansipan. \r\nSau đó, xe đưa Quý khách tham quan đỉnh đèo Ô Quy Hồ một trong “Tứ đại đỉnh đèo” phía Bắc\r\n(không bao gồm vé tham quan Thác Bạc, Cầu Kính Rồng Mây, Cổng Trời...)\r\nNghỉ đêm tại Sapa.\r\n\r\n",
+            "Destination": "Buôn Ma Thuột - PLEIKU"
+        },
+        {
+            "Date": "4/6/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Quý khách ăn sáng và trả phòng khách sạn.\r\nXe đưa đoàn đi tham quan:\r\n- Núi Hàm Rồng thăm vườn Lan khoe sắc, vườn hoa Trung Tâm, ngắm Núi Phanxipăng hùng vĩ, Cổng Trời, Đầu Rồng Thạch Lâm, Sân Mây.\r\nTheo cung đường cao tốc trở về Hà Nội. Xe đưa Quý khách ra sân bay Nội Bài đáp chuyến bay về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n"
+        },
+        {
+            "Date": "1/6/20",
+            "OrderNumber": "1",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Quý khách tập trung tại Công ty Vietravel (190 Pasteur, Phường 6, Quận 3, TP. Hồ Chí Minh) khởi hành đi Phan Thiết. Quý khách ăn sáng trên cung đường đi. Đến Hàm Thuận Nam đoàn tham quan:\r\n- Khu du lịch Núi Tà Cú: Trải nghiệm đi cáp treo lên đỉnh núi độ cao 505m (chi phí tự túc), ngắm cảnh đồng bằng Hàm Thuận Nam với những vườn Thanh long trái chín đỏ được trồng thành từng hàng thẳng tắp xanh bạt ngàn. Viếng chùa Linh Sơn Trường Thọ: Với bộ tượng tam thế Phật được tạc bằng gỗ trầm hương trên 100 năm tuổi và được xếp hạng Di tích lịch sử - Văn hoá Quốc gia.Chiêm viếng tượng Phật Thích Ca nhập niết bàn lớn nhất Đông Nam Á, dài 49m, cao 11m.\r\nĐến Mũi Né nhận phòng, buổi chiều Quý khách tự do tắm biển nghỉ ngơi.\r\nĂn tối và nghỉ đêm tại Mũi Né.\r\n",
+            "Destination": "CẦN THƠ - (NỘI BÀI) HANOI - LÀO CAI - SAPA"
+        },
+        {
+            "Date": "2/6/20",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại resort. Xe đưa đoàn đi tham quan:\r\n- Bàu Trắng: hay còn được gọi với cái tên khác Bàu Sen bởi trong hồ khi vào mùa hè sen nở sẽ rất đẹp, phủ kín cả một vùng hồ…. \r\nQuý khách ăn trưa và về Resort tự do nghỉ dưỡng, tắm biển, hồ bơi,… Buổi chiều đoàn tiếp tục tham quan:\r\n- Làng Chài Xưa Mũi Né: Với lịch sử 300 năm cái nôi của nghề làm nước mắm, trải nghiệm cảm giác lao động trên đồng muối, đi trên con đường rạng xưa, thăm phố cổ Phan Thiết, thăm nhà lều của hàm hộ nước mắm xưa, đắm chìm cảm xúc trong biển 3D và thích thú khi đi chợ làng chài xưa với bàn tính tay, bàn cân xưa thú vị,…\r\nSau khi dùng bữa tối, Quý khách tự do dạo phố về đêm. Nghỉ đêm tại Mũi Né.\r\n",
+            "Destination": "SA PA - FANSIPAN"
+        },
+        {
+            "Date": "3/6/20",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa)",
+            "Description": "Dùng buffet sáng tại resort. Quý khách tự do tắm biển, hồ bơi, tận hưởng dịch vụ đến giờ trả phòng đoàn khởi hành đi:  \r\n- Organik Farm - Hello Muine: Tự do mua sắm đặc sản Phan Thiết sạch về làm quà cho người thân và bạn bè.\r\nChiều đoàn về đến TP. Hồ Chí Minh, xe đưa về điểm đón ban đầu. Chia tay Quý khách và kết thúc chương trình du lịch.\r\n",
+            "Destination": "TP. HỒ CHÍ MINH - MŨI NÉ"
+        },
+        {
+            "Date": "16/06/2020",
+            "OrderNumber": "1",
+            "Title": "Số bữa ăn: 1 bữa (trường hợp chuyến bay trước 11h, Vietravel sẽ hỗ trợ Quý khách bữa ăn trưa)",
+            "Description": "Quý khách tập trung tại Sân bay Tân Sơn Nhất, ga đi Trong Nước. Hướng dẫn viên làm thủ tục cho Quý khách đáp chuyến bay đi Phú Quốc. Xe đón đoàn tại sân bay đưa Quý khách ghé thăm Dinh Cậu - biểu tượng văn hoá và tín ngưỡng của đảo Phú Quốc, là nơi cầu may mắn, cầu an lành và là nơi ngư dân địa phương gởi gắm niềm tin cho một chuyến ra khơi đánh bắt đầy ắp cá khi trở về. Sau đó, đoàn viếng Dinh Bà Thủy Long Thánh Mẫu là nơi thờ Thần Nữ Kim Giao, người phụ nữ được người dân Phú Quốc rất mực tôn kính vì có công khai phá huyện đảo này. Sau đó nhận phòng khách sạn nghỉ ngơi.\r\nChiều Quý khách tham quan Chùa Sư Muôn (Hùng Long Tự) - để cầu nguyện sự an lành và hạnh phúc đến với gia đình. Tiếp tục, đoàn tham quan Làng Chài Hàm Ninh nằm phía Đông Đảo tại đây Quý khách được hướng dẫn viên giới thiệu về cuộc sống của người dân xứ đảo với nghề đánh bắt hải sản. Tiếp tục hành trình Quý khách tham quan Sunset Sanato Beach Club sở hữu vị thế đắc địa nhất, khu vui chơi nằm ngay trung tâm của Bãi Trường. Nơi đây, sóng biển dịu êm như một dòng sông, bạn sẽ thấy mình được hưởng trọn vẹn hương vị mặn mòi của biển và mát lành của những hoang sơ còn vương vấn, đến đây du khách sẽ được thưởng ngoạn phong cảnh biển tuyệt đẹp, những góc ảnh check-in cực chất, tự do tắm biển, hòa nhịp trong những bản nhạc sôi động. Nghỉ đêm tại Phú Quốc.\r\n",
+            "Destination": " MŨI NÉ - BÀU TRẮNG"
+        },
+        {
+            "Date": "17/06/2020",
+            "OrderNumber": "2",
+            "Title": "Số bữa ăn: 2 bữa (sáng,trưa, chiều tự túc)",
+            "Description": "Xe đưa Quý khách đến tham quan tắm biển Bãi Sao nằm ở phía Nam Đảo - một bãi biển dịu êm, bãi cát dài tĩnh lặng và nguyên sơ nơi đảo xanh. Tại đây Quý khách sẽ thật sự cảm thấy yên bình, thư thái và dường như cuộc sống chậm lại khi hòa mình cùng thiên nhiên. Ăn trưa, về lại khách sạn tự do nghỉ ngơi. Trên đường về, Quý khách Tham quan Vườn Tiêu, Nhà Thùng làm nước mắm, Cơ Sở nuôi cấy Ngọc Trai.\r\nBuổi chiều, Quý khách tự do tham quan Khu vui chơi giải trí Vinpearl Land (chi phí tự túc) rộng lớn với đầy đủ những trò chơi dành cho mọi lứa tuổi và sở thích. Nơi đây hội đủ tất cả các trò chơi trong nhà, ngoài trời như: đĩa bay, đu quay con ong, cốc xoay, đĩa quay siêu tốc, cối xay gió,… Khu công viên nước với các trò chơi hấp dẫn như: boomerang khổng lồ, đường trượt siêu lòng chảo, dòng sông lười, lâu đài, bể tạo sóng… Tiếp tục Quý khách có thể khám phá Khu Thủy Cung với hàng trăm loài cá và sinh vật biển kỳ thú như: cá Hải tượng, cá Sấu hỏa tiễn với chiếc mõm dài và hung dữ hay những loài quý hiếm như cá Nemo, cá Napoleon, cá Mập trắng, cua King Crab…. Hơn nữa, ở đây  còn có Rạp chiếu phim 5D, Sân khấu nhạc nước. \r\nHay trải nghiệm tại Vườn Thú Hoang Dã đầu tiên tại Việt Nam (chi phí tự túc) với quy mô 180ha, hơn 130 loài động vật quý hiếm và các chương trình Biểu diễn động vật, Chụp ảnh với động vật, Khám phá và trải nghiệm Vườn thú mở trong rừng tự nhiên, gần gũi và thân thiện với con người. Quý khách tự túc ăn tối. Nghỉ đêm tại khách sạn.\r\n\r\n",
+            "Destination": "MŨI NÉ - TP. HỒ CHÍ MINH"
+        },
+        {
+            "Date": "18/06/2020",
+            "OrderNumber": "3",
+            "Title": "Số bữa ăn: 1 bữa (sáng) ",
+            "Description": "Sau khi ăn sáng. Tự do tắm biển nghỉ ngơi. Đến giờ trả phòng khách sạn. Sau đó, xe đưa Quý khách ra sân bay Phú Quốc đáp chuyến bay trở về Tp.HCM. Chia tay Quý khách và kết thúc chương trình du lịch tại sân bay Tân Sơn Nhất.\r\n",
+            "Destination": "TP.HCM - CHÂU ĐỐC - MIẾU BÀ CHÚA XỨ"
+        },
+        {
+            "Date": "19/06/2020",
+            "OrderNumber": "1",
+            "Title": "(Ăn trưa, chiều)",
+            "Description": "Quý khách tập trung tại Ga đi trong nước, sân bay Tân Sơn Nhất. Hướng dẫn viên hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Đà Nẵng. Tại sân bay Đà Nẵng xe và HDV Vietravel đón đoàn đi tham quan: \r\n- Bán đảo Sơn Trà, viếng Chùa Linh Ứng: nơi đây có tượng Phật Quan Thế Âm cao nhất Việt Nam, đứng nơi đây, Quý khách sẽ được chiêm ngưỡng toàn cảnh thành phố, núi rừng và biển đảo Sơn Trà một cách hoàn hảo nhất. \r\n\r\n",
+            "Destination": "CHÂU ĐỐC - RỪNG TRÀM TRÀ SƯ - HÀ TIÊN - MŨI NAI"
+        },
+        {
+            "Date": "20/06/2020",
+            "OrderNumber": "2",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa Quý khách đi tham quan:",
+            "Destination": "HÀ TIÊN - RẠCH GIÁ - CẦN THƠ"
+        },
+        {
+            "Date": "21/06/2020",
+            "OrderNumber": "3",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Du lịch Suối Mơ (chi phí cáp treo & ăn trưa tự túc): Tận hưởng không khí se lạnh của Đà Lạt tại miền Trung, đoàn tự do tham quan Chùa Linh Ứng, Hầm Rượu Debay, vườn hoa Le Jardin D’Amour, Khu Tâm linh mới của Bà Nà viếng Đền Lĩnh Chúa Linh Từ, khu vui chơi Fantasy Park, tự do chụp hình tại Cầu Vàng điểm tham quan mới siêu hot tại Bà Nà…Ăn trưa tại Bà Nà tự túc. Sau đó đoàn tiếp tục tham quan vui chơi đến giờ xuống cáp. ",
+            "Destination": "CẦN THƠ - CHỢ NỔI CÁI RĂNG - TP.HCM"
+        },
+        {
+            "Date": "22/06/2020",
+            "OrderNumber": "4",
+            "Title": "(Ăn sáng, trưa, tối)",
+            "Description": "Dùng buffet sáng tại khách sạn. Xe đưa Quý khách đi tham quan:\r\n- Ngũ Hành Sơn: Động Tàng Chơn, Động Hoa Nghiêm, Chùa Non Nước, Làng Đá Mỹ Nghệ,..\r\n- Bãi biển Mỹ Khê: Một trong những bãi biển quyến rũ nhất hành tinh. Quý khách tự do dạo biển, chụp hình....\r\n- Ky niem local specialites and souvernia shop: Mua sắm đặc sản của Đà Nẵng và các vùng miền  \r\n\r\n",
+            "Destination": "TP.HỒ CHÍ MINH - NÚI TÀ CÚ - PHAN THIẾT"
+        }
+    ]

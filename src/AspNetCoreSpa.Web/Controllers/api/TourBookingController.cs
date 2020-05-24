@@ -92,6 +92,8 @@ namespace AspNetCoreSpa.Web.Controllers.api
                 tourBookingTourCustomer.TourBookingId = tourBooking.Id;
             }
             _uow.TourBookings.Add(_mapper.Map<TourBooking>(tourBooking));
+            var tour = _uow.Tours.GetSingleOrDefault(x=>x.Id ==tourBooking.TourId);
+            tour.Slot -= tourBooking.TourCustomers.Count;
             _uow.SaveChanges();
         }
 

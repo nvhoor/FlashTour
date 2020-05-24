@@ -313,4 +313,7 @@ export class HomeDetailComponent implements OnInit {
       console.log(that.searchingPosts);
     }, error => console.error(error));
   }
+  truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '...' : str;
+  };
 }

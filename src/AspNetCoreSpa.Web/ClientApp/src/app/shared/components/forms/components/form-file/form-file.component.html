@@ -1,5 +1,5 @@
 <div [formGroup]="formGroup" class="form-group">
-    <img class="img-tour-preview mb-1 mt-1" id="image-preview" src="./assets/images/tours/{{formGroup.value.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
+    <img class="img-tour-preview mb-1 mt-1" id="image-preview" src="./assets/images/{{getFolderImage()}}/{{formGroup.value.image}}" onerror="this.src='./assets/images/proposal-flight.png';" alt="Card image">
         <div class="custom-file">
             <input type="file" class="custom-file-input" (change)="onFileChange($event)" #file />
             <input type="hidden" [formControlName]="config.name" [id]="config.name"/>

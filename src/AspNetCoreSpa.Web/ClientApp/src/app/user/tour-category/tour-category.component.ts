@@ -187,4 +187,7 @@ export class TourCategoryComponent implements OnInit {
             return tour.originalPrice;
         }
     }
+  truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '...' : str;
+  };
 }

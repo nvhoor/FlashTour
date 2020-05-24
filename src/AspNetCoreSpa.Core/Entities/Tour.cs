@@ -9,13 +9,13 @@ namespace AspNetCoreSpa.Core.Entities
     {
         [Key]
         public Guid Id { get; set; }
-        [Column(TypeName = "NVARCHAR(100)")]
+        [Column(TypeName = "NVARCHAR(255)")]
         public string Name { get; set; }
         [Column(TypeName = "VARCHAR(100)")]
         public string Image { get; set; }
         [Column(TypeName = "VARCHAR(255)")]
         public string Images { get; set; }
-        [Column(TypeName = "NVARCHAR(500)")]
+        [Column(TypeName = "NVARCHAR(3000)")]
         public string Description { get; set; }
         public DateTime DepartureDate { get; set; }
         public Guid DepartureId { get; set; }

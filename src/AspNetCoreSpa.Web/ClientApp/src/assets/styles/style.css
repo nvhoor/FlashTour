@@ -517,6 +517,9 @@ hr.dashed {
 	max-height: 200px;
 	max-width: 250px;
 }
+a h4.card-tour-title{
+	font-size: 13px
+}
 .card-tour:hover{
 	border: 3px solid rgba(229, 96, 56, 1);
 }

@@ -164,4 +164,7 @@ export class DetailComponent implements OnInit{
         return ((this.evaluation.oneStar+ this.evaluation.twoStar*2
             +this.evaluation.threeStar*3+this.evaluation.fourStar*4+this.evaluation.fiveStar*5)/(this.getTotalEvaluation())).toFixed(2);
     }
+    truncate(str, n){
+        return (str.length > n) ? str.substr(0, n-1) + '...' : str;
+    };
 }

@@ -170,7 +170,7 @@
                     <div class="form-group">
                         <label>Note</label>
                         <div>
-                            <textarea class="form-control" cols="20" id="note" name="note" rows="4" (keyup)="keyupValidate(comunication.note)" [(ngModel)]="comunication.note"></textarea>
+                            <textarea class="form-control" cols="20" id="note" name="note" rows="4" (keyup)="keyupValidate(comunication.note,500)" [(ngModel)]="comunication.note"></textarea>
                             <div class="text-danger" *ngIf="!checkMaxLengthRegrex(comunication.note,500)">
                                 Over 500 characters.
                             </div>
@@ -299,6 +299,6 @@
             </div>
         </div>
         <div class="col-xs-12 text-center mg-bot30">
-            <button  id="btnSubmit" type="submit" class="btn btn-lg btn-danger mt-3" (click)="postTourBooking()">Book tour&nbsp;&nbsp;<i class="fas fa-arrow-right text-light"></i></button>
+            <button  id="btnSubmit" type="submit" [ngClass]="tour.slot>0?'btn btn-lg btn-danger mt-3':'btn btn-lg btn-danger mt-3 disabled'" (click)="postTourBooking()">Book tour&nbsp;&nbsp;<i class="fas fa-arrow-right text-light"></i></button>
         </div>
     </form>    </div>
