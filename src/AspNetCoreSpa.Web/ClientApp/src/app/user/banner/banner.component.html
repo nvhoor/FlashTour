@@ -106,7 +106,7 @@
                                             <div class="form-group">
                                                 <label class="mg-b">Post Category:</label>
                                                 <select class="form-control input-md" id="postCategory" name="TourCate" [(ngModel)]="optionSearchPost.postCategoryId">
-                                                    <option value="0">All</option>
+<!--                                                    <option value="0">All</option>-->
                                                     <option value="{{postCate.id}}" *ngFor="let postCate of postCategories">{{postCate.name}}</option>
                                                 </select>
                                             </div>

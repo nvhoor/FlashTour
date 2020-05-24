@@ -5,48 +5,94 @@
         </div>
     </div>
     <div class="col-xs-12 mg-bot50">
-        <form action="/StaticPage/SendEmail" id="SendEmail" method="post"><input name="__RequestVerificationToken" type="hidden" value="YfMLGMR516-6kAKSq8SYwNAJGTz-4jUp-9YrExQbGsMfEaFuLeTyJECZBxw5SEsNQZd5JiYEWIz312FDSlweZrvOhuwBmelJ5yngDFXWUkU1">
+        <form id="myForm" method="post" class="was-validated"novalidate="">
+            <input name="" type="hidden" value="">
             <div class="frame-contact">
                 <div class="row" *ngIf="contact">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mg-bot15">
                         <label>Information (<span class="star">*</span>)</label>
-                        <select name="Type" class="form-control" [(ngModel)]="contact.information">
+                        <select name="dropdown" class="form-control" [(ngModel)]="contact.information" required>
                             <option value="Travel">Travel</option>
                             <option value="Customer Service">Customer Service</option>
                         </select>
+                        <div class="invalid-feedback" *ngIf="contact.information==''">
+                            Please enter full infomation.
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mg-bot15">
                         <label>Full Name (<span class="star">*</span>)</label>
-                        <input type="text" class="form-control" required="required" name="txtHoTen" id="txtHoTen" [(ngModel)]="contact.fullName" ng-required="someLogicExpression" />
+                        <div>
+                            <input class="form-control" (keyup)="keyupValidate(contact.fullName,100)" id="full_name" name="full_name" type="text" [(ngModel)]="contact.fullName" required>
+                            <div class="invalid-feedback" *ngIf="contact.fullName==''">
+                                Please enter full infomation.
+                            </div>
+                            <div class="text-danger" *ngIf="checkSpecialCharacterRegrex(contact.fullName)">
+                                Not accept special characters.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(contact.fullName,100)">
+                                Over 100 characters.
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mg-bot15">
                         <label>Email (<span class="star">*</span>)</label>
-                        <input type="email" class="form-control" required="required" name="txtEmail" id="txtEmail" [(ngModel)]="contact.email">
-                    </div>
+                        <div>
+                            <input class="form-control" id="email" name="email" (keyup)="keyupValidate(contact.email,255)"  required="required" type="email" [(ngModel)]="contact.email">
+                            <div class="invalid-feedback" *ngIf="contact.email==''">
+                                Please enter full infomation.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkEmailRegrex(contact.email)">
+                                Please enter corect full infomation.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(contact.email,255)">
+                                Over 255 characters.
+                            </div>
+                        </div>                    </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mg-bot15">
                         <label>Phone (<span class="star">*</span>)</label>
-                        <input type="text" class="form-control" required="required" name="txtDienThoai" id="txtDienThoai" [(ngModel)]="contact.phone">
+                        <div>
+                            <input class="form-control" id="mobilephone" name="mobilephone" (keyup)="keyupValidate(contact.phone)" required="required" type="phone" [(ngModel)]="contact.phone">
+                            <div class="invalid-feedback" *ngIf="contact.phone==''">
+                                Please enter full infomation.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkPhoneRegrex(contact.phone)">
+                                Invalid phone number format.
+                            </div>
+                        </div>                    
                     </div>
                     <div class="col-xs-12 mg-bot15">
                         <label>Address</label>
-                        <input type="text" class="form-control" required="required" name="txtDiaChi" [(ngModel)]="contact.address">
-                    </div>
+                        <div>
+                            <input class="form-control" id="address" name="address" (keyup)="keyupValidate(contact.address,255)"  type="text" [(ngModel)]="contact.address" required>
+                            <div class="invalid-feedback" *ngIf="contact.address==''">
+                                Please enter full infomation.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(contact.address,255)">
+                                Over 255 characters.
+                            </div>
+                        </div>                    </div>
                     <div class="col-xs-12 mg-bot15">
                         <label>Title (<span class="star">*</span>)</label>
-                        <input type="text" class="form-control" required="required" name="txtTieuDe" [(ngModel)]="contact.title">
-                    </div>
+                        <div>
+                            <input class="form-control" id="title" name="address" (keyup)="keyupValidate(contact.title,255)"  type="text" [(ngModel)]="contact.title" required>
+                            <div class="invalid-feedback" *ngIf="contact.title==''">
+                                Please enter full infomation.
+                            </div>
+                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(contact.title,255)">
+                                Over 255 characters.
+                            </div>
+                        </div>                      </div>
                     <div class="col-xs-12 mg-bot15">
                         <label>Content (<span class="star">*</span>)</label>
-                        <textarea class="form-control" cols="20" id="contact" name="contact" rows="4" [(ngModel)]="contact.content"></textarea>
+                        <div>
+                            <textarea class="form-control" cols="20" id="note" name="note" rows="4" (keyup)="keyupValidate(contact.content)" [(ngModel)]="contact.content"></textarea>
+<!--                            <div class="text-danger" *ngIf="!checkMaxLengthRegrex(contact.content,500)">-->
+<!--                                Over 500 characters.-->
+<!--                            </div>-->
+                        </div>                    
                     </div>
-                 
-                 <!--   <div class="col-xs-12 mg-bot15">
-                        <re-captcha (resolved)="resolved($event)" siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
-"></re-captcha>
-                    </div> 
-                   -->
                     <div class="col-xs-12 text-center">
-                        <button type="submit" class="btn btn-md btn-general" (click)="postContact()">Send<i class="fas fa-paper-plane"></i></button>
+                        <button id="btnSubmit" type="submit" class="btn btn-md btn-general" (click)="postContact()">Send<i class="fas fa-paper-plane"></i></button>
                     </div>
                 </div>
             </div>

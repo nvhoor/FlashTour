@@ -447,6 +447,18 @@ namespace AspNetCoreSpa.STS.Controllers
             return View(nameof(ResetAuthenticator));
         }
 
+        // [HttpGet]
+        // public IActionResult ListUser()
+        // {
+        //     return View(_userManager.Users.ToList());
+        //
+        // }
+        [HttpGet]
+        public IActionResult ListAccount()
+        {
+            return View(_userManager.Users.ToList());
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetAuthenticator()

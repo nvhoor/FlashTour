@@ -75,6 +75,13 @@ export class BannerComponent implements OnInit {
 
   @Output() myEventPost = new EventEmitter<EmitSearchPost>();
   onClickSearchPost(){
+    var selectedDeparture=this._document.getElementById("Departureid");
+    if(this.optionSearchPost.postCategoryId=='0'){
+      alert("You need to choose a Post Category!");
+      selectedDeparture.classList.add("btn-outline-danger");
+      selectedDeparture.focus();
+      return;
+    }
     this.selectedCatePost=this.postCategories.find(x=>x.id==this.optionSearchPost.postCategoryId).name;
     this.emitSearchPost={categoryName:this.selectedCatePost,option:this.optionSearchPost};
     this.myEventPost.emit(this.emitSearchPost);
