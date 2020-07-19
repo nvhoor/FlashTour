@@ -51,7 +51,7 @@
     "date-fns": "2.6.0",
     "flatpickr": "4.6.3",
     "font-awesome": "^4.7.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "ng-recaptcha": "^5.0.0",
     "ng2-charts": "^2.3.1",
     "oidc-client": "1.9.1",
